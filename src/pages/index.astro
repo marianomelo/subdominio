@@ -1,0 +1,443 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.jsx';
+import ServiceCard from '../components/ServiceCard.jsx';
+---
+
+<Layout title="Inicio" description="Subdominio - Agencia de desarrollo que transforma ideas en experiencias digitales excepcionales.">
+	<HeroSection client:load />
+
+	<section class="py-24 bg-white">
+		<div class="container mx-auto px-6">
+			<div class="text-center mb-20">
+				<h2 class="text-4xl md:text-5xl font-medium mb-6 text-black">
+					Servicios
+				</h2>
+				<p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+					Ofrecemos soluciones completas para transformar tu negocio en el mundo digital
+				</p>
+			</div>
+			
+			<div class="max-w-4xl mx-auto">
+				<ServiceCard 
+					client:load
+					title="Desarrollo Web"
+					description="Creamos sitios web modernos, rápidos y optimizados para todos los dispositivos."
+					technologies={["WordPress", "Astro", "Next.js"]}
+				/>
+
+				<ServiceCard 
+					client:load
+					title="Desarrollo de E-commerce"
+					description="Soluciones completas para tiendas online que convierten visitantes en clientes."
+					technologies={["WooCommerce", "Shopify", "Desarrollo personalizado"]}
+				/>
+
+				<ServiceCard 
+					client:load
+					title="Automatización de Procesos"
+					description="Optimizamos tu negocio con tecnología de vanguardia y soluciones inteligentes."
+					technologies={["IA", "Automatización", "Workflows"]}
+				/>
+
+				<ServiceCard 
+					client:load
+					title="Desarrollo Personalizado"
+					description="Creamos soluciones tecnológicas específicas para tu empresa."
+					technologies={["Laravel", "Next.js", "ERP/CRM", "APIs"]}
+				/>
+
+			</div>
+		</div>
+	</section>
+
+	<section class="py-24 bg-gray-50">
+		<div class="container mx-auto px-6">
+			<div class="max-w-5xl mx-auto">
+				<div class="text-center mb-20">
+					<h2 class="text-4xl md:text-5xl font-medium mb-6 text-black">
+						Nuestro Proceso de Trabajo
+					</h2>
+					<p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+						Metodología probada que garantiza resultados exitosos en cada proyecto
+					</p>
+				</div>
+
+				<div class="relative">
+					<!-- Línea conectora vertical (oculta en móvil) -->
+					<div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-gray-300 via-gray-400 to-gray-300"></div>
+					
+					<div class="space-y-16 md:space-y-24">
+						<!-- Paso 1 -->
+						<div class="relative flex flex-col md:flex-row items-center gap-8">
+							<div class="md:w-1/2 md:text-right md:pr-16">
+								<div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300">
+									<div class="inline-flex items-center justify-center w-16 h-16 bg-black text-white rounded-xl mb-6 text-xl font-medium">
+										01
+									</div>
+									<h3 class="text-2xl font-medium text-black mb-4">Descubrimiento y Análisis</h3>
+									<p class="text-gray-600 leading-relaxed">
+										Comenzamos entendiendo tu negocio, objetivos y audiencia. Realizamos un análisis profundo 
+										de requisitos y definimos el alcance del proyecto junto contigo.
+									</p>
+									<ul class="mt-4 space-y-2 text-sm text-gray-500">
+										<li class="flex items-center justify-end md:justify-start">
+											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+											Reunión inicial y brief
+										</li>
+										<li class="flex items-center justify-end md:justify-start">
+											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+											Análisis de competencia
+										</li>
+										<li class="flex items-center justify-end md:justify-start">
+											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+											Definición de objetivos
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="hidden md:block md:w-1/2"></div>
+						</div>
+
+						<!-- Paso 2 -->
+						<div class="relative flex flex-col md:flex-row items-center gap-8">
+							<div class="hidden md:block md:w-1/2"></div>
+							<div class="md:w-1/2 md:pl-16">
+								<div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
+									<div class="inline-flex items-center justify-center w-16 h-16 bg-black text-white rounded-xl mb-6 text-xl font-medium">
+										02
+									</div>
+									<h3 class="text-2xl font-medium text-black mb-4">Diseño y Estrategia</h3>
+									<p class="text-gray-600 leading-relaxed">
+										Creamos wireframes, prototipos y definimos la arquitectura del proyecto. 
+										Presentamos la propuesta visual y funcional para tu aprobación.
+									</p>
+									<ul class="mt-4 space-y-2 text-sm text-gray-500">
+										<li class="flex items-center">
+											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+											Arquitectura de información
+										</li>
+										<li class="flex items-center">
+											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+											Diseño UI/UX
+										</li>
+										<li class="flex items-center">
+											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+											Prototipo interactivo
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- Paso 3 -->
+						<div class="relative flex flex-col md:flex-row items-center gap-8">
+							<div class="md:w-1/2 md:text-right md:pr-16">
+								<div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
+									<div class="inline-flex items-center justify-center w-16 h-16 bg-black text-white rounded-xl mb-6 text-xl font-medium">
+										03
+									</div>
+									<h3 class="text-2xl font-medium text-black mb-4">Desarrollo Ágil</h3>
+									<p class="text-gray-600 leading-relaxed">
+										Implementamos el proyecto con metodología ágil, entregas semanales y 
+										feedback constante. Mantenemos comunicación transparente durante todo el proceso.
+									</p>
+									<ul class="mt-4 space-y-2 text-sm text-gray-500">
+										<li class="flex items-center justify-end md:justify-start">
+											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+											Sprints semanales
+										</li>
+										<li class="flex items-center justify-end md:justify-start">
+											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+											Revisiones regulares
+										</li>
+										<li class="flex items-center justify-end md:justify-start">
+											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+											Testing continuo
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="hidden md:block md:w-1/2"></div>
+						</div>
+
+						<!-- Paso 4 -->
+						<div class="relative flex flex-col md:flex-row items-center gap-8">
+							<div class="hidden md:block md:w-1/2"></div>
+							<div class="md:w-1/2 md:pl-16">
+								<div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
+									<div class="inline-flex items-center justify-center w-16 h-16 bg-black text-white rounded-xl mb-6 text-xl font-medium">
+										04
+									</div>
+									<h3 class="text-2xl font-medium text-black mb-4">Testing y Optimización</h3>
+									<p class="text-gray-600 leading-relaxed">
+										Realizamos pruebas exhaustivas de funcionalidad, rendimiento y seguridad. 
+										Optimizamos cada detalle para garantizar la mejor experiencia.
+									</p>
+									<ul class="mt-4 space-y-2 text-sm text-gray-500">
+										<li class="flex items-center">
+											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+											Pruebas de calidad
+										</li>
+										<li class="flex items-center">
+											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+											Optimización SEO
+										</li>
+										<li class="flex items-center">
+											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+											Performance tuning
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- Paso 5 -->
+						<div class="relative flex flex-col md:flex-row items-center gap-8">
+							<div class="md:w-1/2 md:text-right md:pr-16">
+								<div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
+									<div class="inline-flex items-center justify-center w-16 h-16 bg-black text-white rounded-xl mb-6 text-xl font-medium">
+										05
+									</div>
+									<h3 class="text-2xl font-medium text-black mb-4">Lanzamiento y Soporte</h3>
+									<p class="text-gray-600 leading-relaxed">
+										Desplegamos tu proyecto y te proporcionamos formación completa. 
+										Incluimos soporte post-lanzamiento y mantenimiento continuo.
+									</p>
+									<ul class="mt-4 space-y-2 text-sm text-gray-500">
+										<li class="flex items-center justify-end md:justify-start">
+											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+											Deployment seguro
+										</li>
+										<li class="flex items-center justify-end md:justify-start">
+											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+											Documentación completa
+										</li>
+										<li class="flex items-center justify-end md:justify-start">
+											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+											Soporte 24/7
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="hidden md:block md:w-1/2"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="text-center mt-16">
+					<p class="text-gray-600 mb-8">¿Listo para comenzar tu proyecto con nosotros?</p>
+					<a
+						href="/contacto"
+						class="inline-block px-8 py-4 bg-black text-white font-medium hover:bg-gray-800 transition-colors duration-200"
+					>
+						Iniciar proyecto
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-24 bg-white">
+		<div class="container mx-auto px-6">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-20">
+					<h2 class="text-4xl md:text-5xl font-medium mb-6 text-black">
+						¿Por qué Subdominio?
+					</h2>
+					<p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+						Combinamos experiencia técnica con metodologías ágiles para entregar resultados excepcionales
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<!-- Metodología Clara -->
+					<div class="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+						<div class="relative">
+							<div class="w-16 h-16 bg-black rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+								</svg>
+							</div>
+							<h3 class="text-xl font-medium text-black mb-4">Metodología Clara</h3>
+							<p class="text-gray-600 leading-relaxed mb-6">
+								Proceso transparente con entregas regulares y comunicación constante durante todo el proyecto.
+							</p>
+							<ul class="space-y-3 text-sm text-gray-500">
+								<li class="flex items-start">
+									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Sprints semanales con objetivos claros</span>
+								</li>
+								<li class="flex items-start">
+									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Reportes de progreso regulares</span>
+								</li>
+								<li class="flex items-start">
+									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Canal directo de comunicación</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Tecnología Moderna -->
+					<div class="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+						<div class="relative">
+							<div class="w-16 h-16 bg-black rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+								</svg>
+							</div>
+							<h3 class="text-xl font-medium text-black mb-4">Tecnología Moderna</h3>
+							<p class="text-gray-600 leading-relaxed mb-6">
+								Utilizamos las herramientas más actuales para garantizar productos escalables y mantenibles.
+							</p>
+							<ul class="space-y-3 text-sm text-gray-500">
+								<li class="flex items-start">
+									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Stack tecnológico actualizado</span>
+								</li>
+								<li class="flex items-start">
+									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Mejores prácticas de desarrollo</span>
+								</li>
+								<li class="flex items-start">
+									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Código limpio y documentado</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Soporte Continuo -->
+					<div class="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+						<div class="relative">
+							<div class="w-16 h-16 bg-black rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+								</svg>
+							</div>
+							<h3 class="text-xl font-medium text-black mb-4">Soporte Continuo</h3>
+							<p class="text-gray-600 leading-relaxed mb-6">
+								Acompañamiento post-lanzamiento con mantenimiento, actualizaciones y soporte técnico.
+							</p>
+							<ul class="space-y-3 text-sm text-gray-500">
+								<li class="flex items-start">
+									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Mantenimiento preventivo</span>
+								</li>
+								<li class="flex items-start">
+									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Actualizaciones de seguridad</span>
+								</li>
+								<li class="flex items-start">
+									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+									</svg>
+									<span>Respuesta rápida a incidencias</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Stats adicionales -->
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-20 border-t border-gray-200">
+					<div class="text-center">
+						<div class="text-4xl font-bold text-black mb-2">100+</div>
+						<p class="text-gray-600">Proyectos Completados</p>
+					</div>
+					<div class="text-center">
+						<div class="text-4xl font-bold text-black mb-2">5+</div>
+						<p class="text-gray-600">Años de Experiencia</p>
+					</div>
+					<div class="text-center">
+						<div class="text-4xl font-bold text-black mb-2">98%</div>
+						<p class="text-gray-600">Clientes Satisfechos</p>
+					</div>
+					<div class="text-center">
+						<div class="text-4xl font-bold text-black mb-2">24/7</div>
+						<p class="text-gray-600">Soporte Disponible</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-24 bg-black text-white">
+		<div class="container mx-auto px-6 text-center">
+			<div class="max-w-3xl mx-auto">
+				<h2 class="text-4xl md:text-5xl font-medium mb-6">
+					¿Tienes un proyecto en mente?
+				</h2>
+				<p class="text-xl text-gray-300 mb-12 leading-relaxed">
+					Hablemos sobre cómo podemos ayudarte a materializarlo
+				</p>
+				
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a
+						href="/contacto"
+						class="px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-colors duration-200"
+					>
+						Empezar proyecto
+					</a>
+					<a
+						href="mailto:info@subdominio.com"
+						class="px-8 py-4 border border-gray-600 text-white font-medium hover:border-white transition-colors duration-200"
+					>
+						Enviar email
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
