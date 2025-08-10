@@ -67,8 +67,8 @@ const Header = () => {
     >
       <div className="container mx-auto px-6">
         <nav className="flex items-center justify-between h-20">
-          <a href="/" className="text-2xl font-medium tracking-tight text-black">
-            Subdominio
+          <a href="/" className="text-2xl font-bold tracking-tight text-black" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            subdominio.
           </a>
 
           <div className="hidden lg:flex items-center space-x-8">

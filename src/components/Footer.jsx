@@ -71,8 +71,8 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-1">
-            <a href="/" className="inline-block text-2xl font-medium text-black mb-4 hover:text-gray-800 transition-colors duration-200">
-              Subdominio
+            <a href="/" className="inline-block text-2xl font-bold text-black mb-4 hover:text-gray-800 transition-colors duration-200" style={{ fontFamily: 'Poppins, sans-serif' }}>
+              subdominio.
             </a>
             <p className="text-gray-600 leading-relaxed max-w-sm">
               Línea de negocio de Tecnológica Chile especializada en desarrollo web y software.
