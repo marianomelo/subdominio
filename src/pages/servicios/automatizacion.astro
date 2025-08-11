@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { Icon } from 'astro-icon/components';
+import LucideIcon from "../../components/LucideIcon.jsx";
 ---
 
 <Layout title="Automatización de Procesos" description="Optimizamos tu negocio con tecnología de vanguardia y soluciones inteligentes. Automatización empresarial, IA y workflows personalizados.">
@@ -9,7 +9,7 @@ import { Icon } from 'astro-icon/components';
 			<div class="max-w-4xl mx-auto">
 				<div class="mb-8">
 					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
-						<Icon name="arrow-left" class="w-4 h-4 mr-2" />
+						<LucideIcon name="arrow-left" className="w-4 h-4 mr-2" />
 						Volver al inicio
 					</a>
 				</div>
@@ -82,14 +82,6 @@ import { Icon } from 'astro-icon/components';
 					<li class="flex gap-4">
 						<span class="text-black dark:text-white mt-1">•</span>
 						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">IA aplicada al e-commerce</h3>
-							<p class="text-gray-600 dark:text-gray-300">Recomendaciones personalizadas, ajuste dinámico de precios y predicción de demanda.</p>
-						</div>
-					</li>
-					
-					<li class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">•</span>
-						<div>
 							<h3 class="font-medium text-black dark:text-white mb-2">Integraciones complejas</h3>
 							<p class="text-gray-600 dark:text-gray-300">Conexión de plataformas como ERP, CRM, logística, facturación electrónica o analítica, vía API REST o GraphQL.</p>
 						</div>
@@ -128,153 +120,149 @@ import { Icon } from 'astro-icon/components';
 					</p>
 				</div>
 				
-				<div class="space-y-12">
+				<div class="space-y-8">
 					<!-- Ejemplo 1: Descripciones de productos -->
-					<div class="bg-white dark:bg-gray-800 rounded-card shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
-						<div class="p-8">
-							<div class="flex items-start gap-4 mb-6">
-								<span class="text-3xl">📝</span>
-								<div>
-									<h3 class="text-2xl font-medium text-black dark:text-white mb-2">
-										Descripciones de productos con IA
-									</h3>
-									<p class="text-gray-600 dark:text-gray-300">
-										Transforma información básica en textos de venta profesionales
-									</p>
-								</div>
-							</div>
-							
-							<div class="grid md:grid-cols-2 gap-6 mb-6">
-								<div class="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg">
-									<span class="text-sm font-medium text-red-700 dark:text-red-400">ANTES (Manual)</span>
-									<p class="text-sm text-gray-700 dark:text-gray-300 mt-2">
-										"Polera algodón. Talla M. Color azul. $19.990"
-									</p>
-									<p class="text-xs text-red-600 dark:text-red-400 mt-3">
-										⏱️ 15 minutos por producto<br>
-										👤 Requiere copywriter<br>
-										📉 Sin optimización SEO
-									</p>
-								</div>
-								
-								<div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
-									<span class="text-sm font-medium text-green-700 dark:text-green-400">DESPUÉS (Automatizado)</span>
-									<p class="text-sm text-gray-700 dark:text-gray-300 mt-2">
-										"Polera premium de algodón 100% orgánico, perfecta para el día a día. Su corte moderno y tejido transpirable garantizan comodidad durante todo el día. Color azul clásico que combina con todo. Talla M."
-									</p>
-									<p class="text-xs text-green-600 dark:text-green-400 mt-3">
-										⚡ 5 segundos por producto<br>
-										🤖 100% automático<br>
-										🎯 Optimizado para Google
-									</p>
-								</div>
-							</div>
-							
-							<div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-								<p class="text-sm text-blue-800 dark:text-blue-300">
-									<strong>Resultado:</strong> 500 productos actualizados en 1 hora vs 125 horas de trabajo manual
+					<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8">
+						<div class="flex items-start justify-between mb-6">
+							<div>
+								<h3 class="text-2xl font-medium text-black dark:text-white mb-2">
+									Descripciones de productos con IA
+								</h3>
+								<p class="text-gray-600 dark:text-gray-300">
+									Transforma información básica en textos de venta profesionales
 								</p>
 							</div>
+							<span class="text-xs text-gray-500 dark:text-gray-400 font-mono">01</span>
+						</div>
+						
+						<div class="grid md:grid-cols-2 gap-8 mb-6">
+							<div>
+								<span class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Antes</span>
+								<div class="mt-3 p-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700">
+									<p class="text-sm text-gray-600 dark:text-gray-300 font-mono">
+										"Polera algodón. Talla M. Color azul. $19.990"
+									</p>
+								</div>
+								<div class="mt-4 space-y-2 text-sm text-gray-500 dark:text-gray-400">
+									<p>• 15 minutos por producto</p>
+									<p>• Requiere copywriter</p>
+									<p>• Sin optimización SEO</p>
+								</div>
+							</div>
+							
+							<div>
+								<span class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Después</span>
+								<div class="mt-3 p-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700">
+									<p class="text-sm text-gray-700 dark:text-gray-300">
+										"Polera premium de algodón 100% orgánico, perfecta para el día a día. Su corte moderno y tejido transpirable garantizan comodidad durante todo el día. Color azul clásico que combina con todo. Talla M."
+									</p>
+								</div>
+								<div class="mt-4 space-y-2 text-sm text-gray-500 dark:text-gray-400">
+									<p>• 5 segundos por producto</p>
+									<p>• 100% automático</p>
+									<p>• Optimizado para Google</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="pt-6 border-t border-gray-200 dark:border-gray-700">
+							<p class="text-sm text-black dark:text-white">
+								<span class="font-medium">Resultado:</span> 500 productos actualizados en 1 hora vs 125 horas de trabajo manual
+							</p>
 						</div>
 					</div>
 					
 					<!-- Ejemplo 2: Reportes automáticos -->
-					<div class="bg-white dark:bg-gray-800 rounded-card shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
-						<div class="p-8">
-							<div class="flex items-start gap-4 mb-6">
-								<span class="text-3xl">📊</span>
-								<div>
-									<h3 class="text-2xl font-medium text-black dark:text-white mb-2">
-										Reportes de ventas automáticos
-									</h3>
-									<p class="text-gray-600 dark:text-gray-300">
-										Informes diarios sin intervención humana
-									</p>
-								</div>
-							</div>
-							
-							<div class="grid md:grid-cols-2 gap-6 mb-6">
-								<div class="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg">
-									<span class="text-sm font-medium text-red-700 dark:text-red-400">ANTES</span>
-									<ul class="text-sm text-gray-700 dark:text-gray-300 mt-2 space-y-1">
-										<li>• Exportar datos de 3 sistemas diferentes</li>
-										<li>• Consolidar en Excel manualmente</li>
-										<li>• Crear gráficos y análisis</li>
-										<li>• Enviar por email a gerencia</li>
-									</ul>
-									<p class="text-xs text-red-600 dark:text-red-400 mt-3">
-										⏱️ 2 horas diarias<br>
-										❌ Propenso a errores<br>
-										😓 Tarea repetitiva
-									</p>
-								</div>
-								
-								<div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
-									<span class="text-sm font-medium text-green-700 dark:text-green-400">DESPUÉS</span>
-									<ul class="text-sm text-gray-700 dark:text-gray-300 mt-2 space-y-1">
-										<li>• Sistema recopila datos automáticamente</li>
-										<li>• Genera análisis con IA</li>
-										<li>• Crea visualizaciones dinámicas</li>
-										<li>• Envía a las 9 AM sin falta</li>
-									</ul>
-									<p class="text-xs text-green-600 dark:text-green-400 mt-3">
-										⚡ 0 minutos de trabajo manual<br>
-										✅ 100% preciso<br>
-										📈 Incluye insights con IA
-									</p>
-								</div>
-							</div>
-							
-							<div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-								<p class="text-sm text-blue-800 dark:text-blue-300">
-									<strong>Resultado:</strong> 40 horas mensuales liberadas para tareas estratégicas
+					<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8">
+						<div class="flex items-start justify-between mb-6">
+							<div>
+								<h3 class="text-2xl font-medium text-black dark:text-white mb-2">
+									Reportes de ventas automáticos
+								</h3>
+								<p class="text-gray-600 dark:text-gray-300">
+									Informes diarios sin intervención humana
 								</p>
 							</div>
+							<span class="text-xs text-gray-500 dark:text-gray-400 font-mono">02</span>
+						</div>
+						
+						<div class="grid md:grid-cols-2 gap-8 mb-6">
+							<div>
+								<span class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Proceso Manual</span>
+								<div class="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-300">
+									<p>• Exportar datos de 3 sistemas diferentes</p>
+									<p>• Consolidar en Excel manualmente</p>
+									<p>• Crear gráficos y análisis</p>
+									<p>• Enviar por email a gerencia</p>
+								</div>
+								<div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 space-y-1 text-sm text-gray-500 dark:text-gray-400">
+									<p>2 horas diarias</p>
+									<p>Propenso a errores</p>
+								</div>
+							</div>
+							
+							<div>
+								<span class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Proceso Automatizado</span>
+								<div class="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-300">
+									<p>• Sistema recopila datos automáticamente</p>
+									<p>• Genera análisis con IA</p>
+									<p>• Crea visualizaciones dinámicas</p>
+									<p>• Envía a las 9 AM sin falta</p>
+								</div>
+								<div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 space-y-1 text-sm text-gray-500 dark:text-gray-400">
+									<p>0 minutos de trabajo manual</p>
+									<p>100% preciso con insights IA</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="pt-6 border-t border-gray-200 dark:border-gray-700">
+							<p class="text-sm text-black dark:text-white">
+								<span class="font-medium">Resultado:</span> 40 horas mensuales liberadas para tareas estratégicas
+							</p>
 						</div>
 					</div>
 					
 					<!-- Ejemplo 3: Sincronización de inventarios -->
-					<div class="bg-white dark:bg-gray-800 rounded-card shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
-						<div class="p-8">
-							<div class="flex items-start gap-4 mb-6">
-								<span class="text-3xl">📦</span>
-								<div>
-									<h3 class="text-2xl font-medium text-black dark:text-white mb-2">
-										Sincronización de inventarios
-									</h3>
-									<p class="text-gray-600 dark:text-gray-300">
-										Stock actualizado en tiempo real entre todas tus plataformas
-									</p>
-								</div>
-							</div>
-							
-							<div class="grid md:grid-cols-2 gap-6 mb-6">
-								<div class="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg">
-									<span class="text-sm font-medium text-red-700 dark:text-red-400">PROBLEMA</span>
-									<ul class="text-sm text-gray-700 dark:text-gray-300 mt-2 space-y-1">
-										<li>• Sobreventa por desactualización</li>
-										<li>• Actualización manual en 3 sistemas</li>
-										<li>• Errores de digitación frecuentes</li>
-										<li>• Clientes insatisfechos</li>
-									</ul>
-								</div>
-								
-								<div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
-									<span class="text-sm font-medium text-green-700 dark:text-green-400">SOLUCIÓN</span>
-									<ul class="text-sm text-gray-700 dark:text-gray-300 mt-2 space-y-1">
-										<li>• Sincronización instantánea</li>
-										<li>• ERP ↔️ Tienda online ↔️ Marketplace</li>
-										<li>• Alertas de stock bajo</li>
-										<li>• Cero sobreventa</li>
-									</ul>
-								</div>
-							</div>
-							
-							<div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-								<p class="text-sm text-blue-800 dark:text-blue-300">
-									<strong>Resultado:</strong> -95% reclamos por productos no disponibles, +30% eficiencia operativa
+					<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-8">
+						<div class="flex items-start justify-between mb-6">
+							<div>
+								<h3 class="text-2xl font-medium text-black dark:text-white mb-2">
+									Sincronización de inventarios
+								</h3>
+								<p class="text-gray-600 dark:text-gray-300">
+									Stock actualizado en tiempo real entre todas tus plataformas
 								</p>
 							</div>
+							<span class="text-xs text-gray-500 dark:text-gray-400 font-mono">03</span>
+						</div>
+						
+						<div class="grid md:grid-cols-2 gap-8 mb-6">
+							<div>
+								<span class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Problema</span>
+								<div class="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-300">
+									<p>• Sobreventa por desactualización</p>
+									<p>• Actualización manual en 3 sistemas</p>
+									<p>• Errores de digitación frecuentes</p>
+									<p>• Clientes insatisfechos</p>
+								</div>
+							</div>
+							
+							<div>
+								<span class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Solución</span>
+								<div class="mt-3 space-y-2 text-sm text-gray-600 dark:text-gray-300">
+									<p>• Sincronización instantánea</p>
+									<p>• ERP ↔ Tienda online ↔ Marketplace</p>
+									<p>• Alertas de stock bajo</p>
+									<p>• Cero sobreventa</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="pt-6 border-t border-gray-200 dark:border-gray-700">
+							<p class="text-sm text-black dark:text-white">
+								<span class="font-medium">Resultado:</span> -95% reclamos por productos no disponibles, +30% eficiencia operativa
+							</p>
 						</div>
 					</div>
 				</div>

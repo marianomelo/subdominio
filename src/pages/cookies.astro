@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Icon } from 'astro-icon/components';
+import LucideIcon from "../components/LucideIcon.jsx";
 ---
 
 <Layout title="Política de Cookies" description="Política de Cookies de Subdominio - Información sobre el uso de cookies y tecnologías similares en nuestro sitio web.">
@@ -9,7 +9,7 @@ import { Icon } from 'astro-icon/components';
 			<div class="max-w-4xl mx-auto">
 				<div class="mb-8">
 					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
-						<Icon name="arrow-left" class="w-4 h-4 mr-2" />
+						<LucideIcon name="arrow-left" className="w-4 h-4 mr-2" />
 						Volver al inicio
 					</a>
 				</div>
@@ -142,14 +142,14 @@ import { Icon } from 'astro-icon/components';
 						
 						<div class="space-y-3">
 							<div class="flex items-start space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-								<div class="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+								<div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
 								<div>
 									<p><strong>Google Analytics:</strong> <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" class="text-black dark:text-white font-medium hover:underline">Complemento de exclusión</a></p>
 								</div>
 							</div>
 							
 							<div class="flex items-start space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-								<div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+								<div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
 								<div>
 									<p><strong>Do Not Track:</strong> Activa esta opción en tu navegador para indicar que no deseas ser rastreado</p>
 								</div>

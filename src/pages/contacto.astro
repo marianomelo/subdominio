@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm.jsx';
-import { Icon } from 'astro-icon/components';
+import LucideIcon from '../components/LucideIcon.jsx';
 ---
 
 <Layout title="Contacto" description="Contacta con Subdominio para tu próximo proyecto de desarrollo web, e-commerce o automatización. Estamos en Santiago, Chile.">
@@ -10,7 +10,7 @@ import { Icon } from 'astro-icon/components';
 			<div class="max-w-4xl mx-auto">
 				<div class="mb-8">
 					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-200 hover:scale-[1.02] rounded-button mb-6">
-						<Icon name="arrow-left" class="w-4 h-4 mr-2" />
+						<LucideIcon name="arrow-left" className="w-4 h-4 mr-2" />
 						Volver al inicio
 					</a>
 				</div>
@@ -51,7 +51,7 @@ import { Icon } from 'astro-icon/components';
 								<h3 class="text-lg font-medium text-black dark:text-white mb-4">Datos de contacto</h3>
 								<div class="space-y-4">
 									<div class="flex items-start space-x-3">
-										<Icon name="mail" class="w-5 h-5 text-gray-600 dark:text-gray-300 mt-1" />
+										<LucideIcon name="mail" className="w-5 h-5 text-gray-600 dark:text-gray-300 mt-1" />
 										<div>
 											<p class="text-black dark:text-white font-medium">Email</p>
 											<a href="mailto:info@subdominio.com" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-200 hover:scale-[1.02] rounded-button">
@@ -61,7 +61,7 @@ import { Icon } from 'astro-icon/components';
 									</div>
 
 									<div class="flex items-start space-x-3">
-										<Icon name="phone" class="w-5 h-5 text-gray-600 dark:text-gray-300 mt-1" />
+										<LucideIcon name="phone" className="w-5 h-5 text-gray-600 dark:text-gray-300 mt-1" />
 										<div>
 											<p class="text-black dark:text-white font-medium">Teléfono</p>
 											<a href="tel:800914659" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-200 hover:scale-[1.02] rounded-button">
@@ -71,7 +71,7 @@ import { Icon } from 'astro-icon/components';
 									</div>
 
 									<div class="flex items-start space-x-3">
-										<Icon name="map-pin" class="w-5 h-5 text-gray-600 dark:text-gray-300 mt-1" />
+										<LucideIcon name="map-pin" className="w-5 h-5 text-gray-600 dark:text-gray-300 mt-1" />
 										<div>
 											<p class="text-black dark:text-white font-medium">Ubicación</p>
 											<p class="text-gray-600 dark:text-gray-300">Santiago, Chile</p>

@@ -10,8 +10,6 @@ featured: true
 slug: optimizacion-performance-wordpress
 ---
 
-# Optimización de Performance en Sitios WordPress
-
 La velocidad de carga es crucial para el éxito de cualquier sitio WordPress. Los usuarios esperan que las páginas se carguen en menos de 3 segundos, y cada segundo adicional puede significar una pérdida significativa de conversiones.
 
 ## Optimización de Imágenes
