@@ -1,6 +1,7 @@
 ---
 import AppWrapper from '../components/AppWrapper.jsx';
 import Footer from '../components/Footer.jsx';
+import CookieBanner from '../components/CookieBanner.jsx';
 import SchemaOrg from '../components/SchemaOrg.astro';
 
 interface Props {
@@ -101,6 +102,7 @@ const imageURL = new URL(image, Astro.site || 'https://subdominio.com').toString
 			<slot />
 		</main>
 		<Footer />
+		<CookieBanner client:load />
 	</body>
 </html>
 

@@ -30,39 +30,124 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 					Soluciones digitales completas para tu negocio
 				</h2>
 				<p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
-					Beneficios claros primero, tecnología después
+					Elige el servicio que mejor se adapte a tus necesidades
 				</p>
 			</div>
 			
-			<div class="max-w-4xl mx-auto">
-				<ServiceCard 
-					client:load
-					title="Desarrollo Web"
-					description="Sitios rápidos, seguros y optimizados para buscadores."
-					technologies={["WordPress", "Astro", "Next.js"]}
-				/>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+				<!-- Desarrollo Web -->
+				<a href="/servicios/web" class="group">
+					<div class="h-full bg-gray-50 dark:bg-gray-800 p-8 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white">
+						<div class="flex items-start justify-between mb-6">
+							<div class="w-12 h-12 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center text-xl font-mono">
+								01
+							</div>
+							<svg class="w-6 h-6 text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-medium text-black dark:text-white mb-3">
+							Desarrollo Web
+						</h3>
+						<p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+							Sitios web modernos que cargan rápido, se ven increíbles y convierten visitantes en clientes.
+						</p>
+						<div class="flex flex-wrap gap-2">
+							<span class="text-xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1">WordPress</span>
+							<span class="text-xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1">React</span>
+							<span class="text-xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1">Next.js</span>
+							<span class="text-xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1">Astro</span>
+						</div>
+					</div>
+				</a>
 
-				<ServiceCard 
-					client:load
-					title="E-commerce"
-					description="Tiendas online que venden más y son fáciles de gestionar."
-					technologies={["WooCommerce", "Shopify", "Desarrollo a medida"]}
-				/>
+				<!-- E-commerce -->
+				<a href="/servicios/ecommerce" class="group">
+					<div class="h-full bg-gray-50 dark:bg-gray-800 p-8 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white">
+						<div class="flex items-start justify-between mb-6">
+							<div class="w-12 h-12 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center text-xl font-mono">
+								02
+							</div>
+							<svg class="w-6 h-6 text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-medium text-black dark:text-white mb-3">
+							E-commerce
+						</h3>
+						<p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+							Tiendas online que procesan pagos seguros, gestionan inventarios y escalan con tu negocio.
+						</p>
+						<div class="flex flex-wrap gap-2">
+							<span class="text-xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1">WooCommerce</span>
+							<span class="text-xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1">Shopify</span>
+							<span class="text-xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1">Laravel</span>
+						</div>
+					</div>
+				</a>
 
-				<ServiceCard 
-					client:load
-					title="Automatización de Procesos"
-					description="Reducción de tareas manuales y errores con flujos inteligentes."
-					technologies={["IA", "APIs", "Workflows"]}
-				/>
+				<!-- Automatización -->
+				<a href="/servicios/automatizacion" class="group">
+					<div class="h-full bg-gray-50 dark:bg-gray-800 p-8 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white">
+						<div class="flex items-start justify-between mb-6">
+							<div class="w-12 h-12 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center text-xl font-mono">
+								03
+							</div>
+							<svg class="w-6 h-6 text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-medium text-black dark:text-white mb-3">
+							Automatización
+						</h3>
+						<p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+							Procesos inteligentes que eliminan tareas repetitivas y te ahorran tiempo valioso.
+						</p>
+						<div class="flex flex-wrap gap-2">
+							<span class="text-xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1">Python</span>
+							<span class="text-xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1">APIs</span>
+							<span class="text-xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1">IA</span>
+							<span class="text-xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1">Workflows</span>
+						</div>
+					</div>
+				</a>
 
-				<ServiceCard 
-					client:load
-					title="Desarrollo Personalizado"
-					description="Sistemas a medida, integraciones ERP/CRM y soluciones específicas."
-					technologies={["Laravel", "Next.js", "API REST"]}
-				/>
+				<!-- Desarrollo Personalizado -->
+				<a href="/servicios/personalizado" class="group">
+					<div class="h-full bg-gray-50 dark:bg-gray-800 p-8 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white">
+						<div class="flex items-start justify-between mb-6">
+							<div class="w-12 h-12 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center text-xl font-mono">
+								04
+							</div>
+							<svg class="w-6 h-6 text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
+						</div>
+						<h3 class="text-2xl font-medium text-black dark:text-white mb-3">
+							Software a Medida
+						</h3>
+						<p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+							Aplicaciones y sistemas personalizados que resuelven exactamente tu problema específico.
+						</p>
+						<div class="flex flex-wrap gap-2">
+							<span class="text-xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1">Laravel</span>
+							<span class="text-xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1">React Native</span>
+							<span class="text-xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1">Node.js</span>
+						</div>
+					</div>
+				</a>
+			</div>
 
+			<div class="text-center mt-12">
+				<p class="text-gray-600 dark:text-gray-400 mb-6">
+					¿No estás seguro de qué servicio necesitas?
+				</p>
+				<a 
+					href="/contacto"
+					class="inline-block px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors duration-200"
+				>
+					Cuéntanos tu idea
+				</a>
 			</div>
 		</div>
 	</section>

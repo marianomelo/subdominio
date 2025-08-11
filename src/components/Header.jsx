@@ -47,9 +47,9 @@ const Header = ({ showThemeToggle = true }) => {
 
   const navItems = [
     { label: 'Inicio', href: '/' },
-    { label: 'Proyectos', href: '/proyectos' },
     { label: 'Blog', href: '/blog' },
     { label: 'Nosotros', href: '/nosotros' },
+    { label: 'Productos', href: '/productos' },
     { label: 'Contacto', href: '/contacto' },
   ];
 
@@ -59,6 +59,7 @@ const Header = ({ showThemeToggle = true }) => {
     { label: 'Automatización de Procesos', href: '/servicios/automatizacion' },
     { label: 'Desarrollo Personalizado', href: '/servicios/personalizado' },
   ];
+
 
   return (
     <header 

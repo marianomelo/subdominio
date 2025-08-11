@@ -284,28 +284,50 @@ const ContactForm = () => {
         </p>
       </div>
 
-      <div className="flex items-start">
-        <input
-          type="checkbox"
-          id="acepto"
-          name="acepto"
-          checked={formData.acepto}
-          onChange={handleChange}
-          className={`w-4 h-4 mt-1 text-black border-gray-300 focus:ring-black ${
-            errors.acepto ? 'border-red-500' : ''
-          }`}
-        />
-        <label htmlFor="acepto" className="ml-3 text-sm text-gray-600 dark:text-gray-300">
-          Acepto el tratamiento de mis datos personales según la{' '}
-          <a href="/privacidad" className="underline hover:text-black dark:hover:text-white">
-            política de privacidad
-          </a>{' '}
-          para responder a mi consulta *
-        </label>
+      <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+        <div className="flex items-start justify-between">
+          <div className="flex-1">
+            <label htmlFor="acepto" className="text-sm font-medium text-black dark:text-white cursor-pointer">
+              Consentimiento de datos *
+            </label>
+            <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+              Acepto el tratamiento de mis datos personales según la{' '}
+              <a href="/privacidad" className="underline hover:text-black dark:hover:text-white">
+                política de privacidad
+              </a>{' '}
+              para responder a mi consulta y recibir información relevante.
+            </p>
+          </div>
+          <div className="ml-4">
+            <button
+              type="button"
+              onClick={() => {
+                setFormData(prev => ({ ...prev, acepto: !prev.acepto }));
+                if (errors.acepto) {
+                  setErrors(prev => ({ ...prev, acepto: '' }));
+                }
+              }}
+              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-2 ${
+                formData.acepto 
+                  ? 'bg-black dark:bg-white' 
+                  : 'bg-gray-300 dark:bg-gray-600'
+              }`}
+              role="switch"
+              aria-checked={formData.acepto}
+              aria-label="Aceptar términos"
+            >
+              <span
+                className={`inline-block h-4 w-4 transform rounded-full bg-white dark:bg-gray-900 transition-transform duration-200 ${
+                  formData.acepto ? 'translate-x-6' : 'translate-x-1'
+                }`}
+              />
+            </button>
+          </div>
+        </div>
+        {errors.acepto && (
+          <p className="mt-2 text-sm text-red-500">{errors.acepto}</p>
+        )}
       </div>
-      {errors.acepto && (
-        <p className="text-sm text-red-500">{errors.acepto}</p>
-      )}
 
       {submitMessage && (
         <div className={`p-4 rounded ${
