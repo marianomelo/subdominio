@@ -1,272 +1,243 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { BackArrowIcon } from '../../components/ContactIcons.jsx';
 ---
 
 <Layout title="Desarrollo Personalizado" description="Creamos soluciones tecnológicas específicas para tu empresa. Backend con Laravel, frontend con Next.js, sistemas empresariales y integraciones.">
-	<section class="pt-32 pb-16 bg-white">
+	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
 				<div class="mb-8">
-					<a href="/" class="inline-flex items-center text-gray-600 hover:text-black transition-colors duration-200 mb-6">
-						<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-						</svg>
+					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
+						<BackArrowIcon />
 						Volver al inicio
 					</a>
 				</div>
 				
-				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black leading-tight">
-					⚙️ Desarrollo Personalizado
+				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black dark:text-white leading-tight">
+					Soluciones tecnológicas hechas a tu medida
 				</h1>
 				
-				<p class="text-xl text-gray-600 leading-relaxed mb-12 max-w-3xl">
-					Creamos soluciones tecnológicas específicas para tu empresa. Desde sistemas empresariales 
-					complejos hasta integraciones personalizadas que se adaptan perfectamente a tus procesos.
+				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+					Desde sistemas empresariales complejos hasta integraciones avanzadas, desarrollamos tecnología personalizada que se ajusta a tus procesos reales.
+				</p>
+				
+				<div class="flex flex-col sm:flex-row gap-4">
+					<a
+						href="/contacto"
+						class="px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-colors duration-200"
+					>
+						Solicitar consultoría
+					</a>
+					<a
+						href="#capacidades"
+						class="px-8 py-4 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 font-medium hover:border-black dark:hover:border-white transition-colors duration-200"
+					>
+						Cuéntanos tu idea
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Introducción - Posicionamiento -->
+	<section class="py-16 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+					No adaptamos tu negocio a soluciones prediseñadas: construimos la tecnología que encaja con tus procesos, desafíos y crecimiento. Nos especializamos en crear herramientas robustas, a medida y escalables usando código limpio y arquitecturas modernas.
 				</p>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-16 bg-white border-t border-gray-200">
+	<!-- Capacidades técnicas destacadas -->
+	<section class="py-16 bg-white dark:bg-gray-900" id="capacidades">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black">
-					Tecnologías y Servicios
+				<h2 class="text-3xl font-medium mb-12 text-black dark:text-white">
+					Desarrollo altamente personalizable, sin límites
 				</h2>
 				
-				<div class="space-y-12">
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Backend: Laravel</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Desarrollo robusto y escalable con Laravel. APIs RESTful, sistemas de autenticación avanzados, 
-							gestión de bases de datos complejas y arquitecturas orientadas a microservicios.
-						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Laravel</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">PHP 8+</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">MySQL/PostgreSQL</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Redis</span>
+				<ul class="space-y-6">
+					<li class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">•</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Backend con Laravel</h3>
+							<p class="text-gray-600 dark:text-gray-300">APIs RESTful, autenticación avanzada, microservicios, sistemas de base de datos complejos (MySQL/PostgreSQL), cache con Redis.</p>
 						</div>
-					</div>
+					</li>
+					
+					<li class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">•</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Frontend moderno con Next.js</h3>
+							<p class="text-gray-600 dark:text-gray-300">Páginas reactivas, renderizado en servidor, SEO óptimo, experiencia con React, TypeScript y Tailwind CSS.</p>
+						</div>
+					</li>
+					
+					<li class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">•</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Sistemas empresariales a la medida</h3>
+							<p class="text-gray-600 dark:text-gray-300">CRM, ERP y sistemas internos adaptados a flujos específicos de tu negocio.</p>
+						</div>
+					</li>
+					
+					<li class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">•</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Plugins de WordPress avanzados</h3>
+							<p class="text-gray-600 dark:text-gray-300">Funcionalidades únicas mediante hooks, campos personalizados y tipos de post personalizados.</p>
+						</div>
+					</li>
+					
+					<li class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">•</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Apps y extensiones para Shopify</h3>
+							<p class="text-gray-600 dark:text-gray-300">Funcionalidades fuera de lo común, desarrolladas desde cero.</p>
+						</div>
+					</li>
+					
+					<li class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">•</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">DevOps y Testing profesional</h3>
+							<p class="text-gray-600 dark:text-gray-300">Pipelines CI/CD, testing automatizado, contenedores Docker, deployments en AWS o DigitalOcean y monitoreo continuo.</p>
+						</div>
+					</li>
+					
+					<li class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">•</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Integraciones profundas</h3>
+							<p class="text-gray-600 dark:text-gray-300">APIs REST, GraphQL, migración de datos y sincronización entre sistemas diversos.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
 
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Frontend: Next.js</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Interfaces modernas y reactivas con Next.js. Aplicaciones web progresivas, 
-							server-side rendering, optimización SEO y experiencias de usuario excepcionales.
+	<section class="py-16 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl font-medium mb-12 text-black dark:text-white">
+					Qué podemos construir juntos
+				</h2>
+				
+				<div class="space-y-8">
+					<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+						<h3 class="text-xl font-medium text-black dark:text-white mb-3">Plataformas de gestión empresarial</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Centraliza clientes, inventarios, ventas y reporting.
 						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Next.js</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">React</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">TypeScript</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Tailwind CSS</span>
-						</div>
 					</div>
-
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Sistemas Empresariales: ERP, CRM y Sistemas Internos</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Desarrollo de sistemas de gestión empresarial completos adaptados a tus procesos. 
-							Desde CRM personalizados hasta ERPs que integran todas las áreas de tu negocio.
+					
+					<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+						<h3 class="text-xl font-medium text-black dark:text-white mb-3">Aplicaciones tipo PWA</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Apps con modo offline, notificaciones push, como nativas, modernas y eficientes.
 						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">CRM Personalizado</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Sistemas ERP</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Gestión de Inventario</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Inteligencia de Negocios</span>
-						</div>
 					</div>
-
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">WordPress: Plugins y Funcionalidades Avanzadas</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Desarrollo de plugins personalizados para WordPress que extienden las funcionalidades 
-							de tu sitio web. Soluciones específicas que no existen en el mercado.
+					
+					<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+						<h3 class="text-xl font-medium text-black dark:text-white mb-3">Sistemas de reservas y citas</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Con calendario inteligente, pagos y notificaciones integradas.
 						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Plugins Personalizados</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Campos Personalizados Avanzados</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Tipos de Post Personalizados</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Hooks de WordPress</span>
-						</div>
 					</div>
-
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Shopify: Apps y Extensiones</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Desarrollo de aplicaciones y extensiones personalizadas para Shopify. 
-							Funcionalidades específicas que potencian tu tienda online más allá de las opciones estándar.
+					
+					<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+						<h3 class="text-xl font-medium text-black dark:text-white mb-3">Portales de clientes</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Área privada para facturas, documentos, soporte y seguimiento.
 						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Apps de Shopify</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Temas Personalizados</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">API de Shopify</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Extensiones de Tienda</span>
-						</div>
 					</div>
-
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">DevOps y Testing</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Implementación de CI/CD, contenedores Docker, testing automatizado y monitoreo de aplicaciones. 
-							Deployment en AWS, DigitalOcean y servicios cloud con alta disponibilidad.
+					
+					<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+						<h3 class="text-xl font-medium text-black dark:text-white mb-3">Facturación automatizada</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Generamos facturas, PDFs y cumplimos con normativas fiscales automáticamente.
 						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Docker</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">CI/CD</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Testing PHPUnit</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">AWS/DigitalOcean</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Monitoreo</span>
-						</div>
 					</div>
-
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Integraciones: APIs, Servicios Externos y Sincronización</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Conectamos sistemas heterogéneos, integramos servicios de terceros y creamos 
-							ecosistemas tecnológicos cohesivos que trabajan en perfecta sincronía.
+					
+					<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+						<h3 class="text-xl font-medium text-black dark:text-white mb-3">Plataformas de contenido</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							CMS headless con workflows aprobatorios y publicación en múltiples canales.
 						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">REST APIs</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">GraphQL</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">APIs de Terceros</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Migración de Datos</span>
-						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-16 bg-gray-50">
+	<section class="py-16 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black">
-					Tipos de Proyectos
-				</h2>
-				
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-					<div class="p-6 border border-gray-200 rounded-lg bg-white">
-						<h3 class="text-lg font-medium text-black mb-3">Plataformas de Gestión Empresarial</h3>
-						<p class="text-gray-600 text-sm leading-relaxed mb-4">
-							Sistemas completos que centralizan toda la operación de tu empresa: clientes, inventarios, ventas y reporting.
-						</p>
-						<div class="text-xs text-gray-500">Laravel • React • MySQL • Tableros Analíticos</div>
-					</div>
-
-					<div class="p-6 border border-gray-200 rounded-lg bg-white">
-						<h3 class="text-lg font-medium text-black mb-3">Aplicaciones Web Progresivas</h3>
-						<p class="text-gray-600 text-sm leading-relaxed mb-4">
-							Apps web que funcionan como aplicaciones nativas, con capacidades offline y notificaciones push.
-						</p>
-						<div class="text-xs text-gray-500">Next.js • PWA • Service Workers • Notificaciones Push</div>
-					</div>
-
-					<div class="p-6 border border-gray-200 rounded-lg bg-white">
-						<h3 class="text-lg font-medium text-black mb-3">Sistemas de Reservas y Citas</h3>
-						<p class="text-gray-600 text-sm leading-relaxed mb-4">
-							Plataformas de gestión de citas con calendarios inteligentes, notificaciones y pagos integrados.
-						</p>
-						<div class="text-xs text-gray-500">API de Calendario • Procesamiento de Pagos • SMS/Email • Multiusuario</div>
-					</div>
-
-					<div class="p-6 border border-gray-200 rounded-lg bg-white">
-						<h3 class="text-lg font-medium text-black mb-3">Portales de Clientes</h3>
-						<p class="text-gray-600 text-sm leading-relaxed mb-4">
-							Áreas privadas donde tus clientes pueden acceder a facturas, documentos, estado de proyectos y soporte.
-						</p>
-						<div class="text-xs text-gray-500">Autenticación de Usuarios • Gestión de Documentos • Comunicación • Tickets de Soporte</div>
-					</div>
-
-					<div class="p-6 border border-gray-200 rounded-lg bg-white">
-						<h3 class="text-lg font-medium text-black mb-3">Sistemas de Facturación Automática</h3>
-						<p class="text-gray-600 text-sm leading-relaxed mb-4">
-							Automatización completa del proceso de facturación con integración contable y fiscal.
-						</p>
-						<div class="text-xs text-gray-500">Automatización de Facturación • Cumplimiento Fiscal • Integración Contable • Generación de PDF</div>
-					</div>
-
-					<div class="p-6 border border-gray-200 rounded-lg bg-white">
-						<h3 class="text-lg font-medium text-black mb-3">Plataformas de Contenido</h3>
-						<p class="text-gray-600 text-sm leading-relaxed mb-4">
-							Sistemas de gestión de contenido avanzados con workflows de aprobación y publicación multicanal.
-						</p>
-						<div class="text-xs text-gray-500">CMS Headless • Flujos de Contenido • Publicación Multicanal • Herramientas SEO</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="py-16 bg-white">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black">
-					Metodología de Desarrollo
+				<h2 class="text-3xl font-medium mb-12 text-black dark:text-white">
+					Proceso de trabajo
 				</h2>
 				
 				<div class="space-y-8">
 					<div class="flex flex-col md:flex-row gap-6">
 						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black">01</span>
+							<span class="text-2xl font-medium text-black dark:text-white">01</span>
 						</div>
 						<div>
-							<h3 class="text-xl font-medium text-black mb-3">Discovery y Análisis</h3>
-							<p class="text-gray-600 leading-relaxed">
-								Análisis profundo de tus procesos, requisitos técnicos y objetivos de negocio. 
-								Definimos la arquitectura y stack tecnológico más adecuado.
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Discovery y análisis</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+								Profundizamos en tus objetivos, procesos y necesidades técnicas.
 							</p>
 						</div>
 					</div>
 
 					<div class="flex flex-col md:flex-row gap-6">
 						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black">02</span>
+							<span class="text-2xl font-medium text-black dark:text-white">02</span>
 						</div>
 						<div>
-							<h3 class="text-xl font-medium text-black mb-3">Diseño y Prototipado</h3>
-							<p class="text-gray-600 leading-relaxed">
-								Creación de wireframes, diseño de interfaces y prototipos funcionales. 
-								Validación temprana del concepto antes de comenzar el desarrollo.
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Diseño y prototipado</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+								Prototipos visuales y funcionales para validar ideas.
 							</p>
 						</div>
 					</div>
 
 					<div class="flex flex-col md:flex-row gap-6">
 						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black">03</span>
+							<span class="text-2xl font-medium text-black dark:text-white">03</span>
 						</div>
 						<div>
-							<h3 class="text-xl font-medium text-black mb-3">Desarrollo Ágil</h3>
-							<p class="text-gray-600 leading-relaxed">
-								Desarrollo iterativo con entregas semanales, testing continuo y feedback constante. 
-								Adaptamos el producto según tus necesidades cambiantes.
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Desarrollo ágil</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+								Entregas frecuentes, adaptabilidad y testing continuo.
 							</p>
 						</div>
 					</div>
 
 					<div class="flex flex-col md:flex-row gap-6">
 						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black">04</span>
+							<span class="text-2xl font-medium text-black dark:text-white">04</span>
 						</div>
 						<div>
-							<h3 class="text-xl font-medium text-black mb-3">Testing y Optimización</h3>
-							<p class="text-gray-600 leading-relaxed">
-								Pruebas exhaustivas de funcionalidad, seguridad y rendimiento. 
-								Optimización de base de datos y código para máxima eficiencia.
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Testing y optimización</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+								Rendimiento, seguridad y calidad mediante pruebas rigurosas.
 							</p>
 						</div>
 					</div>
 
 					<div class="flex flex-col md:flex-row gap-6">
 						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black">05</span>
+							<span class="text-2xl font-medium text-black dark:text-white">05</span>
 						</div>
 						<div>
-							<h3 class="text-xl font-medium text-black mb-3">Despliegue y Mantenimiento</h3>
-							<p class="text-gray-600 leading-relaxed">
-								Deployment en producción, configuración de servidores, monitoreo y 
-								mantenimiento continuo con actualizaciones regulares de seguridad.
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Despliegue y mantenimiento</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+								Implementación segura, monitoreo permanente y actualizaciones regulares.
 							</p>
 						</div>
 					</div>
@@ -275,26 +246,79 @@ import Layout from '../../layouts/Layout.astro';
 		</div>
 	</section>
 
-	<section class="py-16 bg-black text-white">
+	<!-- Diferenciales -->
+	<section class="py-16 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl font-medium mb-12 text-black dark:text-white">
+					Lo que nos distingue
+				</h2>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+					<div class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">✓</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">100% personalizado</h3>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">Sin plantillas ni soluciones "pronto".</p>
+						</div>
+					</div>
+					
+					<div class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">✓</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Arquitectura escalable</h3>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">Diseñada para crecer contigo.</p>
+						</div>
+					</div>
+					
+					<div class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">✓</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Calidad garantizada</h3>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">Tests automatizados, CI/CD y código limpio.</p>
+						</div>
+					</div>
+					
+					<div class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">✓</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Visión integral</h3>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">Entendemos negocio y tecnología.</p>
+						</div>
+					</div>
+					
+					<div class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">✓</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Soporte técnico continuo</h3>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">Mantenimiento evolutivo y respuesta rápida.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-16 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
 		<div class="container mx-auto px-6 text-center">
 			<div class="max-w-3xl mx-auto">
-				<h2 class="text-3xl md:text-4xl font-medium mb-6">
-					¿Tienes una idea específica en mente?
+				<h2 class="text-3xl md:text-4xl font-medium mb-6 text-white dark:text-gray-900">
+					Transformar una idea en una solución digital sólida requiere más que código
 				</h2>
-				<p class="text-xl text-gray-300 mb-8 leading-relaxed">
-					Hablemos sobre cómo podemos convertirla en una solución tecnológica real
+				<p class="text-xl text-gray-300 dark:text-gray-600 mb-8 leading-relaxed">
+					Necesita precisión, visión y compromiso técnico. Si buscas desarrollo personalizado sin atajos, estamos listos para ayudarte.
 				</p>
 				
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
 					<a
 						href="/contacto"
-						class="px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-colors duration-200"
+						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
 					>
-						Solicitar consultoría
+						Comienza tu proyecto
 					</a>
 					<a
 						href="mailto:info@subdominio.com"
-						class="px-8 py-4 border border-gray-600 text-white font-medium hover:border-white transition-colors duration-200"
+						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-colors duration-200"
 					>
 						Enviar email
 					</a>

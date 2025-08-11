@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { BlogBackIcon, AuthorIcon, ReadMoreIcon } from '../../components/BlogIcons.jsx';
 
 // Esta página manejará las URLs dinámicas como /blog/optimizacion-performance-wordpress
 export async function getStaticPaths() {
@@ -27,26 +28,24 @@ const formatDate = (dateString) => {
 
 const getCategoryColor = (color) => {
   const colors = {
-    blue: 'bg-blue-100 text-blue-700',
-    orange: 'bg-orange-100 text-orange-700',
-    green: 'bg-green-100 text-green-700',
-    purple: 'bg-purple-100 text-purple-700',
-    red: 'bg-red-100 text-red-700'
+    blue: 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300',
+    orange: 'bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300',
+    green: 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300',
+    purple: 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300',
+    red: 'bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300'
   };
-  return colors[color] || 'bg-gray-100 text-gray-700';
+  return colors[color] || 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300';
 };
 ---
 
 <Layout title={post.data.title} description={post.data.excerpt}>
   <!-- Hero del artículo -->
-  <section class="pt-32 pb-16 bg-white">
+  <section class="pt-32 pb-16 bg-white dark:bg-gray-900">
     <div class="container mx-auto px-6">
       <div class="max-w-4xl mx-auto">
         <div class="mb-8">
-          <a href="/blog" class="inline-flex items-center text-gray-600 hover:text-black transition-colors duration-200 mb-6">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-            </svg>
+          <a href="/blog" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
+            <BlogBackIcon />
             Volver al blog
           </a>
         </div>
@@ -55,29 +54,27 @@ const getCategoryColor = (color) => {
           <span class={`px-3 py-1 text-sm font-medium rounded ${getCategoryColor(post.data.categoryColor)}`}>
             {post.data.category}
           </span>
-          <span class="text-gray-500 mx-4">•</span>
-          <span class="text-gray-600">{formatDate(post.data.publishedDate)}</span>
-          <span class="text-gray-500 mx-4">•</span>
-          <span class="text-gray-600">{post.data.readingTime} min de lectura</span>
+          <span class="text-gray-500 dark:text-gray-400 mx-4">•</span>
+          <span class="text-gray-600 dark:text-gray-300">{formatDate(post.data.publishedDate)}</span>
+          <span class="text-gray-500 dark:text-gray-400 mx-4">•</span>
+          <span class="text-gray-600 dark:text-gray-300">{post.data.readingTime} min de lectura</span>
         </div>
         
-        <h1 class="text-4xl md:text-5xl font-medium mb-6 text-black leading-tight">
+        <h1 class="text-4xl md:text-5xl font-medium mb-6 text-black dark:text-white leading-tight">
           {post.data.title}
         </h1>
         
-        <p class="text-xl text-gray-600 leading-relaxed mb-12">
+        <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-12">
           {post.data.excerpt}
         </p>
         
         <div class="flex items-center mb-12">
-          <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-4">
-            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
+          <div class="w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mr-4">
+            <AuthorIcon />
           </div>
           <div>
-            <p class="font-medium text-black">{post.data.author}</p>
-            <p class="text-sm text-gray-600">Equipo de desarrollo de Subdominio</p>
+            <p class="font-medium text-black dark:text-white">{post.data.author}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Equipo de desarrollo de Subdominio</p>
           </div>
         </div>
       </div>
@@ -85,10 +82,10 @@ const getCategoryColor = (color) => {
   </section>
 
   <!-- Contenido del artículo -->
-  <article class="pb-16">
+  <article class="pb-16 bg-white dark:bg-gray-900">
     <div class="container mx-auto px-6">
       <div class="max-w-3xl mx-auto">
-        <div class="prose prose-lg max-w-none">
+        <div class="prose prose-lg dark:prose-invert max-w-none">
           <Content />
         </div>
       </div>
@@ -96,33 +93,33 @@ const getCategoryColor = (color) => {
   </article>
 
   <!-- Compartir y navegación -->
-  <section class="py-12 bg-gray-50 border-t border-gray-200">
+  <section class="py-12 bg-gray-50 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-700">
     <div class="container mx-auto px-6">
       <div class="max-w-3xl mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="mb-6 md:mb-0">
-            <h3 class="font-medium text-black mb-3">Comparte este artículo</h3>
+            <h3 class="font-medium text-black dark:text-white mb-3">Comparte este artículo</h3>
             <div class="flex space-x-4">
-              <a href="#" class="text-gray-600 hover:text-black transition-colors duration-200">
+              <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200">
                 Twitter
               </a>
-              <a href="#" class="text-gray-600 hover:text-black transition-colors duration-200">
+              <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200">
                 LinkedIn
               </a>
-              <a href="#" class="text-gray-600 hover:text-black transition-colors duration-200">
+              <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200">
                 Facebook
               </a>
-              <a href="#" class="text-gray-600 hover:text-black transition-colors duration-200">
+              <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200">
                 Copiar enlace
               </a>
             </div>
           </div>
           
           <div class="text-center md:text-right">
-            <p class="text-sm text-gray-600 mb-2">¿Te gustó este contenido?</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">¿Te gustó este contenido?</p>
             <a 
               href="/blog" 
-              class="inline-flex items-center px-4 py-2 bg-black text-white font-medium hover:bg-gray-800 transition-colors duration-200"
+              class="inline-flex items-center px-4 py-2 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-colors duration-200"
             >
               Ver más artículos
             </a>
@@ -133,25 +130,23 @@ const getCategoryColor = (color) => {
   </section>
 
   <!-- CTA final -->
-  <section class="py-16 bg-black text-white">
+  <section class="py-16 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
     <div class="container mx-auto px-6 text-center">
       <div class="max-w-2xl mx-auto">
         <h2 class="text-3xl font-medium mb-4">
           ¿Necesitas ayuda con tu proyecto?
         </h2>
-        <p class="text-gray-300 mb-8">
+        <p class="text-gray-300 dark:text-gray-600 mb-8">
           En Subdominio tenemos la experiencia y conocimiento para llevar tu negocio al siguiente nivel. 
           Hablemos sobre cómo podemos ayudarte.
         </p>
         
         <a 
           href="/contacto"
-          class="inline-flex items-center px-8 py-3 bg-white text-black font-medium hover:bg-gray-100 transition-colors duration-200"
+          class="inline-flex items-center px-8 py-3 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors duration-200"
         >
           Hablemos
-          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
+          <ReadMoreIcon />
         </a>
       </div>
     </div>

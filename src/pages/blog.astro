@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { BackArrowIcon } from '../components/ContactIcons.jsx';
 
 // Obtener todos los posts del blog
 const allBlogPosts = await getCollection('blog');
@@ -32,23 +33,21 @@ const formatDate = (dateString) => {
 ---
 
 <Layout title="Blog" description="Artículos sobre desarrollo web, e-commerce, automatización y tendencias tecnológicas. Conocimiento compartido por el equipo de Subdominio.">
-	<section class="pt-32 pb-16 bg-white">
+	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
 				<div class="mb-8">
-					<a href="/" class="inline-flex items-center text-gray-600 hover:text-black transition-colors duration-200 mb-6">
-						<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-						</svg>
+					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
+						<BackArrowIcon />
 						Volver al inicio
 					</a>
 				</div>
 				
-				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black leading-tight">
+				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black dark:text-white leading-tight">
 					Blog
 				</h1>
 				
-				<p class="text-xl text-gray-600 leading-relaxed mb-16 max-w-3xl">
+				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-16 max-w-3xl">
 					Artículos sobre desarrollo web, e-commerce, automatización y las últimas tendencias 
 					tecnológicas. Conocimiento compartido por nuestro equipo.
 				</p>
@@ -57,26 +56,26 @@ const formatDate = (dateString) => {
 	</section>
 
 	<!-- Filtros -->
-	<section class="py-8 bg-gray-50 border-b border-gray-200">
+	<section class="py-8 bg-gray-50 dark:bg-gray-950 border-b border-gray-200 dark:border-gray-700">
 		<div class="container mx-auto px-6">
 			<div class="max-w-6xl mx-auto">
 				<div class="flex flex-wrap gap-4 justify-center">
-					<button class="px-4 py-2 bg-black text-white font-medium transition-colors duration-200">
+					<button class="px-4 py-2 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium transition-colors duration-200">
 						Todos
 					</button>
-					<button class="px-4 py-2 bg-white text-gray-600 border border-gray-300 hover:text-black hover:border-black transition-colors duration-200">
+					<button class="px-4 py-2 bg-white dark:bg-black text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-colors duration-200">
 						Desarrollo Web
 					</button>
-					<button class="px-4 py-2 bg-white text-gray-600 border border-gray-300 hover:text-black hover:border-black transition-colors duration-200">
+					<button class="px-4 py-2 bg-white dark:bg-black text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-colors duration-200">
 						E-commerce
 					</button>
-					<button class="px-4 py-2 bg-white text-gray-600 border border-gray-300 hover:text-black hover:border-black transition-colors duration-200">
+					<button class="px-4 py-2 bg-white dark:bg-black text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-colors duration-200">
 						Automatización
 					</button>
-					<button class="px-4 py-2 bg-white text-gray-600 border border-gray-300 hover:text-black hover:border-black transition-colors duration-200">
+					<button class="px-4 py-2 bg-white dark:bg-black text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-colors duration-200">
 						IA & Tecnología
 					</button>
-					<button class="px-4 py-2 bg-white text-gray-600 border border-gray-300 hover:text-black hover:border-black transition-colors duration-200">
+					<button class="px-4 py-2 bg-white dark:bg-black text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-colors duration-200">
 						Casos de Estudio
 					</button>
 				</div>
@@ -85,19 +84,19 @@ const formatDate = (dateString) => {
 	</section>
 
 	<!-- Artículos destacados -->
-	<section class="py-16 bg-white">
+	<section class="py-16 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="max-w-6xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black">
+				<h2 class="text-3xl font-medium mb-12 text-black dark:text-white">
 					Artículos Destacados
 				</h2>
 				
 				<!-- Grid de artículos desde archivos Markdown -->
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{sortedPosts.map((post) => (
-						<article class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200">
-							<div class="aspect-video bg-gray-100 flex items-center justify-center">
-								<span class="text-gray-400">Imagen del artículo</span>
+						<article class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200">
+							<div class="aspect-video bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+								<span class="text-gray-400 dark:text-gray-500">Imagen del artículo</span>
 							</div>
 							
 							<div class="p-6">
@@ -105,31 +104,31 @@ const formatDate = (dateString) => {
 									<span class={`px-2 py-1 text-xs font-medium rounded ${getCategoryColor(post.data.categoryColor)}`}>
 										{post.data.category}
 									</span>
-									<span class="text-sm text-gray-500 ml-auto">
+									<span class="text-sm text-gray-500 dark:text-gray-400 ml-auto">
 										{formatDate(post.data.publishedDate)}
 									</span>
 								</div>
 								
-								<h3 class="text-xl font-medium text-black mb-3">
+								<h3 class="text-xl font-medium text-black dark:text-white mb-3">
 									<a 
 										href={`/blog/${post.data.slug || post.slug}`} 
-										class="hover:text-gray-600 transition-colors duration-200"
+										class="hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
 									>
 										{post.data.title}
 									</a>
 								</h3>
 								
-								<p class="text-gray-600 text-sm leading-relaxed mb-4">
+								<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
 									{post.data.excerpt}
 								</p>
 								
 								<div class="flex items-center justify-between">
-									<span class="text-xs text-gray-500">
+									<span class="text-xs text-gray-500 dark:text-gray-400">
 										{post.data.readingTime} min de lectura
 									</span>
 									<a 
 										href={`/blog/${post.data.slug || post.slug}`}
-										class="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-200"
+										class="text-sm font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
 									>
 										Leer más →
 									</a>
@@ -143,13 +142,13 @@ const formatDate = (dateString) => {
 	</section>
 
 	<!-- Newsletter/Suscripción -->
-	<section class="py-16 bg-black text-white">
+	<section class="py-16 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
 		<div class="container mx-auto px-6 text-center">
 			<div class="max-w-2xl mx-auto">
 				<h2 class="text-3xl font-medium mb-4">
 					¿Te gustó este contenido?
 				</h2>
-				<p class="text-gray-300 mb-8">
+				<p class="text-gray-300 dark:text-gray-600 mb-8">
 					Suscríbete para recibir los últimos artículos sobre desarrollo web, 
 					e-commerce y automatización directamente en tu inbox.
 				</p>
@@ -158,18 +157,18 @@ const formatDate = (dateString) => {
 					<input
 						type="email"
 						placeholder="tu@email.com"
-						class="flex-1 px-4 py-3 text-black border-0 focus:ring-2 focus:ring-white"
+						class="flex-1 px-4 py-3 text-black dark:text-white bg-white dark:bg-black border-0 focus:ring-2 focus:ring-white dark:focus:ring-black"
 						required
 					/>
 					<button
 						type="submit"
-						class="px-6 py-3 bg-white text-black font-medium hover:bg-gray-100 transition-colors duration-200"
+						class="px-6 py-3 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
 					>
 						Suscribirse
 					</button>
 				</form>
 				
-				<p class="text-xs text-gray-400 mt-4">
+				<p class="text-xs text-gray-400 dark:text-gray-500 mt-4">
 					No spam. Solo contenido de calidad. Puedes darte de baja cuando quieras.
 				</p>
 			</div>
@@ -177,12 +176,12 @@ const formatDate = (dateString) => {
 	</section>
 
 	<!-- Nota técnica -->
-	<section class="py-8 bg-gray-50 border-t border-gray-200">
+	<section class="py-8 bg-gray-50 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-700">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto text-center">
-				<p class="text-sm text-gray-500">
+				<p class="text-sm text-gray-500 dark:text-gray-400">
 					💡 <strong>Nota técnica:</strong> Este blog utiliza archivos Markdown 
-					y las <a href="https://docs.astro.build/en/guides/content-collections/" target="_blank" rel="noopener" class="underline hover:text-black">
+					y las <a href="https://docs.astro.build/en/guides/content-collections/" target="_blank" rel="noopener" class="underline hover:text-black dark:hover:text-white">
 						Content Collections de Astro
 					</a>
 					para una gestión simple y eficiente del contenido.

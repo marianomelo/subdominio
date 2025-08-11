@@ -1,224 +1,280 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { BackArrowIcon } from '../../components/ContactIcons.jsx';
+import { Lightbulb } from 'lucide-react';
 ---
 
 <Layout title="Automatización de Procesos" description="Optimizamos tu negocio con tecnología de vanguardia y soluciones inteligentes. Automatización empresarial, IA y workflows personalizados.">
-	<section class="pt-32 pb-16 bg-white">
+	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
 				<div class="mb-8">
-					<a href="/" class="inline-flex items-center text-gray-600 hover:text-black transition-colors duration-200 mb-6">
-						<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-						</svg>
+					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
+						<BackArrowIcon />
 						Volver al inicio
 					</a>
 				</div>
 				
-				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black leading-tight">
-					🤖 Automatización de Procesos
+				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black dark:text-white leading-tight">
+					Automatización real, resultados tangibles
 				</h1>
 				
-				<p class="text-xl text-gray-600 leading-relaxed mb-12 max-w-3xl">
-					Optimizamos tu negocio con tecnología de vanguardia y soluciones inteligentes. 
-					Automatización empresarial, generación de contenido con IA y workflows personalizados.
+				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+					Eliminamos tareas repetitivas y reducimos errores humanos con soluciones de automatización desarrolladas a la medida, integradas directamente en tus sistemas y con control total del código.
+				</p>
+				
+				<div class="flex flex-col sm:flex-row gap-4">
+					<a
+						href="/contacto"
+						class="px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-colors duration-200"
+					>
+						Solicitar consultoría
+					</a>
+					<a
+						href="#capacidades"
+						class="px-8 py-4 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 font-medium hover:border-black dark:hover:border-white transition-colors duration-200"
+					>
+						Hablemos de tu proyecto
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Introducción - Valor técnico -->
+	<section class="py-16 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+					Automatizar no es usar herramientas genéricas: es crear procesos inteligentes que funcionan exactamente como tu negocio lo necesita.
+				</p>
+				<p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+					Desarrollamos soluciones con <span class="font-medium text-black dark:text-white">código propio</span>, integraciones API y aplicaciones que se adaptan a tu flujo de trabajo, sin depender de terceros.
 				</p>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-16 bg-white border-t border-gray-200">
+	<!-- Capacidades técnicas avanzadas -->
+	<section class="py-16 bg-white dark:bg-gray-900" id="capacidades">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black">
-					Especialidades
+				<h2 class="text-3xl font-medium mb-12 text-black dark:text-white">
+					Soluciones de automatización personalizadas
 				</h2>
 				
-				<div class="space-y-12">
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Automatización de Procesos Empresariales</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Automatizamos tareas repetitivas, flujos de trabajo complejos y procesos administrativos. 
-							Desde la gestión de inventarios hasta la generación automática de reportes y facturación.
-						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Scripts Python</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Tareas Programadas</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Zapier</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Make.com</span>
+				<ul class="space-y-6">
+					<li class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">•</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Automatización de procesos empresariales</h3>
+							<p class="text-gray-600 dark:text-gray-300">Control de inventarios, facturación, reportes y flujos de aprobación integrados directamente en tu ERP o CRM.</p>
 						</div>
-					</div>
-
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Generación de Contenido con Inteligencia Artificial</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Implementamos sistemas de IA para generar contenido automático, respuestas de atención al cliente, 
-							contenido para marketing digital y textos optimizados para diferentes canales de comunicación.
-						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">OpenAI API</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Claude API</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Modelos Ajustados</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Ingeniería de Prompts</span>
+					</li>
+					
+					<li class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">•</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Contenido generado por IA</h3>
+							<p class="text-gray-600 dark:text-gray-300">Textos para productos, respuestas automáticas y optimización SEO adaptada a tu negocio.</p>
 						</div>
-					</div>
-
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Optimización de E-commerce con IA</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Sistemas inteligentes para recomendaciones de productos, optimización de precios, 
-							análisis predictivo de ventas y automatización de marketing personalizado.
-						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Aprendizaje Automático</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Sistemas de Recomendación</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Optimización de Precios</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Analíticas</span>
+					</li>
+					
+					<li class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">•</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">IA aplicada al e-commerce</h3>
+							<p class="text-gray-600 dark:text-gray-300">Recomendaciones personalizadas, ajuste dinámico de precios y predicción de demanda.</p>
 						</div>
-					</div>
-
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Integración de Sistemas y APIs</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Conectamos diferentes plataformas y servicios para crear ecosistemas tecnológicos integrados. 
-							Sincronización de datos, webhooks y comunicación entre sistemas.
-						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">REST APIs</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">GraphQL</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Webhooks</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Sincronización de Datos</span>
+					</li>
+					
+					<li class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">•</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Integraciones complejas</h3>
+							<p class="text-gray-600 dark:text-gray-300">Conexión de plataformas como ERP, CRM, logística, facturación electrónica o analítica, vía API REST o GraphQL.</p>
 						</div>
-					</div>
-
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Workflows Personalizados</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Diseñamos y desarrollamos flujos de trabajo específicos para tu empresa, 
-							desde procesos de aprobación hasta sistemas de notificaciones inteligentes.
-						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Flujos Personalizados</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Sistemas de Aprobación</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Notificaciones</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Optimización de Procesos</span>
+					</li>
+					
+					<li class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">•</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Workflows operativos internos</h3>
+							<p class="text-gray-600 dark:text-gray-300">Procesos de notificación, control de estados y validaciones automáticas.</p>
 						</div>
-					</div>
-
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Seguridad y Privacidad de Datos</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Implementación segura con cifrado end-to-end, compliance GDPR y manejo responsable de datos. 
-							Auditorías de seguridad, control de acceso y monitoreo de sistemas automatizados.
-						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Cumplimiento GDPR</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Cifrado de Datos</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Control de Acceso</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Auditorías de Seguridad</span>
+					</li>
+					
+					<li class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">•</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Seguridad y cumplimiento</h3>
+							<p class="text-gray-600 dark:text-gray-300">Cifrado, control de accesos y cumplimiento normativo (GDPR, Ley 19.628).</p>
 						</div>
-					</div>
-				</div>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-16 bg-black text-white">
+	<!-- Ejemplos tipo -->
+	<section class="py-16 bg-gray-50 dark:bg-gray-950">
 		<div class="container mx-auto px-6">
 			<div class="max-w-5xl mx-auto">
 				<div class="text-center mb-12">
-					<h2 class="text-3xl font-medium mb-4 text-white">
-						Ejemplo de Automatización
+					<h2 class="text-3xl font-medium mb-4 text-black dark:text-white">
+						Casos reales de automatización
 					</h2>
-					<p class="text-gray-300 text-lg">
-						Cómo transformamos descripciones básicas con IA
+					<p class="text-gray-600 dark:text-gray-300 text-lg">
+						Transformaciones concretas que generan resultados inmediatos
 					</p>
 				</div>
 				
-				<div class="bg-white text-black rounded-lg p-8 md:p-12">
-					<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-						<div>
-							<div class="mb-6">
-								<span class="inline-block px-3 py-1 bg-orange-100 text-orange-700 text-sm font-medium rounded-full mb-4">
-									🤖 IA + E-commerce
-								</span>
-								<h3 class="text-2xl font-medium text-black mb-4">
-									Generación Automática de Descripciones de Productos
-								</h3>
-								<p class="text-gray-600 leading-relaxed mb-6">
-									Creamos todas las descripciones de productos para WooCommerce o cualquier e-commerce 
-									usando IA. El sistema toma la información ya cargada (título, imagen, atributos, categoría) 
-									y genera descripciones atractivas y optimizadas para SEO.
+				<div class="space-y-12">
+					<!-- Ejemplo 1: Descripciones de productos -->
+					<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+						<div class="p-8">
+							<div class="flex items-start gap-4 mb-6">
+								<span class="text-3xl">📝</span>
+								<div>
+									<h3 class="text-2xl font-medium text-black dark:text-white mb-2">
+										Descripciones de productos con IA
+									</h3>
+									<p class="text-gray-600 dark:text-gray-300">
+										Transforma información básica en textos de venta profesionales
+									</p>
+								</div>
+							</div>
+							
+							<div class="grid md:grid-cols-2 gap-6 mb-6">
+								<div class="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg">
+									<span class="text-sm font-medium text-red-700 dark:text-red-400">ANTES (Manual)</span>
+									<p class="text-sm text-gray-700 dark:text-gray-300 mt-2">
+										"Polera algodón. Talla M. Color azul. $19.990"
+									</p>
+									<p class="text-xs text-red-600 dark:text-red-400 mt-3">
+										⏱️ 15 minutos por producto<br>
+										👤 Requiere copywriter<br>
+										📉 Sin optimización SEO
+									</p>
+								</div>
+								
+								<div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+									<span class="text-sm font-medium text-green-700 dark:text-green-400">DESPUÉS (Automatizado)</span>
+									<p class="text-sm text-gray-700 dark:text-gray-300 mt-2">
+										"Polera premium de algodón 100% orgánico, perfecta para el día a día. Su corte moderno y tejido transpirable garantizan comodidad durante todo el día. Color azul clásico que combina con todo. Talla M."
+									</p>
+									<p class="text-xs text-green-600 dark:text-green-400 mt-3">
+										⚡ 5 segundos por producto<br>
+										🤖 100% automático<br>
+										🎯 Optimizado para Google
+									</p>
+								</div>
+							</div>
+							
+							<div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+								<p class="text-sm text-blue-800 dark:text-blue-300">
+									<strong>Resultado:</strong> 500 productos actualizados en 1 hora vs 125 horas de trabajo manual
 								</p>
-								
-								<div class="space-y-4 mb-6">
-									<div class="flex items-start space-x-3">
-										<div class="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
-										<div>
-											<span class="font-medium text-black">Procesamiento masivo:</span>
-											<span class="text-gray-600"> Múltiples productos simultáneamente</span>
-										</div>
-									</div>
-									<div class="flex items-start space-x-3">
-										<div class="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-										<div>
-											<span class="font-medium text-black">SEO optimizado:</span>
-											<span class="text-gray-600"> Keywords y estructura para buscadores</span>
-										</div>
-									</div>
-									<div class="flex items-start space-x-3">
-										<div class="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
-										<div>
-											<span class="font-medium text-black">Personalizable:</span>
-											<span class="text-gray-600"> Tono de voz adaptado a tu marca</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div class="flex flex-wrap gap-2">
-								<span class="text-xs text-gray-500 border border-gray-200 px-2 py-1 rounded">OpenAI GPT-4</span>
-								<span class="text-xs text-gray-500 border border-gray-200 px-2 py-1 rounded">WooCommerce API</span>
-								<span class="text-xs text-gray-500 border border-gray-200 px-2 py-1 rounded">SEO Keywords</span>
-								<span class="text-xs text-gray-500 border border-gray-200 px-2 py-1 rounded">Procesamiento Masivo</span>
 							</div>
 						</div>
-						
-						<div class="bg-gray-50 p-6 rounded-lg">
-							<h4 class="font-medium text-black mb-4">Ejemplo de Transformación</h4>
-							
-							<div class="space-y-6">
-								<div class="border-l-4 border-red-200 pl-4">
-									<span class="text-sm text-red-600 font-medium">DESCRIPCIÓN BÁSICA</span>
-									<p class="text-sm text-gray-600 mt-1">
-										"Zapatillas deportivas Nike Air Max. Color negro. Talla 42."
-									</p>
-								</div>
-								
-								<div class="border-l-4 border-green-200 pl-4">
-									<span class="text-sm text-green-600 font-medium">DESCRIPCIÓN OPTIMIZADA</span>
-									<p class="text-sm text-gray-600 mt-1">
-										"Descubre las <strong>zapatillas deportivas Nike Air Max</strong> en elegante color negro. 
-										Diseñadas para máximo confort y rendimiento, estas zapatillas combinan estilo urbano 
-										con tecnología de amortiguación avanzada. Perfectas para entrenamientos intensos 
-										o uso casual. Disponible en talla 42. ✓ Envío gratuito ✓ Garantía oficial Nike"
+					</div>
+					
+					<!-- Ejemplo 2: Reportes automáticos -->
+					<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+						<div class="p-8">
+							<div class="flex items-start gap-4 mb-6">
+								<span class="text-3xl">📊</span>
+								<div>
+									<h3 class="text-2xl font-medium text-black dark:text-white mb-2">
+										Reportes de ventas automáticos
+									</h3>
+									<p class="text-gray-600 dark:text-gray-300">
+										Informes diarios sin intervención humana
 									</p>
 								</div>
 							</div>
 							
-							<div class="mt-6 p-4 bg-blue-50 rounded-lg">
-								<div class="flex items-center space-x-2 mb-2">
-									<svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-									</svg>
-									<span class="text-sm font-medium text-blue-800">Beneficios esperados:</span>
+							<div class="grid md:grid-cols-2 gap-6 mb-6">
+								<div class="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg">
+									<span class="text-sm font-medium text-red-700 dark:text-red-400">ANTES</span>
+									<ul class="text-sm text-gray-700 dark:text-gray-300 mt-2 space-y-1">
+										<li>• Exportar datos de 3 sistemas diferentes</li>
+										<li>• Consolidar en Excel manualmente</li>
+										<li>• Crear gráficos y análisis</li>
+										<li>• Enviar por email a gerencia</li>
+									</ul>
+									<p class="text-xs text-red-600 dark:text-red-400 mt-3">
+										⏱️ 2 horas diarias<br>
+										❌ Propenso a errores<br>
+										😓 Tarea repetitiva
+									</p>
 								</div>
-								<ul class="text-xs text-blue-700 space-y-1">
-									<li>• Mayor atractivo visual y profesionalismo</li>
-									<li>• Mejor posicionamiento en buscadores</li>
-									<li>• Ahorro significativo de tiempo manual</li>
-									<li>• Consistencia en toda la tienda</li>
-								</ul>
+								
+								<div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+									<span class="text-sm font-medium text-green-700 dark:text-green-400">DESPUÉS</span>
+									<ul class="text-sm text-gray-700 dark:text-gray-300 mt-2 space-y-1">
+										<li>• Sistema recopila datos automáticamente</li>
+										<li>• Genera análisis con IA</li>
+										<li>• Crea visualizaciones dinámicas</li>
+										<li>• Envía a las 9 AM sin falta</li>
+									</ul>
+									<p class="text-xs text-green-600 dark:text-green-400 mt-3">
+										⚡ 0 minutos de trabajo manual<br>
+										✅ 100% preciso<br>
+										📈 Incluye insights con IA
+									</p>
+								</div>
+							</div>
+							
+							<div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+								<p class="text-sm text-blue-800 dark:text-blue-300">
+									<strong>Resultado:</strong> 40 horas mensuales liberadas para tareas estratégicas
+								</p>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Ejemplo 3: Sincronización de inventarios -->
+					<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+						<div class="p-8">
+							<div class="flex items-start gap-4 mb-6">
+								<span class="text-3xl">📦</span>
+								<div>
+									<h3 class="text-2xl font-medium text-black dark:text-white mb-2">
+										Sincronización de inventarios
+									</h3>
+									<p class="text-gray-600 dark:text-gray-300">
+										Stock actualizado en tiempo real entre todas tus plataformas
+									</p>
+								</div>
+							</div>
+							
+							<div class="grid md:grid-cols-2 gap-6 mb-6">
+								<div class="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg">
+									<span class="text-sm font-medium text-red-700 dark:text-red-400">PROBLEMA</span>
+									<ul class="text-sm text-gray-700 dark:text-gray-300 mt-2 space-y-1">
+										<li>• Sobreventa por desactualización</li>
+										<li>• Actualización manual en 3 sistemas</li>
+										<li>• Errores de digitación frecuentes</li>
+										<li>• Clientes insatisfechos</li>
+									</ul>
+								</div>
+								
+								<div class="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg">
+									<span class="text-sm font-medium text-green-700 dark:text-green-400">SOLUCIÓN</span>
+									<ul class="text-sm text-gray-700 dark:text-gray-300 mt-2 space-y-1">
+										<li>• Sincronización instantánea</li>
+										<li>• ERP ↔️ Tienda online ↔️ Marketplace</li>
+										<li>• Alertas de stock bajo</li>
+										<li>• Cero sobreventa</li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+								<p class="text-sm text-blue-800 dark:text-blue-300">
+									<strong>Resultado:</strong> -95% reclamos por productos no disponibles, +30% eficiencia operativa
+								</p>
 							</div>
 						</div>
 					</div>
@@ -227,106 +283,70 @@ import Layout from '../../layouts/Layout.astro';
 		</div>
 	</section>
 
-	<section class="py-16 bg-gray-50">
+	<section class="py-16 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black">
-					Otros Casos de Uso
-				</h2>
-				
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-					<div class="p-6 border border-gray-200 rounded-lg bg-white">
-						<h3 class="text-lg font-medium text-black mb-3">Generación Automática de Reportes</h3>
-						<p class="text-gray-600 text-sm leading-relaxed mb-4">
-							Reportes diarios/mensuales automáticos con datos de ventas, inventario y métricas clave enviados por email.
-						</p>
-						<div class="text-xs text-gray-500">Python • APIs • Email • Programación</div>
-					</div>
-
-					<div class="p-6 border border-gray-200 rounded-lg bg-white">
-						<h3 class="text-lg font-medium text-black mb-3">Chatbots Inteligentes</h3>
-						<p class="text-gray-600 text-sm leading-relaxed mb-4">
-							Asistentes virtuales para atención al cliente con capacidades de IA para respuestas contextuales.
-						</p>
-						<div class="text-xs text-gray-500">OpenAI • API WhatsApp • Chat Web • Entrenamiento</div>
-					</div>
-
-					<div class="p-6 border border-gray-200 rounded-lg bg-white">
-						<h3 class="text-lg font-medium text-black mb-3">Sincronización de Inventarios</h3>
-						<p class="text-gray-600 text-sm leading-relaxed mb-4">
-							Mantén sincronizados los inventarios entre diferentes plataformas de venta automáticamente.
-						</p>
-						<div class="text-xs text-gray-500">APIs • Sincronización en Tiempo Real • Multiplataforma • Alertas</div>
-					</div>
-
-					<div class="p-6 border border-gray-200 rounded-lg bg-white">
-						<h3 class="text-lg font-medium text-black mb-3">Marketing Personalizado</h3>
-						<p class="text-gray-600 text-sm leading-relaxed mb-4">
-							Campañas de email y contenido personalizadas basadas en comportamiento del usuario y datos de compra.
-						</p>
-						<div class="text-xs text-gray-500">Segmentación con IA • Email Marketing • Personalización • Analíticas</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="py-16 bg-white">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black">
-					Proceso de Implementación
+				<h2 class="text-3xl font-medium mb-12 text-black dark:text-white">
+					Proceso de trabajo
 				</h2>
 				
 				<div class="space-y-8">
 					<div class="flex flex-col md:flex-row gap-6">
 						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black">01</span>
+							<span class="text-2xl font-medium text-black dark:text-white">01</span>
 						</div>
 						<div>
-							<h3 class="text-xl font-medium text-black mb-3">Análisis de Procesos Actuales</h3>
-							<p class="text-gray-600 leading-relaxed">
-								Estudiamos tus procesos existentes, identificamos ineficiencias y oportunidades 
-								de automatización con mayor impacto en productividad.
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Evaluación y mapeo</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+								Identificamos procesos repetitivos y puntos de mejora.
 							</p>
 						</div>
 					</div>
 
 					<div class="flex flex-col md:flex-row gap-6">
 						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black">02</span>
+							<span class="text-2xl font-medium text-black dark:text-white">02</span>
 						</div>
 						<div>
-							<h3 class="text-xl font-medium text-black mb-3">Diseño de Solución</h3>
-							<p class="text-gray-600 leading-relaxed">
-								Creamos un plan detallado de automatización, seleccionamos las tecnologías más adecuadas 
-								y diseñamos la arquitectura de la solución.
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Diseño de solución</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+								Definimos arquitectura y requerimientos técnicos.
 							</p>
 						</div>
 					</div>
 
 					<div class="flex flex-col md:flex-row gap-6">
 						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black">03</span>
+							<span class="text-2xl font-medium text-black dark:text-white">03</span>
 						</div>
 						<div>
-							<h3 class="text-xl font-medium text-black mb-3">Desarrollo e Integración</h3>
-							<p class="text-gray-600 leading-relaxed">
-								Implementamos las automatizaciones de forma gradual, probamos cada componente 
-								y aseguramos la integración perfecta con tus sistemas existentes.
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Desarrollo personalizado</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+								Programamos la automatización a medida.
 							</p>
 						</div>
 					</div>
 
 					<div class="flex flex-col md:flex-row gap-6">
 						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black">04</span>
+							<span class="text-2xl font-medium text-black dark:text-white">04</span>
 						</div>
 						<div>
-							<h3 class="text-xl font-medium text-black mb-3">Monitoreo y Optimización</h3>
-							<p class="text-gray-600 leading-relaxed">
-								Configuramos sistemas de monitoreo, analizamos el rendimiento y optimizamos 
-								continuamente para maximizar los beneficios obtenidos.
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Pruebas y ajustes</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+								Validamos funcionamiento, seguridad y rendimiento.
+							</p>
+						</div>
+					</div>
+
+					<div class="flex flex-col md:flex-row gap-6">
+						<div class="md:w-24 flex-shrink-0">
+							<span class="text-2xl font-medium text-black dark:text-white">05</span>
+						</div>
+						<div>
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Implementación y soporte</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+								Puesta en marcha y acompañamiento continuo.
 							</p>
 						</div>
 					</div>
@@ -335,26 +355,71 @@ import Layout from '../../layouts/Layout.astro';
 		</div>
 	</section>
 
-	<section class="py-16 bg-black text-white">
+	<!-- Diferenciales -->
+	<section class="py-16 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl font-medium mb-12 text-black dark:text-white">
+					Diferenciales
+				</h2>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+					<div class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">✓</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Desarrollo 100% a medida</h3>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">Sin dependencias de plataformas externas.</p>
+						</div>
+					</div>
+					
+					<div class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">✓</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Integración nativa</h3>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">Con tus sistemas existentes.</p>
+						</div>
+					</div>
+					
+					<div class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">✓</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Optimización constante</h3>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">Basada en métricas y uso real.</p>
+						</div>
+					</div>
+					
+					<div class="flex gap-4">
+						<span class="text-black dark:text-white mt-1">✓</span>
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-2">Soporte técnico especializado</h3>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">Y mantenimiento evolutivo.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-16 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
 		<div class="container mx-auto px-6 text-center">
 			<div class="max-w-3xl mx-auto">
-				<h2 class="text-3xl md:text-4xl font-medium mb-6">
-					¿Listo para automatizar tu negocio?
+				<h2 class="text-3xl md:text-4xl font-medium mb-6 text-white dark:text-gray-900">
+					La automatización debe adaptarse a tu negocio, no al revés
 				</h2>
-				<p class="text-xl text-gray-300 mb-8 leading-relaxed">
-					Descubre cómo la automatización puede transformar tu productividad
+				<p class="text-xl text-gray-300 dark:text-gray-600 mb-8 leading-relaxed">
+					Diseñamos soluciones propias para que tu operación sea más rápida, segura y eficiente.
 				</p>
 				
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
 					<a
 						href="/contacto"
-						class="px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-colors duration-200"
+						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
 					>
-						Solicitar consultoría
+						Comienza tu automatización
 					</a>
 					<a
 						href="mailto:info@subdominio.com"
-						class="px-8 py-4 border border-gray-600 text-white font-medium hover:border-white transition-colors duration-200"
+						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-colors duration-200"
 					>
 						Enviar email
 					</a>

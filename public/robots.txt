@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://subdominio.com/sitemap.xml
+
+# Bloquear archivos de desarrollo y administración
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /api/internal/
+
+# Permitir acceso a recursos estáticos
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+
+# Crawl-delay opcional (en segundos)
+Crawl-delay: 1

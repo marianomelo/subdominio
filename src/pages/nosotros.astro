@@ -1,272 +1,251 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { BackArrowIcon } from '../components/ContactIcons.jsx';
+import { QualityIcon, CommunicationIcon, InnovationIcon, TimeIcon, TeamIcon, SecurityIcon } from '../components/ValueIcons.jsx';
 ---
 
 <Layout title="Nosotros" description="Conoce a Subdominio, agencia especializada en desarrollo web, e-commerce y aplicaciones. Nuestro equipo, valores y metodología de trabajo.">
-	<section class="pt-32 pb-16 bg-white">
+	<section class="pt-32 pb-20 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
 				<div class="mb-8">
-					<a href="/" class="inline-flex items-center text-gray-600 hover:text-black transition-colors duration-200 mb-6">
-						<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-						</svg>
+					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
+						<BackArrowIcon />
 						Volver al inicio
 					</a>
 				</div>
 				
-				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black leading-tight">
-					Nosotros
+				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black dark:text-white leading-tight">
+					Somos el equipo técnico que tu proyecto necesita
 				</h1>
 				
-				<p class="text-xl text-gray-600 leading-relaxed mb-16 max-w-3xl">
-					Subdominio es la línea de negocio especializada en desarrollo web y software de Tecnológica Chile. 
-					Nuestra pasión es transformar ideas en productos digitales que generen valor real para nuestros clientes.
+				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-12 max-w-3xl">
+					Subdominio es la división especializada en desarrollo web y software de <span class="font-medium text-black dark:text-white">Tecnológica Chile</span>. 
+					Transformamos ideas complejas en soluciones digitales elegantes que impulsan negocios.
 				</p>
+
+				<div class="grid grid-cols-3 gap-8 max-w-2xl">
+					<div>
+						<div class="text-3xl font-bold text-black dark:text-white mb-2">5+</div>
+						<div class="text-sm text-gray-600 dark:text-gray-400">Años de experiencia</div>
+					</div>
+					<div>
+						<div class="text-3xl font-bold text-black dark:text-white mb-2">50+</div>
+						<div class="text-sm text-gray-600 dark:text-gray-400">Proyectos completados</div>
+					</div>
+					<div>
+						<div class="text-3xl font-bold text-black dark:text-white mb-2">100%</div>
+						<div class="text-sm text-gray-600 dark:text-gray-400">Clientes satisfechos</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-16 bg-white">
+	<section class="py-20 bg-gray-50 dark:bg-gray-950">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
-				<div class="mb-16">
-					<h2 class="text-3xl font-medium mb-6 text-black">Nuestra Historia</h2>
-					<p class="text-gray-600 leading-relaxed mb-6">
-						Subdominio es la división especializada en desarrollo web y software de Tecnológica Chile, 
-						empresa experta en desarrollo de sistemas e integraciones. Nacimos de la convicción 
-						de que el desarrollo de software debe ser accesible, transparente y orientado a resultados.
-					</p>
-					<p class="text-gray-600 leading-relaxed">
-						Con el respaldo y experiencia de Tecnológica Chile, hemos perfeccionado nuestra metodología, 
-						especializado nuestras habilidades y construido relaciones duraderas con clientes que confían 
-						en nosotros para materializar sus proyectos digitales más importantes.
-					</p>
+				<div class="grid md:grid-cols-2 gap-16">
+					<div>
+						<h2 class="text-2xl font-medium mb-6 text-black dark:text-white">Nuestra Historia</h2>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Nacimos como la división digital de <span class="font-medium">Tecnológica Chile</span>, 
+							empresa con más de una década de experiencia en desarrollo de sistemas complejos. 
+							Esta herencia nos da una ventaja única: entendemos tanto el frontend bonito como el backend robusto.
+						</p>
+					</div>
+
+					<div>
+						<h2 class="text-2xl font-medium mb-6 text-black dark:text-white">Nuestro Enfoque</h2>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Cada proyecto es único. No usamos plantillas genéricas.
+							Escribimos código limpio, documentado y escalable. 
+							Trabajamos con metodologías ágiles y comunicación transparente 
+							para que siempre sepas el estado de tu proyecto.
+						</p>
+					</div>
 				</div>
 
-				<div class="mb-16">
-					<h2 class="text-3xl font-medium mb-6 text-black">Respaldo de Tecnológica Chile</h2>
-					<p class="text-gray-600 leading-relaxed mb-6">
-						Como parte de Tecnológica Chile, contamos con un sólido respaldo en el desarrollo 
-						de sistemas complejos e integraciones empresariales. Esta experiencia nos permite 
-						abordar proyectos de cualquier escala y complejidad.
-					</p>
-					<p class="text-gray-600 leading-relaxed">
-						La especialización de nuestra casa matriz en sistemas e integraciones se combina 
-						con nuestro enfoque en desarrollo web moderno para ofrecer soluciones completas 
-						y escalables que crecen junto a tu negocio.
-					</p>
-				</div>
-
-				<div>
-					<h2 class="text-3xl font-medium mb-6 text-black">Nuestro Enfoque</h2>
-					<p class="text-gray-600 leading-relaxed mb-6">
-						Creemos que cada proyecto es único y merece una solución personalizada. 
-						No utilizamos plantillas genéricas ni soluciones predefinidas. Cada línea de código 
-						que escribimos está pensada específicamente para tu negocio.
-					</p>
-					<p class="text-gray-600 leading-relaxed">
-						Trabajamos con metodologías ágiles que nos permiten adaptarnos a cambios, 
-						entregar valor de forma iterativa y mantener una comunicación constante 
-						con nuestros clientes durante todo el proceso.
-					</p>
+				<div class="mt-16 p-8 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+					<blockquote class="text-lg text-gray-700 dark:text-gray-300 italic">
+						"No vendemos horas de desarrollo. Vendemos soluciones que funcionan, 
+						se mantienen solas y escalan con tu negocio."
+					</blockquote>
+					<cite class="block mt-4 text-sm text-gray-600 dark:text-gray-400 not-italic">
+						— Filosofía Subdominio
+					</cite>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-16 bg-gray-50">
+	<section class="py-20 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black text-center">
-					Nuestros Valores
+			<div class="max-w-5xl mx-auto">
+				<h2 class="text-3xl font-medium mb-4 text-black dark:text-white text-center">
+					Los valores que nos definen
 				</h2>
-				
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-					<div class="text-center">
-						<div class="w-16 h-16 mx-auto mb-6 bg-black rounded-lg flex items-center justify-center">
-							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-							</svg>
-						</div>
-						<h3 class="text-xl font-medium text-black mb-4">Calidad</h3>
-						<p class="text-gray-600 leading-relaxed">
-							Cada línea de código es revisada, probada y optimizada. 
-							No entregamos nada que no cumpla nuestros estándares de calidad.
-						</p>
-					</div>
-
-					<div class="text-center">
-						<div class="w-16 h-16 mx-auto mb-6 bg-black rounded-lg flex items-center justify-center">
-							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-							</svg>
-						</div>
-						<h3 class="text-xl font-medium text-black mb-4">Transparencia</h3>
-						<p class="text-gray-600 leading-relaxed">
-							Comunicación clara y honesta en cada etapa del proyecto. 
-							Siempre sabrás en qué estamos trabajando y por qué.
-						</p>
-					</div>
-
-					<div class="text-center">
-						<div class="w-16 h-16 mx-auto mb-6 bg-black rounded-lg flex items-center justify-center">
-							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-							</svg>
-						</div>
-						<h3 class="text-xl font-medium text-black mb-4">Innovación</h3>
-						<p class="text-gray-600 leading-relaxed">
-							Nos mantenemos actualizados con las últimas tecnologías 
-							para ofrecer soluciones modernas y escalables.
-						</p>
-					</div>
-
-					<div class="text-center">
-						<div class="w-16 h-16 mx-auto mb-6 bg-black rounded-lg flex items-center justify-center">
-							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-							</svg>
-						</div>
-						<h3 class="text-xl font-medium text-black mb-4">Eficiencia</h3>
-						<p class="text-gray-600 leading-relaxed">
-							Optimizamos procesos y recursos para entregar resultados 
-							excepcionales en los tiempos acordados.
-						</p>
-					</div>
-
-					<div class="text-center">
-						<div class="w-16 h-16 mx-auto mb-6 bg-black rounded-lg flex items-center justify-center">
-							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-							</svg>
-						</div>
-						<h3 class="text-xl font-medium text-black mb-4">Colaboración</h3>
-						<p class="text-gray-600 leading-relaxed">
-							Trabajamos como una extensión de tu equipo, 
-							integrando nuestro conocimiento con tu visión.
-						</p>
-					</div>
-
-					<div class="text-center">
-						<div class="w-16 h-16 mx-auto mb-6 bg-black rounded-lg flex items-center justify-center">
-							<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-							</svg>
-						</div>
-						<h3 class="text-xl font-medium text-black mb-4">Compromiso</h3>
-						<p class="text-gray-600 leading-relaxed">
-							Tu éxito es nuestro éxito. Nos comprometemos con cada proyecto 
-							como si fuera nuestro propio negocio.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="py-16 bg-white">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black text-center">
-					Nuestras Especialidades
-				</h2>
-				
-				<div class="space-y-8">
-					<div class="border-b border-gray-200 pb-8">
-						<h3 class="text-xl font-medium text-black mb-4">Desarrollo Web Avanzado</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Más de 5 años especializados en WordPress, desarrollo de temas personalizados y plugins específicos. 
-							También trabajamos con tecnologías modernas como React, Next.js y Tailwind CSS para proyectos que requieren mayor interactividad.
-						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">WordPress Expert</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Plugin Development</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">React</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Next.js</span>
-						</div>
-					</div>
-
-					<div class="border-b border-gray-200 pb-8">
-						<h3 class="text-xl font-medium text-black mb-4">E-commerce Profesional</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Especialistas certificados en WooCommerce con experiencia en tiendas complejas de más de 1000 productos. 
-							También desarrollamos soluciones e-commerce personalizadas con Laravel para casos que requieren funcionalidades específicas.
-						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">WooCommerce Expert</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Laravel E-commerce</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Payment Gateways</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Inventory Management</span>
-						</div>
-					</div>
-
-					<div class="border-b border-gray-200 pb-8 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Aplicaciones & Automatización</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
-							Desarrollamos aplicaciones móviles con React Native y sistemas complejos con Laravel. 
-							Nuestra experiencia en automatización con Python nos permite crear workflows que optimizan procesos empresariales y reducen tareas repetitivas.
-						</p>
-						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">React Native</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Laravel</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Python Automation</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">API Integration</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="py-16 bg-gray-50">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto text-center">
-				<h2 class="text-3xl font-medium mb-6 text-black">
-					¿Por qué elegir Subdominio?
-				</h2>
-				<p class="text-xl text-gray-600 leading-relaxed mb-12">
-					Con el respaldo de Tecnológica Chile, somos más que una agencia: somos tu socio tecnológico
+				<p class="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
+					No son solo palabras bonitas. Son compromisos reales que cumplimos en cada proyecto.
 				</p>
 				
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-					<div class="flex items-start space-x-4">
-						<div class="w-2 h-2 bg-black rounded-full mt-3 flex-shrink-0"></div>
-						<div>
-							<h4 class="font-medium text-black mb-2">Sin sorpresas en el presupuesto</h4>
-							<p class="text-gray-600 text-sm leading-relaxed">
-								Presupuestos fijos acordados desde el inicio. No hay costos ocultos ni extras inesperados.
-							</p>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16">
+					<div class="group">
+						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+							<QualityIcon />
+						</div>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Código de Calidad</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+							Revisado, testeado, documentado. Si no lo usaríamos nosotros, no te lo entregamos.
+						</p>
+					</div>
+
+					<div class="group">
+						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+							<CommunicationIcon />
+						</div>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Transparencia Total</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+							Sin sorpresas. Comunicación clara sobre avances, problemas y soluciones.
+						</p>
+					</div>
+
+					<div class="group">
+						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+							<InnovationIcon />
+						</div>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Tecnología Moderna</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+							Usamos lo último, pero solo si aporta valor real a tu proyecto.
+						</p>
+					</div>
+
+					<div class="group">
+						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+							<TimeIcon />
+						</div>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Entregas Puntuales</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+							Cumplimos plazos. Si hay retrasos, avisamos con tiempo y explicamos por qué.
+						</p>
+					</div>
+
+					<div class="group">
+						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+							<TeamIcon />
+						</div>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Equipo Dedicado</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+							No eres un ticket más. Tendrás un equipo que conoce y entiende tu proyecto.
+						</p>
+					</div>
+
+					<div class="group">
+						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+							<SecurityIcon />
+						</div>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Compromiso Real</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+							Tu éxito es nuestro KPI principal. No descansamos hasta que funcione perfecto.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-20 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6">
+			<div class="max-w-5xl mx-auto">
+				<h2 class="text-3xl font-medium mb-4 text-black dark:text-white text-center">
+					Dominamos las tecnologías que tu proyecto necesita
+				</h2>
+				<p class="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
+					No somos aprendices. Somos expertos en nuestro stack.
+				</p>
+				
+				<div class="grid md:grid-cols-3 gap-8">
+					<div class="bg-white dark:bg-gray-900 p-8 border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors duration-200">
+						<div class="flex items-center justify-between mb-6">
+							<h3 class="text-xl font-medium text-black dark:text-white">Desarrollo Web</h3>
+							<span class="text-xs text-gray-500 dark:text-gray-400 font-mono">01</span>
+						</div>
+						<p class="text-gray-600 dark:text-gray-300 mb-6 text-sm leading-relaxed">
+							+5 años creando sitios que cargan rápido, se ven increíbles y convierten visitantes en clientes.
+						</p>
+						<div class="space-y-2">
+							<div class="flex items-center justify-between text-sm">
+								<span class="text-gray-700 dark:text-gray-300">WordPress</span>
+								<span class="text-xs text-gray-500 dark:text-gray-400">Expert</span>
+							</div>
+							<div class="flex items-center justify-between text-sm">
+								<span class="text-gray-700 dark:text-gray-300">React / Next.js</span>
+								<span class="text-xs text-gray-500 dark:text-gray-400">Advanced</span>
+							</div>
+							<div class="flex items-center justify-between text-sm">
+								<span class="text-gray-700 dark:text-gray-300">Astro</span>
+								<span class="text-xs text-gray-500 dark:text-gray-400">Advanced</span>
+							</div>
+							<div class="flex items-center justify-between text-sm">
+								<span class="text-gray-700 dark:text-gray-300">Tailwind CSS</span>
+								<span class="text-xs text-gray-500 dark:text-gray-400">Expert</span>
+							</div>
 						</div>
 					</div>
 
-					<div class="flex items-start space-x-4">
-						<div class="w-2 h-2 bg-black rounded-full mt-3 flex-shrink-0"></div>
-						<div>
-							<h4 class="font-medium text-black mb-2">Código limpio y documentado</h4>
-							<p class="text-gray-600 text-sm leading-relaxed">
-								Entregamos código que otros desarrolladores pueden entender y mantener fácilmente.
-							</p>
+					<div class="bg-white dark:bg-gray-900 p-8 border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors duration-200">
+						<div class="flex items-center justify-between mb-6">
+							<h3 class="text-xl font-medium text-black dark:text-white">E-commerce</h3>
+							<span class="text-xs text-gray-500 dark:text-gray-400 font-mono">02</span>
+						</div>
+						<p class="text-gray-600 dark:text-gray-300 mb-6 text-sm leading-relaxed">
+							Tiendas online que procesan pagos seguros, gestionan inventarios y escalan sin problemas.
+						</p>
+						<div class="space-y-2">
+							<div class="flex items-center justify-between text-sm">
+								<span class="text-gray-700 dark:text-gray-300">WooCommerce</span>
+								<span class="text-xs text-gray-500 dark:text-gray-400">Certified</span>
+							</div>
+							<div class="flex items-center justify-between text-sm">
+								<span class="text-gray-700 dark:text-gray-300">Shopify</span>
+								<span class="text-xs text-gray-500 dark:text-gray-400">Advanced</span>
+							</div>
+							<div class="flex items-center justify-between text-sm">
+								<span class="text-gray-700 dark:text-gray-300">Laravel Commerce</span>
+								<span class="text-xs text-gray-500 dark:text-gray-400">Expert</span>
+							</div>
+							<div class="flex items-center justify-between text-sm">
+								<span class="text-gray-700 dark:text-gray-300">Payment APIs</span>
+								<span class="text-xs text-gray-500 dark:text-gray-400">Expert</span>
+							</div>
 						</div>
 					</div>
 
-					<div class="flex items-start space-x-4">
-						<div class="w-2 h-2 bg-black rounded-full mt-3 flex-shrink-0"></div>
-						<div>
-							<h4 class="font-medium text-black mb-2">Soporte post-lanzamiento</h4>
-							<p class="text-gray-600 text-sm leading-relaxed">
-								No desaparecemos después del lanzamiento. Incluimos soporte y mantenimiento.
-							</p>
+					<div class="bg-white dark:bg-gray-900 p-8 border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors duration-200">
+						<div class="flex items-center justify-between mb-6">
+							<h3 class="text-xl font-medium text-black dark:text-white">Apps & Automatización</h3>
+							<span class="text-xs text-gray-500 dark:text-gray-400 font-mono">03</span>
 						</div>
-					</div>
-
-					<div class="flex items-start space-x-4">
-						<div class="w-2 h-2 bg-black rounded-full mt-3 flex-shrink-0"></div>
-						<div>
-							<h4 class="font-medium text-black mb-2">Formación incluida</h4>
-							<p class="text-gray-600 text-sm leading-relaxed">
-								Te enseñamos a gestionar y mantener tu proyecto para que seas independiente.
-							</p>
+						<p class="text-gray-600 dark:text-gray-300 mb-6 text-sm leading-relaxed">
+							Sistemas que trabajan solos, apps móviles nativas y automatizaciones que ahorran horas.
+						</p>
+						<div class="space-y-2">
+							<div class="flex items-center justify-between text-sm">
+								<span class="text-gray-700 dark:text-gray-300">React Native</span>
+								<span class="text-xs text-gray-500 dark:text-gray-400">Advanced</span>
+							</div>
+							<div class="flex items-center justify-between text-sm">
+								<span class="text-gray-700 dark:text-gray-300">Laravel Backend</span>
+								<span class="text-xs text-gray-500 dark:text-gray-400">Expert</span>
+							</div>
+							<div class="flex items-center justify-between text-sm">
+								<span class="text-gray-700 dark:text-gray-300">Python Automation</span>
+								<span class="text-xs text-gray-500 dark:text-gray-400">Advanced</span>
+							</div>
+							<div class="flex items-center justify-between text-sm">
+								<span class="text-gray-700 dark:text-gray-300">API Integration</span>
+								<span class="text-xs text-gray-500 dark:text-gray-400">Expert</span>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -274,29 +253,98 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 	</section>
 
-	<section class="py-16 bg-black text-white">
+	<section class="py-20 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-3xl font-medium mb-16 text-black dark:text-white text-center">
+					Lo que nos diferencia
+				</h2>
+				
+				<div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
+					<div class="relative pl-12">
+						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-full flex items-center justify-center text-xs font-bold">1</div>
+						<h4 class="font-medium text-black dark:text-white mb-2">Precio cerrado, sin sorpresas</h4>
+						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+							Presupuesto fijo desde el día uno. Sabés exactamente cuánto vas a invertir.
+						</p>
+					</div>
+
+					<div class="relative pl-12">
+						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-full flex items-center justify-center text-xs font-bold">2</div>
+						<h4 class="font-medium text-black dark:text-white mb-2">Código que se entiende</h4>
+						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+							Documentado y estructurado. Cualquier dev puede tomarlo y seguir trabajando.
+						</p>
+					</div>
+
+					<div class="relative pl-12">
+						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-full flex items-center justify-center text-xs font-bold">3</div>
+						<h4 class="font-medium text-black dark:text-white mb-2">Soporte real post-lanzamiento</h4>
+						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+							30 días de garantía incluidos. Ajustes y correcciones sin costo adicional.
+						</p>
+					</div>
+
+					<div class="relative pl-12">
+						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-full flex items-center justify-center text-xs font-bold">4</div>
+						<h4 class="font-medium text-black dark:text-white mb-2">Te enseñamos a usarlo</h4>
+						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+							Capacitación incluida. Videos, documentación y sesiones 1:1 para tu equipo.
+						</p>
+					</div>
+
+					<div class="relative pl-12">
+						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-full flex items-center justify-center text-xs font-bold">5</div>
+						<h4 class="font-medium text-black dark:text-white mb-2">Respaldo empresarial</h4>
+						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+							Somos parte de Tecnológica Chile. Tenés el respaldo de una empresa establecida.
+						</p>
+					</div>
+
+					<div class="relative pl-12">
+						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-full flex items-center justify-center text-xs font-bold">6</div>
+						<h4 class="font-medium text-black dark:text-white mb-2">Stack moderno y probado</h4>
+						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+							Usamos tecnologías que escalan. No experimentos, solo lo que funciona.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-24 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
 		<div class="container mx-auto px-6 text-center">
 			<div class="max-w-3xl mx-auto">
-				<h2 class="text-3xl md:text-4xl font-medium mb-6">
-					¿Hablamos de tu proyecto?
+				<h2 class="text-4xl md:text-5xl font-medium mb-6">
+					¿Listo para empezar?
 				</h2>
-				<p class="text-xl text-gray-300 mb-8 leading-relaxed">
-					Estamos aquí para ayudarte a convertir tu idea en una solución digital exitosa
+				<p class="text-xl text-gray-300 dark:text-gray-600 mb-12 leading-relaxed">
+					Cuéntanos tu idea. Sin compromiso, sin jerga técnica.
 				</p>
 				
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
 					<a
 						href="/contacto"
-						class="px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-colors duration-200"
+						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-105"
 					>
-						Empezar conversación
+						Hablemos de tu proyecto
 					</a>
 					<a
 						href="/proyectos"
-						class="px-8 py-4 border border-gray-600 text-white font-medium hover:border-white transition-colors duration-200"
+						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-colors duration-200"
 					>
-						Ver nuestro trabajo
+						Ver casos de éxito
 					</a>
+				</div>
+
+				<div class="mt-12 pt-12 border-t border-gray-800 dark:border-gray-300">
+					<p class="text-sm text-gray-400 dark:text-gray-600">
+						También podés escribirnos directamente a 
+						<a href="mailto:info@subdominio.com" class="underline hover:text-white dark:hover:text-black transition-colors duration-200">
+							info@subdominio.com
+						</a>
+					</p>
 				</div>
 			</div>
 		</div>

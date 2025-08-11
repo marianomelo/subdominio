@@ -1,30 +1,102 @@
 ---
-import Header from '../components/Header.jsx';
+import AppWrapper from '../components/AppWrapper.jsx';
 import Footer from '../components/Footer.jsx';
+import SchemaOrg from '../components/SchemaOrg.astro';
 
 interface Props {
 	title: string;
 	description?: string;
+	image?: string;
+	canonical?: string;
+	keywords?: string;
+	type?: string;
 }
 
-const { title, description = "Subdominio - Agencia de desarrollo web y software. Transformamos ideas en soluciones digitales innovadoras." } = Astro.props;
+const { 
+	title, 
+	description = "Subdominio - Agencia de desarrollo web y software. Transformamos ideas en soluciones digitales innovadoras.",
+	image = "/og-image.jpg",
+	canonical,
+	keywords = "desarrollo web, diseño web, e-commerce, aplicaciones web, automatización, software personalizado, WordPress, React, Chile",
+	type = "website"
+} = Astro.props;
+
+const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site || 'https://subdominio.com').toString();
+const imageURL = new URL(image, Astro.site || 'https://subdominio.com').toString();
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content={type} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={`${title} | Subdominio`} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={imageURL} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:site_name" content="Subdominio" />
+		<meta property="og:locale" content="es_CL" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={`${title} | Subdominio`} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={imageURL} />
+
+		<!-- Icons -->
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="theme-color" content="#000000" />
+		
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Subdominio</title>
+		<script is:inline>
+			// Aplicar tema antes de renderizar para evitar flash
+			const theme = (() => {
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				}
+				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					return 'dark';
+				}
+				return 'light';
+			})();
+			
+			if (theme === 'dark') {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
+		</script>
+		<!-- Optimized font loading -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+		<noscript>
+			<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+		</noscript>
+
+		<!-- Schema.org structured data -->
+		<SchemaOrg type="organization" />
+		<SchemaOrg type="website" />
 	</head>
-	<body class="min-h-screen flex flex-col">
-		<Header client:load />
+	<body class="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
+		<AppWrapper client:load />
 		<main class="flex-grow pt-16 lg:pt-20">
 			<slot />
 		</main>

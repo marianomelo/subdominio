@@ -1,25 +1,24 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { BackArrowIcon } from '../../components/ContactIcons.jsx';
 ---
 
 <Layout title="Aplicaciones & Automatización" description="Desarrollo de aplicaciones móviles, software a medida con Laravel y automatizaciones de procesos. Soluciones personalizadas que optimizan tu negocio.">
-	<section class="pt-32 pb-16 bg-white">
+	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
 				<div class="mb-8">
-					<a href="/" class="inline-flex items-center text-gray-600 hover:text-black transition-colors duration-200 mb-6">
-						<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-						</svg>
+					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
+						<BackArrowIcon />
 						Volver al inicio
 					</a>
 				</div>
 				
-				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black leading-tight">
+				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black dark:text-white leading-tight">
 					Aplicaciones & Automatización
 				</h1>
 				
-				<p class="text-xl text-gray-600 leading-relaxed mb-12 max-w-3xl">
+				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-12 max-w-3xl">
 					Desarrollamos aplicaciones móviles, software a medida con Laravel y automatizaciones que optimizan 
 					procesos empresariales. Soluciones personalizadas que escalan con tu negocio.
 				</p>
@@ -27,63 +26,63 @@ import Layout from '../../layouts/Layout.astro';
 		</div>
 	</section>
 
-	<section class="py-16 bg-white border-t border-gray-200">
+	<section class="py-16 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black">
+				<h2 class="text-3xl font-medium mb-12 text-black dark:text-white">
 					Nuestras Especialidades
 				</h2>
 				
 				<div class="space-y-12">
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Aplicaciones Móviles</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
+					<div class="border-b border-gray-200 dark:border-gray-700 pb-12 last:border-b-0 last:pb-0">
+						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Aplicaciones Móviles</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
 							Apps nativas e híbridas para iOS y Android. Desde aplicaciones corporativas hasta 
 							productos comerciales con interfaces intuitivas y rendimiento optimizado.
 						</p>
 						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">React Native</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">iOS</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Android</span>
+							<span class="text-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 px-3 py-1">React Native</span>
+							<span class="text-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 px-3 py-1">iOS</span>
+							<span class="text-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 px-3 py-1">Android</span>
 						</div>
 					</div>
 
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Software a Medida con Laravel</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
+					<div class="border-b border-gray-200 dark:border-gray-700 pb-12 last:border-b-0 last:pb-0">
+						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Software a Medida con Laravel</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
 							Desarrollo de aplicaciones web complejas y sistemas de gestión personalizados con Laravel. 
 							CRM, ERP, plataformas de gestión y dashboards administrativos robustos.
 						</p>
 						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Laravel</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">PHP</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">MySQL</span>
+							<span class="text-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 px-3 py-1">Laravel</span>
+							<span class="text-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 px-3 py-1">PHP</span>
+							<span class="text-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 px-3 py-1">MySQL</span>
 						</div>
 					</div>
 
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Automatización de Procesos</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
+					<div class="border-b border-gray-200 dark:border-gray-700 pb-12 last:border-b-0 last:pb-0">
+						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Automatización de Procesos</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
 							Automatización de tareas repetitivas, integración de sistemas y workflows inteligentes. 
 							Desde scripts simples hasta sistemas complejos de automatización empresarial.
 						</p>
 						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Python</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">APIs</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Webhooks</span>
+							<span class="text-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 px-3 py-1">Python</span>
+							<span class="text-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 px-3 py-1">APIs</span>
+							<span class="text-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 px-3 py-1">Webhooks</span>
 						</div>
 					</div>
 
-					<div class="border-b border-gray-200 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black mb-4">Integraciones de Sistemas</h3>
-						<p class="text-gray-600 leading-relaxed mb-4">
+					<div class="border-b border-gray-200 dark:border-gray-700 pb-12 last:border-b-0 last:pb-0">
+						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Integraciones de Sistemas</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
 							Conexión entre diferentes plataformas y servicios. APIs personalizadas, sincronización 
 							de datos y comunicación entre sistemas legacy y modernos.
 						</p>
 						<div class="flex flex-wrap gap-2">
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">REST API</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">GraphQL</span>
-							<span class="text-sm text-gray-500 border border-gray-200 px-3 py-1">Microservicios</span>
+							<span class="text-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 px-3 py-1">REST API</span>
+							<span class="text-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 px-3 py-1">GraphQL</span>
+							<span class="text-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 px-3 py-1">Microservicios</span>
 						</div>
 					</div>
 				</div>
@@ -91,17 +90,17 @@ import Layout from '../../layouts/Layout.astro';
 		</div>
 	</section>
 
-	<section class="py-16 bg-gray-50">
+	<section class="py-16 bg-gray-50 dark:bg-gray-950">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black">
+				<h2 class="text-3xl font-medium mb-12 text-black dark:text-white">
 					Stack Tecnológico
 				</h2>
 				
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
 					<div>
-						<h3 class="text-lg font-medium text-black mb-4">Desarrollo Móvil</h3>
-						<ul class="space-y-2 text-gray-600">
+						<h3 class="text-lg font-medium text-black dark:text-white mb-4">Desarrollo Móvil</h3>
+						<ul class="space-y-2 text-gray-600 dark:text-gray-300">
 							<li>React Native</li>
 							<li>Swift (iOS)</li>
 							<li>Kotlin (Android)</li>
@@ -111,8 +110,8 @@ import Layout from '../../layouts/Layout.astro';
 					</div>
 
 					<div>
-						<h3 class="text-lg font-medium text-black mb-4">Backend & APIs</h3>
-						<ul class="space-y-2 text-gray-600">
+						<h3 class="text-lg font-medium text-black dark:text-white mb-4">Backend & APIs</h3>
+						<ul class="space-y-2 text-gray-600 dark:text-gray-300">
 							<li>Laravel</li>
 							<li>PHP</li>
 							<li>Node.js</li>
@@ -122,8 +121,8 @@ import Layout from '../../layouts/Layout.astro';
 					</div>
 
 					<div>
-						<h3 class="text-lg font-medium text-black mb-4">Automatización</h3>
-						<ul class="space-y-2 text-gray-600">
+						<h3 class="text-lg font-medium text-black dark:text-white mb-4">Automatización</h3>
+						<ul class="space-y-2 text-gray-600 dark:text-gray-300">
 							<li>Python Scripts</li>
 							<li>Cron Jobs</li>
 							<li>Queue Systems</li>
@@ -136,65 +135,65 @@ import Layout from '../../layouts/Layout.astro';
 		</div>
 	</section>
 
-	<section class="py-16 bg-white">
+	<section class="py-16 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black">
+				<h2 class="text-3xl font-medium mb-12 text-black dark:text-white">
 					Tipos de Proyectos
 				</h2>
 				
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-					<div class="p-6 border border-gray-200 rounded-lg">
-						<h3 class="text-lg font-medium text-black mb-3">CRM Personalizado</h3>
-						<p class="text-gray-600 text-sm leading-relaxed mb-4">
+					<div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
+						<h3 class="text-lg font-medium text-black dark:text-white mb-3">CRM Personalizado</h3>
+						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
 							Sistemas de gestión de clientes adaptados a tu proceso comercial específico.
 						</p>
-						<div class="text-xs text-gray-500">Laravel • MySQL • Dashboard</div>
+						<div class="text-xs text-gray-500 dark:text-gray-400">Laravel • MySQL • Dashboard</div>
 					</div>
 
-					<div class="p-6 border border-gray-200 rounded-lg">
-						<h3 class="text-lg font-medium text-black mb-3">Apps de Gestión</h3>
-						<p class="text-gray-600 text-sm leading-relaxed mb-4">
+					<div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
+						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Apps de Gestión</h3>
+						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
 							Aplicaciones móviles para equipos de trabajo, inventarios y procesos internos.
 						</p>
-						<div class="text-xs text-gray-500">React Native • API • Sincronización</div>
+						<div class="text-xs text-gray-500 dark:text-gray-400">React Native • API • Sincronización</div>
 					</div>
 
-					<div class="p-6 border border-gray-200 rounded-lg">
-						<h3 class="text-lg font-medium text-black mb-3">Automatización de Reportes</h3>
-						<p class="text-gray-600 text-sm leading-relaxed mb-4">
+					<div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
+						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Automatización de Reportes</h3>
+						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
 							Generación automática de informes, dashboards y alertas basadas en datos.
 						</p>
-						<div class="text-xs text-gray-500">Python • Cron • Email</div>
+						<div class="text-xs text-gray-500 dark:text-gray-400">Python • Cron • Email</div>
 					</div>
 
-					<div class="p-6 border border-gray-200 rounded-lg">
-						<h3 class="text-lg font-medium text-black mb-3">Integración ERP</h3>
-						<p class="text-gray-600 text-sm leading-relaxed mb-4">
+					<div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
+						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Integración ERP</h3>
+						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
 							Conexión entre sistemas ERP existentes y nuevas aplicaciones web o móviles.
 						</p>
-						<div class="text-xs text-gray-500">APIs • Webhooks • Sincronización</div>
+						<div class="text-xs text-gray-500 dark:text-gray-400">APIs • Webhooks • Sincronización</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-16 bg-gray-50">
+	<section class="py-16 bg-gray-50 dark:bg-gray-950">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black">
+				<h2 class="text-3xl font-medium mb-12 text-black dark:text-white">
 					Proceso de Desarrollo
 				</h2>
 				
 				<div class="space-y-8">
 					<div class="flex flex-col md:flex-row gap-6">
 						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black">01</span>
+							<span class="text-2xl font-medium text-black dark:text-white">01</span>
 						</div>
 						<div>
-							<h3 class="text-xl font-medium text-black mb-3">Análisis de Procesos</h3>
-							<p class="text-gray-600 leading-relaxed">
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Análisis de Procesos</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
 								Estudiamos tus procesos actuales, identificamos oportunidades de automatización 
 								y definimos los requisitos técnicos del proyecto.
 							</p>
@@ -203,11 +202,11 @@ import Layout from '../../layouts/Layout.astro';
 
 					<div class="flex flex-col md:flex-row gap-6">
 						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black">02</span>
+							<span class="text-2xl font-medium text-black dark:text-white">02</span>
 						</div>
 						<div>
-							<h3 class="text-xl font-medium text-black mb-3">Arquitectura y Diseño</h3>
-							<p class="text-gray-600 leading-relaxed">
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Arquitectura y Diseño</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
 								Diseñamos la arquitectura técnica, interfaces de usuario y flujos de trabajo. 
 								Creamos prototipos para validación temprana.
 							</p>
@@ -216,11 +215,11 @@ import Layout from '../../layouts/Layout.astro';
 
 					<div class="flex flex-col md:flex-row gap-6">
 						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black">03</span>
+							<span class="text-2xl font-medium text-black dark:text-white">03</span>
 						</div>
 						<div>
-							<h3 class="text-xl font-medium text-black mb-3">Desarrollo Ágil</h3>
-							<p class="text-gray-600 leading-relaxed">
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Desarrollo Ágil</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
 								Desarrollo iterativo con entregas regulares. Testing continuo y ajustes 
 								basados en feedback para garantizar el resultado óptimo.
 							</p>
@@ -229,11 +228,11 @@ import Layout from '../../layouts/Layout.astro';
 
 					<div class="flex flex-col md:flex-row gap-6">
 						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black">04</span>
+							<span class="text-2xl font-medium text-black dark:text-white">04</span>
 						</div>
 						<div>
-							<h3 class="text-xl font-medium text-black mb-3">Implementación y Soporte</h3>
-							<p class="text-gray-600 leading-relaxed">
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Implementación y Soporte</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
 								Despliegue en producción, migración de datos si es necesario, 
 								formación del equipo y soporte post-lanzamiento.
 							</p>
@@ -244,26 +243,26 @@ import Layout from '../../layouts/Layout.astro';
 		</div>
 	</section>
 
-	<section class="py-16 bg-black text-white">
+	<section class="py-16 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
 		<div class="container mx-auto px-6 text-center">
 			<div class="max-w-3xl mx-auto">
-				<h2 class="text-3xl md:text-4xl font-medium mb-6">
+				<h2 class="text-3xl md:text-4xl font-medium mb-6 text-white dark:text-gray-900">
 					¿Necesitas automatizar procesos o desarrollar una app?
 				</h2>
-				<p class="text-xl text-gray-300 mb-8 leading-relaxed">
+				<p class="text-xl text-gray-300 dark:text-gray-600 mb-8 leading-relaxed">
 					Cuéntanos tu proyecto y te ayudaremos a crear la solución perfecta
 				</p>
 				
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
 					<a
 						href="/contacto"
-						class="px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-colors duration-200"
+						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
 					>
 						Solicitar consultoría
 					</a>
 					<a
 						href="mailto:info@subdominio.com"
-						class="px-8 py-4 border border-gray-600 text-white font-medium hover:border-white transition-colors duration-200"
+						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-colors duration-200"
 					>
 						Enviar email
 					</a>

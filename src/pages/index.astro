@@ -2,19 +2,35 @@
 import Layout from '../layouts/Layout.astro';
 import HeroSection from '../components/HeroSection.jsx';
 import ServiceCard from '../components/ServiceCard.jsx';
+import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components/Icons.jsx';
 ---
 
 <Layout title="Inicio" description="Subdominio - Agencia de desarrollo que transforma ideas en experiencias digitales excepcionales.">
 	<HeroSection client:load />
 
-	<section class="py-24 bg-white">
+	<!-- Sección Intro - Quiénes somos -->
+	<section class="py-24 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-4xl md:text-5xl font-medium mb-6 text-black dark:text-white">
+					Un equipo que entiende tu negocio y domina la tecnología
+				</h2>
+				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+					En <span class="font-medium">subdominio</span>, combinamos comunicación clara con un conocimiento técnico profundo para que entiendas cada paso de tu proyecto.
+					Nuestro trabajo es traducir lo complejo en soluciones digitales prácticas, escalables y fáciles de administrar.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-24 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="text-center mb-20">
-				<h2 class="text-4xl md:text-5xl font-medium mb-6 text-black">
-					Servicios
+				<h2 class="text-4xl md:text-5xl font-medium mb-6 text-black dark:text-white">
+					Soluciones digitales completas para tu negocio
 				</h2>
-				<p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-					Ofrecemos soluciones completas para transformar tu negocio en el mundo digital
+				<p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+					Beneficios claros primero, tecnología después
 				</p>
 			</div>
 			
@@ -22,44 +38,44 @@ import ServiceCard from '../components/ServiceCard.jsx';
 				<ServiceCard 
 					client:load
 					title="Desarrollo Web"
-					description="Creamos sitios web modernos, rápidos y optimizados para todos los dispositivos."
+					description="Sitios rápidos, seguros y optimizados para buscadores."
 					technologies={["WordPress", "Astro", "Next.js"]}
 				/>
 
 				<ServiceCard 
 					client:load
-					title="Desarrollo de E-commerce"
-					description="Soluciones completas para tiendas online que convierten visitantes en clientes."
-					technologies={["WooCommerce", "Shopify", "Desarrollo personalizado"]}
+					title="E-commerce"
+					description="Tiendas online que venden más y son fáciles de gestionar."
+					technologies={["WooCommerce", "Shopify", "Desarrollo a medida"]}
 				/>
 
 				<ServiceCard 
 					client:load
 					title="Automatización de Procesos"
-					description="Optimizamos tu negocio con tecnología de vanguardia y soluciones inteligentes."
-					technologies={["IA", "Automatización", "Workflows"]}
+					description="Reducción de tareas manuales y errores con flujos inteligentes."
+					technologies={["IA", "APIs", "Workflows"]}
 				/>
 
 				<ServiceCard 
 					client:load
 					title="Desarrollo Personalizado"
-					description="Creamos soluciones tecnológicas específicas para tu empresa."
-					technologies={["Laravel", "Next.js", "ERP/CRM", "APIs"]}
+					description="Sistemas a medida, integraciones ERP/CRM y soluciones específicas."
+					technologies={["Laravel", "Next.js", "API REST"]}
 				/>
 
 			</div>
 		</div>
 	</section>
 
-	<section class="py-24 bg-gray-50">
+	<section class="py-24 bg-gray-50 dark:bg-gray-950">
 		<div class="container mx-auto px-6">
 			<div class="max-w-5xl mx-auto">
 				<div class="text-center mb-20">
-					<h2 class="text-4xl md:text-5xl font-medium mb-6 text-black">
-						Nuestro Proceso de Trabajo
+					<h2 class="text-4xl md:text-5xl font-medium mb-6 text-black dark:text-white">
+						De la idea al lanzamiento, con un plan claro y transparente
 					</h2>
-					<p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-						Metodología probada que garantiza resultados exitosos en cada proyecto
+					<p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+						Nuestro proceso paso a paso
 					</p>
 				</div>
 
@@ -71,35 +87,14 @@ import ServiceCard from '../components/ServiceCard.jsx';
 						<!-- Paso 1 -->
 						<div class="relative flex flex-col md:flex-row items-center gap-8">
 							<div class="w-full md:w-1/2 md:text-right md:pr-16">
-								<div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300">
-									<div class="inline-flex items-center justify-center w-16 h-16 bg-black text-white rounded-xl mb-6 text-xl font-medium">
+								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-xl mb-6 text-xl font-medium">
 										01
 									</div>
-									<h3 class="text-2xl font-medium text-black mb-4">Descubrimiento y Análisis</h3>
-									<p class="text-gray-600 leading-relaxed">
-										Comenzamos entendiendo tu negocio, objetivos y audiencia. Realizamos un análisis profundo 
-										de requisitos y definimos el alcance del proyecto junto contigo.
+									<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Descubrimiento y Análisis</h3>
+									<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+										Definimos objetivos, alcances y requisitos.
 									</p>
-									<ul class="mt-4 space-y-2 text-sm text-gray-500">
-										<li class="flex items-center">
-											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-											Reunión inicial y brief
-										</li>
-										<li class="flex items-center">
-											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-											Análisis de competencia
-										</li>
-										<li class="flex items-center">
-											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-											Definición de objetivos
-										</li>
-									</ul>
 								</div>
 							</div>
 							<div class="hidden md:block md:w-1/2"></div>
@@ -109,35 +104,14 @@ import ServiceCard from '../components/ServiceCard.jsx';
 						<div class="relative flex flex-col md:flex-row items-center gap-8">
 							<div class="hidden md:block md:w-1/2"></div>
 							<div class="w-full md:w-1/2 md:pl-16">
-								<div class="bg-white p-6 md:p-8 rounded-lg shadow-sm border border-gray-200">
-									<div class="inline-flex items-center justify-center w-16 h-16 bg-black text-white rounded-xl mb-6 text-xl font-medium">
+								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-xl mb-6 text-xl font-medium">
 										02
 									</div>
-									<h3 class="text-2xl font-medium text-black mb-4">Diseño y Estrategia</h3>
-									<p class="text-gray-600 leading-relaxed">
-										Creamos wireframes, prototipos y definimos la arquitectura del proyecto. 
-										Presentamos la propuesta visual y funcional para tu aprobación.
+									<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Diseño y Estrategia</h3>
+									<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+										Creamos prototipos y la estructura técnica del proyecto.
 									</p>
-									<ul class="mt-4 space-y-2 text-sm text-gray-500">
-										<li class="flex items-center">
-											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-											Arquitectura de información
-										</li>
-										<li class="flex items-center">
-											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-											Diseño UI/UX
-										</li>
-										<li class="flex items-center">
-											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-											Prototipo interactivo
-										</li>
-									</ul>
 								</div>
 							</div>
 						</div>
@@ -145,35 +119,14 @@ import ServiceCard from '../components/ServiceCard.jsx';
 						<!-- Paso 3 -->
 						<div class="relative flex flex-col md:flex-row items-center gap-8">
 							<div class="w-full md:w-1/2 md:text-right md:pr-16">
-								<div class="bg-white p-6 md:p-8 rounded-lg shadow-sm border border-gray-200">
-									<div class="inline-flex items-center justify-center w-16 h-16 bg-black text-white rounded-xl mb-6 text-xl font-medium">
+								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-xl mb-6 text-xl font-medium">
 										03
 									</div>
-									<h3 class="text-2xl font-medium text-black mb-4">Desarrollo Ágil</h3>
-									<p class="text-gray-600 leading-relaxed">
-										Implementamos el proyecto con metodología ágil, entregas semanales y 
-										feedback constante. Mantenemos comunicación transparente durante todo el proceso.
+									<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Desarrollo Ágil</h3>
+									<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+										Entregas semanales y revisiones constantes.
 									</p>
-									<ul class="mt-4 space-y-2 text-sm text-gray-500">
-										<li class="flex items-center">
-											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-											Sprints semanales
-										</li>
-										<li class="flex items-center">
-											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-											Revisiones regulares
-										</li>
-										<li class="flex items-center">
-											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-											Testing continuo
-										</li>
-									</ul>
 								</div>
 							</div>
 							<div class="hidden md:block md:w-1/2"></div>
@@ -183,35 +136,14 @@ import ServiceCard from '../components/ServiceCard.jsx';
 						<div class="relative flex flex-col md:flex-row items-center gap-8">
 							<div class="hidden md:block md:w-1/2"></div>
 							<div class="w-full md:w-1/2 md:pl-16">
-								<div class="bg-white p-6 md:p-8 rounded-lg shadow-sm border border-gray-200">
-									<div class="inline-flex items-center justify-center w-16 h-16 bg-black text-white rounded-xl mb-6 text-xl font-medium">
+								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-xl mb-6 text-xl font-medium">
 										04
 									</div>
-									<h3 class="text-2xl font-medium text-black mb-4">Testing y Optimización</h3>
-									<p class="text-gray-600 leading-relaxed">
-										Realizamos pruebas exhaustivas de funcionalidad, rendimiento y seguridad. 
-										Optimizamos cada detalle para garantizar la mejor experiencia.
+									<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Pruebas y Optimización</h3>
+									<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+										Validamos rendimiento, seguridad y SEO.
 									</p>
-									<ul class="mt-4 space-y-2 text-sm text-gray-500">
-										<li class="flex items-center">
-											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-											Pruebas de calidad
-										</li>
-										<li class="flex items-center">
-											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-											Optimización SEO
-										</li>
-										<li class="flex items-center">
-											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-											Performance tuning
-										</li>
-									</ul>
 								</div>
 							</div>
 						</div>
@@ -219,35 +151,14 @@ import ServiceCard from '../components/ServiceCard.jsx';
 						<!-- Paso 5 -->
 						<div class="relative flex flex-col md:flex-row items-center gap-8">
 							<div class="w-full md:w-1/2 md:text-right md:pr-16">
-								<div class="bg-white p-6 md:p-8 rounded-lg shadow-sm border border-gray-200">
-									<div class="inline-flex items-center justify-center w-16 h-16 bg-black text-white rounded-xl mb-6 text-xl font-medium">
+								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-xl mb-6 text-xl font-medium">
 										05
 									</div>
-									<h3 class="text-2xl font-medium text-black mb-4">Lanzamiento y Soporte</h3>
-									<p class="text-gray-600 leading-relaxed">
-										Desplegamos tu proyecto y te proporcionamos formación completa. 
-										Incluimos soporte post-lanzamiento y mantenimiento continuo.
+									<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Lanzamiento y Soporte</h3>
+									<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+										Implementación segura y mantenimiento continuo.
 									</p>
-									<ul class="mt-4 space-y-2 text-sm text-gray-500">
-										<li class="flex items-center">
-											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-											Deployment seguro
-										</li>
-										<li class="flex items-center">
-											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-											Documentación completa
-										</li>
-										<li class="flex items-center">
-											<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-									</svg>
-											Soporte 24/7
-										</li>
-									</ul>
 								</div>
 							</div>
 							<div class="hidden md:block md:w-1/2"></div>
@@ -256,10 +167,10 @@ import ServiceCard from '../components/ServiceCard.jsx';
 				</div>
 
 				<div class="text-center mt-16">
-					<p class="text-gray-600 mb-8">¿Listo para comenzar tu proyecto con nosotros?</p>
+					<p class="text-gray-600 dark:text-gray-300 mb-8">¿Listo para comenzar tu proyecto con nosotros?</p>
 					<a
 						href="/contacto"
-						class="inline-block px-8 py-4 bg-black text-white font-medium hover:bg-gray-800 transition-colors duration-200"
+						class="inline-block px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-colors duration-200"
 					>
 						Iniciar proyecto
 					</a>
@@ -268,69 +179,65 @@ import ServiceCard from '../components/ServiceCard.jsx';
 		</div>
 	</section>
 
-	<section class="py-24 bg-white">
+	<section class="py-24 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="max-w-6xl mx-auto">
 				<div class="text-center mb-20">
-					<h2 class="text-4xl md:text-5xl font-medium mb-6 text-black">
-						¿Por qué Subdominio?
+					<h2 class="text-4xl md:text-5xl font-medium mb-6 text-black dark:text-white">
+						Lo que nos diferencia
 					</h2>
-					<p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-						Combinamos experiencia técnica con metodologías ágiles para entregar resultados excepcionales
+					<p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+						Por qué elegirnos para tu proyecto digital
 					</p>
 				</div>
 
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-					<!-- Metodología Clara -->
-					<div class="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
-						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+					<!-- Comunicación sin barreras -->
+					<div class="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative">
-							<div class="w-16 h-16 bg-black rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-								</svg>
+							<div class="w-16 h-16 bg-black dark:bg-gray-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+								<CheckCircleIcon />
 							</div>
-							<h3 class="text-xl font-medium text-black mb-4">Metodología Clara</h3>
-							<p class="text-gray-600 leading-relaxed mb-6">
-								Proceso transparente con entregas regulares y comunicación constante durante todo el proyecto.
+							<h3 class="text-xl font-medium text-black dark:text-white mb-4">Comunicación sin barreras</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+								Explicamos lo técnico en lenguaje claro.
 							</p>
-							<ul class="space-y-3 text-sm text-gray-500">
+							<ul class="space-y-3 text-sm text-gray-500 dark:text-gray-400">
 								<li class="flex items-start">
 									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 									</svg>
-									<span>Sprints semanales con objetivos claros</span>
+									<span>Traducción de conceptos complejos</span>
 								</li>
 								<li class="flex items-start">
 									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 									</svg>
-									<span>Reportes de progreso regulares</span>
+									<span>Documentación clara y accesible</span>
 								</li>
 								<li class="flex items-start">
 									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
 									</svg>
-									<span>Canal directo de comunicación</span>
+									<span>Transparencia en cada paso</span>
 								</li>
 							</ul>
 						</div>
 					</div>
 
-					<!-- Tecnología Moderna -->
-					<div class="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
-						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+					<!-- Tecnología moderna -->
+					<div class="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative">
-							<div class="w-16 h-16 bg-black rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-								</svg>
+							<div class="w-16 h-16 bg-black dark:bg-gray-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+								<CodeIcon />
 							</div>
-							<h3 class="text-xl font-medium text-black mb-4">Tecnología Moderna</h3>
-							<p class="text-gray-600 leading-relaxed mb-6">
-								Utilizamos las herramientas más actuales para garantizar productos escalables y mantenibles.
+							<h3 class="text-xl font-medium text-black dark:text-white mb-4">Tecnología moderna</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+								Usamos herramientas actuales y código de calidad.
 							</p>
-							<ul class="space-y-3 text-sm text-gray-500">
+							<ul class="space-y-3 text-sm text-gray-500 dark:text-gray-400">
 								<li class="flex items-start">
 									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -354,19 +261,17 @@ import ServiceCard from '../components/ServiceCard.jsx';
 					</div>
 
 					<!-- Soporte Continuo -->
-					<div class="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
-						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+					<div class="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative">
-							<div class="w-16 h-16 bg-black rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-								<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-								</svg>
+							<div class="w-16 h-16 bg-black dark:bg-gray-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+								<SupportIcon />
 							</div>
-							<h3 class="text-xl font-medium text-black mb-4">Soporte Continuo</h3>
-							<p class="text-gray-600 leading-relaxed mb-6">
-								Acompañamiento post-lanzamiento con mantenimiento, actualizaciones y soporte técnico.
+							<h3 class="text-xl font-medium text-black dark:text-white mb-4">Soporte continuo</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+								Acompañamiento post-lanzamiento y actualizaciones.
 							</p>
-							<ul class="space-y-3 text-sm text-gray-500">
+							<ul class="space-y-3 text-sm text-gray-500 dark:text-gray-400">
 								<li class="flex items-start">
 									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -389,50 +294,30 @@ import ServiceCard from '../components/ServiceCard.jsx';
 						</div>
 					</div>
 				</div>
-
-				<!-- Stats adicionales -->
-				<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-20 border-t border-gray-200">
-					<div class="text-center">
-						<div class="text-4xl font-bold text-black mb-2">100+</div>
-						<p class="text-gray-600">Proyectos Completados</p>
-					</div>
-					<div class="text-center">
-						<div class="text-4xl font-bold text-black mb-2">5+</div>
-						<p class="text-gray-600">Años de Experiencia</p>
-					</div>
-					<div class="text-center">
-						<div class="text-4xl font-bold text-black mb-2">98%</div>
-						<p class="text-gray-600">Clientes Satisfechos</p>
-					</div>
-					<div class="text-center">
-						<div class="text-4xl font-bold text-black mb-2">24/7</div>
-						<p class="text-gray-600">Soporte Disponible</p>
-					</div>
-				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-24 bg-black text-white">
+	<section class="py-24 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
 		<div class="container mx-auto px-6 text-center">
 			<div class="max-w-3xl mx-auto">
 				<h2 class="text-4xl md:text-5xl font-medium mb-6">
-					¿Tienes un proyecto en mente?
+					¿Listo para comenzar?
 				</h2>
-				<p class="text-xl text-gray-300 mb-12 leading-relaxed">
-					Hablemos sobre cómo podemos ayudarte a materializarlo
+				<p class="text-xl text-gray-300 dark:text-gray-600 mb-12 leading-relaxed">
+					Conversemos sobre tu proyecto y definamos juntos la mejor solución tecnológica para tu negocio.
 				</p>
 				
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
 					<a
 						href="/contacto"
-						class="px-8 py-4 bg-white text-black font-medium hover:bg-gray-100 transition-colors duration-200"
+						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors duration-200"
 					>
-						Empezar proyecto
+						Solicitar propuesta
 					</a>
 					<a
 						href="mailto:info@subdominio.com"
-						class="px-8 py-4 border border-gray-600 text-white font-medium hover:border-white transition-colors duration-200"
+						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-colors duration-200"
 					>
 						Enviar email
 					</a>
