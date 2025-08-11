@@ -47,11 +47,10 @@ const Header = ({ showThemeToggle = true }) => {
 
   const navItems = [
     { label: 'Inicio', href: '/' },
-    { label: 'Blog', href: '/blog' },
     { label: 'Nosotros', href: '/nosotros' },
     { label: 'Proyectos', href: '/proyectos' },
     { label: 'Productos', href: '/productos' },
-    { label: 'Contacto', href: '/contacto' },
+    { label: 'Blog', href: '/blog' },
   ];
 
   const services = [
@@ -81,16 +80,15 @@ const Header = ({ showThemeToggle = true }) => {
           </a>
 
           <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 text-base"
-              >
-                {item.label}
-              </a>
-            ))}
+            {/* Inicio */}
+            <a
+              href="/"
+              className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 text-base"
+            >
+              Inicio
+            </a>
             
+            {/* Servicios dropdown - positioned early for prominence */}
             <div className="relative services-dropdown">
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -120,6 +118,17 @@ const Header = ({ showThemeToggle = true }) => {
                 ))}
               </div>
             </div>
+            
+            {/* Rest of navigation items (excluding Inicio since it's already above) */}
+            {navItems.slice(1).map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 text-base"
+              >
+                {item.label}
+              </a>
+            ))}
             
             {showThemeToggle && <ThemeToggle />}
             
@@ -154,17 +163,16 @@ const Header = ({ showThemeToggle = true }) => {
           }`}
         >
           <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
-            {navItems.map((item, index) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
-                className="block py-4 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 border-b border-gray-100 dark:border-gray-800 text-base"
-              >
-                {item.label}
-              </a>
-            ))}
+            {/* Inicio */}
+            <a
+              href="/"
+              onClick={() => setIsMenuOpen(false)}
+              className="block py-4 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 border-b border-gray-100 dark:border-gray-800 text-base"
+            >
+              Inicio
+            </a>
             
+            {/* Servicios - positioned early for prominence */}
             <div className="py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="text-gray-600 dark:text-gray-300 font-medium mb-3">Servicios</div>
               {services.map((service) => (
@@ -178,6 +186,18 @@ const Header = ({ showThemeToggle = true }) => {
                 </a>
               ))}
             </div>
+            
+            {/* Rest of navigation items (excluding Inicio since it's already above) */}
+            {navItems.slice(1).map((item, index) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="block py-4 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 border-b border-gray-100 dark:border-gray-800 text-base"
+              >
+                {item.label}
+              </a>
+            ))}
             
             <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-800 flex items-center justify-between">
               {showThemeToggle && (
