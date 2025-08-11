@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import HeroSection from '../components/HeroSection.jsx';
 import ServiceCard from '../components/ServiceCard.jsx';
-import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components/Icons.jsx';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Inicio" description="Subdominio - Agencia de desarrollo que transforma ideas en experiencias digitales excepcionales.">
@@ -39,7 +39,7 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 				<a href="/servicios/web" class="group">
 					<div class="h-full bg-gray-50 dark:bg-gray-800 p-8 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white">
 						<div class="flex items-start justify-between mb-6">
-							<div class="w-12 h-12 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center text-xl font-mono">
+							<div class="w-12 h-12 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center text-xl font-mono rounded-icon rounded-icon">
 								01
 							</div>
 							<svg class="w-6 h-6 text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,7 +65,7 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 				<a href="/servicios/ecommerce" class="group">
 					<div class="h-full bg-gray-50 dark:bg-gray-800 p-8 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white">
 						<div class="flex items-start justify-between mb-6">
-							<div class="w-12 h-12 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center text-xl font-mono">
+							<div class="w-12 h-12 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center text-xl font-mono rounded-icon">
 								02
 							</div>
 							<svg class="w-6 h-6 text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,7 +90,7 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 				<a href="/servicios/automatizacion" class="group">
 					<div class="h-full bg-gray-50 dark:bg-gray-800 p-8 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white">
 						<div class="flex items-start justify-between mb-6">
-							<div class="w-12 h-12 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center text-xl font-mono">
+							<div class="w-12 h-12 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center text-xl font-mono rounded-icon">
 								03
 							</div>
 							<svg class="w-6 h-6 text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,7 +116,7 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 				<a href="/servicios/personalizado" class="group">
 					<div class="h-full bg-gray-50 dark:bg-gray-800 p-8 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white">
 						<div class="flex items-start justify-between mb-6">
-							<div class="w-12 h-12 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center text-xl font-mono">
+							<div class="w-12 h-12 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center text-xl font-mono rounded-icon">
 								04
 							</div>
 							<svg class="w-6 h-6 text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -144,7 +144,7 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 				</p>
 				<a 
 					href="/contacto"
-					class="inline-block px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors duration-200"
+					class="inline-block px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 hover:scale-[1.02] rounded-button"
 				>
 					Cuéntanos tu idea
 				</a>
@@ -172,8 +172,8 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 						<!-- Paso 1 -->
 						<div class="relative flex flex-col md:flex-row items-center gap-8">
 							<div class="w-full md:w-1/2 md:text-right md:pr-16">
-								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
-									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-xl mb-6 text-xl font-medium">
+								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-card shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon mb-6 text-xl font-medium">
 										01
 									</div>
 									<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Descubrimiento y Análisis</h3>
@@ -190,7 +190,7 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 							<div class="hidden md:block md:w-1/2"></div>
 							<div class="w-full md:w-1/2 md:pl-16">
 								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-xl mb-6 text-xl font-medium">
+									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon mb-6 text-xl font-medium">
 										02
 									</div>
 									<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Diseño y Estrategia</h3>
@@ -205,7 +205,7 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 						<div class="relative flex flex-col md:flex-row items-center gap-8">
 							<div class="w-full md:w-1/2 md:text-right md:pr-16">
 								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-xl mb-6 text-xl font-medium">
+									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon mb-6 text-xl font-medium">
 										03
 									</div>
 									<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Desarrollo Ágil</h3>
@@ -222,7 +222,7 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 							<div class="hidden md:block md:w-1/2"></div>
 							<div class="w-full md:w-1/2 md:pl-16">
 								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-xl mb-6 text-xl font-medium">
+									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon mb-6 text-xl font-medium">
 										04
 									</div>
 									<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Pruebas y Optimización</h3>
@@ -237,7 +237,7 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 						<div class="relative flex flex-col md:flex-row items-center gap-8">
 							<div class="w-full md:w-1/2 md:text-right md:pr-16">
 								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-xl mb-6 text-xl font-medium">
+									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon mb-6 text-xl font-medium">
 										05
 									</div>
 									<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Lanzamiento y Soporte</h3>
@@ -255,7 +255,7 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 					<p class="text-gray-600 dark:text-gray-300 mb-8">¿Listo para comenzar tu proyecto con nosotros?</p>
 					<a
 						href="/contacto"
-						class="inline-block px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-colors duration-200"
+						class="inline-block px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button"
 					>
 						Iniciar proyecto
 					</a>
@@ -278,11 +278,11 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 					<!-- Comunicación sin barreras -->
-					<div class="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+					<div class="group relative bg-white dark:bg-gray-800 rounded-card p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-card opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative">
 							<div class="w-16 h-16 bg-black dark:bg-gray-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-								<CheckCircleIcon />
+								<Icon name="check-circle" class="w-8 h-8 text-white dark:text-gray-900" />
 							</div>
 							<h3 class="text-xl font-medium text-black dark:text-white mb-4">Comunicación sin barreras</h3>
 							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
@@ -312,11 +312,11 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 					</div>
 
 					<!-- Tecnología moderna -->
-					<div class="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+					<div class="group relative bg-white dark:bg-gray-800 rounded-card p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-card opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative">
 							<div class="w-16 h-16 bg-black dark:bg-gray-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-								<CodeIcon />
+								<Icon name="code" class="w-8 h-8 text-white dark:text-gray-900" />
 							</div>
 							<h3 class="text-xl font-medium text-black dark:text-white mb-4">Tecnología moderna</h3>
 							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
@@ -346,11 +346,11 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 					</div>
 
 					<!-- Soporte Continuo -->
-					<div class="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+					<div class="group relative bg-white dark:bg-gray-800 rounded-card p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-card opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative">
 							<div class="w-16 h-16 bg-black dark:bg-gray-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-								<SupportIcon />
+								<Icon name="life-buoy" class="w-8 h-8 text-white dark:text-gray-900" />
 							</div>
 							<h3 class="text-xl font-medium text-black dark:text-white mb-4">Soporte continuo</h3>
 							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
@@ -396,13 +396,13 @@ import { CheckIcon, CheckCircleIcon, CodeIcon, SupportIcon } from '../components
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
 					<a
 						href="/contacto"
-						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors duration-200"
+						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-200 hover:scale-[1.02] rounded-button"
 					>
 						Solicitar propuesta
 					</a>
 					<a
 						href="mailto:info@subdominio.com"
-						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-colors duration-200"
+						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-colors duration-200 rounded-button"
 					>
 						Enviar email
 					</a>

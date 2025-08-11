@@ -71,7 +71,7 @@ const Header = ({ showThemeToggle = true }) => {
     >
       <div className="container mx-auto px-6">
         <nav className="flex items-center justify-between h-20">
-          <a href="/" className="text-2xl font-bold tracking-tight text-black dark:text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
+          <a href="/" className="text-2xl font-bold tracking-tight text-black dark:text-white font-display">
             subdominio.
           </a>
 
@@ -120,7 +120,7 @@ const Header = ({ showThemeToggle = true }) => {
             
             <a
               href="/contacto"
-              className="px-6 py-2 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-colors duration-200"
+              className="px-8 py-3 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button"
             >
               Hablemos
             </a>
@@ -179,7 +179,7 @@ const Header = ({ showThemeToggle = true }) => {
               <a
                 href="/contacto"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex-1 ml-4 px-6 py-3 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium text-center hover:bg-gray-800 dark:hover:bg-gray-300 transition-colors duration-200"
+                className="flex-1 ml-4 px-8 py-3 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium text-center hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button"
               >
                 Hablemos
               </a>

@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { BackArrowIcon } from '../components/ContactIcons.jsx';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Nuestros Productos" description="Descubre los productos digitales desarrollados y comercializados por Subdominio. Soluciones listas para usar que impulsan la productividad empresarial.">
@@ -8,8 +8,8 @@ import { BackArrowIcon } from '../components/ContactIcons.jsx';
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
 				<div class="mb-8">
-					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
-						<BackArrowIcon />
+					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-200 hover:scale-[1.02] rounded-button mb-6">
+						<Icon name="arrow-left" class="w-4 h-4 mr-2" />
 						Volver al inicio
 					</a>
 				</div>
@@ -50,7 +50,7 @@ import { BackArrowIcon } from '../components/ContactIcons.jsx';
 								href="https://erpsync.app" 
 								target="_blank" 
 								rel="noopener noreferrer"
-								class="inline-flex items-center text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
+								class="inline-flex items-center text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-all duration-200 hover:scale-[1.02] rounded-button"
 							>
 								<span class="text-sm mr-2">Visitar sitio</span>
 								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -100,7 +100,7 @@ import { BackArrowIcon } from '../components/ContactIcons.jsx';
 								href="https://erpbackup.cl" 
 								target="_blank" 
 								rel="noopener noreferrer"
-								class="inline-flex items-center text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
+								class="inline-flex items-center text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-all duration-200 hover:scale-[1.02] rounded-button"
 							>
 								<span class="text-sm mr-2">Visitar sitio</span>
 								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,7 +148,7 @@ import { BackArrowIcon } from '../components/ContactIcons.jsx';
 							</div>
 							<a 
 								href="mailto:productos@subdominio.com?subject=Consulta%20sobre%20Softland%20API%20REST" 
-								class="inline-flex items-center text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
+								class="inline-flex items-center text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-all duration-200 hover:scale-[1.02] rounded-button"
 							>
 								<span class="text-sm mr-2">Consultar</span>
 								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -213,7 +213,7 @@ import { BackArrowIcon } from '../components/ContactIcons.jsx';
 					</a>
 					<a
 						href="mailto:productos@subdominio.com"
-						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-colors duration-200"
+						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-button"
 					>
 						Email comercial
 					</a>

@@ -1,16 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { BackArrowIcon } from '../components/ContactIcons.jsx';
-import { QualityIcon, CommunicationIcon, InnovationIcon, TimeIcon, TeamIcon, SecurityIcon } from '../components/ValueIcons.jsx';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Nosotros" description="Conoce a Subdominio, agencia especializada en desarrollo web, e-commerce y aplicaciones. Nuestro equipo, valores y metodología de trabajo.">
-	<section class="pt-32 pb-20 bg-white dark:bg-gray-900">
+	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
 				<div class="mb-8">
 					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
-						<BackArrowIcon />
+						<Icon name="arrow-left" class="w-4 h-4 mr-2" />
 						Volver al inicio
 					</a>
 				</div>
@@ -91,8 +90,8 @@ import { QualityIcon, CommunicationIcon, InnovationIcon, TimeIcon, TeamIcon, Sec
 				
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16">
 					<div class="group">
-						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-							<QualityIcon />
+						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-icon flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+							<Icon name="check-circle" class="w-8 h-8 text-white dark:text-gray-900" />
 						</div>
 						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Código de Calidad</h3>
 						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
@@ -101,8 +100,8 @@ import { QualityIcon, CommunicationIcon, InnovationIcon, TimeIcon, TeamIcon, Sec
 					</div>
 
 					<div class="group">
-						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-							<CommunicationIcon />
+						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-icon flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+							<Icon name="message-circle" class="w-8 h-8 text-white dark:text-gray-900" />
 						</div>
 						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Transparencia Total</h3>
 						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
@@ -111,8 +110,8 @@ import { QualityIcon, CommunicationIcon, InnovationIcon, TimeIcon, TeamIcon, Sec
 					</div>
 
 					<div class="group">
-						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-							<InnovationIcon />
+						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-icon flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+							<Icon name="zap" class="w-8 h-8 text-white dark:text-gray-900" />
 						</div>
 						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Tecnología Moderna</h3>
 						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
@@ -121,8 +120,8 @@ import { QualityIcon, CommunicationIcon, InnovationIcon, TimeIcon, TeamIcon, Sec
 					</div>
 
 					<div class="group">
-						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-							<TimeIcon />
+						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-icon flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+							<Icon name="clock" class="w-8 h-8 text-white dark:text-gray-900" />
 						</div>
 						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Entregas Puntuales</h3>
 						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
@@ -131,8 +130,8 @@ import { QualityIcon, CommunicationIcon, InnovationIcon, TimeIcon, TeamIcon, Sec
 					</div>
 
 					<div class="group">
-						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-							<TeamIcon />
+						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-icon flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+							<Icon name="users" class="w-8 h-8 text-white dark:text-gray-900" />
 						</div>
 						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Equipo Dedicado</h3>
 						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
@@ -141,8 +140,8 @@ import { QualityIcon, CommunicationIcon, InnovationIcon, TimeIcon, TeamIcon, Sec
 					</div>
 
 					<div class="group">
-						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-							<SecurityIcon />
+						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-icon flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+							<Icon name="shield" class="w-8 h-8 text-white dark:text-gray-900" />
 						</div>
 						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Compromiso Real</h3>
 						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
@@ -262,7 +261,7 @@ import { QualityIcon, CommunicationIcon, InnovationIcon, TimeIcon, TeamIcon, Sec
 				
 				<div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
 					<div class="relative pl-12">
-						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-full flex items-center justify-center text-xs font-bold">1</div>
+						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon flex items-center justify-center text-xs font-bold">1</div>
 						<h4 class="font-medium text-black dark:text-white mb-2">Precio cerrado, sin sorpresas</h4>
 						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
 							Presupuesto fijo desde el día uno. Sabés exactamente cuánto vas a invertir.
@@ -270,7 +269,7 @@ import { QualityIcon, CommunicationIcon, InnovationIcon, TimeIcon, TeamIcon, Sec
 					</div>
 
 					<div class="relative pl-12">
-						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-full flex items-center justify-center text-xs font-bold">2</div>
+						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon flex items-center justify-center text-xs font-bold">2</div>
 						<h4 class="font-medium text-black dark:text-white mb-2">Código que se entiende</h4>
 						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
 							Documentado y estructurado. Cualquier dev puede tomarlo y seguir trabajando.
@@ -278,7 +277,7 @@ import { QualityIcon, CommunicationIcon, InnovationIcon, TimeIcon, TeamIcon, Sec
 					</div>
 
 					<div class="relative pl-12">
-						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-full flex items-center justify-center text-xs font-bold">3</div>
+						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon flex items-center justify-center text-xs font-bold">3</div>
 						<h4 class="font-medium text-black dark:text-white mb-2">Soporte real post-lanzamiento</h4>
 						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
 							30 días de garantía incluidos. Ajustes y correcciones sin costo adicional.
@@ -286,7 +285,7 @@ import { QualityIcon, CommunicationIcon, InnovationIcon, TimeIcon, TeamIcon, Sec
 					</div>
 
 					<div class="relative pl-12">
-						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-full flex items-center justify-center text-xs font-bold">4</div>
+						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon flex items-center justify-center text-xs font-bold">4</div>
 						<h4 class="font-medium text-black dark:text-white mb-2">Te enseñamos a usarlo</h4>
 						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
 							Capacitación incluida. Videos, documentación y sesiones 1:1 para tu equipo.
@@ -294,7 +293,7 @@ import { QualityIcon, CommunicationIcon, InnovationIcon, TimeIcon, TeamIcon, Sec
 					</div>
 
 					<div class="relative pl-12">
-						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-full flex items-center justify-center text-xs font-bold">5</div>
+						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon flex items-center justify-center text-xs font-bold">5</div>
 						<h4 class="font-medium text-black dark:text-white mb-2">Respaldo empresarial</h4>
 						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
 							Somos parte de Tecnológica Chile. Tenés el respaldo de una empresa establecida.
@@ -302,7 +301,7 @@ import { QualityIcon, CommunicationIcon, InnovationIcon, TimeIcon, TeamIcon, Sec
 					</div>
 
 					<div class="relative pl-12">
-						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-full flex items-center justify-center text-xs font-bold">6</div>
+						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon flex items-center justify-center text-xs font-bold">6</div>
 						<h4 class="font-medium text-black dark:text-white mb-2">Stack moderno y probado</h4>
 						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
 							Usamos tecnologías que escalan. No experimentos, solo lo que funciona.
@@ -326,13 +325,13 @@ import { QualityIcon, CommunicationIcon, InnovationIcon, TimeIcon, TeamIcon, Sec
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
 					<a
 						href="/contacto"
-						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-105"
+						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02] rounded-button"
 					>
 						Hablemos de tu proyecto
 					</a>
 					<a
 						href="/proyectos"
-						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-colors duration-200"
+						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-colors duration-200 rounded-button"
 					>
 						Ver casos de éxito
 					</a>

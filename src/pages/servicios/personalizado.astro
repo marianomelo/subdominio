@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { BackArrowIcon } from '../../components/ContactIcons.jsx';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Desarrollo Personalizado" description="Creamos soluciones tecnológicas específicas para tu empresa. Backend con Laravel, frontend con Next.js, sistemas empresariales y integraciones.">
@@ -9,7 +9,7 @@ import { BackArrowIcon } from '../../components/ContactIcons.jsx';
 			<div class="max-w-4xl mx-auto">
 				<div class="mb-8">
 					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
-						<BackArrowIcon />
+						<Icon name="arrow-left" class="w-4 h-4 mr-2" />
 						Volver al inicio
 					</a>
 				</div>
@@ -25,13 +25,13 @@ import { BackArrowIcon } from '../../components/ContactIcons.jsx';
 				<div class="flex flex-col sm:flex-row gap-4">
 					<a
 						href="/contacto"
-						class="px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-colors duration-200"
+						class="px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button"
 					>
 						Solicitar consultoría
 					</a>
 					<a
 						href="#capacidades"
-						class="px-8 py-4 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 font-medium hover:border-black dark:hover:border-white transition-colors duration-200"
+						class="px-8 py-4 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 font-medium hover:border-black dark:hover:border-white transition-all duration-200 hover:scale-[1.02] rounded-button"
 					>
 						Cuéntanos tu idea
 					</a>
@@ -312,13 +312,13 @@ import { BackArrowIcon } from '../../components/ContactIcons.jsx';
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
 					<a
 						href="/contacto"
-						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02] rounded-button"
 					>
 						Comienza tu proyecto
 					</a>
 					<a
 						href="mailto:info@subdominio.com"
-						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-colors duration-200"
+						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-button"
 					>
 						Enviar email
 					</a>

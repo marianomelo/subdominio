@@ -101,7 +101,7 @@ const imageURL = new URL(image, Astro.site || 'https://subdominio.com').toString
 		<main class="flex-grow pt-16 lg:pt-20">
 			<slot />
 		</main>
-		<Footer />
+		<Footer client:load />
 		<CookieBanner client:load />
 	</body>
 </html>

@@ -72,7 +72,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           <div className="lg:col-span-2">
-            <a href="/" className="inline-block text-2xl font-bold text-black dark:text-white mb-6 hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-200" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            <a href="/" className="inline-block text-2xl font-bold text-black dark:text-white mb-6 hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-200 font-display">
               subdominio.
             </a>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed max-w-sm mb-6">
@@ -85,7 +85,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 hover:scale-110"
+                  className="w-10 h-10 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 hover:scale-110 rounded-icon"
                   aria-label={social.name}
                 >
                   <social.Icon className="w-5 h-5" />
@@ -163,7 +163,7 @@ const Footer = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 text-sm"
+                  className="px-8 py-3 bg-black dark:bg-white text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] rounded-button text-sm"
                 >
                   {isSubmitting ? '...' : 'Suscribir'}
                 </button>

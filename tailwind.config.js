@@ -6,8 +6,13 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        display: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+      },
+      borderRadius: {
+        'card': '0.75rem',
+        'button': '0.5rem',  
+        'icon': '0.75rem',
       },
       colors: {
         gray: {
@@ -28,6 +33,15 @@ export default {
         '18': '4.5rem',
         '88': '22rem',
         '120': '30rem',
+        'section': '5rem',    // 80px - py-20 estándar
+        'section-sm': '4rem', // 64px - py-16 para contenido compacto  
+        'section-lg': '6rem', // 96px - py-24 para secciones hero
+      },
+      maxWidth: {
+        'container-sm': '48rem',    // 768px - Para contenido angosto
+        'container': '64rem',       // 1024px - Para contenido principal
+        'container-lg': '80rem',    // 1280px - Para contenido ancho
+        'container-xl': '90rem',    // 1440px - Para contenido extra ancho
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',
