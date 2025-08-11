@@ -69,13 +69,13 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-50 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
-      <div className="container mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
           <div className="lg:col-span-2">
-            <a href="/" className="inline-block text-2xl font-bold text-black dark:text-white mb-6 hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-200 font-display">
+            <a href="/" className="inline-block text-xl sm:text-2xl font-bold text-black dark:text-white mb-4 sm:mb-6 hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-200 font-display">
               subdominio.
             </a>
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed max-w-sm mb-6">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed max-w-sm mb-4 sm:mb-6">
               División especializada de Tecnológica Chile en desarrollo web y soluciones digitales que impulsan negocios.
             </p>
             <div className="flex space-x-4">
@@ -95,7 +95,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-6 uppercase tracking-wide">Servicios</h3>
+            <h3 className="text-xs sm:text-sm font-semibold text-black dark:text-white mb-4 sm:mb-6 uppercase tracking-wide">Servicios</h3>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
@@ -111,7 +111,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-6 uppercase tracking-wide">Empresa</h3>
+            <h3 className="text-xs sm:text-sm font-semibold text-black dark:text-white mb-4 sm:mb-6 uppercase tracking-wide">Empresa</h3>
             <ul className="space-y-3">
               {company.map((item) => (
                 <li key={item.name}>
@@ -127,7 +127,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-6 uppercase tracking-wide">Contacto</h3>
+            <h3 className="text-xs sm:text-sm font-semibold text-black dark:text-white mb-4 sm:mb-6 uppercase tracking-wide">Contacto</h3>
             <ul className="space-y-3">
               {contact.map((item) => (
                 <li key={item.name}>
@@ -144,26 +144,26 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="py-12 border-t border-gray-200 dark:border-gray-800">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="py-8 sm:py-12 border-t border-gray-200 dark:border-gray-800">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
             <div>
-              <h3 className="text-lg font-medium text-black dark:text-white mb-2">Newsletter</h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">Recibe tips de desarrollo y novedades tech directo en tu inbox.</p>
+              <h3 className="text-base sm:text-lg font-medium text-black dark:text-white mb-2">Newsletter</h3>
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Recibe tips de desarrollo y novedades tech directo en tu inbox.</p>
             </div>
             <div>
-              <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="tu@email.com"
                   required
-                  className="flex-1 px-4 py-3 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:border-black dark:focus:border-white transition-colors duration-200 text-sm"
+                  className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:border-black dark:focus:border-white transition-colors duration-200 text-sm"
                 />
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-8 py-3 bg-black dark:bg-white text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] rounded-button text-sm"
+                  className="px-6 sm:px-8 py-2.5 sm:py-3 bg-black dark:bg-white text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] rounded-button text-sm"
                 >
                   {isSubmitting ? '...' : 'Suscribir'}
                 </button>
@@ -175,13 +175,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-gray-200 dark:border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+        <div className="pt-6 sm:pt-8 border-t border-gray-200 dark:border-gray-800">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 md:gap-8">
               <p className="text-xs text-gray-500 dark:text-gray-400">
                 © {currentYear} Subdominio
               </p>
-              <div className="flex items-center gap-6 text-xs">
+              <div className="flex items-center gap-4 sm:gap-6 text-xs">
                 <a
                   href="/privacidad"
                   className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
