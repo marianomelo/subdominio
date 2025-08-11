@@ -1,6 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import LucideIcon from "../../components/LucideIcon.jsx";
+import ServiceSchema from '../../components/ServiceSchema.astro';
+
+const serviceOffers = [
+  {
+    name: "Automatización con IA",
+    description: "Implementación de inteligencia artificial para automatizar procesos empresariales"
+  },
+  {
+    name: "Workflows Personalizados",
+    description: "Flujos de trabajo automatizados adaptados a tus procesos específicos"
+  },
+  {
+    name: "Integración de Sistemas",
+    description: "Conectamos tus herramientas existentes para trabajar de forma automatizada"
+  },
+  {
+    name: "Automatización de Reportes",
+    description: "Generación automática de informes y dashboards en tiempo real"
+  }
+];
 ---
 
 <Layout title="Automatización de Procesos" description="Optimizamos tu negocio con tecnología de vanguardia y soluciones inteligentes. Automatización empresarial, IA y workflows personalizados.">
@@ -405,7 +425,7 @@ import LucideIcon from "../../components/LucideIcon.jsx";
 						Comienza tu automatización
 					</a>
 					<a
-						href="mailto:info@subdominio.com"
+						href="mailto:info@subdominio.cl"
 						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-button"
 					>
 						Enviar email
@@ -414,4 +434,12 @@ import LucideIcon from "../../components/LucideIcon.jsx";
 			</div>
 		</div>
 	</section>
+	
+	<ServiceSchema 
+		name="Automatización de Procesos"
+		description="Optimizamos tu negocio con tecnología de vanguardia y soluciones inteligentes. Automatización real, resultados tangibles."
+		category="Automatización Empresarial"
+		offers={serviceOffers}
+		url="https://subdominio.cl/servicios/automatizacion"
+	/>
 </Layout>

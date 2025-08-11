@@ -10,13 +10,13 @@ import LucideIcon from '../components/LucideIcon.jsx';
 	<AnimatedHeroSection client:load />
 
 	<!-- Sección Intro - Quiénes somos -->
-	<section class="py-24 bg-gray-50 dark:bg-gray-950">
+	<section class="py-section bg-gray-50 dark:bg-gray-950">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto text-center">
-				<h2 class="text-4xl md:text-5xl font-medium mb-6 text-black dark:text-white">
+				<h2 class="text-h2 md:text-5xl font-medium mb-6 text-black dark:text-white">
 					Un equipo que entiende tu negocio y domina la tecnología
 				</h2>
-				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+				<p class="text-body-lg text-gray-600 dark:text-gray-300">
 					En <span class="font-medium">subdominio</span>, combinamos comunicación clara con un conocimiento técnico profundo para que entiendas cada paso de tu proyecto.
 					Nuestro trabajo es traducir lo complejo en soluciones digitales prácticas, escalables y fáciles de administrar.
 				</p>
@@ -26,110 +26,79 @@ import LucideIcon from '../components/LucideIcon.jsx';
 
 	<AnimatedServiceGrid client:visible />
 
-	<section class="py-24 bg-gray-50 dark:bg-gray-950">
+	<section class="py-section bg-gray-50 dark:bg-gray-950">
 		<div class="container mx-auto px-6">
-			<div class="max-w-5xl mx-auto">
-				<div class="text-center mb-20">
-					<h2 class="text-4xl md:text-5xl font-medium mb-6 text-black dark:text-white">
-						De la idea al lanzamiento, con un plan claro y transparente
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-h2 md:text-5xl font-medium mb-6 text-black dark:text-white">
+						Nuestro proceso
 					</h2>
-					<p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-						Nuestro proceso paso a paso
+					<p class="text-body-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+						Simple, transparente y efectivo
 					</p>
 				</div>
 
-				<div class="relative">
-					<!-- Línea conectora vertical (oculta en móvil) -->
-					<div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-gray-300 via-gray-400 to-gray-300"></div>
-					
-					<div class="space-y-16 md:space-y-24">
-						<!-- Paso 1 -->
-						<div class="relative flex flex-col md:flex-row items-center gap-8">
-							<div class="w-full md:w-1/2 md:text-right md:pr-16">
-								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-card shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
-									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon mb-6 text-xl font-medium">
-										01
-									</div>
-									<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Descubrimiento y Análisis</h3>
-									<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-										Definimos objetivos, alcances y requisitos.
-									</p>
-								</div>
-							</div>
-							<div class="hidden md:block md:w-1/2"></div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
+					<!-- Paso 1 -->
+					<div class="group">
+						<div class="relative h-full bg-white dark:bg-gray-900 p-6 rounded-card border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-card hover:shadow-lg">
+							<div class="text-3xl font-bold text-gray-200 dark:text-gray-800 mb-4">01</div>
+							<h3 class="text-h5 font-medium text-black dark:text-white mb-2">Análisis</h3>
+							<p class="text-body-sm text-gray-600 dark:text-gray-400">
+								Entendemos tu negocio y objetivos
+							</p>
 						</div>
+					</div>
 
-						<!-- Paso 2 -->
-						<div class="relative flex flex-col md:flex-row items-center gap-8">
-							<div class="hidden md:block md:w-1/2"></div>
-							<div class="w-full md:w-1/2 md:pl-16">
-								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon mb-6 text-xl font-medium">
-										02
-									</div>
-									<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Diseño y Estrategia</h3>
-									<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-										Creamos prototipos y la estructura técnica del proyecto.
-									</p>
-								</div>
-							</div>
+					<!-- Paso 2 -->
+					<div class="group">
+						<div class="relative h-full bg-white dark:bg-gray-900 p-6 rounded-card border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-card hover:shadow-lg">
+							<div class="text-3xl font-bold text-gray-200 dark:text-gray-800 mb-4">02</div>
+							<h3 class="text-h5 font-medium text-black dark:text-white mb-2">Diseño</h3>
+							<p class="text-body-sm text-gray-600 dark:text-gray-400">
+								Creamos la estructura y flujos
+							</p>
 						</div>
+					</div>
 
-						<!-- Paso 3 -->
-						<div class="relative flex flex-col md:flex-row items-center gap-8">
-							<div class="w-full md:w-1/2 md:text-right md:pr-16">
-								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon mb-6 text-xl font-medium">
-										03
-									</div>
-									<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Desarrollo Ágil</h3>
-									<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-										Entregas semanales y revisiones constantes.
-									</p>
-								</div>
-							</div>
-							<div class="hidden md:block md:w-1/2"></div>
+					<!-- Paso 3 -->
+					<div class="group">
+						<div class="relative h-full bg-white dark:bg-gray-900 p-6 rounded-card border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-card hover:shadow-lg">
+							<div class="text-3xl font-bold text-gray-200 dark:text-gray-800 mb-4">03</div>
+							<h3 class="text-h5 font-medium text-black dark:text-white mb-2">Desarrollo</h3>
+							<p class="text-body-sm text-gray-600 dark:text-gray-400">
+								Construimos con código de calidad
+							</p>
 						</div>
+					</div>
 
-						<!-- Paso 4 -->
-						<div class="relative flex flex-col md:flex-row items-center gap-8">
-							<div class="hidden md:block md:w-1/2"></div>
-							<div class="w-full md:w-1/2 md:pl-16">
-								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon mb-6 text-xl font-medium">
-										04
-									</div>
-									<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Pruebas y Optimización</h3>
-									<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-										Validamos rendimiento, seguridad y SEO.
-									</p>
-								</div>
-							</div>
+					<!-- Paso 4 -->
+					<div class="group">
+						<div class="relative h-full bg-white dark:bg-gray-900 p-6 rounded-card border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-card hover:shadow-lg">
+							<div class="text-3xl font-bold text-gray-200 dark:text-gray-800 mb-4">04</div>
+							<h3 class="text-h5 font-medium text-black dark:text-white mb-2">Pruebas</h3>
+							<p class="text-body-sm text-gray-600 dark:text-gray-400">
+								Optimizamos rendimiento y SEO
+							</p>
 						</div>
+					</div>
 
-						<!-- Paso 5 -->
-						<div class="relative flex flex-col md:flex-row items-center gap-8">
-							<div class="w-full md:w-1/2 md:text-right md:pr-16">
-								<div class="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-									<div class="inline-flex items-center justify-center w-16 h-16 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon mb-6 text-xl font-medium">
-										05
-									</div>
-									<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Lanzamiento y Soporte</h3>
-									<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-										Implementación segura y mantenimiento continuo.
-									</p>
-								</div>
-							</div>
-							<div class="hidden md:block md:w-1/2"></div>
+					<!-- Paso 5 -->
+					<div class="group">
+						<div class="relative h-full bg-white dark:bg-gray-900 p-6 rounded-card border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-card hover:shadow-lg">
+							<div class="text-3xl font-bold text-gray-200 dark:text-gray-800 mb-4">05</div>
+							<h3 class="text-h5 font-medium text-black dark:text-white mb-2">Lanzamiento</h3>
+							<p class="text-body-sm text-gray-600 dark:text-gray-400">
+								Deploy seguro y soporte continuo
+							</p>
 						</div>
 					</div>
 				</div>
 
-				<div class="text-center mt-16">
-					<p class="text-gray-600 dark:text-gray-300 mb-8">¿Listo para comenzar tu proyecto con nosotros?</p>
+				<div class="text-center mt-12">
 					<a
 						href="/contacto"
-						class="inline-block px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button"
+						class="inline-block px-8 py-3 bg-black dark:bg-white text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 hover:scale-[1.02] rounded-button shadow-button hover:shadow-button-hover text-base"
 					>
 						Iniciar proyecto
 					</a>
@@ -138,31 +107,31 @@ import LucideIcon from '../components/LucideIcon.jsx';
 		</div>
 	</section>
 
-	<section class="py-24 bg-white dark:bg-gray-900">
+	<section class="py-section bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="max-w-6xl mx-auto">
 				<div class="text-center mb-20">
-					<h2 class="text-4xl md:text-5xl font-medium mb-6 text-black dark:text-white">
+					<h2 class="text-h2 md:text-5xl font-medium mb-6 text-black dark:text-white">
 						Lo que nos diferencia
 					</h2>
-					<p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+					<p class="text-body-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
 						Por qué elegirnos para tu proyecto digital
 					</p>
 				</div>
 
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 					<!-- Comunicación sin barreras -->
-					<div class="group relative bg-white dark:bg-gray-800 rounded-card p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+					<div class="group relative bg-white dark:bg-gray-800 rounded-card p-8 shadow-card hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
 						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-card opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative">
-							<div class="w-16 h-16 bg-black dark:bg-gray-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+							<div class="w-16 h-16 bg-black dark:bg-gray-200 rounded-icon flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
 								<LucideIcon name="check-circle" className="w-8 h-8 text-white dark:text-gray-900" />
 							</div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-4">Comunicación sin barreras</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+							<h3 class="text-h4 font-medium text-black dark:text-white mb-4">Comunicación sin barreras</h3>
+							<p class="text-body text-gray-600 dark:text-gray-300 mb-6">
 								Explicamos lo técnico en lenguaje claro.
 							</p>
-							<ul class="space-y-3 text-sm text-gray-500 dark:text-gray-400">
+							<ul class="space-y-3 text-body-sm text-gray-500 dark:text-gray-400">
 								<li class="flex items-start">
 									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -186,17 +155,17 @@ import LucideIcon from '../components/LucideIcon.jsx';
 					</div>
 
 					<!-- Tecnología moderna -->
-					<div class="group relative bg-white dark:bg-gray-800 rounded-card p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+					<div class="group relative bg-white dark:bg-gray-800 rounded-card p-8 shadow-card hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
 						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-card opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative">
-							<div class="w-16 h-16 bg-black dark:bg-gray-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+							<div class="w-16 h-16 bg-black dark:bg-gray-200 rounded-icon flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
 								<LucideIcon name="code" className="w-8 h-8 text-white dark:text-gray-900" />
 							</div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-4">Tecnología moderna</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+							<h3 class="text-h4 font-medium text-black dark:text-white mb-4">Tecnología moderna</h3>
+							<p class="text-body text-gray-600 dark:text-gray-300 mb-6">
 								Usamos herramientas actuales y código de calidad.
 							</p>
-							<ul class="space-y-3 text-sm text-gray-500 dark:text-gray-400">
+							<ul class="space-y-3 text-body-sm text-gray-500 dark:text-gray-400">
 								<li class="flex items-start">
 									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -220,17 +189,17 @@ import LucideIcon from '../components/LucideIcon.jsx';
 					</div>
 
 					<!-- Soporte Continuo -->
-					<div class="group relative bg-white dark:bg-gray-800 rounded-card p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+					<div class="group relative bg-white dark:bg-gray-800 rounded-card p-8 shadow-card hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
 						<div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-card opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative">
-							<div class="w-16 h-16 bg-black dark:bg-gray-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+							<div class="w-16 h-16 bg-black dark:bg-gray-200 rounded-icon flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
 								<LucideIcon name="life-buoy" className="w-8 h-8 text-white dark:text-gray-900" />
 							</div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-4">Soporte continuo</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+							<h3 class="text-h4 font-medium text-black dark:text-white mb-4">Soporte continuo</h3>
+							<p class="text-body text-gray-600 dark:text-gray-300 mb-6">
 								Acompañamiento post-lanzamiento y actualizaciones.
 							</p>
-							<ul class="space-y-3 text-sm text-gray-500 dark:text-gray-400">
+							<ul class="space-y-3 text-body-sm text-gray-500 dark:text-gray-400">
 								<li class="flex items-start">
 									<svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -257,26 +226,26 @@ import LucideIcon from '../components/LucideIcon.jsx';
 		</div>
 	</section>
 
-	<section class="py-24 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
+	<section class="py-section bg-black dark:bg-gray-100 text-white dark:text-gray-900">
 		<div class="container mx-auto px-6 text-center">
 			<div class="max-w-3xl mx-auto">
-				<h2 class="text-4xl md:text-5xl font-medium mb-6">
+				<h2 class="text-h2 md:text-5xl font-medium mb-6">
 					¿Listo para comenzar?
 				</h2>
-				<p class="text-xl text-gray-300 dark:text-gray-600 mb-12 leading-relaxed">
+				<p class="text-body-lg text-gray-300 dark:text-gray-600 mb-12">
 					Conversemos sobre tu proyecto y definamos juntos la mejor solución tecnológica para tu negocio.
 				</p>
 				
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
 					<a
 						href="/contacto"
-						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-200 hover:scale-[1.02] rounded-button"
+						class="px-8 py-3 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-200 hover:scale-[1.02] rounded-button shadow-button hover:shadow-button-hover text-base"
 					>
 						Solicitar propuesta
 					</a>
 					<a
-						href="mailto:info@subdominio.com"
-						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-colors duration-200 rounded-button"
+						href="mailto:info@subdominio.cl"
+						class="px-8 py-3 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 rounded-button text-base"
 					>
 						Enviar email
 					</a>

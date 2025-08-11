@@ -1,18 +1,39 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import LucideIcon from "../../components/LucideIcon.jsx";
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import ServiceSchema from '../../components/ServiceSchema.astro';
+
+const breadcrumbItems = [
+  { name: "Servicios", item: "https://subdominio.cl/servicios" },
+  { name: "Desarrollo Web", item: "https://subdominio.cl/servicios/web" }
+];
+
+const serviceOffers = [
+  {
+    name: "Sitios Web Corporativos",
+    description: "Páginas web profesionales que representan tu marca y generan confianza"
+  },
+  {
+    name: "Desarrollo con WordPress",
+    description: "CMS personalizado y fácil de administrar para tu contenido"
+  },
+  {
+    name: "Landing Pages de Conversión",
+    description: "Páginas optimizadas para generar leads y conversiones"
+  },
+  {
+    name: "Sitios Web Responsive",
+    description: "Diseños que funcionan perfectamente en todos los dispositivos"
+  }
+];
 ---
 
 <Layout title="Desarrollo Web" description="Servicios profesionales de desarrollo web. Creamos sitios web modernos, rápidos y escalables con las mejores tecnologías del mercado.">
 	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
-				<div class="mb-8">
-					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
-						<LucideIcon name="arrow-left" className="w-4 h-4 mr-2" />
-						Volver al inicio
-					</a>
-				</div>
+				<Breadcrumb items={breadcrumbItems} />
 				
 				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black dark:text-white leading-tight">
 					Páginas web que impresionan y funcionan de verdad
@@ -63,10 +84,10 @@ import LucideIcon from "../../components/LucideIcon.jsx";
 					<div class="border-b border-gray-200 dark:border-gray-700 pb-12 last:border-b-0 last:pb-0">
 						<h3 class="text-xl font-medium text-black dark:text-white mb-4">WordPress a tu medida</h3>
 						<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-							Sitios versátiles y fáciles de gestionar, con temas y plugins a medida, y optimización avanzada de rendimiento.
+							Sitios versátiles y fáciles de gestionar, con temas y plugins a medida, optimización avanzada de rendimiento y hosting especializado en nuestros servidores locales para máxima velocidad.
 						</p>
 						<p class="text-sm text-gray-500 dark:text-gray-400 italic">
-							Tecnologías: WordPress con temas personalizados, plugins propios, SEO avanzado.
+							Tecnologías: WordPress con temas personalizados, plugins propios, SEO avanzado, hosting optimizado.
 						</p>
 					</div>
 
@@ -277,7 +298,7 @@ import LucideIcon from "../../components/LucideIcon.jsx";
 						Empezar proyecto
 					</a>
 					<a
-						href="mailto:info@subdominio.com"
+						href="mailto:info@subdominio.cl"
 						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-button"
 					>
 						Enviar email
@@ -286,4 +307,12 @@ import LucideIcon from "../../components/LucideIcon.jsx";
 			</div>
 		</div>
 	</section>
+	
+	<ServiceSchema 
+		name="Desarrollo Web Profesional"
+		description="Creamos sitios web modernos, rápidos y escalables con las mejores tecnologías del mercado. Páginas web que impresionan y funcionan de verdad."
+		category="Desarrollo Web"
+		offers={serviceOffers}
+		url="https://subdominio.cl/servicios/web"
+	/>
 </Layout>

@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LucideIcon from "../components/LucideIcon.jsx";
+---
+
+<Layout title="Proyectos" description="Portafolio de proyectos web y software desarrollados por Subdominio. Soluciones digitales que impulsan negocios.">
+	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<div class="mb-8">
+					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-200 hover:scale-[1.02] rounded-button mb-6">
+						<LucideIcon name="arrow-left" className="w-4 h-4 mr-2" />
+						Volver al inicio
+					</a>
+				</div>
+				
+				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black dark:text-white leading-tight">
+					Proyectos
+				</h1>
+				
+				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-12 max-w-3xl">
+					Una selección de trabajos recientes que muestran nuestras capacidades técnicas.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Grid de Proyectos -->
+	<section class="py-20 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6">
+			<div class="max-w-5xl mx-auto">
+				<div class="space-y-8">
+					
+					<!-- Tecnológica Chile -->
+					<div class="border-b border-gray-200 dark:border-gray-800 pb-12">
+						<a href="https://tecnologicachile.cl" target="_blank" rel="noopener noreferrer" class="inline-block mb-4 group">
+							<h3 class="text-2xl font-medium text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
+								tecnologicachile.cl →
+							</h3>
+						</a>
+						<p class="text-gray-600 dark:text-gray-400 mb-4 max-w-3xl">
+							Sitio corporativo de empresa de soluciones tecnológicas, datacenter y transformación digital.
+						</p>
+						<div class="flex gap-3 text-sm text-gray-500">
+							<span>Astro</span>
+							<span>·</span>
+							<span>React</span>
+							<span>·</span>
+							<span>Tailwind CSS</span>
+						</div>
+					</div>
+
+					<!-- Tienda Sagita -->
+					<div class="border-b border-gray-200 dark:border-gray-800 pb-12">
+						<a href="https://tienda.sagita.cl" target="_blank" rel="noopener noreferrer" class="inline-block mb-4 group">
+							<h3 class="text-2xl font-medium text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
+								tienda.sagita.cl →
+							</h3>
+						</a>
+						<p class="text-gray-600 dark:text-gray-400 mb-4 max-w-3xl">
+							Tienda online de equipos de seguridad industrial y emergencias químicas.
+						</p>
+						<div class="flex gap-3 text-sm text-gray-500">
+							<span>WooCommerce</span>
+							<span>·</span>
+							<span>WordPress</span>
+							<span>·</span>
+							<span>PHP</span>
+						</div>
+					</div>
+
+					<!-- Comcer -->
+					<div class="border-b border-gray-200 dark:border-gray-800 pb-12">
+						<a href="https://comcer.cl" target="_blank" rel="noopener noreferrer" class="inline-block mb-4 group">
+							<h3 class="text-2xl font-medium text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
+								comcer.cl →
+							</h3>
+						</a>
+						<p class="text-gray-600 dark:text-gray-400 mb-4 max-w-3xl">
+							E-commerce de productos de limpieza, higiene y desechables ecológicos.
+						</p>
+						<div class="flex gap-3 text-sm text-gray-500">
+							<span>WooCommerce</span>
+							<span>·</span>
+							<span>WordPress</span>
+							<span>·</span>
+							<span>MySQL</span>
+						</div>
+					</div>
+
+					<!-- Sistema ERP IIBP -->
+					<div class="pb-12">
+						<h3 class="text-2xl font-medium text-black dark:text-white mb-4">
+							Migración Sistema ERP IIBP
+						</h3>
+						<p class="text-gray-600 dark:text-gray-400 mb-4 max-w-3xl">
+							Actualización completa del sistema ERP de PHP 5.4 a PHP 8.1 con refactorización de código nativo.
+						</p>
+						<div class="flex gap-3 text-sm text-gray-500">
+							<span>PHP 8.1</span>
+							<span>·</span>
+							<span>MySQL</span>
+							<span>·</span>
+							<span>PHP Nativo</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA -->
+	<section class="py-20 bg-black dark:bg-white text-white dark:text-black">
+		<div class="container mx-auto px-6 text-center">
+			<div class="max-w-3xl mx-auto">
+				<h2 class="text-3xl md:text-4xl font-medium mb-6">
+					¿Tienes un proyecto en mente?
+				</h2>
+				<p class="text-xl text-gray-300 dark:text-gray-600 mb-8 leading-relaxed">
+					Conversemos sobre cómo podemos ayudarte a hacerlo realidad
+				</p>
+				
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a
+						href="/contacto"
+						class="px-8 py-3 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02] rounded-lg"
+					>
+						Iniciar proyecto
+					</a>
+					<a
+						href="/servicios/web"
+						class="px-8 py-3 border border-gray-600 dark:border-gray-400 text-white dark:text-black font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-lg"
+					>
+						Ver servicios
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

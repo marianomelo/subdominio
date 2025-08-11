@@ -49,6 +49,7 @@ const Header = ({ showThemeToggle = true }) => {
     { label: 'Inicio', href: '/' },
     { label: 'Blog', href: '/blog' },
     { label: 'Nosotros', href: '/nosotros' },
+    { label: 'Proyectos', href: '/proyectos' },
     { label: 'Productos', href: '/productos' },
     { label: 'Contacto', href: '/contacto' },
   ];
@@ -70,8 +71,12 @@ const Header = ({ showThemeToggle = true }) => {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6">
-        <nav className="flex items-center justify-between h-16 sm:h-20">
-          <a href="/" className="text-xl sm:text-2xl font-bold tracking-tight text-black dark:text-white font-display">
+        <nav className={`flex items-center justify-between transition-all duration-300 ${
+          isScrolled ? 'h-14 sm:h-16' : 'h-16 sm:h-20'
+        }`}>
+          <a href="/" className={`font-bold tracking-tight text-black dark:text-white font-display transition-all duration-300 ${
+            isScrolled ? 'text-xl' : 'text-2xl'
+          }`}>
             subdominio.
           </a>
 
@@ -80,7 +85,7 @@ const Header = ({ showThemeToggle = true }) => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200"
+                className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 text-base"
               >
                 {item.label}
               </a>
@@ -89,7 +94,7 @@ const Header = ({ showThemeToggle = true }) => {
             <div className="relative services-dropdown">
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 flex items-center py-2"
+                className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 flex items-center py-2 text-base"
                 aria-expanded={isServicesOpen}
                 aria-haspopup="true"
               >
@@ -120,7 +125,9 @@ const Header = ({ showThemeToggle = true }) => {
             
             <a
               href="/contacto"
-              className="px-6 lg:px-8 py-2.5 lg:py-3 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button text-sm lg:text-base"
+              className={`bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button shadow-button hover:shadow-button-hover text-base ${
+                isScrolled ? 'px-6 py-2.5' : 'px-8 py-3'
+              }`}
             >
               Hablemos
             </a>
@@ -140,7 +147,9 @@ const Header = ({ showThemeToggle = true }) => {
         </nav>
 
         <div
-          className={`lg:hidden absolute top-16 sm:top-20 left-0 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 transition-all duration-300 mobile-menu ${
+          className={`lg:hidden absolute left-0 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 transition-all duration-300 mobile-menu ${
+            isScrolled ? 'top-14 sm:top-16' : 'top-16 sm:top-20'
+          } ${
             isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
           }`}
         >
@@ -150,7 +159,7 @@ const Header = ({ showThemeToggle = true }) => {
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="block py-3 sm:py-4 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 border-b border-gray-100 dark:border-gray-800 text-sm sm:text-base"
+                className="block py-4 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 border-b border-gray-100 dark:border-gray-800 text-base"
               >
                 {item.label}
               </a>
@@ -179,7 +188,7 @@ const Header = ({ showThemeToggle = true }) => {
               <a
                 href="/contacto"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex-1 ml-4 px-6 py-2.5 sm:py-3 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium text-center hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button text-sm sm:text-base"
+                className="flex-1 ml-4 px-6 py-3 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium text-center hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button shadow-button hover:shadow-button-hover text-base"
               >
                 Hablemos
               </a>

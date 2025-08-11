@@ -1,0 +1,10 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo mark -->
+  <rect x="10" y="20" width="20" height="20" fill="currentColor"/>
+  <rect x="15" y="25" width="20" height="20" fill="currentColor" opacity="0.6"/>
+  
+  <!-- Logo text -->
+  <text x="45" y="38" fill="currentColor" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="bold">
+    subdominio
+  </text>
+</svg>

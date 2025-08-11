@@ -8,7 +8,8 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://subdominio.com',
+  site: 'https://subdominio.cl',
+  output: 'static',
   integrations: [
     react(), 
     tailwind(), 
@@ -18,20 +19,14 @@ export default defineConfig({
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
-      customPages: [
-        'https://subdominio.com/',
-        'https://subdominio.com/nosotros',
-        'https://subdominio.com/servicios/web',
-        'https://subdominio.com/servicios/ecommerce',
-        'https://subdominio.com/servicios/automatizacion',
-        'https://subdominio.com/servicios/personalizado',
-        'https://subdominio.com/servicios/apps-automatizacion',
-        'https://subdominio.com/proyectos',
-        'https://subdominio.com/blog',
-        'https://subdominio.com/contacto'
-      ],
+      filter: (page) => !page.includes('/_'),
       serialize(item) {
-        if (item.url === 'https://subdominio.com/') {
+        // Remove trailing slashes for consistency
+        if (item.url.endsWith('/') && item.url !== 'https://subdominio.cl/') {
+          item.url = item.url.slice(0, -1);
+        }
+        
+        if (item.url === 'https://subdominio.cl/') {
           item.changefreq = 'daily';
           item.priority = 1.0;
         }

@@ -1,6 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import LucideIcon from "../../components/LucideIcon.jsx";
+import ServiceSchema from '../../components/ServiceSchema.astro';
+
+const serviceOffers = [
+  {
+    name: "Tiendas WooCommerce",
+    description: "E-commerce completo con WordPress, fácil de administrar y personalizar"
+  },
+  {
+    name: "Tiendas Shopify",
+    description: "Soluciones e-commerce rápidas y escalables con Shopify"
+  },
+  {
+    name: "E-commerce Personalizado",
+    description: "Desarrollo a medida con integraciones ERP, CRM y sistemas de inventario"
+  },
+  {
+    name: "Optimización de Conversiones",
+    description: "UX/UI optimizado para maximizar ventas y reducir abandono de carrito"
+  }
+];
 ---
 
 <Layout title="Desarrollo de E-commerce" description="Soluciones completas para tiendas online que convierten visitantes en clientes. WooCommerce, Shopify y desarrollo personalizado.">
@@ -109,7 +129,7 @@ import LucideIcon from "../../components/LucideIcon.jsx";
 						<span class="text-black dark:text-white mt-1">•</span>
 						<div>
 							<h3 class="font-medium text-black dark:text-white mb-2">Optimización de performance</h3>
-							<p class="text-gray-600 dark:text-gray-300">Reducción de tiempos de carga, optimización de base de datos, uso de CDN y lazy loading de imágenes.</p>
+							<p class="text-gray-600 dark:text-gray-300">Reducción de tiempos de carga, optimización de base de datos, uso de CDN, lazy loading de imágenes y VPS dedicados en Santiago y Miami para tiendas de alto volumen.</p>
 						</div>
 					</li>
 				</ul>
@@ -286,7 +306,7 @@ import LucideIcon from "../../components/LucideIcon.jsx";
 						Comienza tu proyecto
 					</a>
 					<a
-						href="mailto:info@subdominio.com"
+						href="mailto:info@subdominio.cl"
 						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-button"
 					>
 						Enviar email
@@ -295,4 +315,12 @@ import LucideIcon from "../../components/LucideIcon.jsx";
 			</div>
 		</div>
 	</section>
+	
+	<ServiceSchema 
+		name="Desarrollo de E-commerce"
+		description="Soluciones completas para tiendas online que convierten visitantes en clientes. E-commerce avanzado, hecho a tu medida."
+		category="E-commerce"
+		offers={serviceOffers}
+		url="https://subdominio.cl/servicios/ecommerce"
+	/>
 </Layout>

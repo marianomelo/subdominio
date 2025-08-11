@@ -1,243 +1,43 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send } from 'lucide-react';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const WhatsAppWidget = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [showTooltip, setShowTooltip] = useState(false);
-  const [message, setMessage] = useState('');
+  const [isHovered, setIsHovered] = useState(false);
   
-  // WhatsApp number - Replace with your actual WhatsApp Business number
-  const whatsappNumber = '56800914659'; // Chile format without +
+  const whatsappNumber = '56800914659';
   const defaultMessage = 'Hola! Me gustaría consultar sobre sus servicios.';
-  
-  useEffect(() => {
-    // Show tooltip after 5 seconds if widget hasn't been opened
-    const timer = setTimeout(() => {
-      if (!isOpen && !localStorage.getItem('whatsapp-widget-seen')) {
-        setShowTooltip(true);
-        // Hide tooltip after 10 seconds
-        setTimeout(() => {
-          setShowTooltip(false);
-          localStorage.setItem('whatsapp-widget-seen', 'true');
-        }, 10000);
-      }
-    }, 5000);
-    
-    return () => clearTimeout(timer);
-  }, [isOpen]);
 
-  const handleSendMessage = () => {
-    const text = message || defaultMessage;
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+  const handleWhatsAppClick = () => {
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
     window.open(whatsappUrl, '_blank');
-    setMessage('');
-    setIsOpen(false);
   };
-
-  const handleQuickMessage = (quickMessage) => {
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(quickMessage)}`;
-    window.open(whatsappUrl, '_blank');
-    setIsOpen(false);
-  };
-
-  const quickMessages = [
-    { text: 'Necesito un sitio web', icon: '🌐' },
-    { text: 'Consulta sobre e-commerce', icon: '🛒' },
-    { text: 'Información sobre precios', icon: '💰' },
-    { text: 'Agendar una reunión', icon: '📅' }
-  ];
 
   return (
-    <>
-      {/* Main Widget Button */}
-      <motion.div
-        className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-40"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ 
-          type: "spring",
-          stiffness: 260,
-          damping: 20,
-          delay: 0.5 
-        }}
+    <motion.div
+      className="fixed bottom-6 right-6 z-50"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1 }}
+    >
+      <motion.button
+        onClick={handleWhatsAppClick}
+        className="w-12 h-12 rounded-full bg-black dark:bg-white text-white dark:text-black shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center border border-gray-200 dark:border-gray-800"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        aria-label="Abrir WhatsApp"
       >
-        {/* Tooltip */}
-        <AnimatePresence>
-          {showTooltip && !isOpen && (
-            <motion.div
-              className="absolute bottom-full right-0 mb-3 whitespace-nowrap"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded-lg text-sm font-medium shadow-lg">
-                ¿Necesitas ayuda? Chatea con nosotros
-                <div className="absolute bottom-0 right-8 transform translate-y-1/2 rotate-45 w-2 h-2 bg-black dark:bg-white"></div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Button */}
-        <motion.button
-          onClick={() => {
-            setIsOpen(!isOpen);
-            setShowTooltip(false);
-          }}
-          className={`
-            w-12 sm:w-14 h-12 sm:h-14 rounded-full flex items-center justify-center shadow-lg
-            transition-all duration-300 hover:scale-110
-            ${isOpen 
-              ? 'bg-gray-900 dark:bg-gray-100' 
-              : 'bg-green-600 hover:bg-green-700'
-            }
-          `}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          aria-label={isOpen ? 'Cerrar chat' : 'Abrir WhatsApp'}
+        <svg 
+          className="w-5 h-5" 
+          fill="currentColor" 
+          viewBox="0 0 24 24"
+          style={{ opacity: isHovered ? 1 : 0.7 }}
         >
-          <AnimatePresence mode="wait">
-            {isOpen ? (
-              <motion.div
-                key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <X className="w-5 sm:w-6 h-5 sm:h-6 text-white dark:text-black" />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="whatsapp"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <MessageCircle className="w-5 sm:w-6 h-5 sm:h-6 text-white" fill="white" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.button>
-
-        {/* Pulse Animation */}
-        {!isOpen && (
-          <motion.div
-            className="absolute inset-0 rounded-full bg-green-600 pointer-events-none"
-            animate={{
-              scale: [1, 1.3, 1.3],
-              opacity: [0.4, 0, 0],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatDelay: 1,
-            }}
-          />
-        )}
-      </motion.div>
-
-      {/* Chat Window */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            className="fixed bottom-20 sm:bottom-24 right-4 sm:right-6 z-40 w-[calc(100vw-2rem)] sm:w-96 max-w-[24rem]"
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ 
-              type: "spring",
-              stiffness: 300,
-              damping: 25 
-            }}
-          >
-            <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-green-600 to-green-700 p-4 sm:p-5 text-white">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                    <MessageCircle className="w-6 h-6" fill="white" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-base sm:text-lg">Subdominio</h3>
-                    <p className="text-xs sm:text-sm text-green-100 flex items-center">
-                      <span className="w-2 h-2 bg-green-300 rounded-full mr-2 animate-pulse"></span>
-                      En línea ahora
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Body */}
-              <div className="p-4 sm:p-5 space-y-3 sm:space-y-4">
-                <div className="text-center text-gray-600 dark:text-gray-300">
-                  <p className="text-xs sm:text-sm mb-3 sm:mb-4">
-                    👋 Hola! ¿En qué podemos ayudarte hoy?
-                  </p>
-                </div>
-
-                {/* Quick Actions */}
-                <div className="space-y-2">
-                  {quickMessages.map((item, index) => (
-                    <motion.button
-                      key={index}
-                      onClick={() => handleQuickMessage(item.text)}
-                      className="w-full text-left p-2.5 sm:p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 flex items-center space-x-2 sm:space-x-3"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      whileHover={{ x: 5 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <span className="text-lg sm:text-xl">{item.icon}</span>
-                      <span className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-medium">
-                        {item.text}
-                      </span>
-                    </motion.button>
-                  ))}
-                </div>
-
-                {/* Custom Message Input */}
-                <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
-                    O escribe tu mensaje:
-                  </p>
-                  <div className="flex space-x-2">
-                    <input
-                      type="text"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                      placeholder="Escribe tu consulta..."
-                      className="flex-1 px-3 sm:px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-green-600 dark:focus:border-green-500 transition-colors duration-200 text-sm">
-                    />
-                    <motion.button
-                      onClick={handleSendMessage}
-                      className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      aria-label="Enviar mensaje"
-                    >
-                      <Send className="w-5 h-5" />
-                    </motion.button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Footer */}
-              <div className="px-4 sm:px-5 pb-3 sm:pb-4">
-                <p className="text-xs text-gray-400 dark:text-gray-500 text-center">
-                  Responderemos en minutos via WhatsApp
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+      </motion.button>
+    </motion.div>
   );
 };
 

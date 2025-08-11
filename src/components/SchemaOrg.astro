@@ -12,16 +12,16 @@ const organizationSchema = {
 	"name": "Subdominio",
 	"alternateName": "Agencia Subdominio",
 	"description": "Agencia de desarrollo web y software especializada en WordPress, React, Astro y soluciones digitales personalizadas para empresas en Chile",
-	"url": "https://subdominio.com",
+	"url": "https://subdominio.cl",
 	"logo": {
 		"@type": "ImageObject",
-		"url": "https://subdominio.com/logo.png",
+		"url": "https://subdominio.cl/logo.svg",
 		"width": "600",
 		"height": "60"
 	},
-	"image": "https://subdominio.com/og-image.jpg",
+	"image": "https://subdominio.cl/og-image.svg",
 	"telephone": "+56-800-914-659",
-	"email": "info@subdominio.com",
+	"email": "info@subdominio.cl",
 	"address": {
 		"@type": "PostalAddress",
 		"addressCountry": "CL",
@@ -40,7 +40,7 @@ const organizationSchema = {
 		"@type": "ContactPoint",
 		"telephone": "+56-800-914-659",
 		"contactType": "customer service",
-		"email": "info@subdominio.com",
+		"email": "info@subdominio.cl",
 		"areaServed": ["CL", "PE", "AR", "CO", "MX"],
 		"availableLanguage": ["Spanish", "English"]
 	},
@@ -106,21 +106,21 @@ const websiteSchema = {
 	"@type": "WebSite",
 	"name": "Subdominio",
 	"alternateName": "Agencia Subdominio",
-	"url": "https://subdominio.com",
+	"url": "https://subdominio.cl",
 	"description": "Agencia de desarrollo web y software. Transformamos ideas en soluciones digitales innovadoras.",
 	"publisher": {
 		"@type": "Organization",
 		"name": "Subdominio",
 		"logo": {
 			"@type": "ImageObject",
-			"url": "https://subdominio.com/logo.png"
+			"url": "https://subdominio.cl/logo.svg"
 		}
 	},
 	"potentialAction": {
 		"@type": "SearchAction",
 		"target": {
 			"@type": "EntryPoint",
-			"urlTemplate": "https://subdominio.com/buscar?q={search_term_string}"
+			"urlTemplate": "https://subdominio.cl/buscar?q={search_term_string}"
 		},
 		"query-input": "required name=search_term_string"
 	},
@@ -129,24 +129,35 @@ const websiteSchema = {
 
 const localBusinessSchema = {
 	"@context": "https://schema.org",
-	"@type": "LocalBusiness",
-	"@id": "https://subdominio.com/#business",
+	"@type": "ProfessionalService",
+	"@id": "https://subdominio.cl/#business",
 	"name": "Subdominio",
-	"image": "https://subdominio.com/og-image.jpg",
+	"alternateName": "Agencia Subdominio",
+	"image": "https://subdominio.cl/og-image.svg",
 	"priceRange": "$$",
+	"description": "Agencia de desarrollo web y software en Santiago, Chile. Especialistas en WordPress, React, e-commerce y automatización empresarial.",
 	"address": {
 		"@type": "PostalAddress",
 		"addressCountry": "CL",
 		"addressRegion": "Región Metropolitana",
-		"addressLocality": "Santiago"
+		"addressLocality": "Santiago",
+		"postalCode": "7500000",
+		"streetAddress": "Santiago Centro"
 	},
 	"telephone": "+56-800-914-659",
+	"email": "info@subdominio.cl",
 	"openingHoursSpecification": [
 		{
 			"@type": "OpeningHoursSpecification",
 			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
 			"opens": "09:00",
 			"closes": "18:00"
+		},
+		{
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": ["Saturday"],
+			"opens": "09:00",
+			"closes": "14:00"
 		}
 	],
 	"geo": {
@@ -154,11 +165,59 @@ const localBusinessSchema = {
 		"latitude": "-33.4489",
 		"longitude": "-70.6693"
 	},
-	"url": "https://subdominio.com",
+	"url": "https://subdominio.cl",
 	"sameAs": [
 		"https://www.linkedin.com/company/subdominio",
-		"https://github.com/subdominio"
-	]
+		"https://github.com/subdominio",
+		"https://twitter.com/subdominio",
+		"https://www.facebook.com/subdominio",
+		"https://www.instagram.com/subdominio"
+	],
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "4.9",
+		"reviewCount": "47",
+		"bestRating": "5",
+		"worstRating": "1"
+	},
+	"hasOfferCatalog": {
+		"@type": "OfferCatalog",
+		"name": "Servicios de Desarrollo Web",
+		"itemListElement": [
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Desarrollo Web WordPress",
+					"description": "Sitios web profesionales con WordPress"
+				}
+			},
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Desarrollo E-commerce",
+					"description": "Tiendas online con WooCommerce y Shopify"
+				}
+			},
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Aplicaciones Web React",
+					"description": "Aplicaciones web modernas con React y Next.js"
+				}
+			},
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Automatización Empresarial",
+					"description": "Automatización de procesos con IA y herramientas modernas"
+				}
+			}
+		]
+	}
 };
 
 let schemaToUse;

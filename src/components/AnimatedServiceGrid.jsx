@@ -64,7 +64,7 @@ const AnimatedServiceGrid = () => {
   };
 
   return (
-    <section className="py-24 bg-white dark:bg-gray-900">
+    <section className="py-section bg-white dark:bg-gray-900">
       <div className="container mx-auto px-6">
         <motion.div 
           className="text-center mb-20"
@@ -72,10 +72,10 @@ const AnimatedServiceGrid = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-medium mb-6 text-black dark:text-white">
+          <h2 className="text-h2 md:text-5xl font-medium mb-6 text-black dark:text-white">
             Soluciones digitales completas para tu negocio
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-body-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Elige el servicio que mejor se adapte a tus necesidades
           </p>
         </motion.div>
@@ -99,7 +99,7 @@ const AnimatedServiceGrid = () => {
               }}
             >
               <motion.div 
-                className="h-full bg-gray-50 dark:bg-gray-800 p-8 transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white"
+                className="h-full bg-gray-50 dark:bg-gray-800 p-8 transition-all duration-300 rounded-card border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white shadow-card hover:shadow-lg"
                 whileHover={{ 
                   backgroundColor: "rgba(0, 0, 0, 0.02)",
                   transition: { duration: 0.3 }
@@ -128,17 +128,17 @@ const AnimatedServiceGrid = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </motion.svg>
                 </div>
-                <h3 className="text-2xl font-medium text-black dark:text-white mb-3">
+                <h3 className="text-h3 font-medium text-black dark:text-white mb-3">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                <p className="text-body text-gray-600 dark:text-gray-300 mb-6">
                   {service.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {service.tags.map((tag, index) => (
                     <motion.span 
                       key={tag}
-                      className="text-xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1"
+                      className="text-2xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1 rounded-button"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: index * 0.05 }}
@@ -158,12 +158,12 @@ const AnimatedServiceGrid = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-body text-gray-600 dark:text-gray-400 mb-6">
             ¿No estás seguro de qué servicio necesitas?
           </p>
           <motion.a 
             href="/contacto"
-            className="inline-block px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 rounded-button"
+            className="inline-block px-8 py-3 bg-black dark:bg-white text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 rounded-button shadow-button hover:shadow-button-hover text-base"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >

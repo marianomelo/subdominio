@@ -1,0 +1,194 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LucideIcon from '../components/LucideIcon.jsx';
+---
+
+<Layout title="Buscar" description="Busca contenido en Subdominio - Encuentra información sobre desarrollo web, WordPress, React y más.">
+	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<div class="mb-8">
+					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
+						<LucideIcon name="arrow-left" className="w-4 h-4 mr-2" />
+						Volver al inicio
+					</a>
+				</div>
+				
+				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black dark:text-white">
+					Buscar en el sitio
+				</h1>
+				
+				<div class="mb-12">
+					<form id="search-form" class="relative">
+						<input
+							type="search"
+							name="q"
+							id="search-input"
+							placeholder="Buscar servicios, información o contenido..."
+							class="w-full px-6 py-4 pr-14 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-black dark:focus:border-white transition-colors"
+							aria-label="Campo de búsqueda"
+						/>
+						<button
+							type="submit"
+							class="absolute right-2 top-1/2 -translate-y-1/2 p-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+							aria-label="Buscar"
+						>
+							<LucideIcon name="search" className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+						</button>
+					</form>
+				</div>
+
+				<div id="search-results" class="hidden">
+					<h2 class="text-2xl font-medium mb-6 text-black dark:text-white">
+						Resultados de búsqueda
+					</h2>
+					<div id="results-container" class="space-y-6"></div>
+				</div>
+
+				<!-- Enlaces rápidos -->
+				<div class="mt-16">
+					<h2 class="text-2xl font-medium mb-6 text-black dark:text-white">
+						Enlaces rápidos
+					</h2>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+						<a href="/servicios/web" class="group p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+							<div class="flex items-start">
+								<LucideIcon name="globe" className="w-5 h-5 text-gray-600 dark:text-gray-400 mt-0.5 mr-3" />
+								<div>
+									<h3 class="font-medium text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-200">Desarrollo Web</h3>
+									<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Sitios web modernos y responsivos</p>
+								</div>
+							</div>
+						</a>
+						<a href="/servicios/ecommerce" class="group p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+							<div class="flex items-start">
+								<LucideIcon name="shopping-cart" className="w-5 h-5 text-gray-600 dark:text-gray-400 mt-0.5 mr-3" />
+								<div>
+									<h3 class="font-medium text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-200">E-commerce</h3>
+									<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Tiendas online profesionales</p>
+								</div>
+							</div>
+						</a>
+						<a href="/servicios/automatizacion" class="group p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+							<div class="flex items-start">
+								<LucideIcon name="cpu" className="w-5 h-5 text-gray-600 dark:text-gray-400 mt-0.5 mr-3" />
+								<div>
+									<h3 class="font-medium text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-200">Automatización</h3>
+									<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Optimiza procesos con IA</p>
+								</div>
+							</div>
+						</a>
+						<a href="/contacto" class="group p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+							<div class="flex items-start">
+								<LucideIcon name="message-circle" className="w-5 h-5 text-gray-600 dark:text-gray-400 mt-0.5 mr-3" />
+								<div>
+									<h3 class="font-medium text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-200">Contacto</h3>
+									<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Hablemos de tu proyecto</p>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<script>
+	// Simple search functionality
+	const searchForm = document.getElementById('search-form') as HTMLFormElement;
+	const searchInput = document.getElementById('search-input') as HTMLInputElement;
+	const searchResults = document.getElementById('search-results');
+	const resultsContainer = document.getElementById('results-container');
+
+	// Sample content to search (in production, this would come from a backend)
+	const searchableContent = [
+		{
+			title: 'Desarrollo Web Profesional',
+			url: '/servicios/web',
+			description: 'Creamos sitios web modernos, rápidos y escalables con las mejores tecnologías del mercado.'
+		},
+		{
+			title: 'E-commerce y Tiendas Online',
+			url: '/servicios/ecommerce',
+			description: 'Soluciones completas de comercio electrónico con WooCommerce, Shopify y plataformas personalizadas.'
+		},
+		{
+			title: 'Automatización de Procesos',
+			url: '/servicios/automatizacion',
+			description: 'Automatización empresarial con inteligencia artificial y herramientas modernas.'
+		},
+		{
+			title: 'Desarrollo Personalizado',
+			url: '/servicios/personalizado',
+			description: 'Aplicaciones web y móviles a medida para empresas con necesidades específicas.'
+		},
+		{
+			title: 'Sobre Nosotros',
+			url: '/nosotros',
+			description: 'Conoce a Subdominio, agencia especializada en desarrollo web y software.'
+		},
+		{
+			title: 'Contacto',
+			url: '/contacto',
+			description: 'Ponte en contacto con nosotros para discutir tu próximo proyecto.'
+		}
+	];
+
+	// Get query from URL on page load
+	const urlParams = new URLSearchParams(window.location.search);
+	const query = urlParams.get('q');
+	if (query) {
+		searchInput.value = query;
+		performSearch(query);
+	}
+
+	searchForm.addEventListener('submit', (e) => {
+		e.preventDefault();
+		const query = searchInput.value.trim();
+		if (query) {
+			// Update URL
+			const newUrl = `${window.location.pathname}?q=${encodeURIComponent(query)}`;
+			window.history.pushState({ path: newUrl }, '', newUrl);
+			performSearch(query);
+		}
+	});
+
+	function performSearch(query: string) {
+		const lowerQuery = query.toLowerCase();
+		const results = searchableContent.filter(item => 
+			item.title.toLowerCase().includes(lowerQuery) ||
+			item.description.toLowerCase().includes(lowerQuery)
+		);
+
+		displayResults(results, query);
+	}
+
+	function displayResults(results: typeof searchableContent, query: string) {
+		if (!searchResults || !resultsContainer) return;
+
+		searchResults.classList.remove('hidden');
+		
+		if (results.length === 0) {
+			resultsContainer.innerHTML = `
+				<div class="text-gray-600 dark:text-gray-400">
+					No se encontraron resultados para "<strong>${query}</strong>".
+					<br>Intenta con otros términos de búsqueda.
+				</div>
+			`;
+		} else {
+			resultsContainer.innerHTML = results.map(item => `
+				<a href="${item.url}" class="block p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+					<h3 class="text-lg font-medium text-black dark:text-white mb-2">${item.title}</h3>
+					<p class="text-gray-600 dark:text-gray-400">${item.description}</p>
+					<span class="inline-flex items-center mt-3 text-sm text-blue-600 dark:text-blue-400">
+						Ver más
+						<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+						</svg>
+					</span>
+				</a>
+			`).join('');
+		}
+	}
+</script>

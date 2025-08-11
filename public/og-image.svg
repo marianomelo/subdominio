@@ -1,0 +1,49 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#000000"/>
+  
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Gradient overlay -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#111111;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#gradient)"/>
+  
+  <!-- Logo/Brand -->
+  <text x="100" y="200" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="bold">
+    subdominio
+  </text>
+  
+  <!-- Tagline -->
+  <text x="100" y="280" fill="#888888" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="normal">
+    Agencia de desarrollo web y software
+  </text>
+  
+  <!-- Description -->
+  <text x="100" y="360" fill="#cccccc" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="normal">
+    Transformamos ideas en soluciones digitales innovadoras
+  </text>
+  
+  <!-- Services keywords -->
+  <text x="100" y="440" fill="#666666" font-family="system-ui, -apple-system, sans-serif" font-size="20">
+    WordPress • React • E-commerce • Automatización • Apps
+  </text>
+  
+  <!-- URL -->
+  <text x="100" y="530" fill="#444444" font-family="system-ui, -apple-system, sans-serif" font-size="18">
+    subdominio.cl
+  </text>
+  
+  <!-- Decorative element -->
+  <rect x="100" y="300" width="80" height="4" fill="#ffffff" opacity="0.5"/>
+</svg>

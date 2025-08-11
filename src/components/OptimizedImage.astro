@@ -1,0 +1,57 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  loading?: 'lazy' | 'eager';
+  class?: string;
+  sizes?: string;
+  format?: 'webp' | 'jpg' | 'png';
+}
+
+const { 
+  src, 
+  alt, 
+  width, 
+  height, 
+  loading = 'lazy',
+  class: className = '',
+  sizes,
+  format = 'webp'
+} = Astro.props;
+
+// Generate srcset for responsive images
+const generateSrcSet = (baseSrc: string) => {
+  const widths = [320, 640, 768, 1024, 1280, 1536];
+  return widths
+    .map(w => `${baseSrc}?w=${w} ${w}w`)
+    .join(', ');
+};
+
+const imgSizes = sizes || '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw';
+---
+
+<picture>
+  {format === 'webp' && (
+    <source 
+      type="image/webp" 
+      srcset={generateSrcSet(src.replace(/\.(jpg|jpeg|png)$/, '.webp'))}
+      sizes={imgSizes}
+    />
+  )}
+  <source 
+    type={`image/${src.split('.').pop()}`}
+    srcset={generateSrcSet(src)}
+    sizes={imgSizes}
+  />
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={loading}
+    decoding="async"
+    class={className}
+  />
+</picture>

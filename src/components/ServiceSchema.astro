@@ -1,0 +1,88 @@
+---
+interface ServiceSchemaProps {
+  name: string;
+  description: string;
+  category: string;
+  offers?: Array<{
+    name: string;
+    description: string;
+    priceRange?: string;
+  }>;
+  url?: string;
+}
+
+const { name, description, category, offers = [], url } = Astro.props;
+
+const currentUrl = url || new URL(Astro.url.pathname, Astro.site || 'https://subdominio.cl').toString();
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": name,
+  "description": description,
+  "category": category,
+  "url": currentUrl,
+  "provider": {
+    "@type": "Organization",
+    "name": "Subdominio",
+    "url": "https://subdominio.cl",
+    "logo": "https://subdominio.cl/logo.svg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CL",
+      "addressRegion": "Región Metropolitana",
+      "addressLocality": "Santiago"
+    },
+    "telephone": "+56-800-914-659",
+    "email": "info@subdominio.cl"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Chile"
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": currentUrl,
+    "servicePhone": "+56-800-914-659",
+    "serviceSmsNumber": "+56-800-914-659"
+  },
+  "serviceType": category,
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Business"
+  }
+};
+
+// Add offers if provided
+if (offers.length > 0) {
+  serviceSchema.offers = offers.map(offer => ({
+    "@type": "Offer",
+    "name": offer.name,
+    "description": offer.description,
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "priceCurrency": "CLP",
+      "price": offer.priceRange || "Consultar"
+    }
+  }));
+}
+
+// Add hasOfferCatalog for services with multiple offerings
+if (offers.length > 1) {
+  serviceSchema.hasOfferCatalog = {
+    "@type": "OfferCatalog",
+    "name": `${name} - Catálogo de Servicios`,
+    "itemListElement": offers.map((offer, index) => ({
+      "@type": "Offer",
+      "position": index + 1,
+      "itemOffered": {
+        "@type": "Service",
+        "name": offer.name,
+        "description": offer.description
+      }
+    }))
+  };
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />

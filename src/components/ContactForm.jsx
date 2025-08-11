@@ -100,30 +100,33 @@ const ContactForm = () => {
     setSubmitMessage('');
 
     try {
-      // Aquí iría la llamada a la API
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData)
-      // });
-
-      // Simulación de envío
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      setSubmitMessage('¡Gracias por tu mensaje! Te contactaremos en las próximas 24 horas.');
-      setFormData({
-        nombre: '',
-        empresa: '',
-        email: '',
-        telefono: '',
-        servicio: '',
-        mensaje: '',
-        referencia: '',
-        acepto: false
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
       });
-      setErrors({});
+
+      const result = await response.json();
+      
+      if (response.ok && result.success) {
+        setSubmitMessage(result.message || '¡Gracias por tu mensaje! Te contactaremos en las próximas 24 horas.');
+        setFormData({
+          nombre: '',
+          empresa: '',
+          email: '',
+          telefono: '',
+          servicio: '',
+          mensaje: '',
+          referencia: '',
+          acepto: false
+        });
+        setErrors({});
+      } else {
+        setSubmitMessage(result.message || 'Hubo un error al enviar tu mensaje. Por favor intenta nuevamente.');
+      }
     } catch (error) {
-      setSubmitMessage('Hubo un error al enviar tu mensaje. Por favor intenta nuevamente.');
+      console.error('Error submitting form:', error);
+      setSubmitMessage('Hubo un error al enviar tu mensaje. Por favor intenta nuevamente o contáctanos directamente a info@subdominio.cl');
     } finally {
       setIsSubmitting(false);
     }
@@ -133,7 +136,7 @@ const ContactForm = () => {
     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="nombre" className="block text-sm font-medium text-black dark:text-white mb-2">
+          <label htmlFor="nombre" className="block text-body-sm font-medium text-black dark:text-white mb-2">
             Nombre completo *
           </label>
           <input
@@ -144,16 +147,16 @@ const ContactForm = () => {
             onChange={handleChange}
             className={`w-full px-4 py-3 border ${
               errors.nombre ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-            } focus:border-black dark:focus:border-white focus:ring-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200`}
+            } focus:border-black dark:focus:border-white focus:ring-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200 rounded-input text-base`}
             placeholder="Juan Pérez"
           />
           {errors.nombre && (
-            <p className="mt-1 text-sm text-red-500">{errors.nombre}</p>
+            <p className="mt-1 text-body-sm text-red-500">{errors.nombre}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor="empresa" className="block text-sm font-medium text-black dark:text-white mb-2">
+          <label htmlFor="empresa" className="block text-body-sm font-medium text-black dark:text-white mb-2">
             Empresa
           </label>
           <input
@@ -162,7 +165,7 @@ const ContactForm = () => {
             name="empresa"
             value={formData.empresa}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 focus:border-black dark:focus:border-white focus:ring-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200"
+            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 focus:border-black dark:focus:border-white focus:ring-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200 rounded-input text-base"
             placeholder="Mi Empresa S.A."
           />
         </div>
@@ -170,7 +173,7 @@ const ContactForm = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-black dark:text-white mb-2">
+          <label htmlFor="email" className="block text-body-sm font-medium text-black dark:text-white mb-2">
             Email *
           </label>
           <input
@@ -181,16 +184,16 @@ const ContactForm = () => {
             onChange={handleChange}
             className={`w-full px-4 py-3 border ${
               errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-            } focus:border-black dark:focus:border-white focus:ring-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200`}
+            } focus:border-black dark:focus:border-white focus:ring-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200 rounded-input text-base`}
             placeholder="juan@empresa.com"
           />
           {errors.email && (
-            <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+            <p className="mt-1 text-body-sm text-red-500">{errors.email}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor="telefono" className="block text-sm font-medium text-black dark:text-white mb-2">
+          <label htmlFor="telefono" className="block text-body-sm font-medium text-black dark:text-white mb-2">
             Teléfono
           </label>
           <input
@@ -201,18 +204,18 @@ const ContactForm = () => {
             onChange={handleChange}
             className={`w-full px-4 py-3 border ${
               errors.telefono ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-            } focus:border-black dark:focus:border-white focus:ring-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200`}
+            } focus:border-black dark:focus:border-white focus:ring-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200 rounded-input text-base`}
             placeholder="+56 9 1234 5678"
           />
           {errors.telefono && (
-            <p className="mt-1 text-sm text-red-500">{errors.telefono}</p>
+            <p className="mt-1 text-body-sm text-red-500">{errors.telefono}</p>
           )}
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="servicio" className="block text-sm font-medium text-black dark:text-white mb-2">
+          <label htmlFor="servicio" className="block text-body-sm font-medium text-black dark:text-white mb-2">
             Tipo de proyecto *
           </label>
           <select
@@ -222,7 +225,7 @@ const ContactForm = () => {
             onChange={handleChange}
             className={`w-full px-4 py-3 border ${
               errors.servicio ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-            } focus:border-black dark:focus:border-white focus:ring-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200`}
+            } focus:border-black dark:focus:border-white focus:ring-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200 rounded-input text-base`}
           >
             <option value="">Selecciona un servicio</option>
             <option value="desarrollo-web">Desarrollo Web</option>
@@ -236,12 +239,12 @@ const ContactForm = () => {
             <option value="otro">Otro</option>
           </select>
           {errors.servicio && (
-            <p className="mt-1 text-sm text-red-500">{errors.servicio}</p>
+            <p className="mt-1 text-body-sm text-red-500">{errors.servicio}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor="referencia" className="block text-sm font-medium text-black dark:text-white mb-2">
+          <label htmlFor="referencia" className="block text-body-sm font-medium text-black dark:text-white mb-2">
             ¿Cómo nos conociste?
           </label>
           <select
@@ -249,7 +252,7 @@ const ContactForm = () => {
             name="referencia"
             value={formData.referencia}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 focus:border-black dark:focus:border-white focus:ring-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200"
+            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 focus:border-black dark:focus:border-white focus:ring-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200 rounded-input text-base"
           >
             <option value="">Selecciona una opción</option>
             <option value="google">Google</option>
@@ -262,7 +265,7 @@ const ContactForm = () => {
       </div>
 
       <div>
-        <label htmlFor="mensaje" className="block text-sm font-medium text-black dark:text-white mb-2">
+        <label htmlFor="mensaje" className="block text-body-sm font-medium text-black dark:text-white mb-2">
           Cuéntanos sobre tu proyecto *
         </label>
         <textarea
@@ -273,24 +276,24 @@ const ContactForm = () => {
           rows="6"
           className={`w-full px-4 py-3 border ${
             errors.mensaje ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-          } focus:border-black dark:focus:border-white focus:ring-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200 resize-none`}
+          } focus:border-black dark:focus:border-white focus:ring-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200 resize-none rounded-input text-base`}
           placeholder="Describe tu proyecto: objetivos, funcionalidades principales, público objetivo, referencias de diseño si tienes, y cualquier detalle que consideres importante..."
         />
         {errors.mensaje && (
-          <p className="mt-1 text-sm text-red-500">{errors.mensaje}</p>
+          <p className="mt-1 text-body-sm text-red-500">{errors.mensaje}</p>
         )}
-        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+        <p className="mt-1 text-2xs text-gray-500 dark:text-gray-400">
           {formData.mensaje.length}/500 caracteres
         </p>
       </div>
 
-      <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+      <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-card border border-gray-200 dark:border-gray-700">
         <div className="flex items-start justify-between">
           <div className="flex-1">
-            <label htmlFor="acepto" className="text-sm font-medium text-black dark:text-white cursor-pointer">
+            <label htmlFor="acepto" className="text-body-sm font-medium text-black dark:text-white cursor-pointer">
               Consentimiento de datos *
             </label>
-            <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+            <p className="mt-1 text-body-sm text-gray-600 dark:text-gray-400">
               Acepto el tratamiento de mis datos personales según la{' '}
               <a href="/privacidad" className="underline hover:text-black dark:hover:text-white">
                 política de privacidad
@@ -325,12 +328,12 @@ const ContactForm = () => {
           </div>
         </div>
         {errors.acepto && (
-          <p className="mt-2 text-sm text-red-500">{errors.acepto}</p>
+          <p className="mt-2 text-body-sm text-red-500">{errors.acepto}</p>
         )}
       </div>
 
       {submitMessage && (
-        <div className={`p-4 rounded ${
+        <div className={`p-4 rounded-card text-body-sm ${
           submitMessage.includes('error') 
             ? 'bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400' 
             : 'bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400'
@@ -343,7 +346,7 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02]"
+          className="w-full px-8 py-3 bg-black dark:bg-white text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] rounded-button shadow-button hover:shadow-button-hover text-base"
         >
           {isSubmitting ? (
             <span className="flex items-center justify-center">
@@ -359,7 +362,7 @@ const ContactForm = () => {
         </button>
       </div>
 
-      <p className="text-xs text-center text-gray-500 dark:text-gray-400">
+      <p className="text-2xs text-center text-gray-500 dark:text-gray-400">
         Al enviar este formulario, confirmas que has leído y aceptas nuestros{' '}
         <a href="/terminos" className="underline hover:text-black dark:hover:text-white">
           términos y condiciones

@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://subdominio.com/sitemap.xml
+Sitemap: https://subdominio.cl/sitemap.xml
 
 # Bloquear archivos de desarrollo y administración
 Disallow: /admin/

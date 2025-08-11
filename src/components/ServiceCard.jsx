@@ -17,15 +17,15 @@ const ServiceCard = ({ title, description, technologies = [], price }) => {
   };
 
   return (
-    <div className="py-12 border-b border-gray-200 dark:border-gray-700 last:border-b-0 group hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 -mx-6 px-6">
+    <div className="p-8 rounded-card border border-gray-200 dark:border-gray-700 group hover:shadow-lg transition-all duration-200 bg-white dark:bg-gray-800">
       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
         <div className="flex-1">
           <a href={getServiceUrl(title)}>
-            <h3 className="text-2xl font-medium text-black dark:text-white mb-4 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-200">
+            <h3 className="text-h3 font-medium text-black dark:text-white mb-4 transition-colors duration-200">
               {title}
             </h3>
           </a>
-          <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 max-w-lg">
+          <p className="text-body text-gray-600 dark:text-gray-300 mb-6 max-w-lg">
             {description}
           </p>
           {technologies.length > 0 && (
@@ -33,7 +33,7 @@ const ServiceCard = ({ title, description, technologies = [], price }) => {
               {technologies.map((tech, index) => (
                 <span 
                   key={index}
-                  className="text-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-600 px-3 py-1"
+                  className="text-body-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-600 px-3 py-1 rounded-button"
                 >
                   {tech}
                 </span>
@@ -45,14 +45,14 @@ const ServiceCard = ({ title, description, technologies = [], price }) => {
         <div className="lg:text-right flex-shrink-0 flex flex-col gap-3">
           <a 
             href={getServiceUrl(title)} 
-            className="inline-flex items-center text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
+            className="inline-flex items-center text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 font-medium text-base"
           >
-            <span className="font-medium">Ver detalles</span>
+            <span>Ver detalles</span>
             <ArrowRight className="w-4 h-4 ml-2" />
           </a>
           <a 
             href="/contacto" 
-            className="inline-flex items-center text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200 text-sm"
+            className="inline-flex items-center text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200 text-body-sm"
           >
             <span>Solicitar información</span>
           </a>

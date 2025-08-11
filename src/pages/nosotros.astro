@@ -1,18 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LucideIcon from '../components/LucideIcon.jsx';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { name: "Nosotros", item: "https://subdominio.cl/nosotros" }
+];
 ---
 
 <Layout title="Nosotros" description="Conoce a Subdominio, agencia especializada en desarrollo web, e-commerce y aplicaciones. Nuestro equipo, valores y metodología de trabajo.">
 	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
-				<div class="mb-8">
-					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
-						<LucideIcon name="arrow-left" className="w-4 h-4 mr-2" />
-						Volver al inicio
-					</a>
-				</div>
+				<Breadcrumb items={breadcrumbItems} />
 				
 				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black dark:text-white leading-tight">
 					Somos el equipo técnico que tu proyecto necesita
@@ -340,8 +340,8 @@ import LucideIcon from '../components/LucideIcon.jsx';
 				<div class="mt-12 pt-12 border-t border-gray-800 dark:border-gray-300">
 					<p class="text-sm text-gray-400 dark:text-gray-600">
 						También podés escribirnos directamente a 
-						<a href="mailto:info@subdominio.com" class="underline hover:text-white dark:hover:text-black transition-colors duration-200">
-							info@subdominio.com
+						<a href="mailto:info@subdominio.cl" class="underline hover:text-white dark:hover:text-black transition-colors duration-200">
+							info@subdominio.cl
 						</a>
 					</p>
 				</div>

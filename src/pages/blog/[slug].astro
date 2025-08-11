@@ -97,10 +97,43 @@ const getCategoryColor = (color) => {
                 prose-li:text-gray-600 dark:prose-li:text-gray-300
                 prose-strong:text-black dark:prose-strong:text-white prose-strong:font-medium
                 prose-a:text-black dark:prose-a:text-white prose-a:underline prose-a:transition-colors
-                prose-code:bg-gray-100 dark:prose-code:bg-gray-800 prose-code:text-black dark:prose-code:text-white
-                prose-pre:bg-gray-900 dark:prose-pre:bg-gray-950
                 prose-blockquote:border-gray-300 dark:prose-blockquote:border-gray-700
                 prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-400">
+          <style>
+            /* Override default prose code styles */
+            .prose code {
+              background-color: rgb(244 244 245) !important;
+              color: rgb(24 24 27) !important;
+              padding: 0.125rem 0.25rem !important;
+              border-radius: 0.25rem !important;
+              font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+              font-size: 0.875rem !important;
+              font-weight: 500 !important;
+            }
+            .prose code::before,
+            .prose code::after {
+              content: '' !important;
+            }
+            .dark .prose code {
+              background-color: rgb(39 39 42) !important;
+              color: rgb(244 244 245) !important;
+            }
+            .prose pre {
+              background-color: rgb(24 24 27) !important;
+              color: rgb(229 231 235) !important;
+              border-radius: 0.75rem !important;
+              padding: 1rem !important;
+              overflow-x: auto !important;
+              border: 1px solid rgb(63 63 70) !important;
+            }
+            .prose pre code {
+              background-color: transparent !important;
+              color: inherit !important;
+              padding: 0 !important;
+              border-radius: 0 !important;
+              font-size: inherit !important;
+            }
+          </style>
           <Content />
         </div>
       </div>
@@ -115,18 +148,40 @@ const getCategoryColor = (color) => {
           <div class="mb-6 md:mb-0">
             <h3 class="font-medium text-black dark:text-white mb-3">Comparte este artículo</h3>
             <div class="flex space-x-4">
-              <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200">
+              <a 
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.data.title)}&url=${encodeURIComponent(`https://subdominio.cl/blog/${post.data.slug || post.slug}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200"
+              >
+                <LucideIcon name="twitter" className="w-4 h-4 mr-2" />
                 Twitter
               </a>
-              <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200">
+              <a 
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://subdominio.cl/blog/${post.data.slug || post.slug}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200"
+              >
+                <LucideIcon name="linkedin" className="w-4 h-4 mr-2" />
                 LinkedIn
               </a>
-              <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200">
+              <a 
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://subdominio.cl/blog/${post.data.slug || post.slug}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200"
+              >
+                <LucideIcon name="facebook" className="w-4 h-4 mr-2" />
                 Facebook
               </a>
-              <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200">
+              <button 
+                onclick={`navigator.clipboard.writeText('https://subdominio.cl/blog/${post.data.slug || post.slug}').then(() => { const btn = this; const original = btn.innerHTML; btn.innerHTML = '<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>¡Copiado!'; setTimeout(() => btn.innerHTML = original, 2000); })`}
+                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 border-none bg-transparent cursor-pointer"
+              >
+                <LucideIcon name="link" className="w-4 h-4 mr-2" />
                 Copiar enlace
-              </a>
+              </button>
             </div>
           </div>
           

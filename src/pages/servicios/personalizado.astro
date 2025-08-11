@@ -1,6 +1,26 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import LucideIcon from "../../components/LucideIcon.jsx";
+import ServiceSchema from '../../components/ServiceSchema.astro';
+
+const serviceOffers = [
+  {
+    name: "Aplicaciones Web con Laravel",
+    description: "Backend robusto y escalable con el framework PHP más moderno"
+  },
+  {
+    name: "Frontend con Next.js/React",
+    description: "Interfaces de usuario modernas y dinámicas con React y Next.js"
+  },
+  {
+    name: "Sistemas Empresariales",
+    description: "CRM, ERP y sistemas de gestión desarrollados específicamente para tu empresa"
+  },
+  {
+    name: "APIs y Microservicios",
+    description: "Arquitecturas escalables con APIs REST y GraphQL"
+  }
+];
 ---
 
 <Layout title="Desarrollo Personalizado" description="Creamos soluciones tecnológicas específicas para tu empresa. Backend con Laravel, frontend con Next.js, sistemas empresariales y integraciones.">
@@ -104,7 +124,7 @@ import LucideIcon from "../../components/LucideIcon.jsx";
 						<span class="text-black dark:text-white mt-1">•</span>
 						<div>
 							<h3 class="font-medium text-black dark:text-white mb-2">DevOps y Testing profesional</h3>
-							<p class="text-gray-600 dark:text-gray-300">Pipelines CI/CD, testing automatizado, contenedores Docker, deployments en AWS o DigitalOcean y monitoreo continuo.</p>
+							<p class="text-gray-600 dark:text-gray-300">Pipelines CI/CD, testing automatizado, contenedores Docker, despliegue en nuestra infraestructura propia en Chile y Estados Unidos, y monitoreo continuo.</p>
 						</div>
 					</li>
 					
@@ -317,7 +337,7 @@ import LucideIcon from "../../components/LucideIcon.jsx";
 						Comienza tu proyecto
 					</a>
 					<a
-						href="mailto:info@subdominio.com"
+						href="mailto:info@subdominio.cl"
 						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-button"
 					>
 						Enviar email
@@ -326,4 +346,12 @@ import LucideIcon from "../../components/LucideIcon.jsx";
 			</div>
 		</div>
 	</section>
+	
+	<ServiceSchema 
+		name="Desarrollo Personalizado"
+		description="Creamos soluciones tecnológicas específicas para tu empresa. Soluciones tecnológicas hechas a tu medida."
+		category="Desarrollo de Software"
+		offers={serviceOffers}
+		url="https://subdominio.cl/servicios/personalizado"
+	/>
 </Layout>
