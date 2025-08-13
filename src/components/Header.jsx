@@ -49,7 +49,7 @@ const Header = ({ showThemeToggle = true }) => {
     { label: 'Inicio', href: '/' },
     { label: 'Nosotros', href: '/nosotros' },
     { label: 'Proyectos', href: '/proyectos' },
-    { label: 'Productos', href: '/productos' },
+    { label: 'Soluciones', href: '/soluciones' },
     { label: 'Blog', href: '/blog' },
   ];
 
@@ -107,6 +107,12 @@ const Header = ({ showThemeToggle = true }) => {
                   isServicesOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
                 }`}
               >
+                <a
+                  href="/servicios"
+                  className="block px-6 py-4 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-150 border-b border-gray-100 dark:border-gray-700 text-sm font-semibold"
+                >
+                  Ver todos los servicios
+                </a>
                 {services.map((service) => (
                   <a
                     key={service.label}
@@ -174,7 +180,13 @@ const Header = ({ showThemeToggle = true }) => {
             
             {/* Servicios - positioned early for prominence */}
             <div className="py-4 border-b border-gray-100 dark:border-gray-800">
-              <div className="text-gray-600 dark:text-gray-300 font-medium mb-3">Servicios</div>
+              <a
+                href="/servicios"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-gray-600 dark:text-gray-300 font-semibold mb-3 hover:text-black dark:hover:text-white transition-colors duration-200"
+              >
+                Servicios
+              </a>
               {services.map((service) => (
                 <a
                   key={service.label}

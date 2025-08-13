@@ -5,8 +5,8 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import ServiceSchema from '../../components/ServiceSchema.astro';
 
 const breadcrumbItems = [
-  { name: "Servicios", item: "https://subdominio.cl/servicios" },
-  { name: "Desarrollo Web", item: "https://subdominio.cl/servicios/web" }
+  { name: "Servicios", item: "/servicios" },
+  { name: "Desarrollo Web", item: "/servicios/web" }
 ];
 
 const serviceOffers = [
@@ -40,7 +40,8 @@ const serviceOffers = [
 				</h1>
 				
 				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-					Creamos sitios web personalizados, rápidos y confiables que reflejan tu negocio y cumplen objetivos reales.
+					Creamos sitios web personalizados, veloces y confiables que proyectan la esencia de tu negocio y cumplen objetivos medibles.
+					Cada página está diseñada para guiar al visitante, transmitir confianza y convertir su interés en acción.
 				</p>
 				
 				<div class="flex flex-col sm:flex-row gap-4">
@@ -66,7 +67,8 @@ const serviceOffers = [
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
 				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-					No solo diseñamos sitios: construimos experiencias digitales que conectan. Te acompañamos desde la planificación hasta el lanzamiento, con tecnología adecuada a tus necesidades y sin jerga innecesaria.
+					No solo diseñamos sitios: creamos experiencias digitales que conectan con tu público y respaldan tu estrategia comercial.
+					Te acompañamos desde la planificación hasta el lanzamiento, usando tecnología adaptada a tus necesidades y cuidando cada detalle para que todo funcione de forma fluida y sin complicaciones.
 				</p>
 			</div>
 		</div>
@@ -81,33 +83,35 @@ const serviceOffers = [
 				</h2>
 				
 				<div class="space-y-12">
-					<div class="border-b border-gray-200 dark:border-gray-700 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-4">WordPress a tu medida</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-							Sitios versátiles y fáciles de gestionar, con temas y plugins a medida, optimización avanzada de rendimiento y hosting especializado en nuestros servidores locales para máxima velocidad.
-						</p>
-						<p class="text-sm text-gray-500 dark:text-gray-400 italic">
-							Tecnologías: WordPress con temas personalizados, plugins propios, SEO avanzado, hosting optimizado.
+					<div class="border-b border-gray-200 dark:border-gray-700 pb-12">
+						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Web corporativa</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Refuerza tu imagen, genera credibilidad y comunica tu propuesta de valor con un diseño elegante y un flujo de navegación claro.
+							Ideal para empresas que necesitan transmitir profesionalismo y estar disponibles 24/7.
 						</p>
 					</div>
 
-					<div class="border-b border-gray-200 dark:border-gray-700 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Astro ultra-rápido</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-							Sitios que cargan al instante y están pensados para destacar en SEO.
-						</p>
-						<p class="text-sm text-gray-500 dark:text-gray-400 italic">
-							Tecnología: Astro, rendimiento optimizado sin JS innecesario, arquitectura de islas.
+					<div class="border-b border-gray-200 dark:border-gray-700 pb-12">
+						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Landing page de conversión</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Una página enfocada en un único objetivo: que el visitante actúe. Diseño persuasivo, estructura optimizada y mensajes que motivan.
+							Perfecta para campañas, lanzamientos o captación de leads.
 						</p>
 					</div>
 
-					<div class="border-b border-gray-200 dark:border-gray-700 pb-12 last:border-b-0 last:pb-0">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Next.js para experiencias dinámicas</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-							Aplicaciones web avanzadas con funciones en tiempo real, autenticación y rutas API robustas.
+					<div class="border-b border-gray-200 dark:border-gray-700 pb-12">
+						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Aplicaciones web interactivas</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Herramientas digitales que tus usuarios realmente usan: áreas privadas, paneles dinámicos, formularios inteligentes y datos en tiempo real.
+							Hechas para optimizar procesos y mejorar la experiencia del cliente.
 						</p>
-						<p class="text-sm text-gray-500 dark:text-gray-400 italic">
-							Tecnología: Next.js, renderizado en servidor, React, APIs dinámicas.
+					</div>
+
+					<div>
+						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Blog profesional</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Un espacio para compartir contenido relevante, posicionarte en buscadores y fortalecer tu autoridad en el sector.
+							Fácil de administrar, pensado para crecer con tu negocio.
 						</p>
 					</div>
 				</div>
@@ -115,49 +119,6 @@ const serviceOffers = [
 		</div>
 	</section>
 
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black dark:text-white">
-					Tipos de Proyectos
-				</h2>
-				
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-					<div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
-						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Web corporativa</h3>
-						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-							Presencia profesional que refuerza tu imagen, genera confianza y comunica valor.
-						</p>
-						<div class="text-xs text-gray-500 dark:text-gray-400">WordPress • Astro • SEO • CMS</div>
-					</div>
-
-					<div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
-						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Landing de conversión</h3>
-						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-							Páginas que convierten visitantes en clientes con copy efectivo y diseño persuasivo.
-						</p>
-						<div class="text-xs text-gray-500 dark:text-gray-400">Astro • Optimización de Conversión • Analíticas • Pruebas A/B</div>
-					</div>
-
-					<div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
-						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Aplicación web</h3>
-						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-							Herramientas digitales con login, dashboards y funciones que realmente usan tus usuarios.
-						</p>
-						<div class="text-xs text-gray-500 dark:text-gray-400">Next.js • Autenticación • Base de Datos • Tiempo Real</div>
-					</div>
-
-					<div class="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
-						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Blog profesional</h3>
-						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-							Contenido que posiciona, con gestión simple y SEO desde el primer día.
-						</p>
-						<div class="text-xs text-gray-500 dark:text-gray-400">WordPress • Astro • Gestión de Contenido • SEO</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
 	<section class="py-16 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
@@ -174,7 +135,7 @@ const serviceOffers = [
 						<div>
 							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Definimos objetivos</h3>
 							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Analizamos necesidades reales, competencia y expectativas. Armamos una estrategia clara.
+								Entendemos tus metas, analizamos el mercado y creamos una estrategia clara que guíe todo el proyecto.
 							</p>
 						</div>
 					</div>
@@ -184,9 +145,9 @@ const serviceOffers = [
 							<span class="text-2xl font-medium text-black dark:text-white">02</span>
 						</div>
 						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Diseñamos experiencias</h3>
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Diseñamos la experiencia</h3>
 							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Creamos la estructura y diseño visual. Te mostramos cómo se verá antes de programar.
+								Planificamos la estructura y estética para que cada elemento cumpla una función: atraer, guiar y convencer.
 							</p>
 						</div>
 					</div>
@@ -196,9 +157,9 @@ const serviceOffers = [
 							<span class="text-2xl font-medium text-black dark:text-white">03</span>
 						</div>
 						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Construimos con calidad</h3>
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Construimos con precisión</h3>
 							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Desarrollamos con código limpio, optimizado y responsive. Siempre con feedback continuo.
+								Usamos tecnología de última generación para que tu web cargue rápido, funcione siempre y sea fácil de mantener.
 							</p>
 						</div>
 					</div>
@@ -210,7 +171,7 @@ const serviceOffers = [
 						<div>
 							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Lanzamos y optimizamos</h3>
 							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Publicamos tu web, monitoreamos y ajustamos según métricas reales.
+								Ponemos tu web en línea, medimos resultados y ajustamos para maximizar el rendimiento.
 							</p>
 						</div>
 					</div>
@@ -232,23 +193,23 @@ const serviceOffers = [
 						<span class="text-black dark:text-white mt-1">✓</span>
 						<div>
 							<h3 class="font-medium text-black dark:text-white mb-2">Cero sorpresas</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">Proceso transparente con plazos y costos claros.</p>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">procesos y plazos claros desde el inicio.</p>
 						</div>
 					</div>
 					
 					<div class="flex gap-4">
 						<span class="text-black dark:text-white mt-1">✓</span>
 						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Tecnología actualizada</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">Últimas versiones, mejores prácticas.</p>
+							<h3 class="font-medium text-black dark:text-white mb-2">Experiencia comprobada</h3>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">proyectos que combinan diseño y rendimiento.</p>
 						</div>
 					</div>
 					
 					<div class="flex gap-4">
 						<span class="text-black dark:text-white mt-1">✓</span>
 						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">SEO desde el inicio</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">Estructura optimizada para Google desde el día 1.</p>
+							<h3 class="font-medium text-black dark:text-white mb-2">Visibilidad en buscadores</h3>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">SEO incorporado desde el primer día.</p>
 						</div>
 					</div>
 					
@@ -256,15 +217,15 @@ const serviceOffers = [
 						<span class="text-black dark:text-white mt-1">✓</span>
 						<div>
 							<h3 class="font-medium text-black dark:text-white mb-2">Gestión simple</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">Sitios fáciles de actualizar sin depender de nosotros.</p>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">podrás actualizar tu web sin depender de terceros.</p>
 						</div>
 					</div>
 					
 					<div class="flex gap-4">
 						<span class="text-black dark:text-white mt-1">✓</span>
 						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Código limpio</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">Documentado y mantenible a largo plazo.</p>
+							<h3 class="font-medium text-black dark:text-white mb-2">Tecnología al día</h3>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">usamos herramientas modernas que garantizan estabilidad y escalabilidad.</p>
 						</div>
 					</div>
 					
@@ -272,7 +233,7 @@ const serviceOffers = [
 						<span class="text-black dark:text-white mt-1">✓</span>
 						<div>
 							<h3 class="font-medium text-black dark:text-white mb-2">Soporte real</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">Mantenimiento y actualizaciones cuando lo necesites.</p>
+							<p class="text-gray-600 dark:text-gray-300 text-sm">actualizaciones y mejoras cuando lo necesites.</p>
 						</div>
 					</div>
 				</div>
@@ -287,7 +248,8 @@ const serviceOffers = [
 					Tu sitio web puede ser más que una vitrina
 				</h2>
 				<p class="text-xl text-gray-300 dark:text-gray-600 mb-8 leading-relaxed">
-					Puede generar leads, automatizar ventas y posicionar tu marca. Conversemos sobre cómo lograrlo.
+					Puede generar leads, automatizar ventas y posicionar tu marca.<br>
+					Conversemos sobre cómo lograrlo.
 				</p>
 				
 				<div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -302,6 +264,34 @@ const serviceOffers = [
 						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-button"
 					>
 						Enviar email
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Servicios Relacionados -->
+	<section class="py-16 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<h2 class="text-2xl font-medium mb-8 text-black dark:text-white">
+					Servicios relacionados
+				</h2>
+				
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<a href="/servicios/ecommerce" class="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
+						<h3 class="font-medium text-black dark:text-white mb-2 group-hover:underline">E-commerce</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-300">Convierte tu web en una tienda que vende 24/7</p>
+					</a>
+					
+					<a href="/servicios/automatizacion" class="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
+						<h3 class="font-medium text-black dark:text-white mb-2 group-hover:underline">Automatización</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-300">Automatiza procesos para ahorrar tiempo</p>
+					</a>
+					
+					<a href="/servicios/personalizado" class="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
+						<h3 class="font-medium text-black dark:text-white mb-2 group-hover:underline">Desarrollo Personalizado</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-300">Software único para necesidades específicas</p>
 					</a>
 				</div>
 			</div>

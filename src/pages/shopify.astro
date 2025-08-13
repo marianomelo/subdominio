@@ -1,0 +1,856 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LucideIcon from '../components/LucideIcon.jsx';
+---
+
+<Layout title="Tiendas Online con Shopify" description="Creamos tiendas online profesionales con Shopify. La plataforma líder mundial para e-commerce con hosting incluido, diseño personalizado y soporte completo.">
+	<!-- Hero Section -->
+	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6">
+			<div class="max-w-5xl mx-auto text-center">
+				<h1 class="text-5xl md:text-7xl font-medium mb-8 text-black dark:text-white leading-tight">
+					Tu tienda <span class="font-bold">Shopify</span> lista para vender en 2-3 semanas
+				</h1>
+				
+				<p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed mb-12 max-w-4xl mx-auto">
+					Sin complicaciones técnicas. Hosting incluido. Diseño 100% personalizado.
+					Vendes desde el día uno.
+				</p>
+				
+				<div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+					<a
+						href="/contacto"
+						class="px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button"
+					>
+						Solicitar cotización
+					</a>
+					<a
+						href="#ventajas"
+						class="px-8 py-4 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 font-medium hover:border-black dark:hover:border-white transition-all duration-200 hover:scale-[1.02] rounded-button"
+					>
+						Ver ventajas
+					</a>
+				</div>
+
+				<!-- Stats -->
+				<div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+					<div>
+						<div class="text-3xl font-bold text-black dark:text-white mb-2">1.7M+</div>
+						<div class="text-sm text-gray-600 dark:text-gray-400">Tiendas activas</div>
+					</div>
+					<div>
+						<div class="text-3xl font-bold text-black dark:text-white mb-2">$444B</div>
+						<div class="text-sm text-gray-600 dark:text-gray-400">En ventas procesadas</div>
+					</div>
+					<div>
+						<div class="text-3xl font-bold text-black dark:text-white mb-2">99.98%</div>
+						<div class="text-sm text-gray-600 dark:text-gray-400">Uptime garantizado</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Ventajas principales -->
+	<section class="py-20 bg-gray-50 dark:bg-gray-950" id="ventajas">
+		<div class="container mx-auto px-6">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-medium mb-6 text-black dark:text-white">
+						Ventas automáticas. Cero complicaciones.
+					</h2>
+					<p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+						Lo que tú haces manual, Shopify lo automatiza
+					</p>
+				</div>
+				
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<!-- Sin mantenimiento técnico -->
+					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors duration-200">
+						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center mb-6">
+							<LucideIcon name="shield-check" className="w-6 h-6" />
+						</div>
+						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Cero mantenimiento</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Sin actualizaciones. Sin backups. Sin caídas.
+							Tú vendes, nosotros nos encargamos del resto.
+						</p>
+					</div>
+
+					<!-- Hosting incluido -->
+					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors duration-200">
+						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center mb-6">
+							<LucideIcon name="server" className="w-6 h-6" />
+						</div>
+						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Velocidad mundial</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Tu tienda carga rápido desde Chile hasta Japón.
+							99.98% de disponibilidad garantizada.
+						</p>
+					</div>
+
+					<!-- Escalabilidad automática -->
+					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors duration-200">
+						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center mb-6">
+							<LucideIcon name="trending-up" className="w-6 h-6" />
+						</div>
+						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Crece sin límites</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							10 o 10,000 visitantes simultáneos.
+							La infraestructura crece contigo automáticamente.
+						</p>
+					</div>
+
+					<!-- Pagos integrados -->
+					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors duration-200">
+						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center mb-6">
+							<LucideIcon name="credit-card" className="w-6 h-6" />
+						</div>
+						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Cobras instantáneo</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Tarjetas, PayPal, transferencias.
+							Sin esperas bancarias ni trámites.
+						</p>
+					</div>
+
+					<!-- App Store -->
+					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors duration-200">
+						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center mb-6">
+							<LucideIcon name="puzzle" className="w-6 h-6" />
+						</div>
+						<h3 class="text-xl font-medium text-black dark:text-white mb-4">6000+ apps en 1 clic</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Email marketing, inventario, contabilidad.
+							Todo se integra sin programar.
+						</p>
+					</div>
+
+					<!-- Soporte 24/7 -->
+					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors duration-200">
+						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center mb-6">
+							<LucideIcon name="headphones" className="w-6 h-6" />
+						</div>
+						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Ayuda cuando necesites</h3>
+						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+							Soporte 24/7 en español.
+							Chat, email y teléfono siempre disponibles.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Lo que incluimos -->
+	<section class="py-20 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6">
+			<div class="max-w-5xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-medium mb-6 text-black dark:text-white">
+						Todo incluido. Nada extra que pagar.
+					</h2>
+					<p class="text-xl text-gray-600 dark:text-gray-300">
+						Tu tienda lista para vender en 2-3 semanas
+					</p>
+				</div>
+				
+				<div class="space-y-8">
+					<!-- Diseño personalizado -->
+					<div class="flex gap-6 items-start">
+						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
+							<LucideIcon name="palette" className="w-6 h-6" />
+						</div>
+						<div>
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Diseño 100% Personalizado</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+								Tu marca, tus colores, tu estilo.
+								Optimizado para vender desde móvil y desktop.
+							</p>
+							<ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
+								<li>• Responsive y rápido</li>
+								<li>• Tu identidad visual integrada</li>
+								<li>• Orientado a convertir visitas en ventas</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Configuración completa -->
+					<div class="flex gap-6 items-start">
+						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
+							<LucideIcon name="settings" className="w-6 h-6" />
+						</div>
+						<div>
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Configuración Completa</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+								Todo configurado para vender desde el día uno.
+								Tú solo subes productos y vendes.
+							</p>
+							<ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
+								<li>• Productos y categorías organizadas</li>
+								<li>• Inventario y variantes configuradas</li>
+								<li>• Envíos para todo Chile</li>
+								<li>• Políticas legales incluidas</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Pagos -->
+					<div class="flex gap-6 items-start">
+						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
+							<LucideIcon name="banknote" className="w-6 h-6" />
+						</div>
+						<div>
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Pagos Integrados</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+								Todos los métodos para Chile y el mundo.
+								Cobras desde el primer día.
+							</p>
+							<ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
+								<li>• Tarjetas (Visa, Mastercard, American Express)</li>
+								<li>• PayPal y Mercado Pago</li>
+								<li>• Transferencias bancarias chilenas</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Apps y funcionalidades -->
+					<div class="flex gap-6 items-start">
+						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
+							<LucideIcon name="smartphone" className="w-6 h-6" />
+						</div>
+						<div>
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Apps que Aumentan Ventas</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+								Las mejores apps instaladas y configuradas.
+								Más ventas desde el primer día.
+							</p>
+							<ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
+								<li>• SEO automático para Google</li>
+								<li>• Reviews de clientes</li>
+								<li>• Recuperación de carritos abandonados</li>
+								<li>• Analytics para optimizar ventas</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Comparación con otras plataformas -->
+	<section class="py-20 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-medium mb-6 text-black dark:text-white">
+						Shopify vs. Otras plataformas
+					</h2>
+					<p class="text-xl text-gray-600 dark:text-gray-300">
+						¿Por qué Shopify es la mejor opción para tu negocio?
+					</p>
+				</div>
+				
+				<div class="grid md:grid-cols-2 gap-8">
+					<!-- Shopify vs WooCommerce -->
+					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800">
+						<div class="flex items-center justify-between mb-6">
+							<h3 class="text-2xl font-medium text-black dark:text-white">Shopify vs WooCommerce</h3>
+							<div class="text-sm bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-3 py-1 rounded-full">
+								Más simple
+							</div>
+						</div>
+						<div class="space-y-4">
+							<div class="flex items-center justify-between">
+								<span class="text-gray-600 dark:text-gray-300">Hosting incluido</span>
+								<div class="flex gap-2">
+									<LucideIcon name="check" className="w-5 h-5 text-green-500" />
+									<LucideIcon name="x" className="w-5 h-5 text-red-500" />
+								</div>
+							</div>
+							<div class="flex items-center justify-between">
+								<span class="text-gray-600 dark:text-gray-300">Mantenimiento automático</span>
+								<div class="flex gap-2">
+									<LucideIcon name="check" className="w-5 h-5 text-green-500" />
+									<LucideIcon name="x" className="w-5 h-5 text-red-500" />
+								</div>
+							</div>
+							<div class="flex items-center justify-between">
+								<span class="text-gray-600 dark:text-gray-300">Actualizaciones automáticas</span>
+								<div class="flex gap-2">
+									<LucideIcon name="check" className="w-5 h-5 text-green-500" />
+									<LucideIcon name="x" className="w-5 h-5 text-red-500" />
+								</div>
+							</div>
+							<div class="flex items-center justify-between">
+								<span class="text-gray-600 dark:text-gray-300">Soporte 24/7</span>
+								<div class="flex gap-2">
+									<LucideIcon name="check" className="w-5 h-5 text-green-500" />
+									<LucideIcon name="x" className="w-5 h-5 text-red-500" />
+								</div>
+							</div>
+							<div class="flex items-center justify-between">
+								<span class="text-gray-600 dark:text-gray-300">Pagos integrados</span>
+								<div class="flex gap-2">
+									<LucideIcon name="check" className="w-5 h-5 text-green-500" />
+									<LucideIcon name="x" className="w-5 h-5 text-red-500" />
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Shopify vs Plataformas locales -->
+					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800">
+						<div class="flex items-center justify-between mb-6">
+							<h3 class="text-2xl font-medium text-black dark:text-white">Shopify vs Locales</h3>
+							<div class="text-sm bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-3 py-1 rounded-full">
+								Más potente
+							</div>
+						</div>
+						<div class="space-y-4">
+							<div class="flex items-center justify-between">
+								<span class="text-gray-600 dark:text-gray-300">Marketplace de apps</span>
+								<div class="flex gap-2">
+									<LucideIcon name="check" className="w-5 h-5 text-green-500" />
+									<LucideIcon name="x" className="w-5 h-5 text-red-500" />
+								</div>
+							</div>
+							<div class="flex items-center justify-between">
+								<span class="text-gray-600 dark:text-gray-300">Infraestructura global</span>
+								<div class="flex gap-2">
+									<LucideIcon name="check" className="w-5 h-5 text-green-500" />
+									<LucideIcon name="x" className="w-5 h-5 text-red-500" />
+								</div>
+							</div>
+							<div class="flex items-center justify-between">
+								<span class="text-gray-600 dark:text-gray-300">Escalabilidad ilimitada</span>
+								<div class="flex gap-2">
+									<LucideIcon name="check" className="w-5 h-5 text-green-500" />
+									<LucideIcon name="x" className="w-5 h-5 text-red-500" />
+								</div>
+							</div>
+							<div class="flex items-center justify-between">
+								<span class="text-gray-600 dark:text-gray-300">Actualizaciones frecuentes</span>
+								<div class="flex gap-2">
+									<LucideIcon name="check" className="w-5 h-5 text-green-500" />
+									<LucideIcon name="x" className="w-5 h-5 text-red-500" />
+								</div>
+							</div>
+							<div class="flex items-center justify-between">
+								<span class="text-gray-600 dark:text-gray-300">Integraciones nativas</span>
+								<div class="flex gap-2">
+									<LucideIcon name="check" className="w-5 h-5 text-green-500" />
+									<LucideIcon name="x" className="w-5 h-5 text-red-500" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Tipos de negocio -->
+	<section class="py-20 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-medium mb-6 text-black dark:text-white">
+						Ideal para todo tipo de negocio
+					</h2>
+					<p class="text-xl text-gray-600 dark:text-gray-300">
+						Desde emprendimientos hasta grandes empresas
+					</p>
+				</div>
+				
+				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<!-- Emprendedores -->
+					<div class="bg-gray-50 dark:bg-gray-950 p-6 rounded-lg border border-gray-200 dark:border-gray-800">
+						<div class="w-10 h-10 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center mb-4">
+							<LucideIcon name="rocket" className="w-5 h-5" />
+						</div>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Emprendedores</h3>
+						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+							Joyerías, ropa, cosmética chilena.
+							De Instagram a tienda propia en 2 semanas.
+						</p>
+					</div>
+
+					<!-- Pequeñas empresas -->
+					<div class="bg-gray-50 dark:bg-gray-950 p-6 rounded-lg border border-gray-200 dark:border-gray-800">
+						<div class="w-10 h-10 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center mb-4">
+							<LucideIcon name="building-2" className="w-5 h-5" />
+						</div>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-3">PYMES</h3>
+						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+							Ferreterías, librerías, tiendas deportivas.
+							Ventas offline + online integradas.
+						</p>
+					</div>
+
+					<!-- Marcas establecidas -->
+					<div class="bg-gray-50 dark:bg-gray-950 p-6 rounded-lg border border-gray-200 dark:border-gray-800">
+						<div class="w-10 h-10 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center mb-4">
+							<LucideIcon name="crown" className="w-5 h-5" />
+						</div>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Marcas consolidadas</h3>
+						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+							Marcas como Lollapalooza, Decathlon Chile.
+							Migración sin perder una venta.
+						</p>
+					</div>
+
+					<!-- Marketplace sellers -->
+					<div class="bg-gray-50 dark:bg-gray-950 p-6 rounded-lg border border-gray-200 dark:border-gray-800">
+						<div class="w-10 h-10 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center mb-4">
+							<LucideIcon name="store" className="w-5 h-5" />
+						</div>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Vendedores de marketplace</h3>
+						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+							Escapa de MercadoLibre y Falabella.
+							0% comisiones en tu propia tienda.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Proceso de trabajo -->
+	<section class="py-20 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6">
+			<div class="max-w-5xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-medium mb-6 text-black dark:text-white">
+						De idea a ventas en 2-3 semanas
+					</h2>
+					<p class="text-xl text-gray-600 dark:text-gray-300">
+						Proceso probado con +100 tiendas exitosas
+					</p>
+				</div>
+				
+				<div class="space-y-8">
+					<div class="flex gap-6 items-start">
+						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center flex-shrink-0 font-bold">
+							1
+						</div>
+						<div>
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Estrategia y Configuración Inicial</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+								Creamos tu cuenta Shopify, configuramos el plan adecuado y definimos la estructura 
+								de productos, categorías y políticas de envío.
+							</p>
+						</div>
+					</div>
+
+					<div class="flex gap-6 items-start">
+						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center flex-shrink-0 font-bold">
+							2
+						</div>
+						<div>
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Diseño de Tema Personalizado</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+								Desarrollamos un tema exclusivo basado en tu marca, optimizado para conversiones 
+								y experiencia de usuario en móviles y desktop.
+							</p>
+						</div>
+					</div>
+
+					<div class="flex gap-6 items-start">
+						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center flex-shrink-0 font-bold">
+							3
+						</div>
+						<div>
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Configuración de Pagos y Apps</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+								Integramos métodos de pago, instalamos apps esenciales y configuramos 
+								herramientas de marketing y analítica.
+							</p>
+						</div>
+					</div>
+
+					<div class="flex gap-6 items-start">
+						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center flex-shrink-0 font-bold">
+							4
+						</div>
+						<div>
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Carga de Productos y Testing</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+								Subimos tus productos con descripciones optimizadas para SEO y realizamos 
+								pruebas completas de funcionalidad y pagos.
+							</p>
+						</div>
+					</div>
+
+					<div class="flex gap-6 items-start">
+						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center flex-shrink-0 font-bold">
+							5
+						</div>
+						<div>
+							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Lanzamiento y Capacitación</h3>
+							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+								Activamos tu tienda, te capacitamos en el panel administrativo y te entregamos 
+								guías para gestionar pedidos, productos e inventario.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Inversión -->
+	<section class="py-20 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl md:text-4xl font-medium mb-6 text-black dark:text-white">
+					Inversión única. Todo incluido.
+				</h2>
+				<p class="text-xl text-gray-600 dark:text-gray-300 mb-12">
+					Vendes desde el primer día. Sin sorpresas.
+				</p>
+				
+				<div class="bg-gray-50 dark:bg-gray-950 p-12 rounded-lg border border-gray-200 dark:border-gray-800 max-w-2xl mx-auto">
+					<div class="mb-8">
+						<div class="text-6xl font-bold text-black dark:text-white mb-4">55 UF</div>
+						<div class="text-2xl text-gray-600 dark:text-gray-300 mb-2">Desde</div>
+						<div class="text-lg text-gray-500 dark:text-gray-400">Configuración + Diseño personalizado completo</div>
+					</div>
+					
+					<div class="space-y-4 mb-8 text-left">
+						<div class="flex items-center text-gray-600 dark:text-gray-300">
+							<LucideIcon name="check" className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+							Tema Shopify 100% personalizado
+						</div>
+						<div class="flex items-center text-gray-600 dark:text-gray-300">
+							<LucideIcon name="check" className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+							Configuración completa de tienda
+						</div>
+						<div class="flex items-center text-gray-600 dark:text-gray-300">
+							<LucideIcon name="check" className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+							Integración de pagos y apps esenciales
+						</div>
+						<div class="flex items-center text-gray-600 dark:text-gray-300">
+							<LucideIcon name="check" className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+							Carga de hasta 50 productos
+						</div>
+						<div class="flex items-center text-gray-600 dark:text-gray-300">
+							<LucideIcon name="check" className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+							Capacitación completa en Shopify
+						</div>
+						<div class="flex items-center text-gray-600 dark:text-gray-300">
+							<LucideIcon name="check" className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+							30 días de soporte post-lanzamiento
+						</div>
+					</div>
+					
+					<a
+						href="/contacto"
+						class="w-full px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button text-center block"
+					>
+						Solicitar cotización personalizada
+					</a>
+				</div>
+
+				<div class="mt-12 space-y-3">
+					<p class="text-gray-600 dark:text-gray-300">
+						<strong>No incluye:</strong> Suscripción mensual de Shopify (desde $29 USD/mes)
+					</p>
+					<p class="text-sm text-gray-500 dark:text-gray-400">
+						Valor UF al día de la cotización. Tiempo de desarrollo: 2-3 semanas.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Final -->
+	<section class="py-20 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
+		<div class="container mx-auto px-6 text-center">
+			<div class="max-w-3xl mx-auto">
+				<h2 class="text-3xl md:text-4xl font-medium mb-6">
+					Empieza a vender esta semana
+				</h2>
+				<p class="text-xl text-gray-300 dark:text-gray-600 mb-8 leading-relaxed">
+					Más de 1.7 millones de marcas exitosas usan Shopify.<br>Es tu turno.
+				</p>
+				
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a
+						href="/contacto"
+						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02] rounded-button"
+					>
+						Solicitar cotización gratuita
+					</a>
+					<a
+						href="mailto:info@subdominio.cl"
+						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-button"
+					>
+						Escribir por email
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Sección de contacto y cotización -->
+	<section class="py-16 md:py-20 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-2xl md:text-4xl font-medium mb-4 text-black dark:text-white">
+						Cotización gratuita en 24 horas
+					</h2>
+					<p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+						Cuéntanos tu proyecto. Te respondemos con precio exacto y cronograma.
+					</p>
+					<div class="bg-green-50 dark:bg-green-900/20 p-4 md:p-6 rounded-xl border border-green-200 dark:border-green-800 max-w-2xl mx-auto">
+						<div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6 text-green-700 dark:text-green-300">
+							<div class="flex items-center gap-2">
+								<div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+									<LucideIcon name="check" className="w-3 h-3 text-white" />
+								</div>
+								<span class="font-medium">Consultoría gratuita</span>
+							</div>
+							<div class="flex items-center gap-2">
+								<div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+									<LucideIcon name="check" className="w-3 h-3 text-white" />
+								</div>
+								<span class="font-medium">Sin compromiso</span>
+							</div>
+							<div class="flex items-center gap-2">
+								<div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+									<LucideIcon name="check" className="w-3 h-3 text-white" />
+								</div>
+								<span class="font-medium">Respuesta en 24h</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="grid lg:grid-cols-3 gap-6 lg:gap-8">
+					<!-- Formulario -->
+					<div class="lg:col-span-2 order-2 lg:order-1">
+						<div class="bg-white dark:bg-gray-900 p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg">
+							<div class="mb-6">
+								<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+									Cotización personalizada
+								</h3>
+								<p class="text-gray-600 dark:text-gray-400">
+									Completa el formulario y recibe tu propuesta en menos de 24 horas
+								</p>
+							</div>
+							<form class="space-y-5" onsubmit="handleFormSubmit(event)">
+								<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+									<div>
+										<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+											Nombre *
+										</label>
+										<input
+											type="text"
+											name="nombre"
+											required
+											placeholder="Tu nombre"
+											class="w-full px-4 py-4 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200"
+										/>
+									</div>
+									<div>
+										<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+											Empresa
+										</label>
+										<input
+											type="text"
+											name="empresa"
+											placeholder="Nombre de tu empresa"
+											class="w-full px-4 py-4 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200"
+										/>
+									</div>
+								</div>
+							
+								<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+									<div>
+										<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+											Email *
+										</label>
+										<input
+											type="email"
+											name="email"
+											required
+											placeholder="tu@email.com"
+											class="w-full px-4 py-4 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200"
+										/>
+									</div>
+									<div>
+										<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+											Teléfono
+										</label>
+										<input
+											type="tel"
+											name="telefono"
+											placeholder="+56 9 1234 5678"
+											class="w-full px-4 py-4 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200"
+										/>
+									</div>
+								</div>
+							
+								<div>
+									<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+										Tipo de tienda que necesitas
+									</label>
+									<select name="tipoTienda" class="w-full px-4 py-4 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-200">
+										<option value="">Selecciona una opción</option>
+										<option value="b2c">Tienda B2C (venta al público)</option>
+										<option value="b2b">Tienda B2B (venta a empresas)</option>
+										<option value="marketplace">Marketplace (multi-vendedor)</option>
+										<option value="suscripciones">Tienda de suscripciones</option>
+										<option value="no-seguro">No estoy seguro</option>
+									</select>
+								</div>
+							
+								<div>
+									<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+										Cuéntanos sobre tu proyecto *
+									</label>
+									<textarea
+										name="mensaje"
+										required
+										rows="5"
+										placeholder="Ejemplo: Vendo ropa femenina, tengo 50 productos, ya tengo logo. Necesito integración con Shopify Payments y apps de marketing..."
+										class="w-full px-4 py-4 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 resize-none transition-all duration-200"
+									></textarea>
+								</div>
+							
+								<button
+									type="submit"
+									class="w-full px-8 py-5 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-lg rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-3"
+								>
+									<LucideIcon name="send" className="w-5 h-5" />
+									Solicitar cotización gratuita
+								</button>
+							</form>
+						</div>
+					</div>
+					
+					<!-- Información de contacto -->
+					<div class="space-y-6 order-1 lg:order-2">
+						<div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-6 rounded-2xl border border-blue-200 dark:border-blue-800">
+							<h3 class="text-xl font-bold text-blue-900 dark:text-blue-100 mb-2">
+								¿Prefieres hablar directamente?
+							</h3>
+							<p class="text-blue-700 dark:text-blue-300 text-sm mb-6">
+								Contacta con nosotros al instante
+							</p>
+							<div class="space-y-3">
+								<a
+									href="https://wa.me/56800914659?text=Hola, me interesa una tienda Shopify. ¿Podríamos conversar?"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center p-4 bg-green-500 hover:bg-green-600 text-white rounded-xl transition-all duration-200 group shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
+								>
+									<div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mr-3">
+										<LucideIcon name="message-circle" className="w-5 h-5" />
+									</div>
+									<div class="flex-1">
+										<p class="font-bold">WhatsApp</p>
+										<p class="text-sm opacity-90">Respuesta inmediata</p>
+									</div>
+									<LucideIcon name="chevron-right" className="w-5 h-5 opacity-70 group-hover:opacity-100" />
+								</a>
+								
+								<a
+									href="mailto:info@subdominio.cl?subject=Consulta tienda Shopify&body=Hola, me interesa desarrollar una tienda Shopify. Me gustaría recibir más información."
+									class="flex items-center p-4 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-xl transition-all duration-200 group border border-gray-200 dark:border-gray-700"
+								>
+									<div class="w-10 h-10 bg-gray-600 dark:bg-gray-500 text-white rounded-lg flex items-center justify-center mr-3">
+										<LucideIcon name="mail" className="w-5 h-5" />
+									</div>
+									<div class="flex-1">
+										<p class="font-semibold text-gray-900 dark:text-white">Email</p>
+										<p class="text-sm text-gray-600 dark:text-gray-400">info@subdominio.cl</p>
+									</div>
+									<LucideIcon name="chevron-right" className="w-5 h-5 opacity-70 group-hover:opacity-100 text-gray-600 dark:text-gray-400" />
+								</a>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<script>
+		async function handleFormSubmit(event) {
+			event.preventDefault();
+			
+			const form = event.target;
+			const button = form.querySelector('button[type="submit"]');
+			const originalText = button.innerHTML;
+			
+			// Obtener datos del formulario
+			const formData = new FormData(form);
+			const data = {
+				nombre: formData.get('nombre') || '',
+				empresa: formData.get('empresa') || '',
+				email: formData.get('email') || '',
+				telefono: formData.get('telefono') || '',
+				servicio: 'ecommerce',
+				tipoTienda: formData.get('tipoTienda') || '',
+				mensaje: formData.get('mensaje') || '',
+				landing: 'shopify'
+			};
+			
+			// Validar campos requeridos
+			if (!data.nombre.trim() || !data.email.trim() || !data.mensaje.trim()) {
+				alert('Por favor completa todos los campos requeridos (Nombre, Email y Mensaje).');
+				return;
+			}
+			
+			// Cambiar estado del botón
+			button.innerHTML = '<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Enviando...';
+			button.disabled = true;
+			
+			try {
+				const response = await fetch('/api/contact', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(data)
+				});
+				
+				const result = await response.json();
+				
+				if (response.ok && result.success) {
+					button.innerHTML = '✓ ¡Enviado! Te contactaremos pronto';
+					button.className = button.className.replace('from-green-600 to-green-700', 'from-blue-600 to-blue-700');
+					
+					// Limpiar formulario
+					form.reset();
+					
+					// Mostrar mensaje de éxito
+					alert('¡Gracias! Hemos recibido tu solicitud. Te contactaremos en menos de 24 horas con tu cotización personalizada.');
+					
+					// Scroll suave al WhatsApp como opción alternativa
+					setTimeout(() => {
+						const whatsappSection = document.querySelector('a[href*="wa.me"]');
+						if (whatsappSection) {
+							whatsappSection.scrollIntoView({ behavior: 'smooth' });
+						}
+					}, 2000);
+				} else {
+					throw new Error(result.message || 'Error al enviar el formulario');
+				}
+			} catch (error) {
+				console.error('Error:', error);
+				button.innerHTML = '❌ Error - Intenta nuevamente';
+				button.className = button.className.replace('from-green-600 to-green-700', 'from-red-600 to-red-700');
+				alert('Hubo un error al enviar tu mensaje. Por favor intenta nuevamente o contáctanos directamente por WhatsApp.');
+			}
+			
+			// Restaurar botón después de 5 segundos
+			setTimeout(() => {
+				button.innerHTML = originalText;
+				button.disabled = false;
+				button.className = 'w-full px-8 py-5 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-lg rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-3';
+			}, 5000);
+		}
+	</script>
+</Layout>

@@ -11,7 +11,7 @@ export async function onRequestPost(context) {
   try {
     const data = await request.json();
     
-    const { nombre, empresa, email, telefono, servicio, mensaje, referencia } = data;
+    const { nombre, empresa, email, telefono, servicio, mensaje, referencia, tipoTienda, landing } = data;
     
     const servicioMap = {
       'desarrollo-web': 'Desarrollo Web',
@@ -33,9 +33,20 @@ export async function onRequestPost(context) {
       'otro': 'Otro'
     };
     
+    const landingNames = {
+      'woocommerce': 'Landing WooCommerce',
+      'shopify': 'Landing Shopify',
+      'contacto': 'Página de Contacto',
+      'general': 'Sitio Web General'
+    };
+
     const emailContent = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #333; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px;">Nueva Consulta desde el Sitio Web</h2>
+        
+        ${landing ? `<div style="background-color: #e3f2fd; padding: 15px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #2196f3;">
+          <p style="margin: 0; color: #1976d2; font-weight: bold;">📍 Origen: ${landingNames[landing] || landing}</p>
+        </div>` : ''}
         
         <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px; margin: 20px 0;">
           <h3 style="color: #555; margin-top: 0;">Información del Contacto</h3>
@@ -48,6 +59,7 @@ export async function onRequestPost(context) {
         <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px; margin: 20px 0;">
           <h3 style="color: #555; margin-top: 0;">Detalles del Proyecto</h3>
           <p><strong>Tipo de Proyecto:</strong> ${servicioMap[servicio] || servicio}</p>
+          ${tipoTienda ? `<p><strong>Tipo de Tienda:</strong> ${tipoTienda}</p>` : ''}
           ${referencia ? `<p><strong>¿Cómo nos conoció?:</strong> ${referenciaMap[referencia] || referencia}</p>` : ''}
         </div>
         
@@ -59,7 +71,7 @@ export async function onRequestPost(context) {
         <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 30px 0;">
         
         <p style="color: #999; font-size: 12px; text-align: center;">
-          Este mensaje fue enviado desde el formulario de contacto de subdominio.cl<br>
+          Este mensaje fue enviado desde ${landingNames[landing] || 'el formulario de contacto'} de subdominio.cl<br>
           Fecha: ${new Date().toLocaleString('es-CL', { timeZone: 'America/Santiago' })}
         </p>
       </div>
@@ -67,6 +79,7 @@ export async function onRequestPost(context) {
     
     const plainTextContent = `
 Nueva Consulta desde el Sitio Web
+${landing ? `\n📍 ORIGEN: ${landingNames[landing] || landing}\n` : ''}
 
 INFORMACIÓN DEL CONTACTO
 Nombre: ${nombre}
@@ -75,13 +88,13 @@ ${telefono ? `Teléfono: ${telefono}\n` : ''}
 
 DETALLES DEL PROYECTO
 Tipo de Proyecto: ${servicioMap[servicio] || servicio}
-${referencia ? `¿Cómo nos conoció?: ${referenciaMap[referencia] || referencia}\n` : ''}
+${tipoTienda ? `Tipo de Tienda: ${tipoTienda}\n` : ''}${referencia ? `¿Cómo nos conoció?: ${referenciaMap[referencia] || referencia}\n` : ''}
 
 MENSAJE
 ${mensaje}
 
 ---
-Este mensaje fue enviado desde el formulario de contacto de subdominio.cl
+Este mensaje fue enviado desde ${landingNames[landing] || 'el formulario de contacto'} de subdominio.cl
 Fecha: ${new Date().toLocaleString('es-CL', { timeZone: 'America/Santiago' })}
     `;
     
@@ -98,7 +111,7 @@ Fecha: ${new Date().toLocaleString('es-CL', { timeZone: 'America/Santiago' })}
       body: JSON.stringify({
         from: 'Subdominio Web <noreply@transactional.erpsync.app>',
         to: ['comercial@tecnologicachile.cl'],
-        subject: `Nueva consulta: ${servicio} - ${nombre}`,
+        subject: `Nueva consulta${landing ? ` [${landingNames[landing]}]` : ''}: ${servicioMap[servicio] || servicio} - ${nombre}`,
         html: emailContent,
         text: plainTextContent,
         reply_to: email,
