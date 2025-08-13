@@ -1,0 +1,21 @@
+---
+// Redirect to the main web development landing page
+export async function getStaticPaths() {
+  return [];
+}
+
+export const prerender = false;
+---
+
+<script>
+  // Client-side redirect to the main web development page
+  window.location.replace('/servicios/web-profesional');
+</script>
+
+<!-- Server-side redirect fallback -->
+<meta http-equiv="refresh" content="0; url=/servicios/web-profesional">
+
+<!-- For users with JavaScript disabled -->
+<noscript>
+  <a href="/servicios/web-profesional">Click here if you are not redirected automatically</a>
+</noscript>
