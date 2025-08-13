@@ -15,16 +15,14 @@ const AnimatedHeroSection = () => {
   const itemVariants = {
     hidden: { 
       opacity: 0, 
-      y: 30,
-      filter: "blur(10px)"
+      y: 20
     },
     visible: {
       opacity: 1,
       y: 0,
-      filter: "blur(0px)",
       transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        duration: 0.6,
+        ease: "easeOut"
       }
     }
   };
@@ -42,14 +40,14 @@ const AnimatedHeroSection = () => {
             className="text-h1 md:text-6xl lg:text-7xl font-medium mb-8 text-black dark:text-white"
             variants={itemVariants}
           >
-            Tecnología a tu medida, explicada en tu idioma
+            Soluciones digitales hechas para tu negocio
           </motion.h1>
           
           <motion.p 
             className="text-body-lg text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto"
             variants={itemVariants}
           >
-            Desarrollamos sitios web, e-commerce y soluciones de automatización que funcionan, se mantienen y crecen contigo.
+            Desarrollamos sitios web, e-commerce y automatizaciones que impulsan tu crecimiento y se adaptan a tu futuro.
           </motion.p>
 
           <motion.div 
@@ -59,22 +57,12 @@ const AnimatedHeroSection = () => {
             <motion.a
               href="/contacto"
               className="px-8 py-3 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium transition-all duration-200 rounded-button shadow-button hover:shadow-button-hover text-base"
-              whileHover={{ 
-                scale: 1.02,
-                transition: { duration: 0.2 }
-              }}
-              whileTap={{ scale: 0.98 }}
             >
               Hablemos de tu proyecto
             </motion.a>
             <motion.a
               href="/proyectos"
               className="px-8 py-3 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 font-medium hover:border-black dark:hover:border-white hover:text-black dark:hover:text-white transition-all duration-200 rounded-button text-base"
-              whileHover={{ 
-                scale: 1.02,
-                transition: { duration: 0.2 }
-              }}
-              whileTap={{ scale: 0.98 }}
             >
               Ver proyectos realizados
             </motion.a>

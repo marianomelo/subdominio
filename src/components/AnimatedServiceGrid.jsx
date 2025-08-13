@@ -49,16 +49,14 @@ const AnimatedServiceGrid = () => {
   const cardVariants = {
     hidden: { 
       opacity: 0, 
-      y: 40,
-      scale: 0.95
+      y: 20
     },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
       transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        duration: 0.5,
+        ease: "easeOut"
       }
     }
   };
@@ -93,40 +91,24 @@ const AnimatedServiceGrid = () => {
               href={service.href} 
               className="group"
               variants={cardVariants}
-              whileHover={{ 
-                y: -5,
-                transition: { duration: 0.3, ease: "easeOut" }
-              }}
             >
-              <motion.div 
+              <div 
                 className="h-full bg-gray-50 dark:bg-gray-800 p-8 transition-all duration-300 rounded-card border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white shadow-card hover:shadow-lg"
-                whileHover={{ 
-                  backgroundColor: "rgba(0, 0, 0, 0.02)",
-                  transition: { duration: 0.3 }
-                }}
               >
                 <div className="flex items-start justify-between mb-6">
-                  <motion.div 
+                  <div 
                     className="w-12 h-12 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center text-xl font-mono rounded-icon"
-                    whileHover={{ 
-                      scale: 1.1,
-                      rotate: 5,
-                      transition: { duration: 0.3 }
-                    }}
                   >
                     {service.number}
-                  </motion.div>
-                  <motion.svg 
+                  </div>
+                  <svg 
                     className="w-6 h-6 text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors duration-200" 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"
-                    initial={{ x: 0 }}
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.3 }}
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </motion.svg>
+                  </svg>
                 </div>
                 <h3 className="text-h3 font-medium text-black dark:text-white mb-3">
                   {service.title}
@@ -136,18 +118,15 @@ const AnimatedServiceGrid = () => {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {service.tags.map((tag, index) => (
-                    <motion.span 
+                    <span 
                       key={tag}
                       className="text-2xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1 rounded-button"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: index * 0.05 }}
                     >
                       {tag}
-                    </motion.span>
+                    </span>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             </motion.a>
           ))}
         </motion.div>
@@ -161,14 +140,12 @@ const AnimatedServiceGrid = () => {
           <p className="text-body text-gray-600 dark:text-gray-400 mb-6">
             ¿No estás seguro de qué servicio necesitas?
           </p>
-          <motion.a 
+          <a 
             href="/contacto"
             className="inline-block px-8 py-3 bg-black dark:bg-white text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 rounded-button shadow-button hover:shadow-button-hover text-base"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
           >
             Cuéntanos tu idea
-          </motion.a>
+          </a>
         </motion.div>
       </div>
     </section>

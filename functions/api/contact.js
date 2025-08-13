@@ -1,3 +1,5 @@
+import { Resend } from 'resend';
+
 export async function onRequestPost(context) {
   const { request, env } = context;
   
@@ -12,6 +14,41 @@ export async function onRequestPost(context) {
     const data = await request.json();
     
     const { nombre, empresa, email, telefono, servicio, mensaje, referencia, tipoTienda, landing } = data;
+    
+    // Validación básica del lado del servidor
+    if (!nombre || !email || !mensaje) {
+      return new Response(
+        JSON.stringify({ 
+          success: false, 
+          message: 'Todos los campos requeridos deben ser completados.' 
+        }),
+        { 
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json',
+            ...corsHeaders
+          }
+        }
+      );
+    }
+    
+    // Validar formato de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return new Response(
+        JSON.stringify({ 
+          success: false, 
+          message: 'Por favor ingresa un email válido.' 
+        }),
+        { 
+          status: 400,
+          headers: {
+            'Content-Type': 'application/json',
+            ...corsHeaders
+          }
+        }
+      );
+    }
     
     const servicioMap = {
       'desarrollo-web': 'Desarrollo Web',
@@ -98,28 +135,20 @@ Este mensaje fue enviado desde ${landingNames[landing] || 'el formulario de cont
 Fecha: ${new Date().toLocaleString('es-CL', { timeZone: 'America/Santiago' })}
     `;
     
-    // Usar la API key de Resend directamente o desde variables de entorno de Cloudflare
-    const RESEND_API_KEY = env?.RESEND_API_KEY || 're_4GzYNUb5_MEQ3r7YpPaexZRZGfgJuZ47B';
+    // Inicializar Resend con la API key desde las variables de entorno
+    const resend = new Resend(env?.RESEND_API_KEY || 're_4GzYNUb5_MEQ3r7YpPaexZRZGfgJuZ47B');
     
     // Enviar email principal al equipo comercial
-    const emailResponse = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'Subdominio Web <noreply@transactional.erpsync.app>',
-        to: ['comercial@tecnologicachile.cl'],
-        subject: `Nueva consulta${landing ? ` [${landingNames[landing]}]` : ''}: ${servicioMap[servicio] || servicio} - ${nombre}`,
-        html: emailContent,
-        text: plainTextContent,
-        reply_to: email,
-      }),
+    const { data, error } = await resend.emails.send({
+      from: 'Subdominio Web <noreply@transactional.erpsync.app>',
+      to: ['comercial@tecnologicachile.cl'],
+      subject: `Nueva consulta${landing ? ` [${landingNames[landing]}]` : ''}: ${servicioMap[servicio] || servicio} - ${nombre}`,
+      html: emailContent,
+      text: plainTextContent,
+      reply_to: email,
     });
     
-    if (!emailResponse.ok) {
-      const error = await emailResponse.text();
+    if (error) {
       console.error('Error sending email:', error);
       return new Response(
         JSON.stringify({ 
@@ -171,19 +200,12 @@ Fecha: ${new Date().toLocaleString('es-CL', { timeZone: 'America/Santiago' })}
     `;
     
     // Enviar email de confirmación al usuario
-    await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'Subdominio <noreply@transactional.erpsync.app>',
-        to: [email],
-        subject: 'Hemos recibido tu consulta - Subdominio',
-        html: autoReplyContent,
-        text: `Hola ${nombre},\n\nHemos recibido tu consulta sobre ${servicioMap[servicio] || servicio} y nuestro equipo la está revisando.\n\nTe responderemos en las próximas 24 horas hábiles.\n\nSaludos,\nEquipo Subdominio`,
-      }),
+    await resend.emails.send({
+      from: 'Subdominio <noreply@transactional.erpsync.app>',
+      to: [email],
+      subject: 'Hemos recibido tu consulta - Subdominio',
+      html: autoReplyContent,
+      text: `Hola ${nombre},\n\nHemos recibido tu consulta sobre ${servicioMap[servicio] || servicio} y nuestro equipo la está revisando.\n\nTe responderemos en las próximas 24 horas hábiles.\n\nSaludos,\nEquipo Subdominio`,
     });
     
     return new Response(

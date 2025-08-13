@@ -49,7 +49,7 @@ import LucideIcon from '../components/LucideIcon.jsx';
 					<div class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-8 rounded-2xl border border-green-200 dark:border-green-800">
 						<div class="flex items-start">
 							<div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-								<LucideIcon name="clock" className="w-8 h-8 text-white" />
+								<LucideIcon name="clock" className="w-8 h-8 text-white" client:load />
 							</div>
 							<div>
 								<h3 class="text-xl font-bold text-green-800 dark:text-green-200 mb-3">
@@ -104,7 +104,7 @@ import LucideIcon from '../components/LucideIcon.jsx';
 					<!-- Flexibilidad -->
 					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors duration-200">
 						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center mb-6">
-							<LucideIcon name="settings" className="w-6 h-6" />
+							<LucideIcon name="settings" className="w-6 h-6" client:load />
 						</div>
 						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Personalización total</h3>
 						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -590,7 +590,7 @@ import LucideIcon from '../components/LucideIcon.jsx';
 									Completa el formulario y recibe tu propuesta en menos de 24 horas
 								</p>
 							</div>
-							<form class="space-y-5" onsubmit="handleFormSubmit(event)">
+							<form class="space-y-5" onsubmit="handleFormSubmit(event)" method="POST" action="#">
 								<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 									<div>
 										<label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
