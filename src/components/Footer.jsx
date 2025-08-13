@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Mail, Phone, Linkedin, Github, Twitter } from 'lucide-react';
 
 const Footer = () => {
@@ -49,23 +48,6 @@ const Footer = () => {
     },
   ];
 
-  const [email, setEmail] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [message, setMessage] = useState('');
-
-  const handleNewsletterSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setMessage('');
-    
-    // Simulate API call
-    setTimeout(() => {
-      setMessage('¡Gracias por suscribirte!');
-      setEmail('');
-      setIsSubmitting(false);
-      setTimeout(() => setMessage(''), 3000);
-    }, 1000);
-  };
 
   return (
     <footer className="bg-gray-50 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
@@ -144,32 +126,6 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="py-12 border-t border-gray-200 dark:border-gray-800">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-h5 font-medium text-black dark:text-white mb-2">Newsletter</h3>
-            <p className="text-body-sm text-gray-600 dark:text-gray-400 mb-6">Recibe tips de desarrollo y novedades tech directo en tu inbox.</p>
-            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="tu@email.com"
-                required
-                className="flex-1 px-4 py-3 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:border-black dark:focus:border-white transition-colors duration-200 text-base rounded-input"
-              />
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="px-8 py-3 bg-black dark:bg-white text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] rounded-button shadow-button hover:shadow-button-hover text-base whitespace-nowrap"
-              >
-                {isSubmitting ? 'Enviando...' : 'Suscribir'}
-              </button>
-            </form>
-            {message && (
-              <p className="mt-3 text-body-sm text-green-600 dark:text-green-400">{message}</p>
-            )}
-          </div>
-        </div>
 
         <div className="pt-8 border-t border-gray-200 dark:border-gray-800">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
