@@ -1,21 +1,23 @@
 ---
-// Redirect to the main web development landing page
-export async function getStaticPaths() {
-  return [];
-}
-
-export const prerender = false;
+// Static redirect page
 ---
 
-<script>
-  // Client-side redirect to the main web development page
-  window.location.replace('/servicios/web-profesional');
-</script>
-
-<!-- Server-side redirect fallback -->
-<meta http-equiv="refresh" content="0; url=/servicios/web-profesional">
-
-<!-- For users with JavaScript disabled -->
-<noscript>
-  <a href="/servicios/web-profesional">Click here if you are not redirected automatically</a>
-</noscript>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirigiendo...</title>
+  <meta http-equiv="refresh" content="0; url=/servicios/web-profesional">
+  <link rel="canonical" href="/servicios/web-profesional">
+</head>
+<body>
+  <script>
+    window.location.replace('/servicios/web-profesional');
+  </script>
+  
+  <noscript>
+    <a href="/servicios/web-profesional">Haz clic aquí si no eres redirigido automáticamente</a>
+  </noscript>
+</body>
+</html>
