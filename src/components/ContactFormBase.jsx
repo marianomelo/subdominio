@@ -315,12 +315,12 @@ const ContactFormBase = ({
       ) : (
         // Layout por defecto con grid
         <>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {renderField('nombre', finalFields.nombre)}
             {renderField('empresa', finalFields.empresa)}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {renderField('email', finalFields.email)}
             {renderField('telefono', finalFields.telefono)}
           </div>
@@ -330,7 +330,7 @@ const ContactFormBase = ({
               {renderField('referencia', { ...finalFields.referencia, containerClass: 'w-full' })}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {renderField('servicio', finalFields.servicio)}
               {renderField('referencia', finalFields.referencia)}
             </div>
@@ -351,8 +351,8 @@ const ContactFormBase = ({
 
       {/* Consentimiento de datos */}
       {showConsentToggle && (
-        <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-card border border-gray-200 dark:border-gray-700">
-          <div className="flex items-start justify-between">
+        <div className="bg-gray-50 dark:bg-gray-900/50 p-4 sm:p-6 rounded-card border border-gray-200 dark:border-gray-700">
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
             <div className="flex-1">
               <label htmlFor="acepto" className="text-body-sm font-medium text-black dark:text-white cursor-pointer">
                 Consentimiento de datos *
@@ -365,7 +365,7 @@ const ContactFormBase = ({
                 para responder a mi consulta y recibir información relevante.
               </p>
             </div>
-            <div className="ml-4">
+            <div className="flex-shrink-0">
               <button
                 type="button"
                 onClick={() => {

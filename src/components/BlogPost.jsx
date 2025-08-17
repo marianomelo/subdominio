@@ -115,14 +115,14 @@ const BlogPost = ({ featured = false, limit = 6 }) => {
             )}
           </div>
           
-          <div className="p-6">
-            <div className="flex items-center mb-3">
+          <div className="p-4 sm:p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0 mb-3">
               {post.categories && post.categories[0] && (
-                <span className={`px-2 py-1 text-xs font-medium rounded ${getCategoryColor(post.categories[0].color)}`}>
+                <span className={`px-2 py-1 text-xs font-medium rounded ${getCategoryColor(post.categories[0].color)} inline-block`}>
                   {post.categories[0].title}
                 </span>
               )}
-              <span className="text-sm text-gray-500 ml-auto">
+              <span className="text-sm text-gray-500 sm:ml-auto">
                 {formatDate(post.publishedAt)}
               </span>
             </div>
@@ -140,13 +140,13 @@ const BlogPost = ({ featured = false, limit = 6 }) => {
               {post.excerpt}
             </p>
             
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0 sm:justify-between">
               <span className="text-xs text-gray-500">
                 {post.readingTime} min de lectura
               </span>
               <a 
                 href={`/blog/${post.slug.current}`}
-                className="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-200"
+                className="text-sm font-medium text-black hover:text-gray-600 transition-colors duration-200 self-start sm:self-auto"
               >
                 Leer más →
               </a>

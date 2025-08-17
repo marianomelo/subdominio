@@ -37,7 +37,7 @@ const AnimatedHeroSection = () => {
           animate="visible"
         >
           <motion.h1 
-            className="text-h1 md:text-6xl lg:text-7xl font-medium mb-8 text-black dark:text-white"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium mb-8 text-black dark:text-white leading-tight"
             variants={itemVariants}
           >
             Soluciones digitales hechas para tu negocio

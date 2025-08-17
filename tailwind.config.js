@@ -157,6 +157,19 @@ export default {
         'button': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
         'button-hover': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
       },
+      minWidth: {
+        '0': '0',
+        'none': 'none',
+      },
+      maxWidth: {
+        'none': 'none',
+        'full': '100%',
+        'screen-sm': '640px',
+        'screen-md': '768px',
+        'screen-lg': '1024px',
+        'screen-xl': '1280px',
+        'screen-2xl': '1536px',
+      },
     },
   },
   plugins: [

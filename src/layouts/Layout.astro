@@ -36,6 +36,9 @@ const imageURL = new URL(image, Astro.site || 'https://subdominio.cl').toString(
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 		<meta name="msvalidate.01" content="0890B0C49ABD486718243358E6F5033F" />
+		<meta name="author" content="Subdominio - Agencia de Desarrollo Web" />
+		<meta name="geo.region" content="CL" />
+		<meta name="geo.placename" content="Chile" />
 		<link rel="canonical" href={canonicalURL} />
 		
 		<!-- Open Graph / Facebook -->
@@ -108,7 +111,7 @@ const imageURL = new URL(image, Astro.site || 'https://subdominio.cl').toString(
 		<SchemaOrg type="organization" />
 		<SchemaOrg type="website" />
 	</head>
-	<body class="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
+	<body class="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200 overflow-x-hidden">
 		<AppWrapper client:load />
 		<main class="flex-grow pt-16 lg:pt-20">
 			<slot />

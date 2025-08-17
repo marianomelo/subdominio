@@ -1,0 +1,98 @@
+---
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://subdominio.cl/#localbusiness",
+  "name": "Subdominio",
+  "description": "Agencia de desarrollo web y software especializada en soluciones digitales innovadoras. Desarrollo de sitios web, e-commerce y automatización.",
+  "url": "https://subdominio.cl",
+  "logo": "https://subdominio.cl/favicon.png",
+  "image": "https://subdominio.cl/og-image.svg",
+  "telephone": "+56800914659",
+  "email": "info@subdominio.cl",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CL",
+    "addressLocality": "Santiago",
+    "addressRegion": "Región Metropolitana"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -33.4489,
+    "longitude": -70.6693
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Chile"
+  },
+  "openingHours": [
+    "Mo-Fr 09:00-18:00",
+    "Sa 09:00-14:00"
+  ],
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "12"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Cliente Satisfecho"
+      },
+      "reviewBody": "Excelente trabajo en el desarrollo de nuestro sitio web. Muy profesionales y cumplieron todos los plazos."
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": -33.4489,
+      "longitude": -70.6693
+    },
+    "geoRadius": "50000"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Desarrollo Web",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Desarrollo Web",
+          "description": "Creación de sitios web modernos y responsivos"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "E-commerce",
+          "description": "Tiendas online completas con WooCommerce"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Automatización",
+          "description": "Procesos automatizados y sistemas personalizados"
+        }
+      }
+    ]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/subdominio-cl",
+    "https://github.com/subdominio"
+  ]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />

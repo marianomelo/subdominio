@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import LucideIcon from "../components/LucideIcon.jsx";
+import BlogPostSchema from '../components/BlogPostSchema.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 
 // Obtener todos los posts del blog
 const allBlogPosts = await getCollection('blog');
@@ -39,6 +41,7 @@ const formatDate = (dateString) => {
 	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
 		<div class="container mx-auto px-6">
 			<div class="max-w-4xl mx-auto">
+				<Breadcrumb items={[{ name: "Blog", item: "/blog" }]} />
 				<div class="mb-8">
 					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
 						<LucideIcon name="arrow-left" className="w-4 h-4 mr-2" />
@@ -108,12 +111,12 @@ const formatDate = (dateString) => {
 								<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 							</div>
 							
-							<div class="p-6">
-								<div class="flex items-center mb-3">
-									<span class={`px-2 py-1 text-xs font-medium rounded ${getCategoryColor(post.data.categoryColor)}`}>
+							<div class="p-4 sm:p-6">
+								<div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0 mb-3">
+									<span class={`px-2 py-1 text-xs font-medium rounded ${getCategoryColor(post.data.categoryColor)} inline-block`}>
 										{post.data.category}
 									</span>
-									<span class="text-sm text-gray-500 dark:text-gray-400 ml-auto">
+									<span class="text-sm text-gray-500 dark:text-gray-400 sm:ml-auto">
 										{formatDate(post.data.publishedDate)}
 									</span>
 								</div>
@@ -131,13 +134,13 @@ const formatDate = (dateString) => {
 									{post.data.excerpt}
 								</p>
 								
-								<div class="flex items-center justify-between">
+								<div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0 sm:justify-between">
 									<span class="text-xs text-gray-500 dark:text-gray-400">
 										{post.data.readingTime} min de lectura
 									</span>
 									<a 
 										href={`/blog/${post.data.slug || post.slug}`}
-										class="text-sm font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
+										class="text-sm font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 self-start sm:self-auto"
 									>
 										Leer más →
 									</a>

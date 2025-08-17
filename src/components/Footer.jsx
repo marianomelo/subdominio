@@ -52,7 +52,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-50 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
       <div className="container mx-auto px-6 py-section">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12 mb-16">
           <div className="lg:col-span-2">
             <a href="/" className="inline-block text-2xl font-bold text-black dark:text-white mb-6 hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-200 font-display">
               subdominio.
@@ -129,11 +129,11 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-gray-200 dark:border-gray-800">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 md:gap-8">
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 md:gap-6">
               <p className="text-2xs text-gray-500 dark:text-gray-400">
                 © {currentYear} Subdominio
               </p>
-              <div className="flex items-center gap-6 text-2xs">
+              <div className="flex items-center gap-4 sm:gap-6 text-2xs">
                 <a
                   href="/privacidad"
                   className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"

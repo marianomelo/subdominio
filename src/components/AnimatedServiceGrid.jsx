@@ -70,7 +70,7 @@ const AnimatedServiceGrid = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-h2 md:text-5xl font-medium mb-6 text-black dark:text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-6 text-black dark:text-white">
             Soluciones digitales completas para tu negocio
           </h2>
           <p className="text-body-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -80,7 +80,7 @@ const AnimatedServiceGrid = () => {
         
         <motion.div 
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -93,7 +93,7 @@ const AnimatedServiceGrid = () => {
               variants={cardVariants}
             >
               <div 
-                className="h-full bg-gray-50 dark:bg-gray-800 p-8 transition-all duration-300 rounded-card border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white shadow-card hover:shadow-lg"
+                className="h-full bg-gray-50 dark:bg-gray-800 p-6 sm:p-8 transition-all duration-300 rounded-card border border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white shadow-card hover:shadow-lg"
               >
                 <div className="flex items-start justify-between mb-6">
                   <div 

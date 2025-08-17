@@ -1,0 +1,77 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  publishedDate: string;
+  author?: string;
+  category?: string;
+  readingTime?: number;
+  image?: string;
+  url: string;
+}
+
+const { 
+  title, 
+  description, 
+  publishedDate, 
+  author = "Equipo Subdominio",
+  category,
+  readingTime,
+  image,
+  url
+} = Astro.props;
+
+const baseUrl = Astro.site || 'https://subdominio.cl';
+const fullUrl = new URL(url, baseUrl).toString();
+const imageUrl = image ? new URL(image, baseUrl).toString() : new URL('/og-image.svg', baseUrl).toString();
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Organization",
+    "name": author,
+    "url": baseUrl
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Subdominio",
+    "url": baseUrl,
+    "logo": {
+      "@type": "ImageObject",
+      "url": new URL('/favicon.png', baseUrl).toString()
+    }
+  },
+  "datePublished": publishedDate,
+  "dateModified": publishedDate,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": fullUrl
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": imageUrl,
+    "width": 1200,
+    "height": 630
+  },
+  "url": fullUrl,
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "Blog Subdominio",
+    "url": new URL('/blog', baseUrl).toString()
+  },
+  ...(category && {
+    "about": {
+      "@type": "Thing",
+      "name": category
+    }
+  }),
+  ...(readingTime && {
+    "timeRequired": `PT${readingTime}M`
+  })
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

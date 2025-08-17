@@ -103,7 +103,7 @@ const Header = ({ showThemeToggle = true }) => {
               </button>
               
               <div 
-                className={`absolute top-full left-0 mt-1 w-80 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-xl rounded-md overflow-hidden z-50 transition-all duration-200 ${
+                className={`absolute top-full left-0 mt-1 w-80 max-w-[calc(100vw-2rem)] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-xl rounded-md overflow-hidden z-50 transition-all duration-200 ${
                   isServicesOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
                 }`}
               >
