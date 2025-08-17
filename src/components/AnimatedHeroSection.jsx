@@ -37,14 +37,14 @@ const AnimatedHeroSection = () => {
           animate="visible"
         >
           <motion.h1 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium mb-8 text-black dark:text-white leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-6 sm:mb-8 text-black dark:text-white leading-tight"
             variants={itemVariants}
           >
             Soluciones digitales hechas para tu negocio
           </motion.h1>
           
           <motion.p 
-            className="text-body-lg text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto"
+            className="text-body-lg text-gray-600 dark:text-gray-300 mb-8 sm:mb-12 max-w-2xl mx-auto"
             variants={itemVariants}
           >
             Desarrollamos sitios web, e-commerce y automatizaciones que impulsan tu crecimiento y se adaptan a tu futuro.

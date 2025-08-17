@@ -21,7 +21,7 @@ const WhatsAppWidget = () => {
     >
       <motion.button
         onClick={handleWhatsAppClick}
-        className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-black dark:bg-white text-white dark:text-black shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center border border-gray-200 dark:border-gray-800"
+        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-black dark:bg-white text-white dark:text-black shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center border border-gray-200 dark:border-gray-800"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onMouseEnter={() => setIsHovered(true)}
@@ -29,7 +29,7 @@ const WhatsAppWidget = () => {
         aria-label="Abrir WhatsApp"
       >
         <svg 
-          className="w-4 h-4 sm:w-5 sm:h-5" 
+          className="w-5 h-5 sm:w-6 sm:h-6" 
           fill="currentColor" 
           viewBox="0 0 24 24"
           style={{ opacity: isHovered ? 1 : 0.7 }}

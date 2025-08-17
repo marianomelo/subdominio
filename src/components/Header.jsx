@@ -150,7 +150,7 @@ const Header = ({ showThemeToggle = true }) => {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 menu-toggle"
+            className="lg:hidden p-3 menu-toggle min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Toggle menu"
           >
             <div className="w-6 h-5 relative flex flex-col justify-between">

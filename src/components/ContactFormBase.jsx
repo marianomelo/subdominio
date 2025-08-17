@@ -228,7 +228,7 @@ const ContactFormBase = ({
           <p className="mt-1 text-body-sm text-red-500">{error}</p>
         )}
         {fieldName === 'mensaje' && showCharCounter && (
-          <p className="mt-1 text-2xs text-gray-500 dark:text-gray-400">
+          <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
             {value.length}/500 caracteres
           </p>
         )}
@@ -374,7 +374,7 @@ const ContactFormBase = ({
                     setErrors(prev => ({ ...prev, acepto: '' }));
                   }
                 }}
-                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-2 ${
+                className={`relative inline-flex h-7 w-12 items-center rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-offset-2 ${
                   formData.acepto 
                     ? 'bg-black dark:bg-white' 
                     : 'bg-gray-300 dark:bg-gray-600'
@@ -384,7 +384,7 @@ const ContactFormBase = ({
                 aria-label="Aceptar términos"
               >
                 <span
-                  className={`inline-block h-4 w-4 transform rounded-full bg-white dark:bg-gray-900 transition-transform duration-200 ${
+                  className={`inline-block h-5 w-5 transform rounded-full bg-white dark:bg-gray-900 transition-transform duration-200 ${
                     formData.acepto ? 'translate-x-6' : 'translate-x-1'
                   }`}
                 />
@@ -429,7 +429,7 @@ const ContactFormBase = ({
         </button>
       </div>
 
-      <p className="text-2xs text-center text-gray-500 dark:text-gray-400">
+      <p className="text-xs text-center text-gray-500 dark:text-gray-400">
         Al enviar este formulario, confirmas que has leído y aceptas nuestros{' '}
         <a href="/terminos" className="underline hover:text-black dark:hover:text-white">
           términos y condiciones

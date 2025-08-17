@@ -52,7 +52,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-50 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
       <div className="container mx-auto px-6 py-section">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-12 mb-16">
           <div className="lg:col-span-2">
             <a href="/" className="inline-block text-2xl font-bold text-black dark:text-white mb-6 hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-200 font-display">
               subdominio.
@@ -67,7 +67,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 hover:scale-110 rounded-icon"
+                  className="w-11 h-11 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 hover:scale-110 rounded-icon"
                   aria-label={social.name}
                 >
                   <social.Icon className="w-5 h-5" />
@@ -130,10 +130,10 @@ const Footer = () => {
         <div className="pt-8 border-t border-gray-200 dark:border-gray-800">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 md:gap-6">
-              <p className="text-2xs text-gray-500 dark:text-gray-400">
+              <p className="text-xs text-gray-500 dark:text-gray-400">
                 © {currentYear} Subdominio
               </p>
-              <div className="flex items-center gap-4 sm:gap-6 text-2xs">
+              <div className="flex items-center gap-4 sm:gap-6 text-xs">
                 <a
                   href="/privacidad"
                   className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
@@ -155,7 +155,7 @@ const Footer = () => {
               </div>
             </div>
             
-            <div className="text-2xs text-gray-500 dark:text-gray-400">
+            <div className="text-xs text-gray-500 dark:text-gray-400">
               Una división de <a href="https://tecnologicachile.cl" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-black dark:hover:text-white transition-colors duration-200">Tecnológica Chile</a>
             </div>
           </div>
