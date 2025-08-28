@@ -41,7 +41,12 @@ const organizationSchema = {
 		"telephone": "+56-800-914-659",
 		"contactType": "customer service",
 		"email": "info@subdominio.cl",
-		"areaServed": ["CL", "PE", "AR", "CO", "MX"],
+		"areaServed": [
+			{"@type": "City", "name": "Santiago"},
+			{"@type": "City", "name": "Valparaíso"},
+			{"@type": "City", "name": "Concepción"},
+			{"@type": "Country", "name": "Chile"}
+		],
 		"availableLanguage": ["Spanish", "English"]
 	},
 	"founder": {
@@ -182,41 +187,58 @@ const localBusinessSchema = {
 	},
 	"hasOfferCatalog": {
 		"@type": "OfferCatalog",
-		"name": "Servicios de Desarrollo Web",
+		"name": "Servicios de Desarrollo Web Chile",
 		"itemListElement": [
 			{
 				"@type": "Offer",
 				"itemOffered": {
 					"@type": "Service",
-					"name": "Desarrollo Web WordPress",
-					"description": "Sitios web profesionales con WordPress"
+					"name": "WordPress Chile",
+					"description": "Desarrollo WordPress optimizado para Chile",
+					"url": "https://subdominio.cl/wordpress-chile",
+					"areaServed": "Chile"
 				}
 			},
 			{
 				"@type": "Offer",
 				"itemOffered": {
 					"@type": "Service",
-					"name": "Desarrollo E-commerce",
-					"description": "Tiendas online con WooCommerce y Shopify"
+					"name": "WooCommerce Chile",
+					"description": "Tiendas WooCommerce optimizadas para Chile",
+					"url": "https://subdominio.cl/woocommerce",
+					"areaServed": "Chile"
 				}
 			},
 			{
 				"@type": "Offer",
 				"itemOffered": {
 					"@type": "Service",
-					"name": "Aplicaciones Web React",
-					"description": "Aplicaciones web modernas con React y Next.js"
+					"name": "Tiendas Shopify Chile",
+					"description": "Tiendas online Shopify profesionales para Chile",
+					"url": "https://subdominio.cl/shopify",
+					"areaServed": "Chile"
 				}
 			},
 			{
 				"@type": "Offer",
 				"itemOffered": {
 					"@type": "Service",
-					"name": "Automatización Empresarial",
-					"description": "Automatización de procesos con IA y herramientas modernas"
+					"name": "Optimización WordPress",
+					"description": "WordPress optimizado para velocidad y SEO en Chile",
+					"url": "https://subdominio.cl/optimizacion-wordpress",
+					"areaServed": "Chile"
 				}
 			}
 		]
+	},
+	"serviceArea": {
+		"@type": "GeoCircle",
+		"geoMidpoint": {
+			"@type": "GeoCoordinates",
+			"latitude": "-33.4489",
+			"longitude": "-70.6693"
+		},
+		"geoRadius": "5000000"
 	}
 };
 
