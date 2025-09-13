@@ -67,11 +67,11 @@ const formatDate = (dateString) => {
 			<div class="container mx-auto px-6">
 				<div class="max-w-6xl mx-auto">
 					<div class="flex flex-wrap gap-4 justify-center">
-						<button class="px-4 py-2 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium transition-colors duration-200">
+						<button data-filter="all" class="filter-btn px-4 py-2 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium transition-colors duration-200 active">
 							Todos
 						</button>
 						{uniqueCategories.map(category => (
-							<button class="px-4 py-2 bg-white dark:bg-black text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:text-black dark:hover:text-white hover:border-black dark:hover:border-white transition-colors duration-200">
+							<button data-filter={category} class="filter-btn px-4 py-2 bg-white dark:bg-black text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 transition-colors duration-200">
 								{category}
 							</button>
 						))}
@@ -90,9 +90,9 @@ const formatDate = (dateString) => {
 				</h2>
 				
 				<!-- Grid de artículos desde archivos Markdown -->
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{sortedPosts.map((post) => (
-						<article class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-shadow duration-200 group">
+						<article data-category={post.data.category} class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-shadow duration-200 group article-item">
 							<div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center relative overflow-hidden">
 								{post.data.image ? (
 									<img 
@@ -186,5 +186,52 @@ const formatDate = (dateString) => {
 			</div>
 		</div>
 	</section>
+
+	<script>
+		// Funcionalidad de filtros de categorías
+		document.addEventListener('DOMContentLoaded', function() {
+			const filterButtons = document.querySelectorAll('.filter-btn');
+			const articleItems = document.querySelectorAll('.article-item');
+
+			filterButtons.forEach(button => {
+				button.addEventListener('click', function() {
+					const filterValue = this.getAttribute('data-filter');
+
+					// Actualizar estado activo de los botones
+					filterButtons.forEach(btn => {
+						btn.classList.remove('active');
+						btn.classList.remove('bg-black', 'dark:bg-gray-200', 'text-white', 'dark:text-gray-900');
+						btn.classList.add('bg-white', 'dark:bg-black', 'text-gray-600', 'dark:text-gray-300', 'border', 'border-gray-300', 'dark:border-gray-600');
+					});
+
+					this.classList.add('active');
+					this.classList.add('bg-black', 'dark:bg-gray-200', 'text-white', 'dark:text-gray-900');
+					this.classList.remove('bg-white', 'dark:bg-black', 'text-gray-600', 'dark:text-gray-300', 'border', 'border-gray-300', 'dark:border-gray-600');
+
+					// Filtrar artículos
+					articleItems.forEach(article => {
+						const articleCategory = article.getAttribute('data-category');
+
+						if (filterValue === 'all' || articleCategory === filterValue) {
+							article.style.display = 'block';
+							article.style.animation = 'fadeIn 0.3s ease-in-out';
+						} else {
+							article.style.display = 'none';
+						}
+					});
+				});
+			});
+		});
+
+		// Agregar estilos para la animación
+		const style = document.createElement('style');
+		style.textContent = `
+			@keyframes fadeIn {
+				from { opacity: 0; transform: translateY(10px); }
+				to { opacity: 1; transform: translateY(0); }
+			}
+		`;
+		document.head.appendChild(style);
+	</script>
 
 </Layout>
