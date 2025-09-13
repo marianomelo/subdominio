@@ -1,7 +1,7 @@
 ---
 title: "Cómo Mejorar Fichas de Producto para Aumentar Ventas Chile 2025"
 excerpt: "Guía completa para optimizar fichas de producto en tu tienda online. Técnicas de copywriting, fotografía y UX para maximizar conversiones en e-commerce chileno."
-publishedDate: "2025-01-15"
+publishedDate: "2025-01-02"
 category: E-commerce
 categoryColor: green
 author: Equipo Subdominio

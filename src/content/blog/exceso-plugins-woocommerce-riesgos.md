@@ -1,7 +1,7 @@
 ---
 title: "Exceso de Plugins WooCommerce: Riesgos Ocultos para tu Tienda Chile"
 excerpt: "Descubre los riesgos del exceso de plugins en WooCommerce: velocidad, seguridad, mantenimiento y estabilidad. Guía para optimizar tu tienda online chilena."
-publishedDate: "2025-01-15"
+publishedDate: "2025-01-12"
 category: E-commerce
 categoryColor: green
 author: Equipo Subdominio

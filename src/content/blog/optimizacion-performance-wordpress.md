@@ -1,7 +1,7 @@
 ---
 title: "Optimización de Performance en Sitios WordPress: Guía Completa 2025"
 excerpt: "Optimización WordPress Chile: guía completa de performance 2025. Técnicas avanzadas para acelerar sitios WordPress en Chile con hosting local, CDN y SEO técnico."
-publishedDate: "2025-01-15"
+publishedDate: "2024-12-05"
 category: Desarrollo Web
 categoryColor: blue
 author: Equipo Subdominio

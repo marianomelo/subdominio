@@ -1,7 +1,7 @@
 ---
 title: "SEO Chile: Cómo Conseguir Clientes Sin Pagar Publicidad 2025"
 excerpt: "Guía completa de SEO Chile 2025. Descubre cómo posicionar tu negocio en Google Chile sin pagar publicidad. Estrategias SEO locales para empresas chilenas."
-publishedDate: "2025-01-15"
+publishedDate: "2024-11-20"
 category: SEO
 categoryColor: orange
 author: Equipo Subdominio

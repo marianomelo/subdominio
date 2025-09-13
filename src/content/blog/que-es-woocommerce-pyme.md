@@ -1,7 +1,7 @@
 ---
 title: "WooCommerce para PYMEs Chile: Guía Completa 2025"
 excerpt: "WooCommerce Chile: guía completa para PYMEs 2025. Descubre costos, implementación y ventajas de crear tu tienda online con WooCommerce en el mercado chileno."
-publishedDate: "2025-01-15"
+publishedDate: "2024-12-10"
 category: E-commerce
 categoryColor: green
 author: Equipo Subdominio

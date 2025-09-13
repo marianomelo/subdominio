@@ -1,7 +1,7 @@
 ---
 title: "Cómo Optimizar Velocidad WooCommerce Chile: Guía Práctica 2025"
 excerpt: "Guía completa para acelerar tu tienda WooCommerce en Chile. Técnicas prácticas de optimización, hosting, CDN y plugins para mejorar conversiones y SEO."
-publishedDate: "2025-01-15"
+publishedDate: "2024-12-19"
 category: E-commerce
 categoryColor: green
 author: Equipo Subdominio

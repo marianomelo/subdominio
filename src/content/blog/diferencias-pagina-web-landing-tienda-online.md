@@ -1,7 +1,7 @@
 ---
 title: "Página Web vs Landing Page vs Tienda Online: Guía Chile 2025"
 excerpt: "Guía para elegir entre página web, landing page o tienda online en Chile. Análisis detallado con casos prácticos para empresas chilenas y recomendaciones de desarrollo web."
-publishedDate: "2025-01-15"
+publishedDate: "2024-12-03"
 category: Desarrollo Web
 categoryColor: blue
 author: Equipo Subdominio

@@ -1,7 +1,7 @@
 ---
 title: "Tendencias Tecnológicas E-commerce Chile 2025: Guía Empresas"
 excerpt: "Análisis de las principales tendencias tecnológicas que están transformando el comercio chileno: omnicanal, IA, pagos digitales, automatización y más. Guía estratégica para empresas."
-publishedDate: "2025-01-15"
+publishedDate: "2024-12-23"
 category: Tecnología
 categoryColor: purple
 author: Equipo Subdominio

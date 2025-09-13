@@ -1,7 +1,7 @@
 ---
 title: "Cómo Proteger Datos y Seguridad WooCommerce Chile: Guía 2025"
 excerpt: "Guía completa de seguridad para tiendas WooCommerce en Chile. SSL, backups, contraseñas, normativa chilena y herramientas para proteger datos de clientes."
-publishedDate: "2025-01-15"
+publishedDate: "2025-01-07"
 category: E-commerce
 categoryColor: green
 author: Equipo Subdominio

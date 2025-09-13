@@ -1,7 +1,7 @@
 ---
 title: "Cómo Vender al Por Mayor con WooCommerce B2B Chile: Guía 2025"
 excerpt: "Guía completa para implementar ventas mayoristas B2B con WooCommerce en Chile. Plugins, configuración y mejores prácticas para automatizar tu canal B2B."
-publishedDate: "2025-01-15"
+publishedDate: "2025-01-09"
 category: E-commerce
 categoryColor: green
 author: Equipo Subdominio

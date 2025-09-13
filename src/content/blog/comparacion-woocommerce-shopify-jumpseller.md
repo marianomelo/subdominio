@@ -1,7 +1,7 @@
 ---
 title: "WooCommerce vs Shopify vs Jumpseller Chile 2025: Comparativa"
 excerpt: "Guía completa para elegir la mejor plataforma de e-commerce en Chile. Análisis detallado de costos, funcionalidades y localización para PYMEs y emprendedores chilenos."
-publishedDate: "2025-01-15"
+publishedDate: "2024-12-12"
 category: E-commerce
 categoryColor: green
 author: Equipo Subdominio

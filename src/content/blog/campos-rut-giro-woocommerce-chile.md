@@ -1,7 +1,7 @@
 ---
 title: "Campos RUT y Facturación WooCommerce Chile: Guía Completa"
 excerpt: "Tutorial WooCommerce Chile: implementar campos RUT y facturación SII. Guía paso a paso para tiendas online chilenas con facturación electrónica automática."
-publishedDate: "2025-01-15"
+publishedDate: "2024-12-17"
 category: E-commerce
 categoryColor: green
 author: Equipo Subdominio

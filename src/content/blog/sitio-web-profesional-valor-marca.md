@@ -1,7 +1,7 @@
 ---
 title: "Cómo un Sitio Web Profesional Aumenta el Valor de tu Marca Chile"
 excerpt: "Descubre cómo un sitio web profesional fortalece la confianza, mejora tu imagen corporativa y te posiciona por encima de la competencia en el mercado chileno."
-publishedDate: "2025-01-15"
+publishedDate: "2024-11-28"
 category: Desarrollo Web
 categoryColor: blue
 author: Equipo Subdominio
