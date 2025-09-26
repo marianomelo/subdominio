@@ -111,36 +111,41 @@ const formatDate = (dateString) => {
 								<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 							</div>
 							
-							<div class="p-4 sm:p-6">
-								<div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0 mb-3">
-									<span class={`px-2 py-1 text-xs font-medium rounded ${getCategoryColor(post.data.categoryColor)} inline-block`}>
-										{post.data.category}
-									</span>
-									<span class="text-sm text-gray-500 dark:text-gray-400 sm:ml-auto">
+							<div class="p-4 md:p-6">
+								<div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-2 mb-4">
+									<div class="flex items-center gap-3">
+										<span class={`px-2 py-1 text-xs font-medium rounded ${getCategoryColor(post.data.categoryColor)} inline-block whitespace-nowrap w-fit`}>
+											{post.data.category}
+										</span>
+										<span class="text-sm text-gray-500 dark:text-gray-400 sm:hidden">
+											{formatDate(post.data.publishedDate)}
+										</span>
+									</div>
+									<span class="text-sm text-gray-500 dark:text-gray-400 hidden sm:block sm:ml-auto">
 										{formatDate(post.data.publishedDate)}
 									</span>
 								</div>
 								
-								<h3 class="text-xl font-medium text-black dark:text-white mb-3">
-									<a 
-										href={`/blog/${post.data.slug || post.slug}`} 
+								<h3 class="text-lg sm:text-xl font-medium text-black dark:text-white mb-3 leading-tight">
+									<a
+										href={`/blog/${post.data.slug || post.slug}`}
 										class="hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
 									>
 										{post.data.title}
 									</a>
 								</h3>
 								
-								<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
+								<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-5">
 									{post.data.excerpt}
 								</p>
 								
-								<div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0 sm:justify-between">
+								<div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 sm:justify-between">
 									<span class="text-xs text-gray-500 dark:text-gray-400">
 										{post.data.readingTime} min de lectura
 									</span>
-									<a 
+									<a
 										href={`/blog/${post.data.slug || post.slug}`}
-										class="text-sm font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 self-start sm:self-auto"
+										class="text-sm font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 self-start sm:self-auto inline-flex items-center"
 									>
 										Leer más →
 									</a>
@@ -165,16 +170,16 @@ const formatDate = (dateString) => {
 					e-commerce y automatización directamente en tu inbox.
 				</p>
 				
-				<form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+				<form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
 					<input
 						type="email"
 						placeholder="tu@email.com"
-						class="flex-1 px-4 py-3 text-black dark:text-white bg-white dark:bg-black border-0 focus:ring-2 focus:ring-white dark:focus:ring-black"
+						class="flex-1 px-4 py-3 text-black dark:text-white bg-white dark:bg-black border-0 focus:ring-2 focus:ring-white dark:focus:ring-black rounded-md"
 						required
 					/>
 					<button
 						type="submit"
-						class="px-6 py-3 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+						class="px-6 py-3 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 rounded-md min-w-[120px]"
 					>
 						Suscribirse
 					</button>

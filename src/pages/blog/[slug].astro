@@ -50,17 +50,18 @@ const getCategoryColor = (color) => {
           </a>
         </div>
         
-        <div class="flex items-center mb-6">
-          <span class={`px-3 py-1 text-sm font-medium rounded ${getCategoryColor(post.data.categoryColor)}`}>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-6">
+          <span class={`px-2 py-1 text-xs font-medium rounded ${getCategoryColor(post.data.categoryColor)} inline-block whitespace-nowrap w-fit`}>
             {post.data.category}
           </span>
-          <span class="text-gray-500 dark:text-gray-400 mx-4">•</span>
-          <span class="text-gray-600 dark:text-gray-300">{formatDate(post.data.publishedDate)}</span>
-          <span class="text-gray-500 dark:text-gray-400 mx-4">•</span>
-          <span class="text-gray-600 dark:text-gray-300">{post.data.readingTime} min de lectura</span>
+          <div class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-300">
+            <span>{formatDate(post.data.publishedDate)}</span>
+            <span class="text-gray-400">•</span>
+            <span>{post.data.readingTime} min de lectura</span>
+          </div>
         </div>
         
-        <h1 class="text-4xl md:text-5xl font-medium mb-6 text-black dark:text-white leading-tight">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-6 text-black dark:text-white leading-tight">
           {post.data.title}
         </h1>
         
@@ -68,7 +69,7 @@ const getCategoryColor = (color) => {
           {post.data.excerpt}
         </p>
         
-        <div class="flex items-center justify-between mb-12 pb-12 border-b border-gray-200 dark:border-gray-800">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-12 pb-8 sm:pb-12 border-b border-gray-200 dark:border-gray-800">
           <div class="flex items-center">
             <div className="w-10 h-10 bg-black dark:bg-white rounded-full flex items-center justify-center mr-3">
               <LucideIcon name="user" className="w-5 h-5 text-white dark:text-black" />
@@ -78,7 +79,7 @@ const getCategoryColor = (color) => {
               <p class="text-xs text-gray-500 dark:text-gray-400">Desarrollo & Estrategia Digital</p>
             </div>
           </div>
-          <div class="text-right">
+          <div class="text-left sm:text-right">
             <p class="text-xs text-gray-500 dark:text-gray-400">Artículo verificado</p>
             <p class="text-xs text-gray-600 dark:text-gray-300 font-medium">Enero 2025</p>
           </div>
@@ -144,52 +145,52 @@ const getCategoryColor = (color) => {
   <section class="py-12 bg-gray-50 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-700">
     <div class="container mx-auto px-6">
       <div class="max-w-3xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="mb-6 md:mb-0">
-            <h3 class="font-medium text-black dark:text-white mb-3">Comparte este artículo</h3>
-            <div class="flex space-x-4">
-              <a 
+        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6">
+          <div class="mb-4 lg:mb-0">
+            <h3 class="font-medium text-black dark:text-white mb-4">Comparte este artículo</h3>
+            <div class="flex flex-wrap gap-4">
+              <a
                 href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.data.title)}&url=${encodeURIComponent(`https://subdominio.cl/blog/${post.data.slug || post.slug}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200"
+                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 text-sm"
               >
                 <LucideIcon name="twitter" className="w-4 h-4 mr-2" />
                 Twitter
               </a>
-              <a 
+              <a
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://subdominio.cl/blog/${post.data.slug || post.slug}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200"
+                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 text-sm"
               >
                 <LucideIcon name="linkedin" className="w-4 h-4 mr-2" />
                 LinkedIn
               </a>
-              <a 
+              <a
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://subdominio.cl/blog/${post.data.slug || post.slug}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200"
+                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 text-sm"
               >
                 <LucideIcon name="facebook" className="w-4 h-4 mr-2" />
                 Facebook
               </a>
-              <button 
+              <button
                 onclick={`navigator.clipboard.writeText('https://subdominio.cl/blog/${post.data.slug || post.slug}').then(() => { const btn = this; const original = btn.innerHTML; btn.innerHTML = '<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>¡Copiado!'; setTimeout(() => btn.innerHTML = original, 2000); })`}
-                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 border-none bg-transparent cursor-pointer"
+                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 border-none bg-transparent cursor-pointer text-sm"
               >
                 <LucideIcon name="link" className="w-4 h-4 mr-2" />
                 Copiar enlace
               </button>
             </div>
           </div>
-          
-          <div class="text-center md:text-right">
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">¿Te gustó este contenido?</p>
-            <a 
-              href="/blog" 
-              class="inline-flex items-center px-4 py-2 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-colors duration-200"
+
+          <div class="text-left lg:text-right">
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">¿Te gustó este contenido?</p>
+            <a
+              href="/blog"
+              class="inline-flex items-center px-4 py-2 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-colors duration-200 rounded-md"
             >
               Ver más artículos
             </a>
