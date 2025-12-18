@@ -116,15 +116,10 @@ const AnimatedServiceGrid = () => {
                 <p className="text-body text-gray-600 dark:text-gray-300 mb-6">
                   {service.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {service.tags.map((tag, index) => (
-                    <span 
-                      key={tag}
-                      className="text-2xs text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-600 px-2 py-1 rounded-button"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                <div>
+                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                    {service.tags.join(' · ')}
+                  </span>
                 </div>
               </div>
             </motion.a>

@@ -1,117 +1,119 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import LucideIcon from "../../components/LucideIcon.jsx";
-import Breadcrumb from '../../components/Breadcrumb.astro';
 import ServiceSchema from '../../components/ServiceSchema.astro';
 
-const breadcrumbItems = [
-  { name: "Servicios", item: "/servicios" },
-  { name: "Desarrollo Personalizado", item: "/servicios/personalizado" }
-];
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{ "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://subdominio.cl" },
+		{ "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://subdominio.cl/servicios" },
+		{ "@type": "ListItem", "position": 3, "name": "Software a Medida", "item": "https://subdominio.cl/servicios/personalizado" }
+	]
+};
 
 const serviceOffers = [
-  {
-    name: "Aplicaciones Web con Laravel",
-    description: "Backend robusto y escalable con el framework PHP más moderno"
-  },
-  {
-    name: "Frontend con Next.js/React",
-    description: "Interfaces de usuario modernas y dinámicas con React y Next.js"
-  },
-  {
-    name: "Sistemas Empresariales",
-    description: "CRM, ERP y sistemas de gestión desarrollados específicamente para tu empresa"
-  },
-  {
-    name: "APIs y Microservicios",
-    description: "Arquitecturas escalables con APIs REST y GraphQL"
-  }
+  { name: "Aplicaciones Web con Laravel", description: "Backend robusto y escalable" },
+  { name: "Frontend con Next.js/React", description: "Interfaces de usuario modernas" },
+  { name: "Sistemas Empresariales", description: "CRM, ERP y sistemas de gestión" },
+  { name: "APIs y Microservicios", description: "Arquitecturas escalables" }
 ];
 ---
 
 <Layout title="Desarrollo Personalizado" description="Creamos soluciones tecnológicas específicas para tu empresa. Backend con Laravel, frontend con Next.js, sistemas empresariales y integraciones.">
-	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<Breadcrumb items={breadcrumbItems} />
-				
-				<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium mb-8 text-black dark:text-white leading-tight">
-					Software que se adapta a tu negocio, no al revés
+	<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+	<!-- Hero -->
+	<section class="pt-32 lg:pt-40 pb-16 lg:pb-24 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="max-w-4xl">
+				<div class="flex items-center gap-4 mb-8">
+					<a href="/servicios" class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white transition-colors duration-300">
+						Servicios
+					</a>
+					<span class="text-gray-300 dark:text-gray-600">/</span>
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Software a medida
+					</span>
+				</div>
+
+				<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-black dark:text-white leading-[1.1] mb-8">
+					Software que se adapta a tu <span class="italic">negocio</span>
 				</h1>
-				
-				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-					Desarrollamos aplicaciones y sistemas completamente personalizados que encajan con tus procesos únicos.
-					Cada línea de código está pensada para resolver tus desafíos específicos y escalar con tu crecimiento.
+
+				<p class="text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mb-10">
+					Desarrollamos aplicaciones y sistemas completamente personalizados que encajan
+					con tus procesos únicos. Cada línea de código pensada para resolver tus desafíos.
 				</p>
-				
-				<div class="flex flex-col sm:flex-row gap-4">
-					<a
-						href="/contacto"
-						class="px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button"
-					>
-						Solicitar consultoría
-					</a>
-					<a
-						href="#capacidades"
-						class="px-8 py-4 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 font-medium hover:border-black dark:hover:border-white transition-all duration-200 hover:scale-[1.02] rounded-button"
-					>
-						Cuéntanos tu idea
+
+				<div class="flex flex-col sm:flex-row items-start gap-6">
+					<a href="/contacto" class="group inline-flex items-center gap-3 px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-black font-medium transition-all duration-300 hover:gap-5">
+						<span>Solicitar consultoría</span>
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
 					</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Introducción - Posicionamiento -->
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-					Cuando las soluciones estándar no funcionan para tu negocio, creamos software desde cero.
-					Te acompañamos desde la idea hasta la implementación, construyendo herramientas que realmente resuelven tus problemas y crecen contigo.
-				</p>
+	<!-- Types -->
+	<section class="py-24 lg:py-32 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Tipos de aplicaciones
+					</span>
+				</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						Lo que <span class="italic">desarrollamos</span>
+					</h2>
+				</div>
 			</div>
-		</div>
-	</section>
 
-	<!-- Capacidades técnicas destacadas -->
-	<section class="py-16 bg-white dark:bg-gray-900" id="capacidades">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-medium mb-12 text-black dark:text-white">
-					Tipos de aplicaciones que desarrollamos
-				</h2>
-				
-				<div class="space-y-12">
-					<div class="border-b border-gray-200 dark:border-gray-700 pb-12">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Sistemas de gestión empresarial</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							CRM y ERP completamente personalizados que se adaptan a tus procesos específicos. Centraliza clientes, inventarios, ventas y reportes en una sola plataforma.
-							Ideal para empresas que han superado las limitaciones de software estándar.
+			<div class="border-t border-gray-200 dark:border-gray-800">
+				<div class="grid lg:grid-cols-12 gap-6 py-12 lg:py-16 border-b border-gray-200 dark:border-gray-800">
+					<div class="lg:col-span-4">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Sistemas de gestión</h3>
+					</div>
+					<div class="lg:col-span-7 lg:col-start-6">
+						<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+							CRM y ERP completamente personalizados. Centraliza clientes, inventarios, ventas y reportes en una sola plataforma.
 						</p>
 					</div>
+				</div>
 
-					<div class="border-b border-gray-200 dark:border-gray-700 pb-12">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Aplicaciones web interactivas</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Dashboards avanzados, portales de clientes y herramientas colaborativas que funcionan como aplicaciones nativas.
-							Perfectas para equipos que necesitan interfaces complejas y workflows específicos.
+				<div class="grid lg:grid-cols-12 gap-6 py-12 lg:py-16 border-b border-gray-200 dark:border-gray-800">
+					<div class="lg:col-span-4">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Aplicaciones web</h3>
+					</div>
+					<div class="lg:col-span-7 lg:col-start-6">
+						<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+							Dashboards avanzados, portales de clientes y herramientas colaborativas que funcionan como apps nativas.
 						</p>
 					</div>
+				</div>
 
-					<div class="border-b border-gray-200 dark:border-gray-700 pb-12">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Integraciones y conectores</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							APIs, middleware y sincronización entre sistemas que no están diseñados para trabajar juntos.
-							Eliminamos la duplicación de datos y conectamos tu ecosistema tecnológico.
+				<div class="grid lg:grid-cols-12 gap-6 py-12 lg:py-16 border-b border-gray-200 dark:border-gray-800">
+					<div class="lg:col-span-4">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Integraciones</h3>
+					</div>
+					<div class="lg:col-span-7 lg:col-start-6">
+						<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+							APIs, middleware y sincronización entre sistemas. Eliminamos duplicación de datos y conectamos tu ecosistema.
 						</p>
 					</div>
+				</div>
 
-					<div>
-						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Aplicaciones móvil-web (PWA)</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Apps que funcionan en cualquier dispositivo con capacidades offline, notificaciones push y experiencia nativa.
-							La alternativa inteligente a desarrollar apps separadas para cada plataforma.
+				<div class="grid lg:grid-cols-12 gap-6 py-12 lg:py-16">
+					<div class="lg:col-span-4">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">PWA</h3>
+					</div>
+					<div class="lg:col-span-7 lg:col-start-6">
+						<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+							Apps que funcionan en cualquier dispositivo con capacidades offline y notificaciones push.
 						</p>
 					</div>
 				</div>
@@ -119,243 +121,170 @@ const serviceOffers = [
 		</div>
 	</section>
 
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-medium mb-12 text-black dark:text-white">
-					Qué podemos construir juntos
-				</h2>
-				
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-					<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-3">Sistemas de reservas y citas</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Calendario inteligente con disponibilidad automática, pagos integrados y recordatorios. 
-							Ideal para consultorios, salones, servicios profesionales.
-						</p>
-					</div>
-					
-					<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-3">Portales de clientes</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Área privada donde los clientes acceden a facturas, documentos, soporte y seguimiento de proyectos.
-							Reduce consultas y mejora la experiencia de servicio.
-						</p>
-					</div>
-					
-					<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-3">Herramientas colaborativas</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Plataformas para equipos con gestión de tareas, documentos compartidos y workflows de aprobación.
-							Reemplaza múltiples herramientas con una solución integrada.
-						</p>
-					</div>
-					
-					<div class="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-3">Sistemas de facturación</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Genera facturas automáticamente, cumple normativas fiscales y se integra con tu sistema contable.
-							Elimina trabajo manual y errores de facturación.
-						</p>
-					</div>
+	<!-- Examples -->
+	<section class="py-24 lg:py-32 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Ejemplos
+					</span>
+				</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						Qué podemos construir <span class="italic">juntos</span>
+					</h2>
+				</div>
+			</div>
+
+			<div class="grid sm:grid-cols-2 gap-8">
+				<div class="p-8 border border-gray-200 dark:border-gray-800">
+					<h3 class="font-medium text-black dark:text-white mb-3">Sistemas de reservas</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">
+						Calendario inteligente con disponibilidad automática, pagos integrados y recordatorios.
+					</p>
+				</div>
+
+				<div class="p-8 border border-gray-200 dark:border-gray-800">
+					<h3 class="font-medium text-black dark:text-white mb-3">Portales de clientes</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">
+						Área privada para facturas, documentos, soporte y seguimiento de proyectos.
+					</p>
+				</div>
+
+				<div class="p-8 border border-gray-200 dark:border-gray-800">
+					<h3 class="font-medium text-black dark:text-white mb-3">Herramientas colaborativas</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">
+						Gestión de tareas, documentos compartidos y workflows de aprobación.
+					</p>
+				</div>
+
+				<div class="p-8 border border-gray-200 dark:border-gray-800">
+					<h3 class="font-medium text-black dark:text-white mb-3">Sistemas de facturación</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">
+						Facturas automáticas, cumplimiento fiscal e integración contable.
+					</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-16 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-medium mb-12 text-black dark:text-white">
-					Proceso de trabajo
-				</h2>
-				
-				<div class="space-y-8">
-					<div class="flex flex-col md:flex-row gap-6">
-						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black dark:text-white">01</span>
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Discovery y análisis</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Profundizamos en tus objetivos, procesos y necesidades técnicas.
-							</p>
-						</div>
-					</div>
+	<!-- Differentiators -->
+	<section class="py-24 lg:py-32 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Diferenciadores
+					</span>
+				</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						¿Por qué <span class="italic">elegirnos?</span>
+					</h2>
+				</div>
+			</div>
 
-					<div class="flex flex-col md:flex-row gap-6">
-						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black dark:text-white">02</span>
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Diseño y prototipado</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Prototipos visuales y funcionales para validar ideas.
-							</p>
-						</div>
-					</div>
-
-					<div class="flex flex-col md:flex-row gap-6">
-						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black dark:text-white">03</span>
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Desarrollo ágil</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Entregas frecuentes, adaptabilidad y testing continuo.
-							</p>
-						</div>
-					</div>
-
-					<div class="flex flex-col md:flex-row gap-6">
-						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black dark:text-white">04</span>
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Testing y optimización</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Rendimiento, seguridad y calidad mediante pruebas rigurosas.
-							</p>
-						</div>
-					</div>
-
-					<div class="flex flex-col md:flex-row gap-6">
-						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black dark:text-white">05</span>
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Despliegue y mantenimiento</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Implementación segura, monitoreo permanente y actualizaciones regulares.
-							</p>
-						</div>
-					</div>
+			<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Desarrollo desde cero</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Sin plantillas ni adaptaciones forzadas.</p>
+				</div>
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Escalabilidad real</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Arquitectura que crece con tu negocio.</p>
+				</div>
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Código de calidad</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Testing automatizado y documentación completa.</p>
+				</div>
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Propiedad total</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">El código es tuyo, sin dependencias.</p>
+				</div>
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Soporte especializado</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Mantenimiento y evolución continua.</p>
+				</div>
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Integración nativa</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Conecta con todos tus sistemas.</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Diferenciales -->
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-medium mb-12 text-black dark:text-white">
-					¿Por qué elegirnos para desarrollo personalizado?
-				</h2>
-				
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Desarrollo desde cero</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">sin plantillas ni adaptaciones forzadas.</p>
-						</div>
-					</div>
-					
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Escalabilidad real</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">arquitectura que crece con tu negocio.</p>
-						</div>
-					</div>
-					
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Código de calidad</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">testing automatizado y documentación completa.</p>
-						</div>
-					</div>
-					
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Propiedad total</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">el código es tuyo, sin dependencias externas.</p>
-						</div>
-					</div>
-					
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Soporte especializado</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">mantenimiento y evolución continua.</p>
-						</div>
-					</div>
-
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Integración nativa</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">conecta con todos tus sistemas existentes.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="py-16 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
-		<div class="container mx-auto px-6 text-center">
-			<div class="max-w-3xl mx-auto">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-medium mb-6 text-white dark:text-gray-900">
-					Tu idea merece software que funcione exactamente como lo imaginas
-				</h2>
-				<p class="text-xl text-gray-300 dark:text-gray-600 mb-8 leading-relaxed">
-					Sin limitaciones, sin adaptaciones. Solo la solución perfecta para tu negocio.<br>
-					Conversemos sobre tu proyecto.
-				</p>
-				
-				<div class="flex flex-col sm:flex-row gap-4 justify-center">
-					<a
-						href="/contacto"
-						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02] rounded-button"
-					>
-						Comienza tu proyecto
-					</a>
-					<a
-						href="mailto:info@subdominio.cl"
-						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-button"
-					>
-						Enviar email
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Servicios Relacionados -->
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-xl sm:text-2xl md:text-3xl font-medium mb-8 text-black dark:text-white">
+	<!-- Related -->
+	<section class="py-24 lg:py-32 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="mb-12">
+				<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
 					Servicios relacionados
+				</span>
+			</div>
+
+			<div class="grid md:grid-cols-3 gap-px bg-gray-200 dark:bg-gray-800">
+				<a href="/servicios/automatizacion" class="group bg-white dark:bg-gray-900 p-8 lg:p-10 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-800">
+					<div class="flex items-start justify-between mb-6">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Automatización</h3>
+						<svg class="w-5 h-5 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Potencia tu software con IA</p>
+				</a>
+
+				<a href="/servicios/web" class="group bg-white dark:bg-gray-900 p-8 lg:p-10 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-800">
+					<div class="flex items-start justify-between mb-6">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Desarrollo Web</h3>
+						<svg class="w-5 h-5 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Interfaz web para tu sistema</p>
+				</a>
+
+				<a href="/servicios/ecommerce" class="group bg-white dark:bg-gray-900 p-8 lg:p-10 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-800">
+					<div class="flex items-start justify-between mb-6">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">E-commerce</h3>
+						<svg class="w-5 h-5 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<p class="text-sm text-gray-600 dark:text-gray-400">E-commerce personalizado</p>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA -->
+	<section class="py-24 lg:py-32 bg-black dark:bg-gray-200">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="max-w-4xl">
+				<h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-white dark:text-black leading-tight mb-6">
+					Tu idea merece software que funcione <span class="italic">exactamente</span> como lo imaginas
 				</h2>
-				
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-					<a href="/servicios/automatizacion" class="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
-						<h3 class="font-medium text-black dark:text-white mb-2 group-hover:underline">Automatización</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Potencia tu software con automatización IA</p>
+				<p class="text-lg text-gray-400 dark:text-gray-600 mb-10 max-w-2xl">
+					Sin limitaciones, sin adaptaciones. Solo la solución perfecta para tu negocio.
+				</p>
+				<div class="flex flex-col sm:flex-row items-start gap-6">
+					<a href="/contacto" class="group inline-flex items-center gap-3 px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium transition-all duration-300 hover:gap-5">
+						<span>Comienza tu proyecto</span>
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
 					</a>
-					
-					<a href="/servicios/web" class="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
-						<h3 class="font-medium text-black dark:text-white mb-2 group-hover:underline">Desarrollo Web</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Interfaz web para tu sistema personalizado</p>
-					</a>
-					
-					<a href="/servicios/ecommerce" class="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
-						<h3 class="font-medium text-black dark:text-white mb-2 group-hover:underline">E-commerce</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">E-commerce personalizado para casos únicos</p>
+					<a href="mailto:info@subdominio.cl" class="text-gray-500 hover:text-white dark:hover:text-black transition-colors duration-300">
+						info@subdominio.cl
 					</a>
 				</div>
 			</div>
 		</div>
 	</section>
-	
-	<ServiceSchema 
+
+	<ServiceSchema
 		name="Desarrollo Personalizado"
-		description="Creamos soluciones tecnológicas específicas para tu empresa. Soluciones tecnológicas hechas a tu medida."
+		description="Creamos soluciones tecnológicas específicas para tu empresa."
 		category="Desarrollo de Software"
 		offers={serviceOffers}
 		url="https://subdominio.cl/servicios/personalizado"

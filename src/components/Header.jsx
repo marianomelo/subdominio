@@ -12,23 +12,36 @@ const Header = ({ showThemeToggle = true }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+
+    // Verificar posición inicial al montar (evita flash en refresh)
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Bloquear scroll del body cuando el menú móvil está abierto
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // Close services dropdown if clicking outside
       if (isServicesOpen && !event.target.closest('.services-dropdown')) {
         setIsServicesOpen(false);
       }
-      // Close mobile menu if clicking outside
       if (isMenuOpen && !event.target.closest('.mobile-menu') && !event.target.closest('.menu-toggle')) {
         setIsMenuOpen(false);
       }
     };
 
-    // Close dropdown when pressing Escape key
     const handleEscapeKey = (event) => {
       if (event.key === 'Escape') {
         setIsServicesOpen(false);
@@ -38,7 +51,7 @@ const Header = ({ showThemeToggle = true }) => {
 
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('keydown', handleEscapeKey);
-    
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('keydown', handleEscapeKey);
@@ -46,183 +59,170 @@ const Header = ({ showThemeToggle = true }) => {
   }, [isServicesOpen, isMenuOpen]);
 
   const navItems = [
-    { label: 'Inicio', href: '/' },
-    { label: 'Nosotros', href: '/nosotros' },
-    { label: 'Proyectos', href: '/proyectos' },
     { label: 'Soluciones', href: '/soluciones' },
+    { label: 'Proyectos', href: '/proyectos' },
+    { label: 'Nosotros', href: '/nosotros' },
     { label: 'Blog', href: '/blog' },
   ];
 
   const services = [
     { label: 'Desarrollo Web', href: '/servicios/web' },
-    { label: 'Desarrollo de E-commerce', href: '/servicios/ecommerce' },
-    { label: 'Automatización de Procesos', href: '/servicios/automatizacion' },
-    { label: 'Desarrollo Personalizado', href: '/servicios/personalizado' },
+    { label: 'E-commerce', href: '/servicios/ecommerce' },
+    { label: 'Automatización', href: '/servicios/automatizacion' },
+    { label: 'Software a medida', href: '/servicios/personalizado' },
   ];
 
-
   return (
-    <header 
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800' 
+    <header
+      className={`fixed w-full top-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-100 dark:border-gray-800'
           : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6">
-        <nav className={`flex items-center justify-between transition-all duration-300 ${
-          isScrolled ? 'h-14 sm:h-16' : 'h-16 sm:h-20'
+      <div className="container mx-auto px-6 lg:px-12">
+        <nav className={`flex items-center justify-between transition-all duration-500 ${
+          isScrolled ? 'h-16' : 'h-20 lg:h-24'
         }`}>
-          <a href="/" className={`font-bold tracking-tight text-black dark:text-white font-display transition-all duration-300 ${
-            isScrolled ? 'text-xl' : 'text-2xl'
-          }`}>
+          {/* Logo - Editorial serif */}
+          <a
+            href="/"
+            className="font-display text-xl lg:text-2xl font-medium tracking-tight text-black dark:text-white transition-all duration-300"
+          >
             subdominio.
           </a>
 
-          <div className="hidden lg:flex items-center space-x-8">
-            {/* Inicio */}
-            <a
-              href="/"
-              className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 text-base"
-            >
-              Inicio
-            </a>
-            
-            {/* Servicios dropdown - positioned early for prominence */}
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-10">
+            {/* Services dropdown */}
             <div className="relative services-dropdown">
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 flex items-center py-2 text-base"
+                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 flex items-center gap-1.5 text-sm tracking-wide"
                 aria-expanded={isServicesOpen}
                 aria-haspopup="true"
               >
                 Servicios
-                <ChevronDown 
-                  className={`w-4 h-4 ml-1 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} 
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`}
                 />
               </button>
-              
-              <div 
-                className={`absolute top-full left-0 mt-1 w-80 max-w-[calc(100vw-2rem)] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-xl rounded-md overflow-hidden z-50 transition-all duration-200 ${
+
+              <div
+                className={`absolute top-full left-0 mt-4 w-64 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-xl overflow-hidden transition-all duration-300 ${
                   isServicesOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
                 }`}
               >
                 <a
                   href="/servicios"
-                  className="block px-6 py-4 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-150 border-b border-gray-100 dark:border-gray-700 text-sm font-semibold"
+                  className="block px-6 py-4 text-xs tracking-[0.15em] uppercase text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 border-b border-gray-100 dark:border-gray-800"
                 >
-                  Ver todos los servicios
+                  Ver todos
                 </a>
                 {services.map((service) => (
                   <a
                     key={service.label}
                     href={service.href}
-                    className="block px-6 py-4 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-150 border-b border-gray-100 dark:border-gray-700 last:border-b-0 text-sm font-medium"
+                    className="block px-6 py-4 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 text-sm"
                   >
                     {service.label}
                   </a>
                 ))}
               </div>
             </div>
-            
-            {/* Rest of navigation items (excluding Inicio since it's already above) */}
-            {navItems.slice(1).map((item) => (
+
+            {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 text-base"
+                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 text-sm tracking-wide"
               >
                 {item.label}
               </a>
             ))}
-            
-            {showThemeToggle && <ThemeToggle />}
-            
-            <a
-              href="/contacto"
-              className={`bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button shadow-button hover:shadow-button-hover text-base ${
-                isScrolled ? 'px-6 py-2.5' : 'px-8 py-3'
-              }`}
-            >
-              Hablemos
-            </a>
+
+            <div className="flex items-center gap-6 ml-4 pl-6 border-l border-gray-200 dark:border-gray-700">
+              {showThemeToggle && <ThemeToggle />}
+
+              <a
+                href="/contacto"
+                className="group inline-flex items-center gap-2 text-sm tracking-wide text-black dark:text-white hover:opacity-70 transition-all duration-300"
+              >
+                <span>Contacto</span>
+                <svg className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
           </div>
 
+          {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-3 menu-toggle min-w-[44px] min-h-[44px] flex items-center justify-center"
+            className="lg:hidden p-2 menu-toggle"
             aria-label="Toggle menu"
           >
             <div className="w-6 h-5 relative flex flex-col justify-between">
-              <span className={`block h-0.5 w-full bg-black dark:bg-gray-200 transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-              <span className={`block h-0.5 w-full bg-black dark:bg-gray-200 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`block h-0.5 w-full bg-black dark:bg-gray-200 transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+              <span className={`block h-px w-full bg-black dark:bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`block h-px w-full bg-black dark:bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`block h-px w-full bg-black dark:bg-white transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
             </div>
           </button>
         </nav>
 
+        {/* Mobile menu */}
         <div
-          className={`lg:hidden absolute left-0 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 transition-all duration-300 mobile-menu ${
-            isScrolled ? 'top-14 sm:top-16' : 'top-16 sm:top-20'
+          className={`lg:hidden fixed inset-0 bg-white dark:bg-gray-900 transition-all duration-500 mobile-menu ${
+            isScrolled ? 'top-16' : 'top-20'
           } ${
-            isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
+            isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
-            {/* Inicio */}
-            <a
-              href="/"
-              onClick={() => setIsMenuOpen(false)}
-              className="block py-4 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 border-b border-gray-100 dark:border-gray-800 text-base"
-            >
-              Inicio
-            </a>
-            
-            {/* Servicios - positioned early for prominence */}
-            <div className="py-4 border-b border-gray-100 dark:border-gray-800">
-              <a
-                href="/servicios"
-                onClick={() => setIsMenuOpen(false)}
-                className="block text-gray-600 dark:text-gray-300 font-semibold mb-3 hover:text-black dark:hover:text-white transition-colors duration-200"
-              >
+          <div className="container mx-auto px-6 py-12">
+            {/* Services section */}
+            <div className="mb-8">
+              <span className="text-xs tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 mb-4 block">
                 Servicios
-              </a>
+              </span>
               {services.map((service) => (
                 <a
                   key={service.label}
                   href={service.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 pl-4 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
+                  className="block py-3 text-xl text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300"
                 >
                   {service.label}
                 </a>
               ))}
             </div>
-            
-            {/* Rest of navigation items (excluding Inicio since it's already above) */}
-            {navItems.slice(1).map((item, index) => (
+
+            {/* Divider */}
+            <div className="h-px bg-gray-200 dark:bg-gray-800 my-8" />
+
+            {/* Main navigation */}
+            {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="block py-4 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white font-medium transition-colors duration-200 border-b border-gray-100 dark:border-gray-800 text-base"
+                className="block py-3 text-xl text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300"
               >
                 {item.label}
               </a>
             ))}
-            
-            <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-800 flex items-center justify-between">
-              {showThemeToggle && (
-                <div className="px-2">
-                  <ThemeToggle />
-                </div>
-              )}
+
+            {/* Footer actions */}
+            <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex items-center justify-between">
+              {showThemeToggle && <ThemeToggle />}
               <a
                 href="/contacto"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex-1 ml-4 px-6 py-3 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium text-center hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button shadow-button hover:shadow-button-hover text-base"
+                className="inline-flex items-center gap-2 text-black dark:text-white"
               >
-                Hablemos
+                <span>Contacto</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </a>
             </div>
           </div>

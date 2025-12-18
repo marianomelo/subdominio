@@ -10,6 +10,7 @@ import icon from 'astro-icon';
 export default defineConfig({
   site: 'https://subdominio.cl',
   output: 'static',
+  trailingSlash: 'never',
   integrations: [
     react(), 
     tailwind(), 

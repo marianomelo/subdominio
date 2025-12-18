@@ -1,208 +1,158 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import LucideIcon from "../../components/LucideIcon.jsx";
 ---
 
 <Layout title="Servicios de Desarrollo Web y Software" description="Servicios completos de desarrollo: sitios web, e-commerce, automatización y software personalizado. Soluciones digitales que impulsan tu negocio.">
-	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto text-center">
-				<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium mb-8 text-black dark:text-white leading-tight">
-					Servicios que impulsan tu negocio
-				</h1>
-				
-				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-12">
-					Desde sitios web hasta sistemas complejos, desarrollamos soluciones digitales 
-					que resuelven problemas reales y escalan con tu crecimiento.
-				</p>
-			</div>
-		</div>
-	</section>
-
-	<!-- Grid de Servicios -->
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-6xl mx-auto">
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-					<!-- Desarrollo Web -->
-					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 group">
-						<div class="mb-6">
-							<div class="w-12 h-12 bg-black dark:bg-white rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-								<LucideIcon name="globe" className="w-6 h-6 text-white dark:text-black" />
-							</div>
-							<h2 class="text-2xl font-medium text-black dark:text-white mb-4">Desarrollo Web</h2>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-								Páginas web que impresionan y funcionan de verdad. Desde sitios corporativos hasta landing pages de conversión, cada proyecto está diseñado para cumplir objetivos específicos.
-							</p>
-						</div>
-						<div class="space-y-2 mb-6">
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Web corporativa
-							</div>
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Landing pages de conversión
-							</div>
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Aplicaciones web interactivas
-							</div>
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Blog profesional
-							</div>
-						</div>
-						<a
-							href="/servicios/web"
-							class="inline-flex items-center text-black dark:text-white font-medium hover:underline"
-						>
-							Ver desarrollo web
-							<LucideIcon name="arrow-right" className="w-4 h-4 ml-2" />
-						</a>
+	<!-- Hero -->
+	<section class="pt-32 lg:pt-40 pb-16 lg:pb-24 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-8 lg:gap-12">
+				<div class="lg:col-span-8">
+					<div class="flex items-center gap-4 mb-8">
+						<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+							Servicios
+						</span>
+						<div class="h-px w-12 bg-gray-300 dark:bg-gray-700"></div>
 					</div>
 
-					<!-- E-commerce -->
-					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 group">
-						<div class="mb-6">
-							<div class="w-12 h-12 bg-black dark:bg-white rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-								<LucideIcon name="shopping-cart" className="w-6 h-6 text-white dark:text-black" />
-							</div>
-							<h2 class="text-2xl font-medium text-black dark:text-white mb-4">E-commerce</h2>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-								Tiendas online que venden más y mejor. Desarrollamos e-commerce que convierten visitantes en clientes y automatizan tu operación comercial.
-							</p>
-						</div>
-						<div class="space-y-2 mb-6">
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Tiendas B2C
-							</div>
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Tiendas B2B
-							</div>
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Marketplace
-							</div>
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Tiendas de suscripciones
-							</div>
-						</div>
-						<a
-							href="/servicios/ecommerce"
-							class="inline-flex items-center text-black dark:text-white font-medium hover:underline"
-						>
-							Ver e-commerce
-							<LucideIcon name="arrow-right" className="w-4 h-4 ml-2" />
-						</a>
-					</div>
+					<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium text-black dark:text-white leading-[1.1] mb-8">
+						Soluciones digitales que
+						<span class="italic">impulsan negocios</span>
+					</h1>
 
-					<!-- Automatización -->
-					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 group">
-						<div class="mb-6">
-							<div class="w-12 h-12 bg-black dark:bg-white rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-								<LucideIcon name="zap" className="w-6 h-6 text-white dark:text-black" />
-							</div>
-							<h2 class="text-2xl font-medium text-black dark:text-white mb-4">Automatización</h2>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-								Automatización real, resultados tangibles. Eliminamos tareas repetitivas y creamos procesos inteligentes que funcionan 24/7.
-							</p>
-						</div>
-						<div class="space-y-2 mb-6">
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Procesos empresariales
-							</div>
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Contenido con IA
-							</div>
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Integraciones complejas
-							</div>
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Workflows operativos
-							</div>
-						</div>
-						<a
-							href="/servicios/automatizacion"
-							class="inline-flex items-center text-black dark:text-white font-medium hover:underline"
-						>
-							Ver automatización
-							<LucideIcon name="arrow-right" className="w-4 h-4 ml-2" />
-						</a>
-					</div>
-
-					<!-- Desarrollo Personalizado -->
-					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 group">
-						<div class="mb-6">
-							<div class="w-12 h-12 bg-black dark:bg-white rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-								<LucideIcon name="code" className="w-6 h-6 text-white dark:text-black" />
-							</div>
-							<h2 class="text-2xl font-medium text-black dark:text-white mb-4">Desarrollo Personalizado</h2>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-								Software que se adapta a tu negocio, no al revés. Desarrollamos aplicaciones y sistemas completamente personalizados desde cero.
-							</p>
-						</div>
-						<div class="space-y-2 mb-6">
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Sistemas de gestión empresarial
-							</div>
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Aplicaciones web interactivas
-							</div>
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Integraciones y conectores
-							</div>
-							<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-								<span class="w-1 h-1 bg-gray-400 rounded-full mr-3"></span>
-								Aplicaciones móvil-web (PWA)
-							</div>
-						</div>
-						<a
-							href="/servicios/personalizado"
-							class="inline-flex items-center text-black dark:text-white font-medium hover:underline"
-						>
-							Ver desarrollo personalizado
-							<LucideIcon name="arrow-right" className="w-4 h-4 ml-2" />
-						</a>
-					</div>
+					<p class="text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+						Desde sitios web hasta sistemas complejos, desarrollamos productos
+						digitales que resuelven problemas reales y escalan con tu crecimiento.
+					</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- CTA Section -->
-	<section class="py-20 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
-		<div class="container mx-auto px-6 text-center">
-			<div class="max-w-3xl mx-auto">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-medium mb-6 text-white dark:text-gray-900">
-					¿No estás seguro qué servicio necesitas?
+	<!-- Services Grid -->
+	<section class="py-24 lg:py-32 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid md:grid-cols-2 gap-px bg-gray-200 dark:bg-gray-800">
+				<!-- Desarrollo Web -->
+				<a href="/servicios/web" class="group bg-white dark:bg-gray-900 p-8 lg:p-12 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-800">
+					<div class="flex items-start justify-between mb-12">
+						<span class="text-7xl lg:text-8xl font-display text-gray-100 dark:text-gray-800 font-medium">01</span>
+						<svg class="w-6 h-6 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<h2 class="font-display text-2xl lg:text-3xl font-medium text-black dark:text-white mb-4">
+						Desarrollo Web
+					</h2>
+					<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+						Páginas web que impresionan y funcionan de verdad. Desde sitios corporativos
+						hasta landing pages de conversión.
+					</p>
+					<ul class="space-y-2 text-sm text-gray-500 dark:text-gray-500">
+						<li>Web corporativa</li>
+						<li>Landing pages</li>
+						<li>Aplicaciones web</li>
+						<li>Blog profesional</li>
+					</ul>
+				</a>
+
+				<!-- E-commerce -->
+				<a href="/servicios/ecommerce" class="group bg-white dark:bg-gray-900 p-8 lg:p-12 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-800">
+					<div class="flex items-start justify-between mb-12">
+						<span class="text-7xl lg:text-8xl font-display text-gray-100 dark:text-gray-800 font-medium">02</span>
+						<svg class="w-6 h-6 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<h2 class="font-display text-2xl lg:text-3xl font-medium text-black dark:text-white mb-4">
+						E-commerce
+					</h2>
+					<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+						Tiendas online que venden más y mejor. Desarrollamos e-commerce que
+						convierten visitantes en clientes.
+					</p>
+					<ul class="space-y-2 text-sm text-gray-500 dark:text-gray-500">
+						<li>Tiendas B2C y B2B</li>
+						<li>Marketplace</li>
+						<li>Suscripciones</li>
+						<li>Integraciones</li>
+					</ul>
+				</a>
+
+				<!-- Automatización -->
+				<a href="/servicios/automatizacion" class="group bg-white dark:bg-gray-900 p-8 lg:p-12 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-800">
+					<div class="flex items-start justify-between mb-12">
+						<span class="text-7xl lg:text-8xl font-display text-gray-100 dark:text-gray-800 font-medium">03</span>
+						<svg class="w-6 h-6 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<h2 class="font-display text-2xl lg:text-3xl font-medium text-black dark:text-white mb-4">
+						Automatización
+					</h2>
+					<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+						Automatización real, resultados tangibles. Eliminamos tareas repetitivas
+						y creamos procesos inteligentes.
+					</p>
+					<ul class="space-y-2 text-sm text-gray-500 dark:text-gray-500">
+						<li>Procesos empresariales</li>
+						<li>Contenido con IA</li>
+						<li>Integraciones</li>
+						<li>Workflows</li>
+					</ul>
+				</a>
+
+				<!-- Software Personalizado -->
+				<a href="/servicios/personalizado" class="group bg-white dark:bg-gray-900 p-8 lg:p-12 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-800">
+					<div class="flex items-start justify-between mb-12">
+						<span class="text-7xl lg:text-8xl font-display text-gray-100 dark:text-gray-800 font-medium">04</span>
+						<svg class="w-6 h-6 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<h2 class="font-display text-2xl lg:text-3xl font-medium text-black dark:text-white mb-4">
+						Software a medida
+					</h2>
+					<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+						Software que se adapta a tu negocio, no al revés. Aplicaciones y sistemas
+						completamente personalizados.
+					</p>
+					<ul class="space-y-2 text-sm text-gray-500 dark:text-gray-500">
+						<li>Sistemas de gestión</li>
+						<li>Dashboards</li>
+						<li>Portales web</li>
+						<li>PWA</li>
+					</ul>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA -->
+	<section class="py-24 lg:py-32 bg-black dark:bg-gray-200">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="max-w-4xl">
+				<h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-white dark:text-black leading-tight mb-6">
+					¿No estás seguro qué <span class="italic">servicio necesitas?</span>
 				</h2>
-				<p class="text-xl text-gray-300 dark:text-gray-600 mb-8 leading-relaxed">
+				<p class="text-lg text-gray-400 dark:text-gray-600 mb-10 max-w-2xl">
 					Conversemos sobre tu proyecto y te ayudamos a encontrar la solución perfecta.
 				</p>
-				
-				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<div class="flex flex-col sm:flex-row items-start gap-6">
 					<a
 						href="/contacto"
-						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02] rounded-button"
+						class="group inline-flex items-center gap-3 px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium transition-all duration-300 hover:gap-5"
 					>
-						Hablemos de tu proyecto
+						<span>Hablemos</span>
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
 					</a>
 					<a
 						href="mailto:info@subdominio.cl"
-						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-button"
+						class="text-gray-500 hover:text-white dark:hover:text-black transition-colors duration-300"
 					>
-						Enviar email
+						info@subdominio.cl
 					</a>
 				</div>
 			</div>

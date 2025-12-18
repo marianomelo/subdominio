@@ -1,5 +1,3 @@
-import { Mail, Phone, Linkedin, Github, Twitter } from 'lucide-react';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -7,156 +5,139 @@ const Footer = () => {
     { name: 'Desarrollo Web', href: '/servicios/web' },
     { name: 'E-commerce', href: '/servicios/ecommerce' },
     { name: 'Automatización', href: '/servicios/automatizacion' },
-    { name: 'Apps & Software', href: '/servicios/personalizado' },
+    { name: 'Software a medida', href: '/servicios/personalizado' },
   ];
 
   const company = [
-    { name: 'Nosotros', href: '/nosotros' },
+    { name: 'Soluciones', href: '/soluciones' },
     { name: 'Proyectos', href: '/proyectos' },
+    { name: 'Nosotros', href: '/nosotros' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Contacto', href: '/contacto' },
   ];
-
-  const contact = [
-    { 
-      name: 'info@subdominio.cl', 
-      href: 'mailto:info@subdominio.cl',
-      Icon: Mail
-    },
-    { 
-      name: '800 914 659', 
-      href: 'tel:800914659',
-      Icon: Phone
-    },
-  ];
-
-  const socialLinks = [
-    { 
-      name: 'LinkedIn', 
-      href: 'https://linkedin.com/company/subdominio',
-      Icon: Linkedin
-    },
-    { 
-      name: 'GitHub', 
-      href: 'https://github.com/subdominio',
-      Icon: Github
-    },
-    { 
-      name: 'Twitter', 
-      href: 'https://twitter.com/subdominio',
-      Icon: Twitter
-    },
-  ];
-
 
   return (
     <footer className="bg-gray-50 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
-      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-section">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12 mb-12 sm:mb-16">
-          <div className="sm:col-span-2 lg:col-span-2 mb-8 sm:mb-0">
-            <a href="/" className="inline-block text-xl sm:text-2xl font-bold text-black dark:text-white mb-4 sm:mb-6 hover:text-gray-800 dark:hover:text-gray-300 transition-colors duration-200 font-display">
-              subdominio.
-            </a>
-            <p className="text-sm sm:text-body text-gray-600 dark:text-gray-300 max-w-sm mb-6 leading-relaxed">
-              División especializada de Tecnológica Chile en desarrollo web y soluciones digitales que impulsan negocios.
-            </p>
-            <div className="flex space-x-3 sm:space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 sm:w-11 sm:h-11 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 hover:scale-110 rounded-icon"
-                  aria-label={social.name}
-                >
-                  <social.Icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                </a>
-              ))}
+      <div className="container mx-auto px-6 lg:px-12">
+        {/* Main footer content */}
+        <div className="py-16 lg:py-24">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-8">
+            {/* Brand column */}
+            <div className="lg:col-span-5">
+              <a
+                href="/"
+                className="inline-block font-display text-xl lg:text-2xl font-medium text-black dark:text-white mb-6"
+              >
+                subdominio.
+              </a>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed max-w-sm mb-6">
+                Estudio digital especializado en crear experiencias web que conectan marcas con personas.
+              </p>
+              <p className="font-display text-lg italic text-gray-500 dark:text-gray-500 mb-8">
+                Código con propósito.
+              </p>
+              <a
+                href="/contacto"
+                className="group inline-flex items-center gap-3 text-black dark:text-white transition-all duration-300"
+              >
+                <span className="text-sm tracking-wide">Iniciar proyecto</span>
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
             </div>
-          </div>
 
-          <div className="mb-8 sm:mb-0">
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-4 sm:mb-6 uppercase tracking-wide">Servicios</h3>
-            <ul className="space-y-2 sm:space-y-3">
-              {services.map((service) => (
-                <li key={service.name}>
-                  <a
-                    href={service.href}
-                    className="text-sm sm:text-body-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200 inline-block"
-                  >
-                    {service.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Links columns */}
+            <div className="lg:col-span-7">
+              <div className="grid sm:grid-cols-3 gap-8 lg:gap-12">
+                {/* Services */}
+                <div>
+                  <span className="text-xs tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 mb-6 block">
+                    Servicios
+                  </span>
+                  <ul className="space-y-3">
+                    {services.map((service) => (
+                      <li key={service.name}>
+                        <a
+                          href={service.href}
+                          className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 text-sm"
+                        >
+                          {service.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-          <div className="mb-8 sm:mb-0">
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-4 sm:mb-6 uppercase tracking-wide">Empresa</h3>
-            <ul className="space-y-2 sm:space-y-3">
-              {company.map((item) => (
-                <li key={item.name}>
-                  <a
-                    href={item.href}
-                    className="text-sm sm:text-body-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200 inline-block"
-                  >
-                    {item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+                {/* Company */}
+                <div>
+                  <span className="text-xs tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 mb-6 block">
+                    Estudio
+                  </span>
+                  <ul className="space-y-3">
+                    {company.map((item) => (
+                      <li key={item.name}>
+                        <a
+                          href={item.href}
+                          className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 text-sm"
+                        >
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-          <div>
-            <h3 className="text-sm font-semibold text-black dark:text-white mb-4 sm:mb-6 uppercase tracking-wide">Contacto</h3>
-            <ul className="space-y-2 sm:space-y-3">
-              {contact.map((item) => (
-                <li key={item.name}>
-                  <a
-                    href={item.href}
-                    className="text-sm sm:text-body-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200 flex items-center group"
-                  >
-                    <item.Icon className="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500 group-hover:text-black dark:group-hover:text-white transition-colors duration-200" />
-                    <span>{item.name}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
+                {/* Contact */}
+                <div>
+                  <span className="text-xs tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 mb-6 block">
+                    Contacto
+                  </span>
+                  <ul className="space-y-3">
+                    <li>
+                      <a
+                        href="mailto:info@subdominio.cl"
+                        className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 text-sm"
+                      >
+                        info@subdominio.cl
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="tel:800914659"
+                        className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 text-sm"
+                      >
+                        800 914 659
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-
-        <div className="pt-6 sm:pt-8 border-t border-gray-200 dark:border-gray-800">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-4 sm:gap-6">
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 md:gap-6 order-2 lg:order-1">
-              <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
-                © {currentYear} Subdominio
-              </p>
-              <div className="flex items-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm">
-                <a
-                  href="/privacidad"
-                  className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
-                >
-                  Privacidad
-                </a>
-                <a
-                  href="/terminos"
-                  className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
-                >
-                  Términos
-                </a>
-                <a
-                  href="/cookies"
-                  className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
-                >
-                  Cookies
-                </a>
-              </div>
+        {/* Bottom bar */}
+        <div className="py-6 border-t border-gray-200 dark:border-gray-800">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-4 text-xs text-gray-400 dark:text-gray-500">
+              <span>© {currentYear} Subdominio</span>
+              <span className="hidden sm:inline text-gray-300 dark:text-gray-700">—</span>
+              <a href="https://tecnologicachile.cl" target="_blank" rel="noopener noreferrer" className="hover:text-black dark:hover:text-white transition-colors duration-300">
+                Tecnológica Chile
+              </a>
             </div>
-
-            <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 text-center lg:text-right order-1 lg:order-2">
-              Una división de <a href="https://tecnologicachile.cl" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-black dark:hover:text-white transition-colors duration-200">Tecnológica Chile</a>
+            <div className="flex items-center gap-4 text-xs text-gray-400 dark:text-gray-500">
+              <a href="/privacidad" className="hover:text-black dark:hover:text-white transition-colors duration-300">
+                Privacidad
+              </a>
+              <span className="text-gray-300 dark:text-gray-700">/</span>
+              <a href="/terminos" className="hover:text-black dark:hover:text-white transition-colors duration-300">
+                Términos
+              </a>
+              <span className="text-gray-300 dark:text-gray-700">/</span>
+              <a href="/cookies" className="hover:text-black dark:hover:text-white transition-colors duration-300">
+                Cookies
+              </a>
             </div>
           </div>
         </div>

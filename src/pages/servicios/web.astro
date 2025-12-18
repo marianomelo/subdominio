@@ -1,13 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import LucideIcon from "../../components/LucideIcon.jsx";
-import Breadcrumb from '../../components/Breadcrumb.astro';
 import ServiceSchema from '../../components/ServiceSchema.astro';
 
-const breadcrumbItems = [
-  { name: "Servicios", item: "/servicios" },
-  { name: "Desarrollo Web", item: "/servicios/web" }
-];
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{ "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://subdominio.cl" },
+		{ "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://subdominio.cl/servicios" },
+		{ "@type": "ListItem", "position": 3, "name": "Desarrollo Web", "item": "https://subdominio.cl/servicios/web" }
+	]
+};
 
 const serviceOffers = [
   {
@@ -30,88 +33,138 @@ const serviceOffers = [
 ---
 
 <Layout title="Desarrollo Web" description="Servicios profesionales de desarrollo web. Creamos sitios web modernos, rápidos y escalables con las mejores tecnologías del mercado.">
-	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-4 sm:px-6">
-			<div class="max-w-4xl mx-auto">
-				<Breadcrumb items={breadcrumbItems} />
-				
-				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-8 text-black dark:text-white leading-tight">
-					Páginas web que impresionan y funcionan de verdad
+	<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+	<!-- Hero -->
+	<section class="pt-32 lg:pt-40 pb-16 lg:pb-24 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="max-w-4xl">
+				<div class="flex items-center gap-4 mb-8">
+					<a href="/servicios" class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white transition-colors duration-300">
+						Servicios
+					</a>
+					<span class="text-gray-300 dark:text-gray-600">/</span>
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Web
+					</span>
+				</div>
+
+				<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-black dark:text-white leading-[1.1] mb-8">
+					Páginas web que <span class="italic">impresionan</span> y funcionan
 				</h1>
-				
-				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-					Creamos sitios web personalizados, veloces y confiables que proyectan la esencia de tu negocio y cumplen objetivos medibles.
-					Cada página está diseñada para guiar al visitante, transmitir confianza y convertir su interés en acción.
+
+				<p class="text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mb-10">
+					Creamos sitios web personalizados, veloces y confiables que proyectan la esencia
+					de tu negocio y cumplen objetivos medibles.
 				</p>
-				
-				<div class="flex flex-col sm:flex-row gap-4">
+
+				<div class="flex flex-col sm:flex-row items-start gap-6">
 					<a
 						href="/contacto"
-						class="px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button"
+						class="group inline-flex items-center gap-3 px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-black font-medium transition-all duration-300 hover:gap-5"
 					>
-						Solicitar presupuesto
-					</a>
-					<a
-						href="#servicios"
-						class="px-8 py-4 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 font-medium hover:border-black dark:hover:border-white transition-all duration-200 hover:scale-[1.02] rounded-button"
-					>
-						Cuéntanos tu idea
+						<span>Solicitar presupuesto</span>
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
 					</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Introducción -->
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-					No solo diseñamos sitios: creamos experiencias digitales que conectan con tu público y respaldan tu estrategia comercial.
-					Te acompañamos desde la planificación hasta el lanzamiento, usando tecnología adaptada a tus necesidades y cuidando cada detalle para que todo funcione de forma fluida y sin complicaciones.
-				</p>
+	<!-- Intro -->
+	<section class="py-24 lg:py-32 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Enfoque
+					</span>
+				</div>
+				<div class="lg:col-span-7">
+					<p class="text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+						No solo diseñamos sitios: creamos experiencias digitales que conectan con
+						tu público y respaldan tu estrategia comercial. Te acompañamos desde la
+						planificación hasta el lanzamiento.
+					</p>
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Servicios -->
-	<section class="py-16 bg-white dark:bg-gray-900" id="servicios">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-medium mb-12 text-black dark:text-white">
-					Soluciones web con valor real
-				</h2>
-				
-				<div class="space-y-12">
-					<div class="border-b border-gray-200 dark:border-gray-700 pb-12">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Web corporativa</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Refuerza tu imagen, genera credibilidad y comunica tu propuesta de valor con un diseño elegante y un flujo de navegación claro.
-							Ideal para empresas que necesitan transmitir profesionalismo y estar disponibles 24/7.
+	<!-- Services -->
+	<section class="py-24 lg:py-32 bg-white dark:bg-gray-900" id="servicios">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Soluciones
+					</span>
+				</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						Soluciones web con <span class="italic">valor real</span>
+					</h2>
+				</div>
+			</div>
+
+			<div class="border-t border-gray-200 dark:border-gray-800">
+				<div class="grid lg:grid-cols-12 gap-6 py-12 lg:py-16 border-b border-gray-200 dark:border-gray-800">
+					<div class="lg:col-span-4">
+						<h3 class="font-display text-xl lg:text-2xl font-medium text-black dark:text-white">
+							Web corporativa
+						</h3>
+					</div>
+					<div class="lg:col-span-7 lg:col-start-6">
+						<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+							Refuerza tu imagen, genera credibilidad y comunica tu propuesta de valor
+							con un diseño elegante y un flujo de navegación claro. Ideal para empresas
+							que necesitan transmitir profesionalismo.
 						</p>
 					</div>
+				</div>
 
-					<div class="border-b border-gray-200 dark:border-gray-700 pb-12">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Landing page de conversión</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Una página enfocada en un único objetivo: que el visitante actúe. Diseño persuasivo, estructura optimizada y mensajes que motivan.
-							Perfecta para campañas, lanzamientos o captación de leads.
+				<div class="grid lg:grid-cols-12 gap-6 py-12 lg:py-16 border-b border-gray-200 dark:border-gray-800">
+					<div class="lg:col-span-4">
+						<h3 class="font-display text-xl lg:text-2xl font-medium text-black dark:text-white">
+							Landing page
+						</h3>
+					</div>
+					<div class="lg:col-span-7 lg:col-start-6">
+						<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+							Una página enfocada en un único objetivo: que el visitante actúe. Diseño
+							persuasivo, estructura optimizada y mensajes que motivan. Perfecta para
+							campañas y captación de leads.
 						</p>
 					</div>
+				</div>
 
-					<div class="border-b border-gray-200 dark:border-gray-700 pb-12">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Aplicaciones web interactivas</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Herramientas digitales que tus usuarios realmente usan: áreas privadas, paneles dinámicos, formularios inteligentes y datos en tiempo real.
-							Hechas para optimizar procesos y mejorar la experiencia del cliente.
+				<div class="grid lg:grid-cols-12 gap-6 py-12 lg:py-16 border-b border-gray-200 dark:border-gray-800">
+					<div class="lg:col-span-4">
+						<h3 class="font-display text-xl lg:text-2xl font-medium text-black dark:text-white">
+							Aplicaciones web
+						</h3>
+					</div>
+					<div class="lg:col-span-7 lg:col-start-6">
+						<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+							Herramientas digitales que tus usuarios realmente usan: áreas privadas,
+							paneles dinámicos, formularios inteligentes. Hechas para optimizar
+							procesos y mejorar la experiencia.
 						</p>
 					</div>
+				</div>
 
-					<div>
-						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Blog profesional</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Un espacio para compartir contenido relevante, posicionarte en buscadores y fortalecer tu autoridad en el sector.
-							Fácil de administrar, pensado para crecer con tu negocio.
+				<div class="grid lg:grid-cols-12 gap-6 py-12 lg:py-16">
+					<div class="lg:col-span-4">
+						<h3 class="font-display text-xl lg:text-2xl font-medium text-black dark:text-white">
+							Blog profesional
+						</h3>
+					</div>
+					<div class="lg:col-span-7 lg:col-start-6">
+						<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+							Un espacio para compartir contenido relevante, posicionarte en buscadores
+							y fortalecer tu autoridad en el sector. Fácil de administrar, pensado
+							para crecer.
 						</p>
 					</div>
 				</div>
@@ -119,247 +172,209 @@ const serviceOffers = [
 		</div>
 	</section>
 
+	<!-- Process -->
+	<section class="py-24 lg:py-32 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Método
+					</span>
+				</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						Nuestro método de <span class="italic">trabajo</span>
+					</h2>
+				</div>
+			</div>
 
-	<section class="py-16 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-medium mb-12 text-black dark:text-white">
-					Nuestro método de trabajo
-				</h2>
-				
-				<div class="space-y-8">
-					<div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
-						<div class="sm:w-16 md:w-24 flex-shrink-0">
-							<span class="text-xl sm:text-2xl font-medium text-black dark:text-white">01</span>
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Definimos objetivos</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Entendemos tus metas, analizamos el mercado y creamos una estrategia clara que guíe todo el proyecto.
-							</p>
-						</div>
-					</div>
-
-					<div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
-						<div class="sm:w-16 md:w-24 flex-shrink-0">
-							<span class="text-xl sm:text-2xl font-medium text-black dark:text-white">02</span>
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Diseñamos la experiencia</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Planificamos la estructura y estética para que cada elemento cumpla una función: atraer, guiar y convencer.
-							</p>
-						</div>
-					</div>
-
-					<div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
-						<div class="sm:w-16 md:w-24 flex-shrink-0">
-							<span class="text-xl sm:text-2xl font-medium text-black dark:text-white">03</span>
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Construimos con precisión</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Usamos tecnología de última generación para que tu web cargue rápido, funcione siempre y sea fácil de mantener.
-							</p>
-						</div>
-					</div>
-
-					<div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
-						<div class="sm:w-16 md:w-24 flex-shrink-0">
-							<span class="text-xl sm:text-2xl font-medium text-black dark:text-white">04</span>
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Lanzamos y optimizamos</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Ponemos tu web en línea, medimos resultados y ajustamos para maximizar el rendimiento.
-							</p>
-						</div>
-					</div>
+			<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+				<div>
+					<span class="font-display text-5xl text-gray-200 dark:text-gray-800 font-medium block mb-4">01</span>
+					<h3 class="font-medium text-black dark:text-white mb-3">Definimos objetivos</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+						Entendemos tus metas, analizamos el mercado y creamos una estrategia clara.
+					</p>
+				</div>
+				<div>
+					<span class="font-display text-5xl text-gray-200 dark:text-gray-800 font-medium block mb-4">02</span>
+					<h3 class="font-medium text-black dark:text-white mb-3">Diseñamos la experiencia</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+						Planificamos estructura y estética para atraer, guiar y convencer.
+					</p>
+				</div>
+				<div>
+					<span class="font-display text-5xl text-gray-200 dark:text-gray-800 font-medium block mb-4">03</span>
+					<h3 class="font-medium text-black dark:text-white mb-3">Construimos con precisión</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+						Tecnología de última generación para que tu web cargue rápido y funcione siempre.
+					</p>
+				</div>
+				<div>
+					<span class="font-display text-5xl text-gray-200 dark:text-gray-800 font-medium block mb-4">04</span>
+					<h3 class="font-medium text-black dark:text-white mb-3">Lanzamos y optimizamos</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+						Ponemos tu web en línea, medimos resultados y ajustamos para maximizar rendimiento.
+					</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Diferenciales -->
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-medium mb-12 text-black dark:text-white">
-					¿Por qué elegirnos?
-				</h2>
-				
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Cero sorpresas</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">procesos y plazos claros desde el inicio.</p>
-						</div>
-					</div>
-					
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Experiencia comprobada</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">proyectos que combinan diseño y rendimiento.</p>
-						</div>
-					</div>
-					
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Visibilidad en buscadores</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">SEO incorporado desde el primer día.</p>
-						</div>
-					</div>
-					
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Gestión simple</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">podrás actualizar tu web sin depender de terceros.</p>
-						</div>
-					</div>
-					
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Tecnología al día</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">usamos herramientas modernas que garantizan estabilidad y escalabilidad.</p>
-						</div>
-					</div>
-					
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Soporte real</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">actualizaciones y mejoras cuando lo necesites.</p>
-						</div>
-					</div>
+	<!-- Differentiators -->
+	<section class="py-24 lg:py-32 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Diferenciadores
+					</span>
+				</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						¿Por qué <span class="italic">elegirnos?</span>
+					</h2>
+				</div>
+			</div>
+
+			<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Cero sorpresas</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Procesos y plazos claros desde el inicio.</p>
+				</div>
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Experiencia comprobada</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Proyectos que combinan diseño y rendimiento.</p>
+				</div>
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">SEO incorporado</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Visibilidad en buscadores desde el primer día.</p>
+				</div>
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Gestión simple</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Podrás actualizar tu web sin depender de terceros.</p>
+				</div>
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Tecnología al día</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Herramientas modernas que garantizan estabilidad.</p>
+				</div>
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Soporte real</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Actualizaciones y mejoras cuando lo necesites.</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-16 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
-		<div class="container mx-auto px-6 text-center">
-			<div class="max-w-3xl mx-auto">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-medium mb-6 text-white dark:text-gray-900">
-					Tu sitio web puede ser más que una vitrina
+	<!-- WordPress especializado -->
+	<section class="py-24 lg:py-32 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="mb-12">
+				<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+					Especialización WordPress
+				</span>
+			</div>
+
+			<div class="grid md:grid-cols-2 gap-px bg-gray-200 dark:bg-gray-800">
+				<a href="/wordpress-chile" class="group bg-gray-50 dark:bg-gray-950 p-8 lg:p-10 transition-colors duration-300 hover:bg-white dark:hover:bg-gray-900">
+					<div class="flex items-start justify-between mb-6">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">WordPress Chile</h3>
+						<svg class="w-5 h-5 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Desarrollo WordPress profesional optimizado para el mercado chileno</p>
+				</a>
+
+				<a href="/optimizacion-wordpress" class="group bg-gray-50 dark:bg-gray-950 p-8 lg:p-10 transition-colors duration-300 hover:bg-white dark:hover:bg-gray-900">
+					<div class="flex items-start justify-between mb-6">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Optimización WordPress</h3>
+						<svg class="w-5 h-5 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Mejora velocidad, SEO y seguridad de tu WordPress existente</p>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Related Services -->
+	<section class="py-24 lg:py-32 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="mb-12">
+				<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+					Servicios relacionados
+				</span>
+			</div>
+
+			<div class="grid md:grid-cols-3 gap-px bg-gray-200 dark:bg-gray-800">
+				<a href="/servicios/ecommerce" class="group bg-white dark:bg-gray-900 p-8 lg:p-10 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-800">
+					<div class="flex items-start justify-between mb-6">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">E-commerce</h3>
+						<svg class="w-5 h-5 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Convierte tu web en una tienda que vende 24/7</p>
+				</a>
+
+				<a href="/servicios/automatizacion" class="group bg-white dark:bg-gray-900 p-8 lg:p-10 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-800">
+					<div class="flex items-start justify-between mb-6">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Automatización</h3>
+						<svg class="w-5 h-5 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Automatiza procesos para ahorrar tiempo</p>
+				</a>
+
+				<a href="/servicios/personalizado" class="group bg-white dark:bg-gray-900 p-8 lg:p-10 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-800">
+					<div class="flex items-start justify-between mb-6">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Software a medida</h3>
+						<svg class="w-5 h-5 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Software único para necesidades específicas</p>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA -->
+	<section class="py-24 lg:py-32 bg-black dark:bg-gray-200">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="max-w-4xl">
+				<h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-white dark:text-black leading-tight mb-6">
+					Tu sitio web puede ser más que <span class="italic">una vitrina</span>
 				</h2>
-				<p class="text-xl text-gray-300 dark:text-gray-600 mb-8 leading-relaxed">
-					Puede generar leads, automatizar ventas y posicionar tu marca.<br>
+				<p class="text-lg text-gray-400 dark:text-gray-600 mb-10 max-w-2xl">
+					Puede generar leads, automatizar ventas y posicionar tu marca.
 					Conversemos sobre cómo lograrlo.
 				</p>
-				
-				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<div class="flex flex-col sm:flex-row items-start gap-6">
 					<a
 						href="/contacto"
-						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02] rounded-button"
+						class="group inline-flex items-center gap-3 px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium transition-all duration-300 hover:gap-5"
 					>
-						Empezar proyecto
+						<span>Empezar proyecto</span>
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
 					</a>
 					<a
 						href="mailto:info@subdominio.cl"
-						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-button"
+						class="text-gray-500 hover:text-white dark:hover:text-black transition-colors duration-300"
 					>
-						Enviar email
+						info@subdominio.cl
 					</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Opciones de Desarrollo Web -->
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<div class="text-center mb-12">
-					<h2 class="text-3xl font-medium mb-4 text-black dark:text-white">
-						Desarrollo web profesional
-					</h2>
-					<p class="text-lg text-gray-600 dark:text-gray-300">
-						Cotización detallada y especializada para tu proyecto
-					</p>
-				</div>
-				
-				<div class="grid grid-cols-1 gap-8 max-w-2xl mx-auto">
-					<!-- Desarrollo Web Profesional -->
-					<div class="bg-white dark:bg-gray-900 p-8 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
-						<div class="mb-6">
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Desarrollo Web Profesional</h3>
-							<p class="text-gray-600 dark:text-gray-300 mb-4">
-								Sitios web corporativos, portales empresariales, landing pages y plataformas que impulsan tu negocio. 
-								Cotización personalizada desde 25 UF.
-							</p>
-						</div>
-						<div class="grid grid-cols-2 gap-3 mb-6">
-							<div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-								<span class="text-black dark:text-white mr-2">✓</span>
-								<span>Diseño personalizado</span>
-							</div>
-							<div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-								<span class="text-black dark:text-white mr-2">✓</span>
-								<span>SEO optimizado</span>
-							</div>
-							<div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-								<span class="text-black dark:text-white mr-2">✓</span>
-								<span>Responsive design</span>
-							</div>
-							<div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-								<span class="text-black dark:text-white mr-2">✓</span>
-								<span>CMS incluido</span>
-							</div>
-							<div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-								<span class="text-black dark:text-white mr-2">✓</span>
-								<span>Formularios optimizados</span>
-							</div>
-							<div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-								<span class="text-black dark:text-white mr-2">✓</span>
-								<span>Soporte incluido</span>
-							</div>
-						</div>
-						<a
-							href="/web"
-							class="inline-block px-6 py-3 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button"
-						>
-							Ver precios y cotizar
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Servicios Relacionados -->
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-xl sm:text-2xl md:text-3xl font-medium mb-8 text-black dark:text-white">
-					Servicios relacionados
-				</h2>
-				
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-					<a href="/servicios/ecommerce" class="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
-						<h3 class="font-medium text-black dark:text-white mb-2 group-hover:underline">E-commerce</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Convierte tu web en una tienda que vende 24/7</p>
-					</a>
-					
-					<a href="/servicios/automatizacion" class="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
-						<h3 class="font-medium text-black dark:text-white mb-2 group-hover:underline">Automatización</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Automatiza procesos para ahorrar tiempo</p>
-					</a>
-					
-					<a href="/servicios/personalizado" class="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
-						<h3 class="font-medium text-black dark:text-white mb-2 group-hover:underline">Desarrollo Personalizado</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Software único para necesidades específicas</p>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	
-	<ServiceSchema 
+	<ServiceSchema
 		name="Desarrollo Web Profesional"
 		description="Creamos sitios web modernos, rápidos y escalables con las mejores tecnologías del mercado. Páginas web que impresionan y funcionan de verdad."
 		category="Desarrollo Web"

@@ -1,13 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import BlogPostSchema from '../../components/BlogPostSchema.astro';
 import { getCollection } from 'astro:content';
-import LucideIcon from "../../components/LucideIcon.jsx";
 
-// Esta página manejará las URLs dinámicas como /blog/optimizacion-performance-wordpress
 export async function getStaticPaths() {
-  // Obtener posts desde las colecciones de contenido
   const allBlogPosts = await getCollection('blog');
-  
+
   return allBlogPosts.map((post) => ({
     params: { slug: post.data.slug || post.slug },
     props: { post }
@@ -17,209 +15,255 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await post.render();
 
-const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('es-ES', { 
-    day: 'numeric', 
-    month: 'long', 
-    year: 'numeric' 
-  });
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{ "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://subdominio.cl" },
+		{ "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://subdominio.cl/blog" },
+		{ "@type": "ListItem", "position": 3, "name": post.data.title, "item": `https://subdominio.cl/blog/${post.data.slug || post.slug}` }
+	]
 };
 
-const getCategoryColor = (color) => {
-  const colors = {
-    blue: 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300',
-    orange: 'bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300',
-    green: 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300',
-    purple: 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300',
-    red: 'bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300'
-  };
-  return colors[color] || 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300';
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('es-ES', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
 };
 ---
 
 <Layout title={post.data.title} description={post.data.excerpt}>
-  <!-- Hero del artículo -->
-  <section class="pt-32 pb-16 bg-white dark:bg-gray-900">
-    <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto">
-        <div class="mb-8">
-          <a href="/blog" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
-            <LucideIcon name="arrow-left" className="w-4 h-4 mr-2" />
-            Volver al blog
-          </a>
-        </div>
-        
-        <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-6">
-          <span class={`px-2 py-1 text-xs font-medium rounded ${getCategoryColor(post.data.categoryColor)} inline-block whitespace-nowrap w-fit`}>
-            {post.data.category}
-          </span>
-          <div class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-300">
-            <span>{formatDate(post.data.publishedDate)}</span>
-            <span class="text-gray-400">•</span>
-            <span>{post.data.readingTime} min de lectura</span>
-          </div>
-        </div>
-        
-        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-6 text-black dark:text-white leading-tight">
-          {post.data.title}
-        </h1>
-        
-        <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-12">
-          {post.data.excerpt}
-        </p>
-        
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-12 pb-8 sm:pb-12 border-b border-gray-200 dark:border-gray-800">
-          <div class="flex items-center">
-            <div className="w-10 h-10 bg-black dark:bg-white rounded-full flex items-center justify-center mr-3">
-              <LucideIcon name="user" className="w-5 h-5 text-white dark:text-black" />
-            </div>
-            <div>
-              <p class="text-sm font-medium text-black dark:text-white">{post.data.author}</p>
-              <p class="text-xs text-gray-500 dark:text-gray-400">Desarrollo & Estrategia Digital</p>
-            </div>
-          </div>
-          <div class="text-left sm:text-right">
-            <p class="text-xs text-gray-500 dark:text-gray-400">Artículo verificado</p>
-            <p class="text-xs text-gray-600 dark:text-gray-300 font-medium">Enero 2025</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+	<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+	<BlogPostSchema
+		title={post.data.title}
+		description={post.data.excerpt}
+		publishedDate={post.data.publishedDate}
+		author={post.data.author}
+		category={post.data.category}
+		readingTime={post.data.readingTime}
+		url={`/blog/${post.data.slug || post.slug}`}
+	/>
+	<!-- Hero del artículo -->
+	<section class="pt-32 lg:pt-40 pb-16 lg:pb-24 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-8 lg:gap-12">
+				<div class="lg:col-span-8">
+					<!-- Back link -->
+					<a href="/blog" class="group inline-flex items-center gap-3 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 mb-12">
+						<svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M7 7h10M7 7v10" transform="rotate(180 12 12)" />
+						</svg>
+						<span class="text-sm tracking-wide">Volver al blog</span>
+					</a>
 
-  <!-- Contenido del artículo -->
-  <article class="pb-16 bg-white dark:bg-gray-900">
-    <div class="container mx-auto px-6">
-      <div class="max-w-3xl mx-auto">
-        <div class="prose prose-lg prose-gray dark:prose-invert max-w-none
-                prose-headings:font-medium prose-headings:text-black dark:prose-headings:text-white
-                prose-p:text-gray-600 dark:prose-p:text-gray-300 prose-p:leading-relaxed
-                prose-li:text-gray-600 dark:prose-li:text-gray-300
-                prose-strong:text-black dark:prose-strong:text-white prose-strong:font-medium
-                prose-a:text-black dark:prose-a:text-white prose-a:underline prose-a:transition-colors
-                prose-blockquote:border-gray-300 dark:prose-blockquote:border-gray-700
-                prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-400">
-          <style>
-            /* Override default prose code styles */
-            .prose code {
-              background-color: rgb(244 244 245) !important;
-              color: rgb(24 24 27) !important;
-              padding: 0.125rem 0.25rem !important;
-              border-radius: 0.25rem !important;
-              font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
-              font-size: 0.875rem !important;
-              font-weight: 500 !important;
-            }
-            .prose code::before,
-            .prose code::after {
-              content: '' !important;
-            }
-            .dark .prose code {
-              background-color: rgb(39 39 42) !important;
-              color: rgb(244 244 245) !important;
-            }
-            .prose pre {
-              background-color: rgb(24 24 27) !important;
-              color: rgb(229 231 235) !important;
-              border-radius: 0.75rem !important;
-              padding: 1rem !important;
-              overflow-x: auto !important;
-              border: 1px solid rgb(63 63 70) !important;
-            }
-            .prose pre code {
-              background-color: transparent !important;
-              color: inherit !important;
-              padding: 0 !important;
-              border-radius: 0 !important;
-              font-size: inherit !important;
-            }
-          </style>
-          <Content />
-        </div>
-      </div>
-    </div>
-  </article>
+					<!-- Category and meta -->
+					<div class="flex items-center gap-4 mb-8">
+						<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+							{post.data.category}
+						</span>
+						<div class="h-px w-8 bg-gray-300 dark:bg-gray-700"></div>
+						<span class="text-sm text-gray-500 dark:text-gray-400">
+							{post.data.readingTime} min
+						</span>
+					</div>
 
-  <!-- Compartir y navegación -->
-  <section class="py-12 bg-gray-50 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-700">
-    <div class="container mx-auto px-6">
-      <div class="max-w-3xl mx-auto">
-        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6">
-          <div class="mb-4 lg:mb-0">
-            <h3 class="font-medium text-black dark:text-white mb-4">Comparte este artículo</h3>
-            <div class="flex flex-wrap gap-4">
-              <a
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.data.title)}&url=${encodeURIComponent(`https://subdominio.cl/blog/${post.data.slug || post.slug}`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 text-sm"
-              >
-                <LucideIcon name="twitter" className="w-4 h-4 mr-2" />
-                Twitter
-              </a>
-              <a
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://subdominio.cl/blog/${post.data.slug || post.slug}`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 text-sm"
-              >
-                <LucideIcon name="linkedin" className="w-4 h-4 mr-2" />
-                LinkedIn
-              </a>
-              <a
-                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://subdominio.cl/blog/${post.data.slug || post.slug}`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 text-sm"
-              >
-                <LucideIcon name="facebook" className="w-4 h-4 mr-2" />
-                Facebook
-              </a>
-              <button
-                onclick={`navigator.clipboard.writeText('https://subdominio.cl/blog/${post.data.slug || post.slug}').then(() => { const btn = this; const original = btn.innerHTML; btn.innerHTML = '<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>¡Copiado!'; setTimeout(() => btn.innerHTML = original, 2000); })`}
-                class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 border-none bg-transparent cursor-pointer text-sm"
-              >
-                <LucideIcon name="link" className="w-4 h-4 mr-2" />
-                Copiar enlace
-              </button>
-            </div>
-          </div>
+					<!-- Title -->
+					<h1 class="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium text-black dark:text-white leading-[1.1] mb-8">
+						{post.data.title}
+					</h1>
 
-          <div class="text-left lg:text-right">
-            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">¿Te gustó este contenido?</p>
-            <a
-              href="/blog"
-              class="inline-flex items-center px-4 py-2 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-colors duration-200 rounded-md"
-            >
-              Ver más artículos
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+					<!-- Excerpt -->
+					<p class="text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+						{post.data.excerpt}
+					</p>
+				</div>
 
-  <!-- CTA final -->
-  <section class="py-20 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
-    <div class="container mx-auto px-6 text-center">
-      <div class="max-w-2xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-medium mb-6">
-          ¿Necesitas ayuda con tu proyecto?
-        </h2>
-        <p class="text-xl text-gray-300 dark:text-gray-600 mb-8 leading-relaxed">
-          En Subdominio tenemos la experiencia y conocimiento para llevar tu negocio al siguiente nivel. 
-          Hablemos sobre cómo podemos ayudarte.
-        </p>
-        
-        <a 
-          href="/contacto"
-          class="inline-flex items-center px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02] rounded-button"
-        >
-          Hablemos
-          <LucideIcon name="arrow-right" className="w-4 h-4 ml-2" />
-        </a>
-      </div>
-    </div>
-  </section>
+				<!-- Sidebar meta -->
+				<div class="lg:col-span-4 lg:pt-24">
+					<div class="lg:pl-8 lg:border-l border-gray-200 dark:border-gray-800 space-y-8">
+						<div>
+							<span class="text-xs tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 block mb-3">
+								Autor
+							</span>
+							<p class="text-black dark:text-white font-medium">{post.data.author}</p>
+							<p class="text-sm text-gray-500 dark:text-gray-400">Subdominio</p>
+						</div>
+						<div>
+							<span class="text-xs tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 block mb-3">
+								Publicado
+							</span>
+							<p class="text-black dark:text-white">{formatDate(post.data.publishedDate)}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contenido del artículo -->
+	<article class="py-16 lg:py-24 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-8 lg:gap-12">
+				<div class="lg:col-span-8">
+					<div class="prose prose-lg prose-gray dark:prose-invert max-w-none
+							prose-headings:font-display prose-headings:font-medium prose-headings:text-black dark:prose-headings:text-white
+							prose-p:text-gray-600 dark:prose-p:text-gray-300 prose-p:leading-relaxed
+							prose-li:text-gray-600 dark:prose-li:text-gray-300
+							prose-strong:text-black dark:prose-strong:text-white prose-strong:font-medium
+							prose-a:text-black dark:prose-a:text-white prose-a:underline prose-a:underline-offset-2 prose-a:transition-colors
+							prose-blockquote:border-l-2 prose-blockquote:border-gray-300 dark:prose-blockquote:border-gray-700
+							prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-400 prose-blockquote:font-display prose-blockquote:italic
+							prose-img:my-12">
+						<style>
+							.prose code {
+								background-color: rgb(244 244 245) !important;
+								color: rgb(24 24 27) !important;
+								padding: 0.125rem 0.375rem !important;
+								font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+								font-size: 0.875rem !important;
+								font-weight: 500 !important;
+							}
+							.prose code::before,
+							.prose code::after {
+								content: '' !important;
+							}
+							.dark .prose code {
+								background-color: rgb(39 39 42) !important;
+								color: rgb(244 244 245) !important;
+							}
+							.prose pre {
+								background-color: rgb(24 24 27) !important;
+								color: rgb(229 231 235) !important;
+								padding: 1.5rem !important;
+								overflow-x: auto !important;
+								border: 1px solid rgb(63 63 70) !important;
+							}
+							.prose pre code {
+								background-color: transparent !important;
+								color: inherit !important;
+								padding: 0 !important;
+								font-size: inherit !important;
+							}
+						</style>
+						<Content />
+					</div>
+				</div>
+
+				<!-- Sidebar - Share -->
+				<div class="lg:col-span-4">
+					<div class="lg:sticky lg:top-32">
+						<div class="lg:pl-8 lg:border-l border-gray-200 dark:border-gray-800">
+							<span class="text-xs tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 block mb-6">
+								Compartir
+							</span>
+							<div class="space-y-4">
+								<button
+									onclick={`navigator.clipboard.writeText('https://subdominio.cl/blog/${post.data.slug || post.slug}').then(() => { const btn = this; const span = btn.querySelector('span'); const original = span.textContent; span.textContent = '¡Copiado!'; setTimeout(() => span.textContent = original, 2000); })`}
+									class="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 text-sm bg-transparent border-none cursor-pointer p-0"
+								>
+									<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+									</svg>
+									<span>Copiar enlace</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+
+	<!-- Navigation -->
+	<section class="py-12 lg:py-16 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+				<a
+					href="/blog"
+					class="group inline-flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300"
+				>
+					<svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M7 7h10M7 7v10" transform="rotate(180 12 12)" />
+					</svg>
+					<span class="text-sm tracking-wide">Ver todos los artículos</span>
+				</a>
+
+				<div class="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
+					<span>¿Te resultó útil?</span>
+					<a
+						href="/contacto"
+						class="text-black dark:text-white hover:opacity-70 transition-opacity duration-300"
+					>
+						Conversemos →
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA - Editorial -->
+	<section class="py-24 lg:py-40 bg-black dark:bg-gray-200 relative overflow-hidden">
+		<div class="absolute top-0 right-0 w-1/3 h-full opacity-[0.03]">
+			<svg class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 text-white dark:text-black" viewBox="0 0 200 200" fill="currentColor">
+				<circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.5"/>
+				<circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="0.5"/>
+				<circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+			</svg>
+		</div>
+
+		<div class="container mx-auto px-6 lg:px-12 relative">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-end">
+				<div class="lg:col-span-7">
+					<span class="inline-block text-sm tracking-[0.3em] uppercase text-gray-500 dark:text-gray-400 mb-8">
+						Próximo paso
+					</span>
+					<h2 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium text-white dark:text-black leading-[1.1] mb-8">
+						¿Necesitas ayuda con tu <span class="italic">proyecto?</span>
+					</h2>
+					<p class="text-lg lg:text-xl text-gray-400 dark:text-gray-600 max-w-xl leading-relaxed">
+						En Subdominio tenemos la experiencia y conocimiento para
+						llevar tu negocio al siguiente nivel.
+					</p>
+				</div>
+
+				<div class="lg:col-span-5 lg:pl-12 lg:border-l border-gray-800 dark:border-gray-200">
+					<div class="space-y-8">
+						<a
+							href="/contacto"
+							class="group flex items-center justify-between py-6 border-b border-gray-800 dark:border-gray-200 transition-all duration-300 hover:border-white dark:hover:border-black"
+						>
+							<span class="text-2xl lg:text-3xl font-display text-white dark:text-black">Hablemos</span>
+							<svg class="w-6 h-6 text-gray-500 group-hover:text-white dark:group-hover:text-black group-hover:translate-x-2 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
+						</a>
+
+						<div class="space-y-4">
+							<a
+								href="mailto:info@subdominio.cl"
+								class="flex items-center gap-3 text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black transition-colors duration-300"
+							>
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+								</svg>
+								<span>info@subdominio.cl</span>
+							</a>
+							<a
+								href="tel:+56800914659"
+								class="flex items-center gap-3 text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black transition-colors duration-300"
+							>
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+								</svg>
+								<span>800 914 659</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </Layout>

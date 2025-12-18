@@ -105,7 +105,7 @@ export default function CookieBanner() {
 
 							<div className="grid md:grid-cols-2 gap-6">
 								<div className="space-y-4">
-									<div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+									<div className="p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
 										<div className="flex items-center justify-between mb-3">
 											<h4 className="font-medium text-black dark:text-white">Cookies Esenciales</h4>
 											<div className="w-12 h-6 bg-green-500 rounded-full relative">
@@ -117,7 +117,7 @@ export default function CookieBanner() {
 										</p>
 									</div>
 
-									<div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+									<div className="p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
 										<div className="flex items-center justify-between mb-3">
 											<h4 className="font-medium text-black dark:text-white">Cookies Analíticas</h4>
 											<label className="relative inline-flex items-center cursor-pointer">
@@ -177,7 +177,7 @@ export default function CookieBanner() {
 										}
 										setIsVisible(false);
 									}}
-									className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 font-medium text-sm hover:scale-105"
+									className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black hover:opacity-90 transition-all duration-300 font-medium text-sm"
 								>
 									Guardar preferencias
 								</button>

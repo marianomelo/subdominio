@@ -5,7 +5,7 @@ const ContactFormBase = ({
   defaultService = '',
   landingSource = '',
   submitButtonText = 'Enviar consulta',
-  submitButtonClass = 'w-full px-8 py-3 bg-black dark:bg-white text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] rounded-button shadow-button hover:shadow-button-hover text-base',
+  submitButtonClass = 'w-full px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-medium hover:opacity-90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed',
   showCharCounter = true,
   showConsentToggle = true,
   customValidation = null
@@ -161,12 +161,12 @@ const ContactFormBase = ({
     const fieldId = fieldConfig.id || fieldName;
 
     const baseInputClass = `w-full px-4 py-3 border ${
-      error ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-    } focus:border-black dark:focus:border-white focus:ring-0 bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-200 rounded-input text-base`;
+      error ? 'border-red-500' : 'border-gray-200 dark:border-gray-700'
+    } focus:border-black dark:focus:border-white focus:outline-none bg-white dark:bg-gray-900 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-colors duration-300`;
 
     const label = (
-      <label htmlFor={fieldId} className="block text-body-sm font-medium text-black dark:text-white mb-2">
-        {fieldConfig.label} {fieldConfig.required && '*'}
+      <label htmlFor={fieldId} className="block text-sm font-medium text-black dark:text-white mb-2">
+        {fieldConfig.label} {fieldConfig.required && <span className="text-gray-400">*</span>}
       </label>
     );
 
@@ -225,7 +225,7 @@ const ContactFormBase = ({
         {label}
         {input}
         {error && (
-          <p className="mt-1 text-body-sm text-red-500">{error}</p>
+          <p className="mt-1.5 text-sm text-red-500">{error}</p>
         )}
         {fieldName === 'mensaje' && showCharCounter && (
           <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
@@ -351,13 +351,13 @@ const ContactFormBase = ({
 
       {/* Consentimiento de datos */}
       {showConsentToggle && (
-        <div className="bg-gray-50 dark:bg-gray-900/50 p-4 sm:p-6 rounded-card border border-gray-200 dark:border-gray-700">
+        <div className="bg-gray-50 dark:bg-gray-800/50 p-6 border border-gray-200 dark:border-gray-700">
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
             <div className="flex-1">
-              <label htmlFor="acepto" className="text-body-sm font-medium text-black dark:text-white cursor-pointer">
-                Consentimiento de datos *
+              <label htmlFor="acepto" className="text-sm font-medium text-black dark:text-white cursor-pointer">
+                Consentimiento de datos <span className="text-gray-400">*</span>
               </label>
-              <p className="mt-1 text-body-sm text-gray-600 dark:text-gray-400">
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                 Acepto el tratamiento de mis datos personales según la{' '}
                 <a href="/privacidad" className="underline hover:text-black dark:hover:text-white">
                   política de privacidad
@@ -392,17 +392,17 @@ const ContactFormBase = ({
             </div>
           </div>
           {errors.acepto && (
-            <p className="mt-2 text-body-sm text-red-500">{errors.acepto}</p>
+            <p className="mt-3 text-sm text-red-500">{errors.acepto}</p>
           )}
         </div>
       )}
 
       {/* Mensaje de estado */}
       {submitMessage && (
-        <div className={`p-4 rounded-card text-body-sm ${
+        <div className={`p-4 text-sm ${
           submitMessage.includes('error') || submitMessage.includes('Error')
-            ? 'bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400' 
-            : 'bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400'
+            ? 'bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800'
+            : 'bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 border border-green-200 dark:border-green-800'
         }`}>
           {submitMessage}
         </div>

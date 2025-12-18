@@ -1,116 +1,101 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm.jsx';
-import LucideIcon from '../components/LucideIcon.jsx';
 import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
 ---
 
 <Layout title="Contacto" description="Contacta con Subdominio para tu próximo proyecto de desarrollo web, e-commerce o automatización. Estamos en Santiago, Chile.">
 	<LocalBusinessSchema />
-	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-4 sm:px-6">
-			<div class="max-w-4xl mx-auto">
-				<Breadcrumb items={[{ name: "Contacto", item: "/contacto" }]} />
-				<div class="mb-8">
-					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-200 hover:scale-[1.02] rounded-button mb-6">
-						<LucideIcon name="arrow-left" className="w-4 h-4 mr-2" />
-						Volver al inicio
-					</a>
+
+	<!-- Hero -->
+	<section class="pt-32 lg:pt-40 pb-16 lg:pb-24 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="max-w-4xl">
+				<div class="flex items-center gap-4 mb-8">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Contacto
+					</span>
+					<div class="h-px w-12 bg-gray-300 dark:bg-gray-700"></div>
 				</div>
-				
-				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-8 text-black dark:text-white leading-tight">
-					Hablemos de tu proyecto
+
+				<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-black dark:text-white leading-[1.1] mb-8">
+					Hablemos de tu
+					<span class="italic">proyecto</span>
 				</h1>
-				
-				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-16 max-w-3xl">
-					¿Tienes una idea en mente? Cuéntanos sobre tu proyecto y te ayudaremos 
+
+				<p class="text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+					¿Tienes una idea en mente? Cuéntanos sobre tu proyecto y te ayudaremos
 					a convertirlo en una solución digital exitosa.
 				</p>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-16 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-4 sm:px-6">
-			<div class="max-w-6xl mx-auto">
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-					<!-- Formulario de contacto -->
-					<div>
-						<h2 class="text-3xl font-medium mb-8 text-black dark:text-white">
-							Envíanos tu consulta
-						</h2>
-						
-						<ContactForm client:load />
-					</div>
+	<!-- Contact section -->
+	<section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-16 lg:gap-8">
+				<!-- Form -->
+				<div class="lg:col-span-7">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 mb-8 block">
+						Envíanos tu consulta
+					</span>
+					<ContactForm client:load />
+				</div>
 
-					<!-- Información de contacto -->
-					<div>
-						<h2 class="text-3xl font-medium mb-8 text-black dark:text-white">
-							Información de contacto
-						</h2>
-						
-						<div class="space-y-8">
-							<div>
-								<h3 class="text-lg font-medium text-black dark:text-white mb-4">Datos de contacto</h3>
-								<div class="space-y-4">
-									<div class="flex items-start space-x-3">
-										<LucideIcon name="mail" className="w-5 h-5 text-gray-600 dark:text-gray-300 mt-1" />
-										<div>
-											<p class="text-black dark:text-white font-medium">Email</p>
-											<a href="mailto:info@subdominio.cl" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-200 hover:scale-[1.02] rounded-button">
-												info@subdominio.cl
-											</a>
-										</div>
-									</div>
-
-									<div class="flex items-start space-x-3">
-										<LucideIcon name="phone" className="w-5 h-5 text-gray-600 dark:text-gray-300 mt-1" />
-										<div>
-											<p class="text-black dark:text-white font-medium">Teléfono</p>
-											<a href="tel:800914659" class="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-200 hover:scale-[1.02] rounded-button">
-												800 914 659
-											</a>
-										</div>
-									</div>
-
-									<div class="flex items-start space-x-3">
-										<LucideIcon name="map-pin" className="w-5 h-5 text-gray-600 dark:text-gray-300 mt-1" />
-										<div>
-											<p class="text-black dark:text-white font-medium">Ubicación</p>
-											<p class="text-gray-600 dark:text-gray-300">Santiago, Chile</p>
-										</div>
-									</div>
-								</div>
+				<!-- Contact info -->
+				<div class="lg:col-span-4 lg:col-start-9">
+					<div class="space-y-12">
+						<div>
+							<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 mb-6 block">
+								Contacto directo
+							</span>
+							<div class="space-y-4">
+								<a href="mailto:info@subdominio.cl" class="block text-black dark:text-white hover:opacity-70 transition-opacity duration-300">
+									info@subdominio.cl
+								</a>
+								<a href="tel:800914659" class="block text-black dark:text-white hover:opacity-70 transition-opacity duration-300">
+									800 914 659
+								</a>
 							</div>
+						</div>
 
-							<div>
-								<h3 class="text-lg font-medium text-black dark:text-white mb-4">Horarios de atención</h3>
-								<div class="space-y-2 text-gray-600 dark:text-gray-300">
-									<p><span class="font-medium text-black dark:text-white">Lunes a Viernes:</span> 9:00 - 18:00</p>
-									<p><span class="font-medium text-black dark:text-white">Sábados:</span> 9:00 - 14:00</p>
-									<p><span class="font-medium text-black dark:text-white">Domingos:</span> Cerrado</p>
-								</div>
-								<p class="text-sm text-gray-500 dark:text-gray-400 mt-3">
-									Horario de Chile (UTC-3)
-								</p>
+						<div>
+							<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 mb-6 block">
+								Ubicación
+							</span>
+							<p class="text-gray-600 dark:text-gray-400">
+								Santiago, Chile
+							</p>
+						</div>
+
+						<div>
+							<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 mb-6 block">
+								Horarios
+							</span>
+							<div class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+								<p>Lunes a Viernes: 9:00 - 18:00</p>
+								<p>Sábados: 9:00 - 14:00</p>
+								<p class="text-gray-400 dark:text-gray-500 mt-2">Horario de Chile (UTC-3)</p>
 							</div>
+						</div>
 
-							<div>
-								<h3 class="text-lg font-medium text-black dark:text-white mb-4">Tiempo de respuesta</h3>
-								<div class="space-y-3">
-									<div class="flex items-center space-x-2">
-										<div class="w-2 h-2 bg-green-500 rounded-full"></div>
-										<span class="text-gray-600 dark:text-gray-300">Consultas urgentes: 2-4 horas</span>
-									</div>
-									<div class="flex items-center space-x-2">
-										<div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-										<span class="text-gray-600 dark:text-gray-300">Consultas generales: 24 horas</span>
-									</div>
-									<div class="flex items-center space-x-2">
-										<div class="w-2 h-2 bg-gray-400 rounded-full"></div>
-										<span class="text-gray-600 dark:text-gray-300">Propuestas detalladas: 2-3 días</span>
-									</div>
+						<div>
+							<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 mb-6 block">
+								Tiempo de respuesta
+							</span>
+							<div class="space-y-3 text-sm">
+								<div class="flex items-center gap-3">
+									<span class="w-2 h-2 bg-green-500 rounded-full"></span>
+									<span class="text-gray-600 dark:text-gray-400">Urgentes: 2-4 horas</span>
+								</div>
+								<div class="flex items-center gap-3">
+									<span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+									<span class="text-gray-600 dark:text-gray-400">Generales: 24 horas</span>
+								</div>
+								<div class="flex items-center gap-3">
+									<span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+									<span class="text-gray-600 dark:text-gray-400">Propuestas: 2-3 días</span>
 								</div>
 							</div>
 						</div>
@@ -120,75 +105,107 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 		</div>
 	</section>
 
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-4 sm:px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black dark:text-white text-center">
-					¿Cómo trabajamos?
-				</h2>
-				
-				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-					<div class="text-center">
-						<div class="w-16 h-16 mx-auto mb-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center font-medium">
-							01
-						</div>
-						<h3 class="font-medium text-black dark:text-white mb-2">Conversación inicial</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Analizamos tu proyecto y definimos objetivos</p>
-					</div>
-					
-					<div class="text-center">
-						<div class="w-16 h-16 mx-auto mb-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center font-medium">
-							02
-						</div>
-						<h3 class="font-medium text-black dark:text-white mb-2">Propuesta detallada</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Enviamos cotización y cronograma completo</p>
-					</div>
-					
-					<div class="text-center">
-						<div class="w-16 h-16 mx-auto mb-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center font-medium">
-							03
-						</div>
-						<h3 class="font-medium text-black dark:text-white mb-2">Desarrollo ágil</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Entregas regulares con feedback constante</p>
-					</div>
-					
-					<div class="text-center">
-						<div class="w-16 h-16 mx-auto mb-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center font-medium">
-							04
-						</div>
-						<h3 class="font-medium text-black dark:text-white mb-2">Lanzamiento y soporte</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Despliegue y acompañamiento post-entrega</p>
-					</div>
+	<!-- Process -->
+	<section class="py-24 lg:py-32 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Proceso
+					</span>
+				</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						Cómo <span class="italic">trabajamos</span>
+					</h2>
+				</div>
+			</div>
+
+			<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+				<div>
+					<span class="font-display text-5xl text-gray-200 dark:text-gray-800 font-medium block mb-4">01</span>
+					<h3 class="font-medium text-black dark:text-white mb-2">Conversación inicial</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Analizamos tu proyecto y definimos objetivos</p>
+				</div>
+				<div>
+					<span class="font-display text-5xl text-gray-200 dark:text-gray-800 font-medium block mb-4">02</span>
+					<h3 class="font-medium text-black dark:text-white mb-2">Propuesta detallada</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Enviamos cotización y cronograma completo</p>
+				</div>
+				<div>
+					<span class="font-display text-5xl text-gray-200 dark:text-gray-800 font-medium block mb-4">03</span>
+					<h3 class="font-medium text-black dark:text-white mb-2">Desarrollo ágil</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Entregas regulares con feedback constante</p>
+				</div>
+				<div>
+					<span class="font-display text-5xl text-gray-200 dark:text-gray-800 font-medium block mb-4">04</span>
+					<h3 class="font-medium text-black dark:text-white mb-2">Lanzamiento</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Despliegue y soporte post-entrega</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-16 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
-		<div class="container mx-auto px-6 text-center">
-			<div class="max-w-3xl mx-auto">
-				<h2 class="text-3xl md:text-4xl font-medium mb-6">
-					¿Prefieres una llamada?
-				</h2>
-				<p class="text-xl text-gray-300 dark:text-gray-600 mb-8 leading-relaxed">
-					También puedes contactarnos directamente para una conversación más personalizada
-				</p>
-				
-				<div class="flex flex-col sm:flex-row gap-4 justify-center">
-					<a
-						href="tel:+56800914659"
-						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02] rounded-button"
-					>
-						Llamar ahora
-					</a>
-					<a
-						href="https://wa.me/56800914659"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-button"
-					>
-						WhatsApp
-					</a>
+	<!-- CTA - Editorial -->
+	<section class="py-24 lg:py-40 bg-black dark:bg-gray-200 relative overflow-hidden">
+		<div class="absolute top-0 right-0 w-1/3 h-full opacity-[0.03]">
+			<svg class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 text-white dark:text-black" viewBox="0 0 200 200" fill="currentColor">
+				<circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.5"/>
+				<circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="0.5"/>
+				<circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+			</svg>
+		</div>
+
+		<div class="container mx-auto px-6 lg:px-12 relative">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-end">
+				<div class="lg:col-span-7">
+					<span class="inline-block text-sm tracking-[0.3em] uppercase text-gray-500 dark:text-gray-400 mb-8">
+						Contacto directo
+					</span>
+					<h2 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium text-white dark:text-black leading-[1.1] mb-8">
+						¿Prefieres una <span class="italic">llamada?</span>
+					</h2>
+					<p class="text-lg lg:text-xl text-gray-400 dark:text-gray-600 max-w-xl leading-relaxed">
+						También puedes contactarnos directamente para una
+						conversación más personalizada.
+					</p>
+				</div>
+
+				<div class="lg:col-span-5 lg:pl-12 lg:border-l border-gray-800 dark:border-gray-200">
+					<div class="space-y-8">
+						<a
+							href="tel:+56800914659"
+							class="group flex items-center justify-between py-6 border-b border-gray-800 dark:border-gray-200 transition-all duration-300 hover:border-white dark:hover:border-black"
+						>
+							<span class="text-2xl lg:text-3xl font-display text-white dark:text-black">Llamar ahora</span>
+							<svg class="w-6 h-6 text-gray-500 group-hover:text-white dark:group-hover:text-black group-hover:translate-x-2 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+							</svg>
+						</a>
+
+						<div class="space-y-4">
+							<a
+								href="https://wa.me/56800914659"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex items-center gap-3 text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black transition-colors duration-300"
+							>
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+								</svg>
+								<span>WhatsApp</span>
+							</a>
+							<a
+								href="mailto:info@subdominio.cl"
+								class="flex items-center gap-3 text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black transition-colors duration-300"
+							>
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+								</svg>
+								<span>info@subdominio.cl</span>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

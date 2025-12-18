@@ -1,146 +1,144 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import LucideIcon from '../components/LucideIcon.jsx';
-import Breadcrumb from '../components/Breadcrumb.astro';
-
-const breadcrumbItems = [
-  { name: "Nosotros", item: "https://subdominio.cl/nosotros" }
-];
 ---
 
 <Layout title="Nosotros" description="Conoce a Subdominio, agencia especializada en desarrollo web, e-commerce y aplicaciones. Nuestro equipo, valores y metodología de trabajo.">
-	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<Breadcrumb items={breadcrumbItems} />
-				
-				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black dark:text-white leading-tight">
-					Somos el equipo técnico que tu proyecto necesita
-				</h1>
-				
-				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-12 max-w-3xl">
-					Subdominio es la división especializada en desarrollo web y software de <span class="font-medium text-black dark:text-white">Tecnológica Chile</span>. 
-					Transformamos ideas complejas en soluciones digitales elegantes que impulsan negocios.
-				</p>
-
-				<div class="grid grid-cols-2 gap-8 max-w-xl">
-					<div>
-						<div class="text-3xl font-bold text-black dark:text-white mb-2">20+</div>
-						<div class="text-sm text-gray-600 dark:text-gray-400">Años de experiencia</div>
+	<!-- Hero -->
+	<section class="pt-32 lg:pt-40 pb-16 lg:pb-24 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8">
+				<div class="lg:col-span-7">
+					<div class="flex items-center gap-4 mb-8">
+						<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+							Nosotros
+						</span>
+						<div class="h-px w-12 bg-gray-300 dark:bg-gray-700"></div>
 					</div>
-					<div>
-						<div class="text-3xl font-bold text-black dark:text-white mb-2">+300</div>
-						<div class="text-sm text-gray-600 dark:text-gray-400">Empresas atendidas</div>
+
+					<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-black dark:text-white leading-[1.1] mb-8">
+						El equipo técnico que tu proyecto
+						<span class="italic">necesita</span>
+					</h1>
+
+					<p class="text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-xl">
+						Subdominio es la división especializada en desarrollo web y software de
+						Tecnológica Chile. Transformamos ideas complejas en soluciones digitales elegantes.
+					</p>
+				</div>
+
+				<div class="lg:col-span-5 lg:pl-8 lg:border-l border-gray-200 dark:border-gray-800">
+					<div class="space-y-8">
+						<div>
+							<span class="font-display text-5xl lg:text-6xl font-medium text-black dark:text-white">20+</span>
+							<p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Años de experiencia</p>
+						</div>
+						<div>
+							<span class="font-display text-5xl lg:text-6xl font-medium text-black dark:text-white">+100</span>
+							<p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Empresas atendidas</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-20 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<div class="grid md:grid-cols-2 gap-16">
-					<div>
-						<h2 class="text-2xl font-medium mb-6 text-black dark:text-white">Nuestra Historia</h2>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Nacimos como la división digital de <span class="font-medium">Tecnológica Chile</span>, 
-							empresa con más de una década de experiencia en desarrollo de sistemas complejos. 
-							Esta herencia nos da una ventaja única: entendemos tanto el frontend bonito como el backend robusto.
-						</p>
-					</div>
-
-					<div>
-						<h2 class="text-2xl font-medium mb-6 text-black dark:text-white">Nuestro Enfoque</h2>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Cada proyecto es único. No usamos plantillas genéricas.
-							Escribimos código limpio, documentado y escalable. 
-							Trabajamos con metodologías ágiles y comunicación transparente 
-							para que siempre sepas el estado de tu proyecto.
-						</p>
-					</div>
+	<!-- Historia y enfoque -->
+	<section class="py-24 lg:py-32 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-16 lg:gap-8">
+				<div class="lg:col-span-5">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Historia
+					</span>
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white mt-4 leading-tight">
+						De dónde <span class="italic">venimos</span>
+					</h2>
 				</div>
+				<div class="lg:col-span-6 lg:col-start-7">
+					<p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+						Nacimos como la división digital de Tecnológica Chile, empresa con más
+						de dos décadas de experiencia en desarrollo de sistemas complejos.
+					</p>
+					<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+						Esta herencia nos da una ventaja única: entendemos tanto el frontend
+						bonito como el backend robusto. No usamos plantillas genéricas.
+						Escribimos código limpio, documentado y escalable.
+					</p>
+				</div>
+			</div>
 
-				<div class="mt-16 p-8 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
-					<blockquote class="text-lg text-gray-700 dark:text-gray-300 italic">
-						"No vendemos horas de desarrollo. Vendemos soluciones que funcionan, 
+			<!-- Quote -->
+			<div class="mt-24 lg:mt-32 max-w-4xl mx-auto">
+				<blockquote class="border-l-2 border-black dark:border-white pl-8 lg:pl-12">
+					<p class="font-display text-2xl lg:text-3xl text-black dark:text-white italic leading-relaxed">
+						"No vendemos horas de desarrollo. Vendemos soluciones que funcionan,
 						se mantienen solas y escalan con tu negocio."
-					</blockquote>
-					<cite class="block mt-4 text-sm text-gray-600 dark:text-gray-400 not-italic">
+					</p>
+					<cite class="block mt-6 text-sm text-gray-500 dark:text-gray-400 not-italic tracking-wide">
 						— Filosofía Subdominio
 					</cite>
-				</div>
+				</blockquote>
 			</div>
 		</div>
 	</section>
 
-	<section class="py-20 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-5xl mx-auto">
-				<h2 class="text-3xl font-medium mb-4 text-black dark:text-white text-center">
-					Los valores que nos definen
-				</h2>
-				<p class="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
-					No son solo palabras bonitas. Son compromisos reales que cumplimos en cada proyecto.
-				</p>
-				
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16">
-					<div class="group">
-						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-icon flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-							<LucideIcon name="check-circle" className="w-8 h-8 text-white dark:text-gray-900" />
-						</div>
-						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Código de Calidad</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+	<!-- Valores -->
+	<section class="py-24 lg:py-32 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16 lg:mb-24">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Valores
+					</span>
+				</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						Los principios que <span class="italic">nos definen</span>
+					</h2>
+				</div>
+			</div>
+
+			<div class="border-t border-gray-200 dark:border-gray-800">
+				<div class="grid lg:grid-cols-3 gap-px bg-gray-200 dark:bg-gray-800">
+					<div class="bg-white dark:bg-gray-900 p-8 lg:p-12">
+						<span class="text-sm text-gray-400 dark:text-gray-500 mb-6 block">01</span>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-4">Código de Calidad</h3>
+						<p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
 							Revisado, testeado, documentado. Si no lo usaríamos nosotros, no te lo entregamos.
 						</p>
 					</div>
-
-					<div class="group">
-						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-icon flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-							<LucideIcon name="message-circle" className="w-8 h-8 text-white dark:text-gray-900" />
-						</div>
-						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Transparencia Total</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+					<div class="bg-white dark:bg-gray-900 p-8 lg:p-12">
+						<span class="text-sm text-gray-400 dark:text-gray-500 mb-6 block">02</span>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-4">Transparencia Total</h3>
+						<p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
 							Sin sorpresas. Comunicación clara sobre avances, problemas y soluciones.
 						</p>
 					</div>
-
-					<div class="group">
-						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-icon flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-							<LucideIcon name="zap" className="w-8 h-8 text-white dark:text-gray-900" />
-						</div>
-						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Tecnología Moderna</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+					<div class="bg-white dark:bg-gray-900 p-8 lg:p-12">
+						<span class="text-sm text-gray-400 dark:text-gray-500 mb-6 block">03</span>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-4">Tecnología Moderna</h3>
+						<p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
 							Usamos lo último, pero solo si aporta valor real a tu proyecto.
 						</p>
 					</div>
-
-					<div class="group">
-						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-icon flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-							<LucideIcon name="clock" className="w-8 h-8 text-white dark:text-gray-900" />
-						</div>
-						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Entregas Puntuales</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+					<div class="bg-white dark:bg-gray-900 p-8 lg:p-12">
+						<span class="text-sm text-gray-400 dark:text-gray-500 mb-6 block">04</span>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-4">Entregas Puntuales</h3>
+						<p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
 							Cumplimos plazos. Si hay retrasos, avisamos con tiempo y explicamos por qué.
 						</p>
 					</div>
-
-					<div class="group">
-						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-icon flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-							<LucideIcon name="users" className="w-8 h-8 text-white dark:text-gray-900" />
-						</div>
-						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Equipo Dedicado</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+					<div class="bg-white dark:bg-gray-900 p-8 lg:p-12">
+						<span class="text-sm text-gray-400 dark:text-gray-500 mb-6 block">05</span>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-4">Equipo Dedicado</h3>
+						<p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
 							No eres un ticket más. Tendrás un equipo que conoce y entiende tu proyecto.
 						</p>
 					</div>
-
-					<div class="group">
-						<div class="w-14 h-14 mb-6 bg-black dark:bg-gray-200 rounded-icon flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-							<LucideIcon name="shield" className="w-8 h-8 text-white dark:text-gray-900" />
-						</div>
-						<h3 class="text-lg font-medium text-black dark:text-white mb-3">Compromiso Real</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+					<div class="bg-white dark:bg-gray-900 p-8 lg:p-12">
+						<span class="text-sm text-gray-400 dark:text-gray-500 mb-6 block">06</span>
+						<h3 class="text-lg font-medium text-black dark:text-white mb-4">Compromiso Real</h3>
+						<p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
 							Tu éxito es nuestro KPI principal. No descansamos hasta que funcione perfecto.
 						</p>
 					</div>
@@ -149,60 +147,70 @@ const breadcrumbItems = [
 		</div>
 	</section>
 
+	<!-- Diferenciadores -->
+	<section class="py-24 lg:py-32 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+				<div class="lg:col-span-5">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Diferenciadores
+					</span>
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white mt-4 leading-tight">
+						Lo que nos hace <span class="italic">diferentes</span>
+					</h2>
+				</div>
+			</div>
 
-	<section class="py-20 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl font-medium mb-16 text-black dark:text-white text-center">
-					Lo que nos diferencia
-				</h2>
-				
-				<div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
-					<div class="relative pl-12">
-						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon flex items-center justify-center text-xs font-bold">1</div>
-						<h4 class="font-medium text-black dark:text-white mb-2">Precio cerrado, sin sorpresas</h4>
-						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+			<div class="space-y-0 border-t border-gray-200 dark:border-gray-800">
+				<div class="grid lg:grid-cols-12 gap-6 py-8 lg:py-10 border-b border-gray-200 dark:border-gray-800">
+					<div class="lg:col-span-1">
+						<span class="text-sm text-gray-400 dark:text-gray-500">01</span>
+					</div>
+					<div class="lg:col-span-4">
+						<h3 class="font-medium text-black dark:text-white">Precio cerrado, sin sorpresas</h3>
+					</div>
+					<div class="lg:col-span-7">
+						<p class="text-gray-600 dark:text-gray-400 text-sm">
 							Presupuesto fijo desde el día uno. Sabés exactamente cuánto vas a invertir.
 						</p>
 					</div>
-
-					<div class="relative pl-12">
-						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon flex items-center justify-center text-xs font-bold">2</div>
-						<h4 class="font-medium text-black dark:text-white mb-2">Código que se entiende</h4>
-						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+				</div>
+				<div class="grid lg:grid-cols-12 gap-6 py-8 lg:py-10 border-b border-gray-200 dark:border-gray-800">
+					<div class="lg:col-span-1">
+						<span class="text-sm text-gray-400 dark:text-gray-500">02</span>
+					</div>
+					<div class="lg:col-span-4">
+						<h3 class="font-medium text-black dark:text-white">Código que se entiende</h3>
+					</div>
+					<div class="lg:col-span-7">
+						<p class="text-gray-600 dark:text-gray-400 text-sm">
 							Documentado y estructurado. Cualquier dev puede tomarlo y seguir trabajando.
 						</p>
 					</div>
-
-					<div class="relative pl-12">
-						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon flex items-center justify-center text-xs font-bold">3</div>
-						<h4 class="font-medium text-black dark:text-white mb-2">Soporte real post-lanzamiento</h4>
-						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+				</div>
+				<div class="grid lg:grid-cols-12 gap-6 py-8 lg:py-10 border-b border-gray-200 dark:border-gray-800">
+					<div class="lg:col-span-1">
+						<span class="text-sm text-gray-400 dark:text-gray-500">03</span>
+					</div>
+					<div class="lg:col-span-4">
+						<h3 class="font-medium text-black dark:text-white">Soporte real post-lanzamiento</h3>
+					</div>
+					<div class="lg:col-span-7">
+						<p class="text-gray-600 dark:text-gray-400 text-sm">
 							30 días de garantía incluidos. Ajustes y correcciones sin costo adicional.
 						</p>
 					</div>
-
-					<div class="relative pl-12">
-						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon flex items-center justify-center text-xs font-bold">4</div>
-						<h4 class="font-medium text-black dark:text-white mb-2">Te enseñamos a usarlo</h4>
-						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+				</div>
+				<div class="grid lg:grid-cols-12 gap-6 py-8 lg:py-10 border-b border-gray-200 dark:border-gray-800">
+					<div class="lg:col-span-1">
+						<span class="text-sm text-gray-400 dark:text-gray-500">04</span>
+					</div>
+					<div class="lg:col-span-4">
+						<h3 class="font-medium text-black dark:text-white">Te enseñamos a usarlo</h3>
+					</div>
+					<div class="lg:col-span-7">
+						<p class="text-gray-600 dark:text-gray-400 text-sm">
 							Capacitación incluida. Videos, documentación y sesiones 1:1 para tu equipo.
-						</p>
-					</div>
-
-					<div class="relative pl-12">
-						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon flex items-center justify-center text-xs font-bold">5</div>
-						<h4 class="font-medium text-black dark:text-white mb-2">Respaldo empresarial</h4>
-						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-							Somos parte de Tecnológica Chile. Tenés el respaldo de una empresa establecida.
-						</p>
-					</div>
-
-					<div class="relative pl-12">
-						<div class="absolute left-0 top-1 w-8 h-8 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-icon flex items-center justify-center text-xs font-bold">6</div>
-						<h4 class="font-medium text-black dark:text-white mb-2">Stack moderno y probado</h4>
-						<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-							Usamos tecnologías que escalan. No experimentos, solo lo que funciona.
 						</p>
 					</div>
 				</div>
@@ -210,38 +218,64 @@ const breadcrumbItems = [
 		</div>
 	</section>
 
-	<section class="py-20 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
-		<div class="container mx-auto px-6 text-center">
-			<div class="max-w-3xl mx-auto">
-				<h2 class="text-3xl md:text-4xl font-medium mb-6">
-					¿Listo para empezar?
-				</h2>
-				<p class="text-xl text-gray-300 dark:text-gray-600 mb-8 leading-relaxed">
-					Cuéntanos tu idea. Sin compromiso, sin jerga técnica.
-				</p>
-				
-				<div class="flex flex-col sm:flex-row gap-4 justify-center">
-					<a
-						href="/contacto"
-						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02] rounded-button"
-					>
-						Hablemos de tu proyecto
-					</a>
-					<a
-						href="/proyectos"
-						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-button"
-					>
-						Ver casos de éxito
-					</a>
+	<!-- CTA - Editorial -->
+	<section class="py-24 lg:py-40 bg-black dark:bg-gray-200 relative overflow-hidden">
+		<div class="absolute top-0 right-0 w-1/3 h-full opacity-[0.03]">
+			<svg class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 text-white dark:text-black" viewBox="0 0 200 200" fill="currentColor">
+				<circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.5"/>
+				<circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="0.5"/>
+				<circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+			</svg>
+		</div>
+
+		<div class="container mx-auto px-6 lg:px-12 relative">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-end">
+				<div class="lg:col-span-7">
+					<span class="inline-block text-sm tracking-[0.3em] uppercase text-gray-500 dark:text-gray-400 mb-8">
+						Siguiente paso
+					</span>
+					<h2 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium text-white dark:text-black leading-[1.1] mb-8">
+						¿Listo para <span class="italic">empezar?</span>
+					</h2>
+					<p class="text-lg lg:text-xl text-gray-400 dark:text-gray-600 max-w-xl leading-relaxed">
+						Cuéntanos tu idea. Sin compromiso, sin jerga técnica.
+						Solo soluciones que funcionan.
+					</p>
 				</div>
 
-				<div class="mt-12 pt-12 border-t border-gray-800 dark:border-gray-300">
-					<p class="text-sm text-gray-400 dark:text-gray-600">
-						También podés escribirnos directamente a 
-						<a href="mailto:info@subdominio.cl" class="underline hover:text-white dark:hover:text-black transition-colors duration-200">
-							info@subdominio.cl
+				<div class="lg:col-span-5 lg:pl-12 lg:border-l border-gray-800 dark:border-gray-200">
+					<div class="space-y-8">
+						<a
+							href="/contacto"
+							class="group flex items-center justify-between py-6 border-b border-gray-800 dark:border-gray-200 transition-all duration-300 hover:border-white dark:hover:border-black"
+						>
+							<span class="text-2xl lg:text-3xl font-display text-white dark:text-black">Hablemos</span>
+							<svg class="w-6 h-6 text-gray-500 group-hover:text-white dark:group-hover:text-black group-hover:translate-x-2 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
 						</a>
-					</p>
+
+						<div class="space-y-4">
+							<a
+								href="/proyectos"
+								class="flex items-center gap-3 text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black transition-colors duration-300"
+							>
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+								</svg>
+								<span>Ver casos de éxito</span>
+							</a>
+							<a
+								href="mailto:info@subdominio.cl"
+								class="flex items-center gap-3 text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black transition-colors duration-300"
+							>
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+								</svg>
+								<span>info@subdominio.cl</span>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

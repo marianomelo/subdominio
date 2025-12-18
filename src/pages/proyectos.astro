@@ -1,158 +1,277 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import LucideIcon from "../components/LucideIcon.jsx";
+
+const projects = [
+	{
+		name: "baseapi.cl",
+		url: "https://baseapi.cl",
+		description: "Plataforma de servicios API para integración de sistemas y automatización empresarial.",
+		tags: ["API REST", "Node.js", "PostgreSQL"],
+		year: "2024"
+	},
+	{
+		name: "rycferretero.cl",
+		url: "https://rycferretero.cl",
+		description: "E-commerce de ferretería y materiales de construcción con catálogo extenso.",
+		tags: ["WooCommerce", "WordPress", "PHP"],
+		year: "2024"
+	},
+	{
+		name: "tecnologicachile.cl",
+		url: "https://tecnologicachile.cl",
+		description: "Sitio corporativo de empresa de soluciones tecnológicas, datacenter y transformación digital.",
+		tags: ["Astro", "React", "Tailwind"],
+		year: "2024"
+	},
+	{
+		name: "tienda.sagita.cl",
+		url: "https://tienda.sagita.cl",
+		description: "Tienda online de equipos de seguridad industrial y emergencias químicas.",
+		tags: ["WooCommerce", "WordPress", "PHP"],
+		year: "2024"
+	},
+	{
+		name: "comcer.cl",
+		url: "https://comcer.cl",
+		description: "E-commerce de productos de limpieza, higiene y desechables ecológicos.",
+		tags: ["WooCommerce", "WordPress", "MySQL"],
+		year: "2023"
+	},
+	{
+		name: "dtepdf.cl",
+		url: "https://dtepdf.cl",
+		description: "Servicio web para generar documentos tributarios electrónicos (DTE) en formato PDF.",
+		tags: ["Next.js", "React", "API REST"],
+		year: "2024"
+	},
+	{
+		name: "Migración Sistema ERP IIBP",
+		url: null,
+		description: "Actualización completa del sistema ERP de PHP 5.4 a PHP 8.1 con refactorización de código nativo.",
+		tags: ["PHP 8.1", "MySQL", "Legacy"],
+		year: "2023"
+	}
+];
 ---
 
 <Layout title="Proyectos" description="Portafolio de proyectos web y software desarrollados por Subdominio. Soluciones digitales que impulsan negocios.">
-	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<div class="mb-8">
-					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-200 hover:scale-[1.02] rounded-button mb-6">
-						<LucideIcon name="arrow-left" className="w-4 h-4 mr-2" />
-						Volver al inicio
-					</a>
+	<!-- Hero -->
+	<section class="pt-32 lg:pt-40 pb-16 lg:pb-24 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8">
+				<div class="lg:col-span-7">
+					<div class="flex items-center gap-4 mb-8">
+						<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+							Portfolio
+						</span>
+						<div class="h-px w-12 bg-gray-300 dark:bg-gray-700"></div>
+					</div>
+
+					<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-black dark:text-white leading-[1.1] mb-8">
+						Proyectos que generan <span class="italic">impacto</span>
+					</h1>
+
+					<p class="text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+						Una selección de trabajos recientes que demuestran nuestras
+						capacidades técnicas y el valor que aportamos a cada cliente.
+					</p>
 				</div>
-				
-				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black dark:text-white leading-tight">
-					Proyectos
-				</h1>
-				
-				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-12 max-w-3xl">
-					Una selección de trabajos recientes que muestran nuestras capacidades técnicas.
-				</p>
-			</div>
-		</div>
-	</section>
 
-	<!-- Grid de Proyectos -->
-	<section class="py-20 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-5xl mx-auto">
-				<div class="space-y-8">
-					
-					<!-- Tecnológica Chile -->
-					<div class="border-b border-gray-200 dark:border-gray-800 pb-12">
-						<a href="https://tecnologicachile.cl" target="_blank" rel="follow" class="inline-block mb-4 group">
-							<h3 class="text-2xl font-medium text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
-								tecnologicachile.cl →
-							</h3>
-						</a>
-						<p class="text-gray-600 dark:text-gray-400 mb-4 max-w-3xl">
-							Sitio corporativo de empresa de soluciones tecnológicas, datacenter y transformación digital.
-						</p>
-						<div class="flex gap-3 text-sm text-gray-500">
-							<span>Astro</span>
-							<span>·</span>
-							<span>React</span>
-							<span>·</span>
-							<span>Tailwind CSS</span>
+				<div class="lg:col-span-5 lg:pl-8 lg:border-l border-gray-200 dark:border-gray-800">
+					<div class="space-y-8">
+						<div>
+							<span class="font-display text-5xl lg:text-6xl font-medium text-black dark:text-white">20+</span>
+							<p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Años de experiencia</p>
+						</div>
+						<div>
+							<span class="font-display text-5xl lg:text-6xl font-medium text-black dark:text-white">+100</span>
+							<p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Empresas atendidas</p>
 						</div>
 					</div>
-
-					<!-- Tienda Sagita -->
-					<div class="border-b border-gray-200 dark:border-gray-800 pb-12">
-						<a href="https://tienda.sagita.cl" target="_blank" rel="follow" class="inline-block mb-4 group">
-							<h3 class="text-2xl font-medium text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
-								tienda.sagita.cl →
-							</h3>
-						</a>
-						<p class="text-gray-600 dark:text-gray-400 mb-4 max-w-3xl">
-							Tienda online de equipos de seguridad industrial y emergencias químicas.
-						</p>
-						<div class="flex gap-3 text-sm text-gray-500">
-							<span>WooCommerce</span>
-							<span>·</span>
-							<span>WordPress</span>
-							<span>·</span>
-							<span>PHP</span>
-						</div>
-					</div>
-
-					<!-- Comcer -->
-					<div class="border-b border-gray-200 dark:border-gray-800 pb-12">
-						<a href="https://comcer.cl" target="_blank" rel="follow" class="inline-block mb-4 group">
-							<h3 class="text-2xl font-medium text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
-								comcer.cl →
-							</h3>
-						</a>
-						<p class="text-gray-600 dark:text-gray-400 mb-4 max-w-3xl">
-							E-commerce de productos de limpieza, higiene y desechables ecológicos.
-						</p>
-						<div class="flex gap-3 text-sm text-gray-500">
-							<span>WooCommerce</span>
-							<span>·</span>
-							<span>WordPress</span>
-							<span>·</span>
-							<span>MySQL</span>
-						</div>
-					</div>
-
-					<!-- DTE PDF -->
-					<div class="border-b border-gray-200 dark:border-gray-800 pb-12">
-						<a href="https://dtepdf.cl" target="_blank" rel="follow" class="inline-block mb-4 group">
-							<h3 class="text-2xl font-medium text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
-								dtepdf.cl →
-							</h3>
-						</a>
-						<p class="text-gray-600 dark:text-gray-400 mb-4 max-w-3xl">
-							Servicio web para generar documentos tributarios electrónicos (DTE) en formato PDF de manera eficiente.
-						</p>
-						<div class="flex gap-3 text-sm text-gray-500">
-							<span>Next.js</span>
-							<span>·</span>
-							<span>React</span>
-							<span>·</span>
-							<span>API REST</span>
-						</div>
-					</div>
-
-					<!-- Sistema ERP IIBP -->
-					<div class="pb-12">
-						<h3 class="text-2xl font-medium text-black dark:text-white mb-4">
-							Migración Sistema ERP IIBP
-						</h3>
-						<p class="text-gray-600 dark:text-gray-400 mb-4 max-w-3xl">
-							Actualización completa del sistema ERP de PHP 5.4 a PHP 8.1 con refactorización de código nativo.
-						</p>
-						<div class="flex gap-3 text-sm text-gray-500">
-							<span>PHP 8.1</span>
-							<span>·</span>
-							<span>MySQL</span>
-							<span>·</span>
-							<span>PHP Nativo</span>
-						</div>
-					</div>
-
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- CTA -->
-	<section class="py-20 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
-		<div class="container mx-auto px-6 text-center">
-			<div class="max-w-3xl mx-auto">
-				<h2 class="text-3xl md:text-4xl font-medium mb-6">
-					¿Tienes un proyecto en mente?
-				</h2>
-				<p class="text-xl text-gray-300 dark:text-gray-600 mb-8 leading-relaxed">
-					Conversemos sobre cómo podemos ayudarte a hacerlo realidad
-				</p>
-				
-				<div class="flex flex-col sm:flex-row gap-4 justify-center">
-					<a
-						href="/contacto"
-						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02] rounded-button"
-					>
-						Iniciar proyecto
-					</a>
-					<a
-						href="/servicios/web"
-						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-button"
-					>
-						Ver servicios
-					</a>
+	<!-- Projects List -->
+	<section class="py-16 lg:py-24 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-12">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Trabajos seleccionados
+					</span>
+				</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						Cada proyecto, una <span class="italic">historia</span>
+					</h2>
+				</div>
+			</div>
+
+			<div class="border-t border-gray-200 dark:border-gray-800">
+				{projects.map((project, index) => (
+					<article class="border-b border-gray-200 dark:border-gray-800 py-10 lg:py-14 group">
+						<div class="grid lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+							<!-- Number -->
+							<div class="lg:col-span-1 hidden lg:block">
+								<span class="text-sm text-gray-400 dark:text-gray-600 font-medium tabular-nums">
+									{String(index + 1).padStart(2, '0')}
+								</span>
+							</div>
+
+							<!-- Main content -->
+							<div class="lg:col-span-6">
+								{project.url ? (
+									<a
+										href={project.url}
+										target="_blank"
+										rel="follow"
+										class="inline-flex items-center gap-3 mb-3 group/link"
+									>
+										<h3 class="font-display text-xl lg:text-2xl font-medium text-black dark:text-white group-hover/link:opacity-70 transition-opacity duration-300">
+											{project.name}
+										</h3>
+										<svg class="w-4 h-4 text-gray-400 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+										</svg>
+									</a>
+								) : (
+									<h3 class="font-display text-xl lg:text-2xl font-medium text-black dark:text-white mb-3">
+										{project.name}
+									</h3>
+								)}
+								<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+									{project.description}
+								</p>
+							</div>
+
+							<!-- Year -->
+							<div class="lg:col-span-2 lg:text-center">
+								<span class="text-sm text-gray-500 dark:text-gray-500">
+									{project.year}
+								</span>
+							</div>
+
+							<!-- Tags -->
+							<div class="lg:col-span-3 lg:text-right">
+								<span class="text-sm text-gray-500 dark:text-gray-400">
+									{project.tags.join(' · ')}
+								</span>
+							</div>
+						</div>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Approach -->
+	<section class="py-24 lg:py-32 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Enfoque
+					</span>
+				</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight mb-8">
+						Cómo <span class="italic">trabajamos</span>
+					</h2>
+					<p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+						Cada proyecto es único. Nos sumergimos en tu negocio para entender
+						los desafíos y diseñar soluciones que realmente funcionen.
+					</p>
+				</div>
+			</div>
+
+			<div class="grid md:grid-cols-3 gap-px bg-gray-200 dark:bg-gray-800">
+				<div class="bg-white dark:bg-gray-900 p-8 lg:p-10">
+					<span class="block text-5xl lg:text-6xl font-display text-gray-200 dark:text-gray-800 mb-6">01</span>
+					<h3 class="font-medium text-black dark:text-white mb-3">Entendemos</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">
+						Escuchamos tus necesidades, analizamos el contexto y definimos objetivos claros.
+					</p>
+				</div>
+				<div class="bg-white dark:bg-gray-900 p-8 lg:p-10">
+					<span class="block text-5xl lg:text-6xl font-display text-gray-200 dark:text-gray-800 mb-6">02</span>
+					<h3 class="font-medium text-black dark:text-white mb-3">Construimos</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">
+						Desarrollamos con tecnología apropiada, código limpio y entregas incrementales.
+					</p>
+				</div>
+				<div class="bg-white dark:bg-gray-900 p-8 lg:p-10">
+					<span class="block text-5xl lg:text-6xl font-display text-gray-200 dark:text-gray-800 mb-6">03</span>
+					<h3 class="font-medium text-black dark:text-white mb-3">Evolucionamos</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">
+						Medimos resultados, iteramos y mejoramos continuamente tu producto.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA - Editorial -->
+	<section class="py-24 lg:py-40 bg-black dark:bg-gray-200 relative overflow-hidden">
+		<!-- Decorative element -->
+		<div class="absolute top-0 right-0 w-1/3 h-full opacity-[0.03]">
+			<div class="absolute inset-0 bg-gradient-to-l from-white dark:from-black to-transparent"></div>
+			<svg class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 text-white dark:text-black" viewBox="0 0 200 200" fill="currentColor">
+				<circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.5"/>
+				<circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="0.5"/>
+				<circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+			</svg>
+		</div>
+
+		<div class="container mx-auto px-6 lg:px-12 relative">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-end">
+				<div class="lg:col-span-7">
+					<span class="inline-block text-sm tracking-[0.3em] uppercase text-gray-500 dark:text-gray-400 mb-8">
+						Tu proyecto
+					</span>
+					<h2 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium text-white dark:text-black leading-[1.1] mb-8">
+						¿Tienes algo en <span class="italic">mente?</span>
+					</h2>
+					<p class="text-lg lg:text-xl text-gray-400 dark:text-gray-600 max-w-xl leading-relaxed">
+						Conversemos sobre cómo podemos ayudarte a transformar
+						tu idea en un producto digital exitoso.
+					</p>
+				</div>
+
+				<div class="lg:col-span-5 lg:pl-12 lg:border-l border-gray-800 dark:border-gray-200">
+					<div class="space-y-8">
+						<a
+							href="/contacto"
+							class="group flex items-center justify-between py-6 border-b border-gray-800 dark:border-gray-200 transition-all duration-300 hover:border-white dark:hover:border-black"
+						>
+							<span class="text-2xl lg:text-3xl font-display text-white dark:text-black">Iniciar proyecto</span>
+							<svg class="w-6 h-6 text-gray-500 group-hover:text-white dark:group-hover:text-black group-hover:translate-x-2 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
+						</a>
+
+						<div class="space-y-4">
+							<a
+								href="/servicios"
+								class="flex items-center gap-3 text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black transition-colors duration-300"
+							>
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+								</svg>
+								<span>Ver servicios</span>
+							</a>
+							<a
+								href="mailto:info@subdominio.cl"
+								class="flex items-center gap-3 text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black transition-colors duration-300"
+							>
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+								</svg>
+								<span>info@subdominio.cl</span>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

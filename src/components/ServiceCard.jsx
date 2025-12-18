@@ -29,15 +29,10 @@ const ServiceCard = ({ title, description, technologies = [], price }) => {
             {description}
           </p>
           {technologies.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {technologies.map((tech, index) => (
-                <span 
-                  key={index}
-                  className="text-body-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-600 px-3 py-1 rounded-button"
-                >
-                  {tech}
-                </span>
-              ))}
+            <div>
+              <span className="text-sm text-gray-500 dark:text-gray-400">
+                {technologies.join(' · ')}
+              </span>
             </div>
           )}
         </div>

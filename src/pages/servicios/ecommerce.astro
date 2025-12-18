@@ -1,393 +1,319 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import LucideIcon from "../../components/LucideIcon.jsx";
-import Breadcrumb from '../../components/Breadcrumb.astro';
 import ServiceSchema from '../../components/ServiceSchema.astro';
 
-const breadcrumbItems = [
-  { name: "Servicios", item: "/servicios" },
-  { name: "E-commerce", item: "/servicios/ecommerce" }
-];
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{ "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://subdominio.cl" },
+		{ "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://subdominio.cl/servicios" },
+		{ "@type": "ListItem", "position": 3, "name": "E-commerce", "item": "https://subdominio.cl/servicios/ecommerce" }
+	]
+};
 
 const serviceOffers = [
-  {
-    name: "Tiendas WooCommerce",
-    description: "E-commerce completo con WordPress, fácil de administrar y personalizar"
-  },
-  {
-    name: "Tiendas Shopify",
-    description: "Soluciones e-commerce rápidas y escalables con Shopify"
-  },
-  {
-    name: "E-commerce Personalizado",
-    description: "Desarrollo a medida con integraciones ERP, CRM y sistemas de inventario"
-  },
-  {
-    name: "Optimización de Conversiones",
-    description: "UX/UI optimizado para maximizar ventas y reducir abandono de carrito"
-  }
+  { name: "Tiendas WooCommerce", description: "E-commerce completo con WordPress" },
+  { name: "Tiendas Shopify", description: "Soluciones e-commerce rápidas y escalables" },
+  { name: "E-commerce Personalizado", description: "Desarrollo a medida con integraciones ERP" },
+  { name: "Optimización de Conversiones", description: "UX/UI optimizado para maximizar ventas" }
 ];
 ---
 
 <Layout title="Desarrollo de E-commerce" description="Soluciones completas para tiendas online que convierten visitantes en clientes. WooCommerce, Shopify y desarrollo personalizado.">
-	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<Breadcrumb items={breadcrumbItems} />
-				
-				<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium mb-8 text-black dark:text-white leading-tight">
-					Tiendas online que venden más y mejor
-				</h1>
-				
-				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-					Creamos e-commerce que convierten visitantes en clientes y automatizan tu operación.
-					Cada tienda está diseñada para maximizar ventas, reducir trabajo manual y escalar con tu negocio.
-				</p>
-				
-				<div class="flex flex-col sm:flex-row gap-4">
-					<a
-						href="/contacto"
-						class="px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button"
-					>
-						Solicitar propuesta
+	<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+	<!-- Hero -->
+	<section class="pt-32 lg:pt-40 pb-16 lg:pb-24 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="max-w-4xl">
+				<div class="flex items-center gap-4 mb-8">
+					<a href="/servicios" class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white transition-colors duration-300">
+						Servicios
 					</a>
-					<a
-						href="#capacidades"
-						class="px-8 py-4 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 font-medium hover:border-black dark:hover:border-white transition-all duration-200 hover:scale-[1.02] rounded-button"
-					>
-						Hablemos de tu tienda
+					<span class="text-gray-300 dark:text-gray-600">/</span>
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						E-commerce
+					</span>
+				</div>
+
+				<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-black dark:text-white leading-[1.1] mb-8">
+					Tiendas online que <span class="italic">venden</span> más
+				</h1>
+
+				<p class="text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mb-10">
+					Creamos e-commerce que convierten visitantes en clientes y automatizan tu operación.
+					Cada tienda está diseñada para maximizar ventas y escalar con tu negocio.
+				</p>
+
+				<div class="flex flex-col sm:flex-row items-start gap-6">
+					<a href="/contacto" class="group inline-flex items-center gap-3 px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-black font-medium transition-all duration-300 hover:gap-5">
+						<span>Solicitar propuesta</span>
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
 					</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Introducción - Posicionamiento -->
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-					No solo montamos catálogos: construimos máquinas de vender que integran inventario, facturación, envíos y marketing.
-					Te acompañamos desde el diseño hasta las integraciones complejas, usando la tecnología que mejor se adapte a tu modelo de negocio.
-				</p>
+	<!-- Platforms -->
+	<section class="py-24 lg:py-32 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Plataformas
+					</span>
+				</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						Tecnologías que <span class="italic">dominamos</span>
+					</h2>
+				</div>
+			</div>
+
+			<div class="grid md:grid-cols-2 gap-px bg-gray-200 dark:bg-gray-800">
+				<div class="bg-white dark:bg-gray-900 p-8 lg:p-12">
+					<h3 class="font-display text-xl lg:text-2xl font-medium text-black dark:text-white mb-4">WooCommerce</h3>
+					<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+						Máxima flexibilidad y personalización. Ideal para negocios que necesitan control total sobre diseño y funcionalidades.
+					</p>
+					<ul class="space-y-2 text-sm text-gray-500 dark:text-gray-500">
+						<li>Personalización ilimitada</li>
+						<li>Miles de plugins</li>
+						<li>SEO avanzado</li>
+					</ul>
+				</div>
+
+				<div class="bg-white dark:bg-gray-900 p-8 lg:p-12">
+					<h3 class="font-display text-xl lg:text-2xl font-medium text-black dark:text-white mb-4">Shopify</h3>
+					<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+						Simplicidad y escalabilidad. Perfecto para emprendedores que quieren vender rápido sin complicaciones técnicas.
+					</p>
+					<ul class="space-y-2 text-sm text-gray-500 dark:text-gray-500">
+						<li>Hosting incluido</li>
+						<li>Pagos integrados</li>
+						<li>Escalabilidad automática</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Types -->
+	<section class="py-24 lg:py-32 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Tipos de tienda
+					</span>
+				</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						Soluciones para cada <span class="italic">modelo</span>
+					</h2>
+				</div>
+			</div>
+
+			<div class="border-t border-gray-200 dark:border-gray-800">
+				<div class="grid lg:grid-cols-12 gap-6 py-12 lg:py-16 border-b border-gray-200 dark:border-gray-800">
+					<div class="lg:col-span-4">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Tiendas B2C</h3>
+					</div>
+					<div class="lg:col-span-7 lg:col-start-6">
+						<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+							Venta directa al consumidor final. Catálogo atractivo, experiencia de compra optimizada, múltiples métodos de pago.
+						</p>
+					</div>
+				</div>
+
+				<div class="grid lg:grid-cols-12 gap-6 py-12 lg:py-16 border-b border-gray-200 dark:border-gray-800">
+					<div class="lg:col-span-4">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Tiendas B2B</h3>
+					</div>
+					<div class="lg:col-span-7 lg:col-start-6">
+						<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+							Ventas entre empresas con catálogos privados, precios diferenciados por cliente y flujos de aprobación.
+						</p>
+					</div>
+				</div>
+
+				<div class="grid lg:grid-cols-12 gap-6 py-12 lg:py-16 border-b border-gray-200 dark:border-gray-800">
+					<div class="lg:col-span-4">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Marketplace</h3>
+					</div>
+					<div class="lg:col-span-7 lg:col-start-6">
+						<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+							Plataforma donde múltiples vendedores ofrecen sus productos. Gestión de comisiones y pagos distribuidos.
+						</p>
+					</div>
+				</div>
+
+				<div class="grid lg:grid-cols-12 gap-6 py-12 lg:py-16">
+					<div class="lg:col-span-4">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Suscripciones</h3>
+					</div>
+					<div class="lg:col-span-7 lg:col-start-6">
+						<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+							Productos o servicios recurrentes con cobros automáticos, gestión de planes y retención de clientes.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Differentiators -->
+	<section class="py-24 lg:py-32 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Diferenciadores
+					</span>
+				</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						¿Por qué <span class="italic">elegirnos?</span>
+					</h2>
+				</div>
+			</div>
+
+			<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Ventas desde el día uno</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Optimizada para convertir, no solo verse bien.</p>
+				</div>
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Integración total</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Conecta con ERP, inventario y facturación.</p>
+				</div>
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Escalabilidad garantizada</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Crece contigo sin límites técnicos.</p>
+				</div>
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Soporte real</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Mantenimiento y mejoras cuando necesites.</p>
+				</div>
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Seguridad empresarial</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">SSL, backups y monitoreo 24/7.</p>
+				</div>
+				<div>
+					<h3 class="font-medium text-black dark:text-white mb-2">Autonomía total</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Gestiona todo sin depender de terceros.</p>
+				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- Plataformas E-commerce -->
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<div class="text-center mb-12">
-					<h2 class="text-3xl font-medium mb-4 text-black dark:text-white">
-						Plataformas que dominamos
-					</h2>
-					<p class="text-xl text-gray-600 dark:text-gray-300">
-						Expertos en las tecnologías líderes del e-commerce
-					</p>
-				</div>
-				
-				<div class="grid md:grid-cols-2 gap-8">
-					<!-- WooCommerce -->
-					<div class="bg-white dark:bg-gray-900 p-8 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
-						<div class="mb-6">
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">WooCommerce</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Máxima flexibilidad y personalización. Ideal para negocios que necesitan control total 
-								sobre diseño, funcionalidades y datos.
-							</p>
-						</div>
-						<div class="space-y-2 mb-8">
-							<div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-								<span class="text-black dark:text-white mr-2">✓</span>
-								<span>Personalización ilimitada</span>
-							</div>
-							<div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-								<span class="text-black dark:text-white mr-2">✓</span>
-								<span>Miles de plugins</span>
-							</div>
-							<div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-								<span class="text-black dark:text-white mr-2">✓</span>
-								<span>SEO avanzado</span>
-							</div>
-							<div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-								<span class="text-black dark:text-white mr-2">✓</span>
-								<span>Hosting propio</span>
-							</div>
-						</div>
-						<a
-							href="/woocommerce"
-							class="inline-block px-6 py-3 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button"
-						>
-							Ver WooCommerce
-						</a>
-					</div>
+	<section class="py-24 lg:py-32 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="mb-12">
+				<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+					Plataformas especializadas
+				</span>
+			</div>
 
-					<!-- Shopify -->
-					<div class="bg-white dark:bg-gray-900 p-8 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
-						<div class="mb-6">
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Shopify</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Simplicidad y escalabilidad. Perfecto para emprendedores que quieren vender 
-								rápido sin complicaciones técnicas.
-							</p>
-						</div>
-						<div class="space-y-2 mb-8">
-							<div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-								<span class="text-black dark:text-white mr-2">✓</span>
-								<span>Hosting incluido</span>
-							</div>
-							<div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-								<span class="text-black dark:text-white mr-2">✓</span>
-								<span>Pagos integrados</span>
-							</div>
-							<div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-								<span class="text-black dark:text-white mr-2">✓</span>
-								<span>Apps ilimitadas</span>
-							</div>
-							<div class="flex items-center text-sm text-gray-600 dark:text-gray-300">
-								<span class="text-black dark:text-white mr-2">✓</span>
-								<span>Escalabilidad automática</span>
-							</div>
-						</div>
-						<a
-							href="/shopify"
-							class="inline-block px-6 py-3 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button"
-						>
-							Ver Shopify
-						</a>
+			<div class="grid md:grid-cols-2 gap-px bg-gray-200 dark:bg-gray-800">
+				<a href="/woocommerce" class="group bg-white dark:bg-gray-900 p-8 lg:p-10 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-800">
+					<div class="flex items-start justify-between mb-6">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">WooCommerce</h3>
+						<svg class="w-5 h-5 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
 					</div>
-				</div>
+					<p class="text-sm text-gray-600 dark:text-gray-400">E-commerce con WordPress. Máximo control y personalización.</p>
+				</a>
+
+				<a href="/shopify" class="group bg-white dark:bg-gray-900 p-8 lg:p-10 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-800">
+					<div class="flex items-start justify-between mb-6">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Shopify</h3>
+						<svg class="w-5 h-5 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Tiendas listas para vender. Hosting incluido, cero mantenimiento.</p>
+				</a>
 			</div>
 		</div>
 	</section>
 
-	<!-- Tipos de Tienda -->
-	<section class="py-16 bg-gray-50 dark:bg-gray-950" id="capacidades">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-medium mb-12 text-black dark:text-white">
-					Tipos de tienda que desarrollamos
-				</h2>
-				
-				<div class="space-y-12">
-					<div class="border-b border-gray-200 dark:border-gray-700 pb-12">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Tiendas B2C</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Venta directa al consumidor final. Catálogo atractivo, experiencia de compra optimizada, múltiples métodos de pago y envío.
-							Perfecta para marcas, retail y productos de consumo que buscan llegar directamente a sus clientes.
-						</p>
-					</div>
-
-					<div class="border-b border-gray-200 dark:border-gray-700 pb-12">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Tiendas B2B</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Ventas entre empresas con catálogos privados, precios diferenciados por cliente, órdenes de compra, términos de crédito y flujos de aprobación.
-							Automatiza las ventas corporativas y simplifica la gestión de clientes mayoristas.
-						</p>
-					</div>
-
-					<div class="border-b border-gray-200 dark:border-gray-700 pb-12">
-						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Marketplace</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Plataforma donde múltiples vendedores ofrecen sus productos. Gestión de comisiones, multi-vendedores, sistema de reputación y pagos distribuidos.
-							Crea tu propio ecosistema de comercio con múltiples participantes.
-						</p>
-					</div>
-
-					<div>
-						<h3 class="text-xl font-medium text-black dark:text-white mb-4">Tiendas de suscripciones</h3>
-						<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-							Productos o servicios recurrentes con cobros automáticos, gestión de planes, pruebas gratuitas y retención de clientes.
-							Ideal para productos consumibles, software, membresías y servicios que se renuevan periódicamente.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-medium mb-12 text-black dark:text-white">
-					Nuestro método de trabajo
-				</h2>
-				
-				<div class="space-y-8">
-					<div class="flex flex-col md:flex-row gap-6">
-						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black dark:text-white">01</span>
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Analizamos tu negocio</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Entendemos cómo vendes hoy, qué procesos quieres automatizar y cómo escalar sin perder control.
-							</p>
-						</div>
-					</div>
-
-					<div class="flex flex-col md:flex-row gap-6">
-						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black dark:text-white">02</span>
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Diseñamos la experiencia de compra</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Creamos un flujo que convierte: desde que llegan hasta que compran y vuelven a comprar.
-							</p>
-						</div>
-					</div>
-
-					<div class="flex flex-col md:flex-row gap-6">
-						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black dark:text-white">03</span>
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Desarrollamos e integramos</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Construimos tu tienda y la conectamos con tus sistemas existentes para que todo funcione como uno solo.
-							</p>
-						</div>
-					</div>
-
-					<div class="flex flex-col md:flex-row gap-6">
-						<div class="md:w-24 flex-shrink-0">
-							<span class="text-2xl font-medium text-black dark:text-white">04</span>
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Lanzamos y optimizamos</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Ponemos tu tienda en marcha, monitoreamos las ventas y ajustamos para mejorar la conversión.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Diferenciales -->
-	<section class="py-16 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-medium mb-12 text-black dark:text-white">
-					¿Por qué elegirnos para tu e-commerce?
-				</h2>
-				
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Ventas desde el día uno</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">optimizada para convertir, no solo verse bien.</p>
-						</div>
-					</div>
-					
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Integración total</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">conecta con ERP, inventario y facturación.</p>
-						</div>
-					</div>
-					
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Escalabilidad garantizada</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">crece contigo sin límites técnicos.</p>
-						</div>
-					</div>
-					
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Soporte real</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">mantenimiento y mejoras cuando necesites.</p>
-						</div>
-					</div>
-
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Seguridad empresarial</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">SSL, backups y monitoreo 24/7.</p>
-						</div>
-					</div>
-					
-					<div class="flex gap-4">
-						<span class="text-black dark:text-white mt-1">✓</span>
-						<div>
-							<h3 class="font-medium text-black dark:text-white mb-2">Autonomía total</h3>
-							<p class="text-gray-600 dark:text-gray-300 text-sm">gestiona todo sin depender de terceros.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="py-16 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
-		<div class="container mx-auto px-6 text-center">
-			<div class="max-w-3xl mx-auto">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-medium mb-6 text-white dark:text-gray-900">
-					Tu e-commerce puede vender mientras duermes
-				</h2>
-				<p class="text-xl text-gray-300 dark:text-gray-600 mb-8 leading-relaxed">
-					Automatiza ventas, conecta sistemas y escala sin límites.<br>
-					Conversemos sobre tu proyecto.
-				</p>
-				
-				<div class="flex flex-col sm:flex-row gap-4 justify-center">
-					<a
-						href="/contacto"
-						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02] rounded-button"
-					>
-						Comienza tu proyecto
-					</a>
-					<a
-						href="mailto:info@subdominio.cl"
-						class="px-8 py-4 border border-gray-600 dark:border-gray-400 text-white dark:text-gray-900 font-medium hover:border-white dark:hover:border-black transition-all duration-200 hover:scale-[1.02] rounded-button"
-					>
-						Enviar email
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Servicios Relacionados -->
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-xl sm:text-2xl md:text-3xl font-medium mb-8 text-black dark:text-white">
+	<!-- Related -->
+	<section class="py-24 lg:py-32 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="mb-12">
+				<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
 					Servicios relacionados
+				</span>
+			</div>
+
+			<div class="grid md:grid-cols-3 gap-px bg-gray-200 dark:bg-gray-800">
+				<a href="/servicios/web" class="group bg-gray-50 dark:bg-gray-950 p-8 lg:p-10 transition-colors duration-300 hover:bg-white dark:hover:bg-gray-900">
+					<div class="flex items-start justify-between mb-6">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Desarrollo Web</h3>
+						<svg class="w-5 h-5 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Presencia web profesional</p>
+				</a>
+
+				<a href="/servicios/automatizacion" class="group bg-gray-50 dark:bg-gray-950 p-8 lg:p-10 transition-colors duration-300 hover:bg-white dark:hover:bg-gray-900">
+					<div class="flex items-start justify-between mb-6">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Automatización</h3>
+						<svg class="w-5 h-5 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Automatiza tu operación</p>
+				</a>
+
+				<a href="/servicios/personalizado" class="group bg-gray-50 dark:bg-gray-950 p-8 lg:p-10 transition-colors duration-300 hover:bg-white dark:hover:bg-gray-900">
+					<div class="flex items-start justify-between mb-6">
+						<h3 class="font-display text-xl font-medium text-black dark:text-white">Software a medida</h3>
+						<svg class="w-5 h-5 text-gray-300 group-hover:text-black dark:group-hover:text-white transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 17L17 7M17 7H7M17 7V17" />
+						</svg>
+					</div>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Integraciones complejas</p>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA -->
+	<section class="py-24 lg:py-32 bg-black dark:bg-gray-200">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="max-w-4xl">
+				<h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-white dark:text-black leading-tight mb-6">
+					Tu e-commerce puede vender <span class="italic">mientras duermes</span>
 				</h2>
-				
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-					<a href="/servicios/web" class="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
-						<h3 class="font-medium text-black dark:text-white mb-2 group-hover:underline">Desarrollo Web</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Presencia web profesional antes del e-commerce</p>
+				<p class="text-lg text-gray-400 dark:text-gray-600 mb-10 max-w-2xl">
+					Automatiza ventas, conecta sistemas y escala sin límites.
+				</p>
+				<div class="flex flex-col sm:flex-row items-start gap-6">
+					<a href="/contacto" class="group inline-flex items-center gap-3 px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium transition-all duration-300 hover:gap-5">
+						<span>Comienza tu proyecto</span>
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
 					</a>
-					
-					<a href="/servicios/automatizacion" class="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
-						<h3 class="font-medium text-black dark:text-white mb-2 group-hover:underline">Automatización</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Automatiza tu operación e-commerce</p>
-					</a>
-					
-					<a href="/servicios/personalizado" class="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
-						<h3 class="font-medium text-black dark:text-white mb-2 group-hover:underline">Desarrollo Personalizado</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Integraciones complejas para tu tienda</p>
+					<a href="mailto:info@subdominio.cl" class="text-gray-500 hover:text-white dark:hover:text-black transition-colors duration-300">
+						info@subdominio.cl
 					</a>
 				</div>
 			</div>
 		</div>
 	</section>
-	
-	<ServiceSchema 
+
+	<ServiceSchema
 		name="Desarrollo de E-commerce"
-		description="Soluciones completas para tiendas online que convierten visitantes en clientes. E-commerce avanzado, hecho a tu medida."
+		description="Soluciones completas para tiendas online que convierten visitantes en clientes."
 		category="E-commerce"
 		offers={serviceOffers}
 		url="https://subdominio.cl/servicios/ecommerce"

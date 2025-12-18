@@ -1,191 +1,129 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import LucideIcon from "../components/LucideIcon.jsx";
-import BlogPostSchema from '../components/BlogPostSchema.astro';
-import Breadcrumb from '../components/Breadcrumb.astro';
 
-// Obtener todos los posts del blog
 const allBlogPosts = await getCollection('blog');
 
-// Ordenar por fecha de publicación (más recientes primero)
-const sortedPosts = allBlogPosts.sort((a, b) => 
+const sortedPosts = allBlogPosts.sort((a, b) =>
   new Date(b.data.publishedDate).getTime() - new Date(a.data.publishedDate).getTime()
 );
 
-// Obtener categorías únicas de los posts
 const uniqueCategories = [...new Set(allBlogPosts.map(post => post.data.category))].filter(Boolean);
-
-const getCategoryColor = (color) => {
-  const colors = {
-    blue: 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300',
-    orange: 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300',
-    green: 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300',
-    purple: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300',
-    red: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300'
-  };
-  return colors[color] || 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300';
-};
 
 const formatDate = (dateString) => {
   const date = new Date(dateString);
-  return date.toLocaleDateString('es-ES', { 
-    day: 'numeric', 
-    month: 'short', 
-    year: 'numeric' 
+  return date.toLocaleDateString('es-ES', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric'
   });
 };
 ---
 
 <Layout title="Blog" description="Artículos sobre desarrollo web, e-commerce, automatización y tendencias tecnológicas. Conocimiento compartido por el equipo de Subdominio.">
-	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<Breadcrumb items={[{ name: "Blog", item: "/blog" }]} />
-				<div class="mb-8">
-					<a href="/" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200 mb-6">
-						<LucideIcon name="arrow-left" className="w-4 h-4 mr-2" />
-						Volver al inicio
-					</a>
+	<!-- Hero -->
+	<section class="pt-32 lg:pt-40 pb-16 lg:pb-24 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="max-w-4xl">
+				<div class="flex items-center gap-4 mb-8">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Blog
+					</span>
+					<div class="h-px w-12 bg-gray-300 dark:bg-gray-700"></div>
 				</div>
-				
-				<h1 class="text-5xl md:text-6xl font-medium mb-8 text-black dark:text-white leading-tight">
-					Blog
+
+				<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-medium text-black dark:text-white leading-[1.1] mb-8">
+					Ideas y <span class="italic">reflexiones</span>
 				</h1>
-				
-				<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-16 max-w-3xl">
-					Artículos sobre desarrollo web, e-commerce, automatización y las últimas tendencias 
-					tecnológicas. Conocimiento compartido por nuestro equipo.
+
+				<p class="text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
+					Artículos sobre desarrollo web, e-commerce, automatización y las últimas
+					tendencias tecnológicas.
 				</p>
 			</div>
 		</div>
 	</section>
 
-	<!-- Filtros -->
+	<!-- Categories filter -->
 	{uniqueCategories.length > 0 && (
-		<section class="py-8 bg-gray-50 dark:bg-gray-950 border-b border-gray-200 dark:border-gray-700">
-			<div class="container mx-auto px-6">
-				<div class="max-w-6xl mx-auto">
-					<div class="flex flex-wrap gap-4 justify-center">
-						<button data-filter="all" class="filter-btn px-4 py-2 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium transition-colors duration-200 active">
-							Todos
+		<section class="py-6 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800">
+			<div class="container mx-auto px-6 lg:px-12">
+				<div class="flex flex-wrap gap-4">
+					<button data-filter="all" class="filter-btn text-sm tracking-wide text-black dark:text-white border-b-2 border-black dark:border-white pb-1 active">
+						Todos
+					</button>
+					{uniqueCategories.map(category => (
+						<button data-filter={category} class="filter-btn text-sm tracking-wide text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 pb-1 border-b-2 border-transparent">
+							{category}
 						</button>
-						{uniqueCategories.map(category => (
-							<button data-filter={category} class="filter-btn px-4 py-2 bg-white dark:bg-black text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 transition-colors duration-200">
-								{category}
-							</button>
-						))}
-					</div>
+					))}
 				</div>
 			</div>
 		</section>
 	)}
 
-	<!-- Artículos destacados -->
-	<section class="py-16 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-6xl mx-auto">
-				<h2 class="text-3xl font-medium mb-12 text-black dark:text-white">
-					Artículos Destacados
-				</h2>
-				
-				<!-- Grid de artículos desde archivos Markdown -->
-				<div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-					{sortedPosts.map((post) => (
-						<article data-category={post.data.category} class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-shadow duration-200 group article-item">
-							<div class="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center relative overflow-hidden">
-								{post.data.image ? (
-									<img 
-										src={post.data.image} 
-										alt={post.data.title}
-										class="w-full h-full object-cover"
-									/>
-								) : (
-									<div class="absolute inset-0 flex flex-col items-center justify-center">
-										<div class="w-20 h-20 bg-black/5 dark:bg-white/5 rounded-full flex items-center justify-center mb-3">
-											<LucideIcon name="file-text" className="w-10 h-10 text-gray-400 dark:text-gray-500" />
-										</div>
-										<span class="text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wider">{post.data.category}</span>
-									</div>
-								)}
-								<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+	<!-- Articles -->
+	<section class="py-16 lg:py-24 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div id="articles-grid" class="space-y-0 border-t border-gray-200 dark:border-gray-800">
+				{sortedPosts.map((post, index) => (
+					<article data-category={post.data.category} class="article-item border-b border-gray-200 dark:border-gray-800 py-10 lg:py-12 group">
+						<div class="grid lg:grid-cols-12 gap-6 lg:gap-8">
+							<div class="lg:col-span-2">
+								<span class="text-sm text-gray-400 dark:text-gray-500">
+									{formatDate(post.data.publishedDate)}
+								</span>
 							</div>
-							
-							<div class="p-4 md:p-6">
-								<div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-2 mb-4">
-									<div class="flex items-center gap-3">
-										<span class={`px-2 py-1 text-xs font-medium rounded ${getCategoryColor(post.data.categoryColor)} inline-block whitespace-nowrap w-fit`}>
-											{post.data.category}
-										</span>
-										<span class="text-sm text-gray-500 dark:text-gray-400 sm:hidden">
-											{formatDate(post.data.publishedDate)}
-										</span>
-									</div>
-									<span class="text-sm text-gray-500 dark:text-gray-400 hidden sm:block sm:ml-auto">
-										{formatDate(post.data.publishedDate)}
-									</span>
-								</div>
-								
-								<h3 class="text-lg sm:text-xl font-medium text-black dark:text-white mb-3 leading-tight">
-									<a
-										href={`/blog/${post.data.slug || post.slug}`}
-										class="hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200"
-									>
+							<div class="lg:col-span-6">
+								<a href={`/blog/${post.data.slug || post.slug}`} class="block group-hover:opacity-70 transition-opacity duration-300">
+									<h2 class="font-display text-xl lg:text-2xl font-medium text-black dark:text-white mb-3 leading-tight">
 										{post.data.title}
-									</a>
-								</h3>
-								
-								<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-5">
-									{post.data.excerpt}
-								</p>
-								
-								<div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 sm:justify-between">
-									<span class="text-xs text-gray-500 dark:text-gray-400">
-										{post.data.readingTime} min de lectura
-									</span>
-									<a
-										href={`/blog/${post.data.slug || post.slug}`}
-										class="text-sm font-medium text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-200 self-start sm:self-auto inline-flex items-center"
-									>
-										Leer más →
-									</a>
-								</div>
+									</h2>
+									<p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+										{post.data.excerpt}
+									</p>
+								</a>
 							</div>
-						</article>
-					))}
-				</div>
+							<div class="lg:col-span-3 lg:col-start-10 flex items-start lg:justify-end">
+								<span class="text-xs tracking-[0.15em] uppercase text-gray-400 dark:text-gray-500">
+									{post.data.category}
+								</span>
+							</div>
+						</div>
+					</article>
+				))}
 			</div>
 		</div>
 	</section>
 
-	<!-- Newsletter/Suscripción -->
-	<section class="py-20 bg-black dark:bg-gray-100 text-white dark:text-gray-900">
-		<div class="container mx-auto px-6 text-center">
-			<div class="max-w-2xl mx-auto">
-				<h2 class="text-3xl md:text-4xl font-medium mb-6">
-					¿Te gustó este contenido?
+	<!-- Newsletter -->
+	<section class="py-24 lg:py-32 bg-black dark:bg-gray-200">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="max-w-2xl">
+				<h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-medium text-white dark:text-black leading-tight mb-6">
+					¿Te gustó este <span class="italic">contenido?</span>
 				</h2>
-				<p class="text-xl text-gray-300 dark:text-gray-600 mb-8 leading-relaxed">
-					Suscríbete para recibir los últimos artículos sobre desarrollo web, 
+				<p class="text-lg text-gray-400 dark:text-gray-600 mb-10">
+					Suscríbete para recibir los últimos artículos sobre desarrollo web,
 					e-commerce y automatización directamente en tu inbox.
 				</p>
-				
-				<form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+
+				<form class="flex flex-col sm:flex-row gap-4">
 					<input
 						type="email"
 						placeholder="tu@email.com"
-						class="flex-1 px-4 py-3 text-black dark:text-white bg-white dark:bg-black border-0 focus:ring-2 focus:ring-white dark:focus:ring-black rounded-md"
+						class="flex-1 px-6 py-4 bg-white/10 dark:bg-black/10 border border-gray-700 dark:border-gray-300 text-white dark:text-black placeholder-gray-500 focus:outline-none focus:border-white dark:focus:border-black transition-colors duration-300"
 						required
 					/>
 					<button
 						type="submit"
-						class="px-6 py-3 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 rounded-md min-w-[120px]"
+						class="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-medium hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-300"
 					>
 						Suscribirse
 					</button>
 				</form>
-				
-				<p class="text-xs text-gray-400 dark:text-gray-500 mt-4">
+
+				<p class="text-xs text-gray-500 mt-4">
 					No spam. Solo contenido de calidad. Puedes darte de baja cuando quieras.
 				</p>
 			</div>
@@ -193,7 +131,6 @@ const formatDate = (dateString) => {
 	</section>
 
 	<script>
-		// Funcionalidad de filtros de categorías
 		document.addEventListener('DOMContentLoaded', function() {
 			const filterButtons = document.querySelectorAll('.filter-btn');
 			const articleItems = document.querySelectorAll('.article-item');
@@ -202,24 +139,19 @@ const formatDate = (dateString) => {
 				button.addEventListener('click', function() {
 					const filterValue = this.getAttribute('data-filter');
 
-					// Actualizar estado activo de los botones
 					filterButtons.forEach(btn => {
-						btn.classList.remove('active');
-						btn.classList.remove('bg-black', 'dark:bg-gray-200', 'text-white', 'dark:text-gray-900');
-						btn.classList.add('bg-white', 'dark:bg-black', 'text-gray-600', 'dark:text-gray-300', 'border', 'border-gray-300', 'dark:border-gray-600');
+						btn.classList.remove('active', 'text-black', 'dark:text-white', 'border-black', 'dark:border-white');
+						btn.classList.add('text-gray-500', 'dark:text-gray-400', 'border-transparent');
 					});
 
-					this.classList.add('active');
-					this.classList.add('bg-black', 'dark:bg-gray-200', 'text-white', 'dark:text-gray-900');
-					this.classList.remove('bg-white', 'dark:bg-black', 'text-gray-600', 'dark:text-gray-300', 'border', 'border-gray-300', 'dark:border-gray-600');
+					this.classList.add('active', 'text-black', 'dark:text-white', 'border-black', 'dark:border-white');
+					this.classList.remove('text-gray-500', 'dark:text-gray-400', 'border-transparent');
 
-					// Filtrar artículos
 					articleItems.forEach(article => {
 						const articleCategory = article.getAttribute('data-category');
 
 						if (filterValue === 'all' || articleCategory === filterValue) {
 							article.style.display = 'block';
-							article.style.animation = 'fadeIn 0.3s ease-in-out';
 						} else {
 							article.style.display = 'none';
 						}
@@ -227,16 +159,5 @@ const formatDate = (dateString) => {
 				});
 			});
 		});
-
-		// Agregar estilos para la animación
-		const style = document.createElement('style');
-		style.textContent = `
-			@keyframes fadeIn {
-				from { opacity: 0; transform: translateY(10px); }
-				to { opacity: 1; transform: translateY(0); }
-			}
-		`;
-		document.head.appendChild(style);
 	</script>
-
 </Layout>

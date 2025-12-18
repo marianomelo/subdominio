@@ -1,586 +1,456 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import LucideIcon from '../components/LucideIcon.jsx';
 import ContactFormBase from '../components/ContactFormBase.jsx';
 ---
 
-<Layout 
-	title="Optimización WordPress Chile | WordPress Optimizado - Subdominio" 
+<Layout
+	title="Optimización WordPress Chile | WordPress Optimizado - Subdominio"
 	description="Optimización WordPress Chile - Expertos en WordPress optimizado, mejora velocidad, SEO y rendimiento. Optimización profesional WordPress Chile."
 	keywords="optimización wordpress, wordpress optimizado, optimización wordpress chile, velocidad wordpress, seo wordpress chile, rendimiento wordpress"
 >
 	<!-- Hero Section -->
-	<section class="pt-32 pb-16 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-5xl mx-auto text-center">
-				<h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-medium mb-6 md:mb-8 text-black dark:text-white leading-tight">
-					<span class="font-bold">Optimización WordPress</span> en Chile
-				</h1>
-				
-				<p class="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8 md:mb-12 max-w-4xl mx-auto px-4">
-					WordPress optimizado para máximo rendimiento. Mejoramos velocidad, SEO y seguridad de tu sitio WordPress 
-					con técnicas avanzadas de optimización profesional.
-				</p>
-				
-				<div class="flex flex-col items-center mb-12 md:mb-16">
+	<section class="pt-32 lg:pt-40 pb-16 lg:pb-24 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8">
+				<div class="lg:col-span-7">
+					<div class="flex items-center gap-4 mb-8">
+						<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+							Optimización
+						</span>
+						<div class="h-px w-12 bg-gray-300 dark:bg-gray-700"></div>
+					</div>
+
+					<h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium text-black dark:text-white leading-[1.1] mb-8">
+						WordPress <span class="italic">optimizado</span> en Chile
+					</h1>
+
+					<p class="text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-xl mb-8">
+						Mejoramos velocidad, SEO y seguridad de tu WordPress con técnicas avanzadas de optimización profesional.
+					</p>
+
 					<a
 						href="#auditoria"
-						class="w-full sm:w-auto px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-gray-900 font-medium hover:bg-gray-800 dark:hover:bg-gray-300 transition-all duration-200 hover:scale-[1.02] rounded-button mb-3 text-center"
+						class="group inline-flex items-center gap-3 text-black dark:text-white transition-all duration-300"
 					>
-						Solicitar auditoría gratuita
+						<span class="text-sm tracking-wide">Solicitar auditoría gratuita</span>
+						<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
 					</a>
-					<p class="text-sm text-gray-500 dark:text-gray-400 text-center px-4">
-						Análisis completo sin compromiso • Respuesta en 24h
-					</p>
 				</div>
 
-				<!-- Stats optimización -->
-				<div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg max-w-3xl mx-auto">
-					<p class="text-center text-gray-600 dark:text-gray-300 mb-4">
-						<strong>Un sitio web lento pierde hasta el 40% de visitantes</strong> y baja posiciones en Google. 
-						La optimización WordPress mejora velocidad, SEO y conversiones.
-					</p>
+				<div class="lg:col-span-5 lg:pl-8 lg:border-l border-gray-200 dark:border-gray-800">
+					<div class="space-y-8">
+						<div>
+							<span class="font-display text-5xl lg:text-6xl font-medium text-black dark:text-white">3x</span>
+							<p class="text-sm text-gray-500 dark:text-gray-400 mt-2">más velocidad de carga</p>
+						</div>
+						<div>
+							<span class="font-display text-5xl lg:text-6xl font-medium text-black dark:text-white">+150%</span>
+							<p class="text-sm text-gray-500 dark:text-gray-400 mt-2">mejora en tráfico SEO</p>
+						</div>
+						<div>
+							<span class="font-display text-5xl lg:text-6xl font-medium text-black dark:text-white">99.9%</span>
+							<p class="text-sm text-gray-500 dark:text-gray-400 mt-2">uptime garantizado</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- Problemas comunes WordPress -->
-	<section class="py-16 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-5xl mx-auto">
-				<div class="text-center mb-12">
-					<h2 class="text-3xl md:text-4xl font-medium mb-6 text-black dark:text-white">
-						¿Tu WordPress tiene estos problemas?
-					</h2>
-					<p class="text-xl text-gray-600 dark:text-gray-300">
-						Síntomas de un WordPress que necesita optimización urgente
-					</p>
+	<section class="py-16 lg:py-24 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Diagnóstico
+					</span>
 				</div>
-				
-				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						¿Tu WordPress tiene estos <span class="italic">problemas?</span>
+					</h2>
+				</div>
+			</div>
+
+			<div class="border-t border-gray-200 dark:border-gray-800">
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 dark:bg-gray-800">
 					<!-- Velocidad lenta -->
-					<div class="bg-red-50 dark:bg-red-900/20 p-8 rounded-lg border border-red-200 dark:border-red-800">
-						<div class="w-12 h-12 bg-red-500 text-white rounded-lg flex items-center justify-center mb-6">
-							<LucideIcon name="clock" className="w-6 h-6" />
-						</div>
-						<h3 class="text-xl font-medium text-red-800 dark:text-red-200 mb-4">Carga muy lenta</h3>
-						<p class="text-red-700 dark:text-red-300 leading-relaxed">
+					<article class="bg-gray-50 dark:bg-gray-950 p-8 lg:p-10">
+						<span class="font-display text-4xl text-gray-200 dark:text-gray-800 font-medium block mb-4">01</span>
+						<h3 class="font-medium text-black dark:text-white mb-3">Carga muy lenta</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
 							Tu WordPress tarda más de 3 segundos en cargar, perdiendo visitantes y posiciones en Google.
 						</p>
-					</div>
+					</article>
 
 					<!-- SEO pobre -->
-					<div class="bg-orange-50 dark:bg-orange-900/20 p-8 rounded-lg border border-orange-200 dark:border-orange-800">
-						<div class="w-12 h-12 bg-orange-500 text-white rounded-lg flex items-center justify-center mb-6">
-							<LucideIcon name="search-x" className="w-6 h-6" />
-						</div>
-						<h3 class="text-xl font-medium text-orange-800 dark:text-orange-200 mb-4">SEO deficiente</h3>
-						<p class="text-orange-700 dark:text-orange-300 leading-relaxed">
+					<article class="bg-gray-50 dark:bg-gray-950 p-8 lg:p-10">
+						<span class="font-display text-4xl text-gray-200 dark:text-gray-800 font-medium block mb-4">02</span>
+						<h3 class="font-medium text-black dark:text-white mb-3">SEO deficiente</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
 							No apareces en Google Chile, meta tags mal configurados y estructura SEO deficiente.
 						</p>
-					</div>
+					</article>
 
 					<!-- Seguridad vulnerable -->
-					<div class="bg-yellow-50 dark:bg-yellow-900/20 p-8 rounded-lg border border-yellow-200 dark:border-yellow-800">
-						<div class="w-12 h-12 bg-yellow-500 text-white rounded-lg flex items-center justify-center mb-6">
-							<LucideIcon name="shield-x" className="w-6 h-6" />
-						</div>
-						<h3 class="text-xl font-medium text-yellow-800 dark:text-yellow-200 mb-4">Seguridad vulnerable</h3>
-						<p class="text-yellow-700 dark:text-yellow-300 leading-relaxed">
+					<article class="bg-gray-50 dark:bg-gray-950 p-8 lg:p-10">
+						<span class="font-display text-4xl text-gray-200 dark:text-gray-800 font-medium block mb-4">03</span>
+						<h3 class="font-medium text-black dark:text-white mb-3">Seguridad vulnerable</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
 							WordPress desactualizado, plugins vulnerables y configuración de seguridad básica.
 						</p>
-					</div>
+					</article>
 
 					<!-- Móviles -->
-					<div class="bg-purple-50 dark:bg-purple-900/20 p-8 rounded-lg border border-purple-200 dark:border-purple-800">
-						<div class="w-12 h-12 bg-purple-500 text-white rounded-lg flex items-center justify-center mb-6">
-							<LucideIcon name="smartphone" className="w-6 h-6" />
-						</div>
-						<h3 class="text-xl font-medium text-purple-800 dark:text-purple-200 mb-4">Mal en móviles</h3>
-						<p class="text-purple-700 dark:text-purple-300 leading-relaxed">
+					<article class="bg-gray-50 dark:bg-gray-950 p-8 lg:p-10">
+						<span class="font-display text-4xl text-gray-200 dark:text-gray-800 font-medium block mb-4">04</span>
+						<h3 class="font-medium text-black dark:text-white mb-3">Mal en móviles</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
 							Diseño no responsive, carga lenta en móviles, mala experiencia de usuario.
 						</p>
-					</div>
+					</article>
 
 					<!-- Plugins -->
-					<div class="bg-indigo-50 dark:bg-indigo-900/20 p-8 rounded-lg border border-indigo-200 dark:border-indigo-800">
-						<div class="w-12 h-12 bg-indigo-500 text-white rounded-lg flex items-center justify-center mb-6">
-							<LucideIcon name="puzzle" className="w-6 h-6" />
-						</div>
-						<h3 class="text-xl font-medium text-indigo-800 dark:text-indigo-200 mb-4">Muchos plugins</h3>
-						<p class="text-indigo-700 dark:text-indigo-300 leading-relaxed">
+					<article class="bg-gray-50 dark:bg-gray-950 p-8 lg:p-10">
+						<span class="font-display text-4xl text-gray-200 dark:text-gray-800 font-medium block mb-4">05</span>
+						<h3 class="font-medium text-black dark:text-white mb-3">Muchos plugins</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
 							Plugins innecesarios, conflictos entre plugins y funcionalidades duplicadas.
 						</p>
-					</div>
+					</article>
 
 					<!-- Hosting -->
-					<div class="bg-pink-50 dark:bg-pink-900/20 p-8 rounded-lg border border-pink-200 dark:border-pink-800">
-						<div class="w-12 h-12 bg-pink-500 text-white rounded-lg flex items-center justify-center mb-6">
-							<LucideIcon name="server" className="w-6 h-6" />
-						</div>
-						<h3 class="text-xl font-medium text-pink-800 dark:text-pink-200 mb-4">Hosting inadecuado</h3>
-						<p class="text-pink-700 dark:text-pink-300 leading-relaxed">
+					<article class="bg-gray-50 dark:bg-gray-950 p-8 lg:p-10">
+						<span class="font-display text-4xl text-gray-200 dark:text-gray-800 font-medium block mb-4">06</span>
+						<h3 class="font-medium text-black dark:text-white mb-3">Hosting inadecuado</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
 							Hosting lento, mal configurado para WordPress o sin optimizaciones específicas.
 						</p>
-					</div>
+					</article>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- Servicios de optimización -->
-	<section class="py-20 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-6xl mx-auto">
-				<div class="text-center mb-16">
-					<h2 class="text-3xl md:text-4xl font-medium mb-6 text-black dark:text-white">
-						Nuestros servicios de optimización WordPress
+	<section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Servicios
+					</span>
+				</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						Optimización WordPress <span class="italic">integral</span>
 					</h2>
-					<p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-						Optimización WordPress integral para máximo rendimiento en Chile
-					</p>
 				</div>
-				
-				<div class="space-y-8">
-					<!-- Velocidad y rendimiento -->
-					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800">
-						<div class="flex gap-6 items-start">
-							<div class="w-12 h-12 bg-green-500 text-white rounded-lg flex items-center justify-center flex-shrink-0">
-								<LucideIcon name="zap" className="w-6 h-6" />
-							</div>
-							<div class="flex-1">
-								<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Optimización de Velocidad</h3>
-								<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-									Mejoramos la velocidad de carga de tu WordPress hasta 3x más rápido con técnicas avanzadas de optimización.
-								</p>
-								<div class="grid md:grid-cols-2 gap-4 text-sm text-gray-500 dark:text-gray-400">
-									<div class="space-y-2">
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-green-500 mr-2" />
-											Compresión de imágenes automática
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-green-500 mr-2" />
-											Minificación CSS y JavaScript
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-green-500 mr-2" />
-											Cache avanzado WordPress
-										</div>
-									</div>
-									<div class="space-y-2">
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-green-500 mr-2" />
-											CDN para carga global rápida
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-green-500 mr-2" />
-											Optimización de base de datos
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-green-500 mr-2" />
-											Lazy loading de imágenes
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+			</div>
 
-					<!-- SEO WordPress -->
-					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800">
-						<div class="flex gap-6 items-start">
-							<div class="w-12 h-12 bg-blue-500 text-white rounded-lg flex items-center justify-center flex-shrink-0">
-								<LucideIcon name="search" className="w-6 h-6" />
-							</div>
-							<div class="flex-1">
-								<h3 class="text-2xl font-medium text-black dark:text-white mb-4">SEO WordPress Avanzado</h3>
-								<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-									Optimización SEO completa para que tu WordPress aparezca en los primeros resultados de Google Chile.
-								</p>
-								<div class="grid md:grid-cols-2 gap-4 text-sm text-gray-500 dark:text-gray-400">
-									<div class="space-y-2">
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-blue-500 mr-2" />
-											Meta títulos y descripciones optimizadas
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-blue-500 mr-2" />
-											URLs amigables y estructura SEO
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-blue-500 mr-2" />
-											Schema markup y datos estructurados
-										</div>
-									</div>
-									<div class="space-y-2">
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-blue-500 mr-2" />
-											Sitemap XML optimizado
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-blue-500 mr-2" />
-											Enlaces internos estratégicos
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-blue-500 mr-2" />
-											Optimización para búsquedas locales Chile
-										</div>
-									</div>
-								</div>
-							</div>
+			<div class="border-t border-gray-200 dark:border-gray-800">
+				<!-- Velocidad y rendimiento -->
+				<article class="border-b border-gray-200 dark:border-gray-800 py-12 lg:py-16">
+					<div class="grid lg:grid-cols-12 gap-6 lg:gap-8">
+						<div class="lg:col-span-4">
+							<h3 class="font-display text-2xl lg:text-3xl font-medium text-black dark:text-white">
+								Optimización de Velocidad
+							</h3>
+						</div>
+						<div class="lg:col-span-5">
+							<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+								Mejoramos la velocidad de carga de tu WordPress hasta 3x más rápido con técnicas avanzadas de optimización.
+							</p>
+							<ul class="space-y-2 text-sm text-gray-500 dark:text-gray-500">
+								<li>Compresión de imágenes automática</li>
+								<li>Minificación CSS y JavaScript</li>
+								<li>Cache avanzado WordPress</li>
+								<li>CDN para carga global rápida</li>
+								<li>Optimización de base de datos</li>
+								<li>Lazy loading de imágenes</li>
+							</ul>
 						</div>
 					</div>
+				</article>
 
-					<!-- Seguridad WordPress -->
-					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800">
-						<div class="flex gap-6 items-start">
-							<div class="w-12 h-12 bg-red-500 text-white rounded-lg flex items-center justify-center flex-shrink-0">
-								<LucideIcon name="shield-check" className="w-6 h-6" />
-							</div>
-							<div class="flex-1">
-								<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Seguridad WordPress Profesional</h3>
-								<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-									Protección completa contra ataques, malware y vulnerabilidades con configuración de seguridad avanzada.
-								</p>
-								<div class="grid md:grid-cols-2 gap-4 text-sm text-gray-500 dark:text-gray-400">
-									<div class="space-y-2">
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-red-500 mr-2" />
-											Firewall WordPress avanzado
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-red-500 mr-2" />
-											Protección contra malware
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-red-500 mr-2" />
-											Backups automáticos seguros
-										</div>
-									</div>
-									<div class="space-y-2">
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-red-500 mr-2" />
-											Certificado SSL configurado
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-red-500 mr-2" />
-											Actualizaciones seguras WordPress
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-red-500 mr-2" />
-											Monitoreo 24/7 de seguridad
-										</div>
-									</div>
-								</div>
-							</div>
+				<!-- SEO WordPress -->
+				<article class="border-b border-gray-200 dark:border-gray-800 py-12 lg:py-16">
+					<div class="grid lg:grid-cols-12 gap-6 lg:gap-8">
+						<div class="lg:col-span-4">
+							<h3 class="font-display text-2xl lg:text-3xl font-medium text-black dark:text-white">
+								SEO WordPress Avanzado
+							</h3>
+						</div>
+						<div class="lg:col-span-5">
+							<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+								Optimización SEO completa para que tu WordPress aparezca en los primeros resultados de Google Chile.
+							</p>
+							<ul class="space-y-2 text-sm text-gray-500 dark:text-gray-500">
+								<li>Meta títulos y descripciones optimizadas</li>
+								<li>URLs amigables y estructura SEO</li>
+								<li>Schema markup y datos estructurados</li>
+								<li>Sitemap XML optimizado</li>
+								<li>Enlaces internos estratégicos</li>
+								<li>Optimización para búsquedas locales Chile</li>
+							</ul>
 						</div>
 					</div>
+				</article>
 
-					<!-- Optimización móvil -->
-					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800">
-						<div class="flex gap-6 items-start">
-							<div class="w-12 h-12 bg-purple-500 text-white rounded-lg flex items-center justify-center flex-shrink-0">
-								<LucideIcon name="smartphone" className="w-6 h-6" />
-							</div>
-							<div class="flex-1">
-								<h3 class="text-2xl font-medium text-black dark:text-white mb-4">Optimización Mobile First</h3>
-								<p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-									Tu WordPress optimizado para móviles, mejorando experiencia de usuario y posicionamiento Google.
-								</p>
-								<div class="grid md:grid-cols-2 gap-4 text-sm text-gray-500 dark:text-gray-400">
-									<div class="space-y-2">
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-purple-500 mr-2" />
-											Diseño responsive optimizado
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-purple-500 mr-2" />
-											Velocidad móvil mejorada
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-purple-500 mr-2" />
-											Usabilidad móvil perfeccionada
-										</div>
-									</div>
-									<div class="space-y-2">
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-purple-500 mr-2" />
-											Core Web Vitals optimizados
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-purple-500 mr-2" />
-											AMP (Accelerated Mobile Pages)
-										</div>
-										<div class="flex items-center">
-											<LucideIcon name="check" className="w-4 h-4 text-purple-500 mr-2" />
-											Touch-friendly navigation
-										</div>
-									</div>
-								</div>
-							</div>
+				<!-- Seguridad WordPress -->
+				<article class="border-b border-gray-200 dark:border-gray-800 py-12 lg:py-16">
+					<div class="grid lg:grid-cols-12 gap-6 lg:gap-8">
+						<div class="lg:col-span-4">
+							<h3 class="font-display text-2xl lg:text-3xl font-medium text-black dark:text-white">
+								Seguridad Profesional
+							</h3>
+						</div>
+						<div class="lg:col-span-5">
+							<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+								Protección completa contra ataques, malware y vulnerabilidades con configuración de seguridad avanzada.
+							</p>
+							<ul class="space-y-2 text-sm text-gray-500 dark:text-gray-500">
+								<li>Firewall WordPress avanzado</li>
+								<li>Protección contra malware</li>
+								<li>Backups automáticos seguros</li>
+								<li>Certificado SSL configurado</li>
+								<li>Actualizaciones seguras WordPress</li>
+								<li>Monitoreo 24/7 de seguridad</li>
+							</ul>
 						</div>
 					</div>
-				</div>
+				</article>
+
+				<!-- Optimización móvil -->
+				<article class="py-12 lg:py-16">
+					<div class="grid lg:grid-cols-12 gap-6 lg:gap-8">
+						<div class="lg:col-span-4">
+							<h3 class="font-display text-2xl lg:text-3xl font-medium text-black dark:text-white">
+								Optimización Mobile First
+							</h3>
+						</div>
+						<div class="lg:col-span-5">
+							<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+								Tu WordPress optimizado para móviles, mejorando experiencia de usuario y posicionamiento Google.
+							</p>
+							<ul class="space-y-2 text-sm text-gray-500 dark:text-gray-500">
+								<li>Diseño responsive optimizado</li>
+								<li>Velocidad móvil mejorada</li>
+								<li>Usabilidad móvil perfeccionada</li>
+								<li>Core Web Vitals optimizados</li>
+								<li>AMP (Accelerated Mobile Pages)</li>
+								<li>Touch-friendly navigation</li>
+							</ul>
+						</div>
+					</div>
+				</article>
 			</div>
 		</div>
 	</section>
 
 	<!-- Proceso de optimización -->
-	<section class="py-20 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-5xl mx-auto">
-				<div class="text-center mb-16">
-					<h2 class="text-3xl md:text-4xl font-medium mb-6 text-black dark:text-white">
-						Nuestro proceso de optimización WordPress
-					</h2>
-					<p class="text-xl text-gray-600 dark:text-gray-300">
-						Metodología probada para optimizar WordPress al máximo rendimiento
-					</p>
+	<section class="py-16 lg:py-24 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Proceso
+					</span>
 				</div>
-				
-				<div class="space-y-8">
-					<div class="flex gap-6 items-start">
-						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center flex-shrink-0 font-bold">
-							1
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Auditoría Completa WordPress</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Análisis exhaustivo de velocidad, SEO, seguridad, plugins y configuración actual de tu WordPress.
-								Identificamos todos los problemas de rendimiento.
-							</p>
-						</div>
-					</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						Cómo <span class="italic">trabajamos</span>
+					</h2>
+				</div>
+			</div>
 
-					<div class="flex gap-6 items-start">
-						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center flex-shrink-0 font-bold">
-							2
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Plan de Optimización Personalizado</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Creamos estrategia específica para tu WordPress: qué optimizar primero, plugins a cambiar,
-								configuraciones a mejorar y objetivos de rendimiento.
-							</p>
-						</div>
-					</div>
-
-					<div class="flex gap-6 items-start">
-						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center flex-shrink-0 font-bold">
-							3
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Optimización Técnica WordPress</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Implementamos todas las optimizaciones: velocidad, SEO, seguridad, móvil.
-								Configuración avanzada WordPress y plugins profesionales.
-							</p>
-						</div>
-					</div>
-
-					<div class="flex gap-6 items-start">
-						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center flex-shrink-0 font-bold">
-							4
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Testing y Validación</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Pruebas exhaustivas de velocidad, SEO, seguridad y funcionalidad. 
-								Medimos mejoras con herramientas profesionales.
-							</p>
-						</div>
-					</div>
-
-					<div class="flex gap-6 items-start">
-						<div class="w-12 h-12 bg-black dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg flex items-center justify-center flex-shrink-0 font-bold">
-							5
-						</div>
-						<div>
-							<h3 class="text-xl font-medium text-black dark:text-white mb-3">Monitoreo y Mantenimiento</h3>
-							<p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-								Configuramos monitoreo continuo y plan de mantenimiento WordPress.
-								Capacitación para mantener optimización a largo plazo.
-							</p>
-						</div>
-					</div>
+			<div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
+				<div>
+					<span class="font-display text-5xl text-gray-200 dark:text-gray-800 font-medium block mb-4">01</span>
+					<h3 class="font-medium text-black dark:text-white mb-2">Auditoría completa</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Análisis exhaustivo de velocidad, SEO, seguridad y configuración actual</p>
+				</div>
+				<div>
+					<span class="font-display text-5xl text-gray-200 dark:text-gray-800 font-medium block mb-4">02</span>
+					<h3 class="font-medium text-black dark:text-white mb-2">Plan personalizado</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Estrategia específica con prioridades y objetivos de rendimiento</p>
+				</div>
+				<div>
+					<span class="font-display text-5xl text-gray-200 dark:text-gray-800 font-medium block mb-4">03</span>
+					<h3 class="font-medium text-black dark:text-white mb-2">Optimización técnica</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Implementación de todas las mejoras de velocidad, SEO y seguridad</p>
+				</div>
+				<div>
+					<span class="font-display text-5xl text-gray-200 dark:text-gray-800 font-medium block mb-4">04</span>
+					<h3 class="font-medium text-black dark:text-white mb-2">Testing y validación</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Pruebas exhaustivas y medición de mejoras con herramientas profesionales</p>
+				</div>
+				<div>
+					<span class="font-display text-5xl text-gray-200 dark:text-gray-800 font-medium block mb-4">05</span>
+					<h3 class="font-medium text-black dark:text-white mb-2">Monitoreo continuo</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400">Plan de mantenimiento y capacitación para optimización a largo plazo</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Resultados esperados -->
-	<section class="py-20 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto text-center">
-				<h2 class="text-3xl md:text-4xl font-medium mb-6 text-black dark:text-white">
-					Resultados de optimización WordPress
-				</h2>
-				<p class="text-xl text-gray-600 dark:text-gray-300 mb-12">
-					Lo que lograrás con tu WordPress optimizado profesionalmente
-				</p>
-				
-				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800">
-						<div class="text-4xl font-bold text-green-600 mb-4">3x</div>
-						<h3 class="text-lg font-medium text-black dark:text-white mb-2">Más velocidad</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Tu WordPress cargará hasta 3 veces más rápido</p>
-					</div>
-					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800">
-						<div class="text-4xl font-bold text-blue-600 mb-4">+150%</div>
-						<h3 class="text-lg font-medium text-black dark:text-white mb-2">Más tráfico SEO</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Mejora significativa en posicionamiento Google</p>
-					</div>
-					<div class="bg-white dark:bg-gray-900 p-8 rounded-lg border border-gray-200 dark:border-gray-800">
-						<div class="text-4xl font-bold text-purple-600 mb-4">99.9%</div>
-						<h3 class="text-lg font-medium text-black dark:text-white mb-2">Uptime</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Máxima disponibilidad y estabilidad</p>
-					</div>
+	<!-- Inversión -->
+	<section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8">
+				<div class="lg:col-span-5">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 mb-6 block">
+						Inversión
+					</span>
+					<h2 class="font-display text-3xl lg:text-4xl xl:text-5xl font-medium text-black dark:text-white leading-tight mb-6">
+						Optimización WordPress <span class="italic">profesional</span>
+					</h2>
+					<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+						Un sitio web lento pierde hasta el 40% de visitantes y baja posiciones en Google. La optimización WordPress mejora velocidad, SEO y conversiones.
+					</p>
 				</div>
-
-				<div class="bg-white dark:bg-gray-900 p-12 rounded-lg border border-gray-200 dark:border-gray-800 max-w-2xl mx-auto">
-					<div class="mb-8">
-						<div class="text-6xl font-bold text-black dark:text-white mb-4">15 UF</div>
-						<div class="text-2xl text-gray-600 dark:text-gray-300 mb-2">Desde</div>
-						<div class="text-lg text-gray-500 dark:text-gray-400">Optimización WordPress completa</div>
+				<div class="lg:col-span-6 lg:col-start-7">
+					<div class="border border-gray-200 dark:border-gray-800 p-8 lg:p-12">
+						<div class="mb-8">
+							<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">Desde</span>
+							<div class="font-display text-5xl lg:text-6xl font-medium text-black dark:text-white mt-2">15 UF</div>
+							<p class="text-gray-500 dark:text-gray-400 mt-2">Optimización WordPress completa</p>
+						</div>
+						<ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400 mb-8">
+							<li class="flex items-start gap-3">
+								<svg class="w-4 h-4 mt-0.5 text-black dark:text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Auditoría inicial gratuita</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-4 h-4 mt-0.5 text-black dark:text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Optimización de velocidad completa</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-4 h-4 mt-0.5 text-black dark:text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>SEO técnico avanzado</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-4 h-4 mt-0.5 text-black dark:text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>Configuración de seguridad</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<svg class="w-4 h-4 mt-0.5 text-black dark:text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
+								</svg>
+								<span>30 días de soporte post-optimización</span>
+							</li>
+						</ul>
+						<a
+							href="#auditoria"
+							class="w-full px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors duration-300 text-center block"
+						>
+							Solicitar auditoría gratuita
+						</a>
 					</div>
-					
-					<a
-						href="#auditoria"
-						class="w-full px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-medium transition-all duration-200 hover:scale-[1.02] rounded-button text-center block shadow-lg"
-					>
-						🚀 Optimizar mi WordPress ahora
-					</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- Formulario auditoría -->
-	<section id="auditoria" class="py-20 bg-white dark:bg-gray-900">
-		<div class="container mx-auto px-6">
-			<div class="max-w-5xl mx-auto">
-				<div class="text-center mb-16">
-					<h2 class="text-2xl md:text-4xl font-medium mb-4 text-black dark:text-white">
-						Auditoría WordPress gratuita
+	<section id="auditoria" class="py-16 lg:py-24 bg-gray-50 dark:bg-gray-950">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8">
+				<div class="lg:col-span-5">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500 mb-6 block">
+						Auditoría gratuita
+					</span>
+					<h2 class="font-display text-3xl lg:text-4xl xl:text-5xl font-medium text-black dark:text-white leading-tight mb-6">
+						Analizamos tu <span class="italic">WordPress</span>
 					</h2>
-					<p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-						Analizamos tu WordPress gratis y te enviamos reporte detallado con recomendaciones específicas de optimización.
+					<p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+						Análisis profesional sin costo ni compromiso. Te enviamos reporte detallado con recomendaciones específicas de optimización.
 					</p>
-				</div>
-				
-				<div class="grid lg:grid-cols-3 gap-6 lg:gap-8">
-					<!-- Formulario -->
-					<div class="lg:col-span-2 order-2 lg:order-1">
-						<div class="bg-white dark:bg-gray-900 p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg">
-							<div class="mb-6">
-								<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-									Solicitar auditoría gratuita WordPress
-								</h3>
-								<p class="text-gray-600 dark:text-gray-400">
-									Te enviamos análisis completo sin compromiso
-								</p>
-							</div>
-							<ContactFormBase
-								client:idle
-								defaultService="optimizacion"
-								landingSource="optimizacion-wordpress"
-								submitButtonText="Solicitar auditoría gratuita"
-								submitButtonClass="w-full px-8 py-5 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold text-lg rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
-								showCharCounter={true}
-								showConsentToggle={true}
-								fields={{
-									hideServicio: true,
-									config: {
-										mensaje: {
-											label: 'Cuéntanos sobre tu WordPress',
-											type: 'textarea',
-											required: true,
-											placeholder: 'Describe los problemas de tu WordPress: lentitud, problemas SEO, seguridad, móviles, etc. También comparte la URL de tu sitio para analizar...',
-											rows: 6
-										}
-									},
-									additionalFields: {
-										url: {
-											label: 'URL de tu sitio WordPress',
-											type: 'url',
-											placeholder: 'https://tusitio.cl',
-											required: true
-										},
-										problemas: {
-											label: 'Principales problemas detectados',
-											type: 'select',
-											placeholder: 'Selecciona el principal problema',
-											multiple: true,
-											options: [
-												{ value: 'lentitud', label: 'Sitio muy lento' },
-												{ value: 'seo', label: 'No aparece en Google' },
-												{ value: 'seguridad', label: 'Problemas de seguridad' },
-												{ value: 'movil', label: 'Mal funcionamiento en móviles' },
-												{ value: 'plugins', label: 'Muchos plugins o conflictos' },
-												{ value: 'hosting', label: 'Problemas de hosting' }
-											]
-										}
-									}
-								}}
-							/>
-						</div>
-					</div>
-					
-					<!-- Información -->
-					<div class="space-y-6 order-1 lg:order-2">
-						<div class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-2xl border border-green-200 dark:border-green-800">
-							<h3 class="text-xl font-bold text-green-900 dark:text-green-100 mb-2">
-								Auditoría 100% gratuita
-							</h3>
-							<p class="text-green-700 dark:text-green-300 text-sm mb-6">
-								Análisis profesional sin costo ni compromiso
-							</p>
-							<div class="space-y-3">
-								<div class="flex items-center text-green-700 dark:text-green-300">
-									<LucideIcon name="check-circle" className="w-5 h-5 mr-3 text-green-500" />
-									<span class="text-sm">Análisis de velocidad completo</span>
-								</div>
-								<div class="flex items-center text-green-700 dark:text-green-300">
-									<LucideIcon name="check-circle" className="w-5 h-5 mr-3 text-green-500" />
-									<span class="text-sm">Revisión SEO técnico</span>
-								</div>
-								<div class="flex items-center text-green-700 dark:text-green-300">
-									<LucideIcon name="check-circle" className="w-5 h-5 mr-3 text-green-500" />
-									<span class="text-sm">Evaluación de seguridad</span>
-								</div>
-								<div class="flex items-center text-green-700 dark:text-green-300">
-									<LucideIcon name="check-circle" className="w-5 h-5 mr-3 text-green-500" />
-									<span class="text-sm">Recomendaciones específicas</span>
-								</div>
-							</div>
+
+					<div class="space-y-6">
+						<div>
+							<h3 class="font-medium text-black dark:text-white mb-3">Qué incluye la auditoría</h3>
+							<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+								<li>Análisis de velocidad completo</li>
+								<li>Revisión SEO técnico</li>
+								<li>Evaluación de seguridad</li>
+								<li>Recomendaciones específicas</li>
+							</ul>
 						</div>
 
-						<div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-6 rounded-2xl border border-blue-200 dark:border-blue-800">
-							<h3 class="text-xl font-bold text-blue-900 dark:text-blue-100 mb-2">
-								¿Necesitas ayuda urgente?
-							</h3>
-							<p class="text-blue-700 dark:text-blue-300 text-sm mb-6">
-								Contacto directo para optimización express
-							</p>
-							<div class="space-y-3">
-								<a
-									href="https://wa.me/56800914659?text=Hola, necesito optimizar mi WordPress urgente. ¿Pueden ayudarme?"
-									target="_blank"
-									rel="noopener noreferrer"
-									class="flex items-center p-4 bg-green-500 hover:bg-green-600 text-white rounded-xl transition-all duration-200 group shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
-								>
-									<div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mr-3">
-										<LucideIcon name="message-circle" className="w-5 h-5" />
-									</div>
-									<div class="flex-1">
-										<p class="font-bold">WhatsApp</p>
-										<p class="text-sm opacity-90">Respuesta inmediata</p>
-									</div>
-								</a>
-							</div>
+						<div class="pt-6 border-t border-gray-200 dark:border-gray-800">
+							<h3 class="font-medium text-black dark:text-white mb-3">¿Necesitas ayuda urgente?</h3>
+							<a
+								href="https://wa.me/56800914659?text=Hola, necesito optimizar mi WordPress urgente. ¿Pueden ayudarme?"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-2 text-sm text-black dark:text-white hover:opacity-70 transition-opacity duration-300"
+							>
+								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+								</svg>
+								WhatsApp directo
+							</a>
 						</div>
+					</div>
+				</div>
+
+				<div class="lg:col-span-6 lg:col-start-7">
+					<div class="bg-white dark:bg-gray-900 p-6 lg:p-8 border border-gray-200 dark:border-gray-800">
+						<ContactFormBase
+							client:idle
+							defaultService="optimizacion"
+							landingSource="optimizacion-wordpress"
+							submitButtonText="Solicitar auditoría gratuita"
+							submitButtonClass="w-full px-8 py-4 bg-black dark:bg-gray-200 text-white dark:text-black font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+							showCharCounter={true}
+							showConsentToggle={true}
+							fields={{
+								hideServicio: true,
+								config: {
+									mensaje: {
+										label: 'Cuéntanos sobre tu WordPress',
+										type: 'textarea',
+										required: true,
+										placeholder: 'Describe los problemas de tu WordPress: lentitud, problemas SEO, seguridad, móviles, etc.',
+										rows: 5
+									}
+								},
+								additionalFields: {
+									url: {
+										label: 'URL de tu sitio WordPress',
+										type: 'url',
+										placeholder: 'https://tusitio.cl',
+										required: true
+									},
+									problemas: {
+										label: 'Principales problemas detectados',
+										type: 'select',
+										placeholder: 'Selecciona el principal problema',
+										multiple: true,
+										options: [
+											{ value: 'lentitud', label: 'Sitio muy lento' },
+											{ value: 'seo', label: 'No aparece en Google' },
+											{ value: 'seguridad', label: 'Problemas de seguridad' },
+											{ value: 'movil', label: 'Mal funcionamiento en móviles' },
+											{ value: 'plugins', label: 'Muchos plugins o conflictos' },
+											{ value: 'hosting', label: 'Problemas de hosting' }
+										]
+									}
+								}
+							}}
+						/>
 					</div>
 				</div>
 			</div>
@@ -588,28 +458,115 @@ import ContactFormBase from '../components/ContactFormBase.jsx';
 	</section>
 
 	<!-- Servicios relacionados -->
-	<section class="py-16 bg-gray-50 dark:bg-gray-950">
-		<div class="container mx-auto px-6">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-2xl font-medium mb-8 text-black dark:text-white">
-					Servicios WordPress relacionados
-				</h2>
-				
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-					<a href="/wordpress-chile" class="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
-						<h3 class="font-medium text-black dark:text-white mb-2 group-hover:underline">Desarrollo WordPress</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Sitios WordPress profesionales desde cero</p>
-					</a>
-					
-					<a href="/woocommerce" class="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
-						<h3 class="font-medium text-black dark:text-white mb-2 group-hover:underline">WooCommerce</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Tiendas online WordPress optimizadas</p>
-					</a>
-					
-					<a href="/servicios/mantenimiento" class="group p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-black dark:hover:border-white transition-all duration-300">
-						<h3 class="font-medium text-black dark:text-white mb-2 group-hover:underline">Mantenimiento WordPress</h3>
-						<p class="text-sm text-gray-600 dark:text-gray-300">Mantenimiento preventivo y actualizaciones</p>
-					</a>
+	<section class="py-16 lg:py-24 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-6 lg:px-12">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 mb-12">
+				<div class="lg:col-span-4">
+					<span class="text-sm tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+						Relacionados
+					</span>
+				</div>
+				<div class="lg:col-span-8">
+					<h2 class="font-display text-3xl lg:text-4xl font-medium text-black dark:text-white leading-tight">
+						Servicios WordPress <span class="italic">relacionados</span>
+					</h2>
+				</div>
+			</div>
+
+			<div class="grid md:grid-cols-3 gap-px bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+				<a href="/wordpress-chile" class="group bg-white dark:bg-gray-900 p-8 lg:p-10 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-950">
+					<h3 class="font-display text-xl font-medium text-black dark:text-white mb-3 group-hover:italic transition-all duration-300">Desarrollo WordPress</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Sitios WordPress profesionales desde cero</p>
+					<span class="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-500 group-hover:text-black dark:group-hover:text-white transition-colors duration-300">
+						Ver servicio
+						<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
+					</span>
+				</a>
+
+				<a href="/woocommerce" class="group bg-white dark:bg-gray-900 p-8 lg:p-10 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-950">
+					<h3 class="font-display text-xl font-medium text-black dark:text-white mb-3 group-hover:italic transition-all duration-300">WooCommerce</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Tiendas online WordPress optimizadas</p>
+					<span class="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-500 group-hover:text-black dark:group-hover:text-white transition-colors duration-300">
+						Ver servicio
+						<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
+					</span>
+				</a>
+
+				<a href="/servicios/web" class="group bg-white dark:bg-gray-900 p-8 lg:p-10 transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-gray-950">
+					<h3 class="font-display text-xl font-medium text-black dark:text-white mb-3 group-hover:italic transition-all duration-300">Desarrollo Web</h3>
+					<p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Sitios web profesionales y corporativos</p>
+					<span class="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-500 group-hover:text-black dark:group-hover:text-white transition-colors duration-300">
+						Ver servicio
+						<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
+					</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Editorial -->
+	<section class="py-24 lg:py-40 bg-black dark:bg-gray-200 relative overflow-hidden">
+		<div class="absolute top-0 right-0 w-1/3 h-full opacity-[0.03]">
+			<svg class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 text-white dark:text-black" viewBox="0 0 200 200" fill="currentColor">
+				<circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.5"/>
+				<circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="0.5"/>
+				<circle cx="100" cy="100" r="40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+			</svg>
+		</div>
+
+		<div class="container mx-auto px-6 lg:px-12 relative">
+			<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-end">
+				<div class="lg:col-span-7">
+					<span class="inline-block text-sm tracking-[0.3em] uppercase text-gray-500 dark:text-gray-400 mb-8">
+						Próximo paso
+					</span>
+					<h2 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium text-white dark:text-black leading-[1.1] mb-8">
+						Tu WordPress al <span class="italic">máximo rendimiento</span>
+					</h2>
+					<p class="text-lg lg:text-xl text-gray-400 dark:text-gray-600 max-w-xl leading-relaxed">
+						Solicita una auditoría gratuita y descubre cómo optimizar tu WordPress profesionalmente.
+					</p>
+				</div>
+
+				<div class="lg:col-span-5 lg:pl-12 lg:border-l border-gray-800 dark:border-gray-200">
+					<div class="space-y-8">
+						<a
+							href="#auditoria"
+							class="group flex items-center justify-between py-6 border-b border-gray-800 dark:border-gray-200 transition-all duration-300 hover:border-white dark:hover:border-black"
+						>
+							<span class="text-2xl lg:text-3xl font-display text-white dark:text-black">Solicitar auditoría</span>
+							<svg class="w-6 h-6 text-gray-500 group-hover:text-white dark:group-hover:text-black group-hover:translate-x-2 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+							</svg>
+						</a>
+
+						<div class="space-y-4">
+							<a
+								href="mailto:info@subdominio.cl"
+								class="flex items-center gap-3 text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black transition-colors duration-300"
+							>
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+								</svg>
+								<span>info@subdominio.cl</span>
+							</a>
+							<a
+								href="tel:+56800914659"
+								class="flex items-center gap-3 text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black transition-colors duration-300"
+							>
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+								</svg>
+								<span>800 914 659</span>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

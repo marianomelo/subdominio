@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://subdominio.cl/sitemap.xml
+Sitemap: https://subdominio.cl/sitemap-index.xml
 
 # Bloquear archivos de desarrollo y administración
 Disallow: /admin/
@@ -19,6 +19,3 @@ Allow: /*.jpeg
 Allow: /*.gif
 Allow: /*.svg
 Allow: /*.webp
-
-# Crawl-delay opcional (en segundos)
-Crawl-delay: 1

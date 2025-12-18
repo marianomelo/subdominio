@@ -10,23 +10,21 @@ export const useTheme = () => {
   return context;
 };
 
+// Función para obtener el tema inicial (sincronizada con Layout.astro)
+const getInitialTheme = () => {
+  if (typeof window === 'undefined') return false;
+
+  // Sincronizar con lo que el script inline ya determinó
+  return document.documentElement.classList.contains('dark');
+};
+
 export const ThemeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(getInitialTheme);
 
   useEffect(() => {
-    // Forzar light theme por defecto
-    const savedTheme = localStorage.getItem('theme');
-    
-    // Solo activar dark mode si está explícitamente guardado como 'dark'
-    if (savedTheme === 'dark') {
-      setIsDarkMode(true);
-      document.documentElement.classList.add('dark');
-    } else {
-      // Asegurar que esté en light mode y guardado como tal
-      setIsDarkMode(false);
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
+    // Sincronizar estado con la clase actual del DOM
+    const isDark = document.documentElement.classList.contains('dark');
+    setIsDarkMode(isDark);
   }, []);
 
   const toggleTheme = () => {
